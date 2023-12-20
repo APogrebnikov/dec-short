@@ -1,0 +1,85 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<div self="@define(content)" hflex="1" vflex="1" apply="org.edec.student.factSheet.ctrl.IndexPageCtrl">
+    <style src="/css/order/order.css"/>
+    <div sclass="order-container">
+        <vlayout>
+
+            <hlayout>
+                <label sclass="label_title">Сервис заказа справок</label>
+            </hlayout>
+
+            <hlayout>
+                <label sclass="label_kind">Вид справки:</label>
+            </hlayout>
+
+            <hlayout>
+                <hbox>
+                    <combobox constraint="no empty: Не указан вид справки" readonly="true"
+                              sclass="cmb_kind" id="cmbKind">
+                    </combobox>
+                </hbox>
+                <spinner style="width:100px" readonly="true"
+                         constraint="no zero, no empty, no negative, min 1 max 5" value="1" maxlength="1" sclass="spin"
+                         id="spin"/>
+            </hlayout>
+
+            <vlayout id="vlGroup" visible="false">
+                <hlayout>
+                    <label sclass="label_kind">Группа:</label>
+                </hlayout>
+                <hlayout>
+                    <combobox id="cmbGroup" readonly="true" sclass="cmb_kind"></combobox>
+                </hlayout>
+            </vlayout>
+
+            <hlayout>
+                <label>Наличие гербовой печати:</label>
+                <checkbox id="cbOfficialSeal"/>
+            </hlayout>
+
+            <hlayout>
+                <label id="lStatusEmail" sclass="b"/>
+            </hlayout>
+
+            <hlayout>
+                <button sclass="btn_order" id="btnOrder" label="Заказать"/>
+                <button sclass="btn_history" id="btnHistory" label="История"/>
+            </hlayout>
+
+            <space height="40px"/>
+
+            <html>
+                <span>Перед заказом ознакомьтесь со сроками выполнения:</span>
+                <br/>
+                <span>- <b>При наличии гербовой печати</b>, срок выполнения справки будет выполняться в течение 10
+                    рабочих дней,
+                    т.к данный вид справки требует подписи ректора СФУ.
+                </span>
+                <br/>
+                <span>- <b>При отсутствии гербовой печати</b>, срок выполнения справки будет выполняться в течение 3
+                    рабочих дней,
+                    т.к данный вид справки требует подписи директора ИКИТ СФУ.
+                </span>
+                <br/>
+                <span>- <b>Справка в Пенсионный фонд РФ</b>, имеет срок выполнения 10 рабочих дней.
+                </span>
+                <br/>
+                <br/>
+            </html>
+
+            <html>
+                <span>Чтобы заказать справки:</span>
+                <br/>
+                <span>- <b>для военкомата</b>, обратитесь во второй отдел, ул. Киренского 26а, ауд. Д 511
+                </span>
+                <br/>
+                <span>- <b>о размере стипендии</b>, обратитесь в стипендиальную группу, пр. Свободный, 79, ауд. 12-13
+                </span>
+                <br/>
+                <span>К сожалению, через наш сервис такие виды справок заказать нельзя.</span>
+            </html>
+
+        </vlayout>
+    </div>
+</div>

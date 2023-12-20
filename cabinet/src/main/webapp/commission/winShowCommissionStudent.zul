@@ -1,0 +1,47 @@
+<window id="winShowCommissionStudent" closable="true" apply="org.edec.commission.ctrl.WinShowCommissionStudentPageCtrl"
+        position="center" width="80%">
+    <caption>
+        <label id="lInfo" value="Информация о комиссии" />
+    </caption>
+    <vbox>
+        <hbox>
+            <button label="Посмотреть список комиссии" id="btnComissionStructure" style="margin-top: 5px;"/>
+        </hbox>
+        <hbox>
+            <groupbox>
+                <caption>
+                    <label value="Изменение даты комиссии" style="font-weight: 700;"/>
+                </caption>
+                <hbox>
+                    <label value="Начало" />
+                    <datebox id="dateBeginComission" placeholder="Начало"/>
+                    <label value=" окончание" />
+                    <datebox id="dateEndComission" placeholder="Окончание" />
+                </hbox>
+                <button id="btnExtendComission" style="margin-top: 5px" label="Продлить комиссию" />
+            </groupbox>
+            <button id="btnDelComission" style="margin-top: 15px; margin-left: 5px;" label="Удалить комиссию у выбранных студентов" />
+        </hbox>
+        <label value="Список студентов" />
+        <listbox id="lbStudentComission" checkmark="true" multiple="true" rows="10"
+                 itemRenderer="org.edec.commission.ctrl.renderer.StudentCommissionRenderer" >
+            <listhead>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="ФИО" />
+                </listheader>
+                <listheader width="150px">
+                    <label sclass="cwf-listheader-label" value="Группа" />
+                </listheader>
+                <listheader width="100px">
+                    <label sclass="cwf-listheader-label" value="Оценка" />
+                </listheader>
+                <listheader width="100px">
+                    <label sclass="cwf-listheader-label" value="Проверен" />
+                </listheader>
+            </listhead>
+        </listbox>
+        <hbox hflex="1" pack="end" align="end">
+            <button id="btnCloseFromComissionStudent" label="Выйти и сохранить" />
+        </hbox>
+    </vbox>
+</window>

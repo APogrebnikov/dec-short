@@ -1,0 +1,6 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.personalNotifications.ctrl.IndexPageCtrl">
+    <listbox id="lbNotifications" hflex="1" vflex="1" emptyMessage="Список полученных уведомлений пуст">
+    </listbox>
+</vbox>

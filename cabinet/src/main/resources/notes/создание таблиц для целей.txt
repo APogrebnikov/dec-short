@@ -1,0 +1,167 @@
+CREATE TABLE public.aim_task_type
+(
+    aim_task_type BIGSERIAL PRIMARY KEY NOT NULL,
+    name VARCHAR NOT NULL
+);
+COMMENT ON TABLE public.aim_task_type IS 'Типы задач';
+
+
+CREATE TABLE public.aim_task_time
+(
+    id_aim_task_time BIGSERIAL PRIMARY KEY NOT NULL,
+    id_aim_task_type BIGINT NOT NULL,
+    course INT,
+    id_institute BIGINT,
+    id_direction BIGINT,
+    execution_days INT NOT NULL,
+    CONSTRAINT fk_aim_task_time_aim_task_type FOREIGN KEY (id_aim_task_type) REFERENCES aim_task_type (id_aim_task_type)
+);
+COMMENT ON COLUMN public.aim_task_time.execution_days IS 'количество дней, необходимых для выполнения задачи';
+COMMENT ON TABLE public.aim_task_time IS 'время выполнения задачи';
+
+CREATE TABLE public.achievement
+(
+    id_achievement BIGSERIAL PRIMARY KEY NOT NULL,
+    id_studentcard BIGINT NOT NULL,
+    name VARCHAR,
+    id_aim_task_type BIGINT NOT NULL,
+	id_aim_level_involvenment BIGINT NOT NULL,
+    CONSTRAINT fk_achievement_studentcard FOREIGN KEY (id_studentcard) REFERENCES studentcard (id_studentcard),
+    CONSTRAINT fk_achievement_aim_task_type FOREIGN KEY (id_aim_task_type) REFERENCES aim_task_type (id_aim_task_type),
+	CONSTRAINT fk_achievement_aim_level_oncolvenment FOREIGN KEY (id_aim_level_involvenment) REFERENCES aim_level_involvenment (id_aim_level_involvenment)
+);
+COMMENT ON TABLE public.achievement IS 'достижения студента';
+ALTER TABLE public.achievement ADD publication_date TIMESTAMP WITHOUT TIME ZONE NOT NULL;
+ALTER TABLE public.achievement ADD id_aim_level_involvement BIGINT NOT NULL;
+ALTER TABLE public.achievement
+ADD CONSTRAINT fk_achievement__aim_level_involvement
+FOREIGN KEY (id_aim_level_involvement) REFERENCES aim_level_involvement (id_aim_level_involvement);
+
+
+
+CREATE TABLE public.aim
+(
+    id_aim BIGSERIAL PRIMARY KEY NOT NULL,
+    name VARCHAR NOT NULL,
+    begin_date TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+    end_date TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+    min_point INT NOT NULL,
+    parent BIGINT,
+	description TEXT
+);
+COMMENT ON COLUMN public.aim.min_point IS 'Минимальный порог';
+COMMENT ON TABLE public.aim IS 'цель';
+
+CREATE TABLE public.aim_history
+(
+    id_aim_history BIGSERIAL PRIMARY KEY NOT NULL,
+    id_aim BIGINT NOT NULL,
+    min_point INT NOT NULL,
+    begin_date TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+    end_date TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+    change_date TIMESTAMP WITHOUT TIME ZONE DEFAULT now() NOT NULL,
+    name VARCHAR NOT NULL,
+    parent BIGINT,
+    CONSTRAINT fk_aim_history__aim FOREIGN KEY (id_aim) REFERENCES aim (id_aim)
+);
+COMMENT ON TABLE public.aim_history IS 'история изменений по цели';
+
+
+CREATE TABLE public.aim_task
+(
+    id_aim_task BIGSERIAL PRIMARY KEY NOT NULL,
+    id_aim BIGINT NOT NULL,
+    point INT NOT NULL,
+    id_aim_task_type BIGINT NOT NULL,
+    condition TEXT,
+    CONSTRAINT fk_aim_task__aim FOREIGN KEY (id_aim) REFERENCES aim (id_aim),
+    CONSTRAINT fk_aim_task__aim_task_type FOREIGN KEY (id_aim_task_type) REFERENCES aim_task_type (id_aim_task_type)
+);
+COMMENT ON TABLE public.aim_task IS 'задачи, которые нужно выполнить по цели';
+
+ALTER TABLE public.aim_task ADD id_aim_level_involvement BIGINT NOT NULL;
+ALTER TABLE public.aim_task
+ADD CONSTRAINT fk_aim_task__aim_level_involvement
+FOREIGN KEY (id_aim_level_involvement) REFERENCES aim_level_involvement (id_aim_level_involvement);
+
+
+
+CREATE TABLE public.aim_student
+(
+    id_aim_student BIGSERIAL PRIMARY KEY NOT NULL,
+    id_studentcard BIGINT NOT NULL,
+    id_aim BIGINT NOT NULL,
+    begin_date TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+    CONSTRAINT fk_aim_student__studentcard FOREIGN KEY (id_studentcard) REFERENCES studentcard (id_studentcard),
+    CONSTRAINT fk_aim_student__aim FOREIGN KEY (id_aim) REFERENCES aim (id_aim)
+);
+COMMENT ON TABLE public.aim_student IS 'цели студента';
+
+CREATE TABLE public.aim_set
+(
+    id_aim_set BIGSERIAL PRIMARY KEY NOT NULL,
+    id_aim_student BIGINT NOT NULL,
+    begin_date TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+    end_date TIMESTAMP WITHOUT TIME ZONE NOT NULL,
+    status INT DEFAULT 0 NOT NULL,
+    id_last_check_achievement BIGINT,
+    start_point INT NOT NULL,
+    CONSTRAINT fk_aim_set__aim_student FOREIGN KEY (id_aim_student) REFERENCES aim_student (id_aim_student)
+);
+COMMENT ON TABLE public.aim_set IS 'набор задач по выбранной цели студента';
+ALTER TABLE public.aim_set ADD increasing_ratio FLOAT DEFAULT 1 NOT NULL;
+COMMENT ON COLUMN public.aim_set.increasing_ratio IS 'увеличивающий коэффициент, используется при прогнозе';
+
+
+
+CREATE TABLE public.aim_student_task
+(
+    id_aim_student_task BIGSERIAL PRIMARY KEY NOT NULL,
+    id_aim_set BIGINT NOT NULL,
+    id_aim_task BIGINT NOT NULL,
+    amount INT NOT NULL,
+    execution_days INT NOT NULL,
+    CONSTRAINT fk_aim_student_task_aim_set FOREIGN KEY (id_aim_set) REFERENCES aim_set (id_aim_set),
+    CONSTRAINT fk_aim_student_task_aim_task FOREIGN KEY (id_aim_task) REFERENCES aim_task (id_aim_task)
+);
+COMMENT ON COLUMN public.aim_student_task.execution_days IS 'время выполнения на одну задачу';
+COMMENT ON TABLE public.aim_student_task IS 'цели, которые необходимо выполнить по выбранному набору';
+
+CREATE TABLE public.aim_student_complete_task
+(
+    id_aim_student_complete_task BIGSERIAL PRIMARY KEY NOT NULL,
+    id_aim_student_task BIGINT NOT NULL,
+    id_achievement BIGINT NOT NULL,
+    CONSTRAINT fk_aim_student_complete_task__aim_student_task FOREIGN KEY (id_aim_student_task) REFERENCES aim_student_task (id_aim_student_task),
+    CONSTRAINT fk_aim_student_complete_task__achievement FOREIGN KEY (id_achievement) REFERENCES achievement (id_achievement)
+);
+CREATE UNIQUE INDEX uniq_complete_tasks ON public.aim_student_complete_task (id_aim_student_task, id_achievement);
+COMMENT ON TABLE public.aim_student_complete_task IS 'линковая таблица для связывания достижений и задач студента';
+
+CREATE TABLE public.aim_condition_type
+(
+    id_aim_condition_type BIGSERIAL PRIMARY KEY NOT NULL,
+    name VARCHAR NOT NULL,
+    type_value INT NOT NULL
+);
+COMMENT ON TABLE public.aim_condition_type IS 'типы условий, которые могут быть использованы для сравнения';
+
+CREATE TABLE public.aim_condition
+(
+    id_aim_condition BIGSERIAL PRIMARY KEY NOT NULL,
+    id_aim BIGINT NOT NULL,
+    id_aim_condition_type BIGINT NOT NULL,
+    type_condition INT DEFAULT 0 NOT NULL,
+    value_condition TEXT NOT NULL,
+    CONSTRAINT fk_aim_condition__aim FOREIGN KEY (id_aim) REFERENCES aim (id_aim),
+    CONSTRAINT fk_aim_condition__aim_condition_type FOREIGN KEY (id_aim_condition_type) REFERENCES aim_condition_type (id_aim_condition_type)
+);
+COMMENT ON TABLE public.aim_condition IS 'условия, при которых цель является достижимой';
+
+CREATE TABLE public.aim_level_involvement
+(
+    id_aim_level_involvenment BIGSERIAL PRIMARY KEY NOT NULL,
+    name VARCHAR NOT NULL
+);
+COMMENT ON TABLE public.aim_level_involvement IS 'Вовлеченность в какой-либо вид деятельности';
+ALTER TABLE public.aim_level_involvement RENAME COLUMN id_aim_level_involvenment TO id_aim_level_involvement;

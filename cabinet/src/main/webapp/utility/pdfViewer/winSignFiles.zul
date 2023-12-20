@@ -1,0 +1,97 @@
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<?page title="Подпись" contentType="text/html;charset=UTF-8"?>
+<window id="winSignFiles" mode="modal" closable="true" height="140px" width="300px"
+        position="top, center" apply="org.edec.utility.pdfViewer.ctrl.WinSignFilesCtrl">
+    <caption>
+        <label value="Подпись файлов" />
+    </caption>
+    <vbox pack="center" align="center">
+        <label id="lSignFileInfo"/>
+        <label id="lSignFileUser"/>
+        <progressmeter id="progressSignFile" value="0" width="290px"/>
+        <label id="lSignFileProgress"/>
+        <button id="btnSignAllFiles" label="Подписать"/>
+    </vbox>
+    <!-- Основной скрипт для получения сертификата и подписи -->
+    <script type="text/javascript">
+        var client;
+        /*Инициализация процесса подписи
+        * принимает base64 данные для подписания
+        */
+        function initSign() {
+            client = new LssClient(jQuery).withBypass();
+            getCert();
+        }
+
+        /*Получение сертификата и вызов функции на сервере*/
+        function getCert() {
+            client.selectCertificate()
+                .done(function (response) {
+                    if (response.IsSuccessful) {
+                        var resp={};
+                        var cert = $.parseJSON(response.CertificateJson);
+                        resp.issuer = cert.Issuer;
+                        resp.subject = cert.Subject;
+                        resp.serialNumber = cert.SerialNumber;
+                        resp.cert = cert.Base64RawData;
+                        //Вызов серверной фукции setCert
+                        zAu.send(new zk.Event(zk.Widget.$('$winSignFiles'), "onCertIn", resp, {toServer:true}));
+                    } else {
+                        // Операция завершилась с ошибкой.
+                        var error = response.ErrorMessage;
+                        //Вызов серверной функции прерывающей подпись
+                    }
+                })
+                .fail(function(error) {
+                    // Запрос не удалось отправить или программа
+                    // ViPNet Local Signature Service не смогла принять подключение.
+                    //Вызов серверной функции прерывающей подпись
+                });
+        }
+
+        //Подписываем один документ
+        function signFile(base,cert,i)
+        {
+            var options =
+                {
+                    base64Data: base,
+                    description: "Документ "+i,
+                    documentName: "testF"+i+".pdf",
+                    fileExtension: "pdf",
+                    isAttached: true,
+                    base64Certificate: cert,
+                };
+
+            //Подписание с колбэком
+            client.sign(options)
+                .done(function(response)
+                {
+                    if (response.IsSuccessful)
+                    {
+                        var fullresult={};
+                        var res=response.SignedData;
+                        var signCertificate = $.parseJSON(response.SignCertificateJson);
+                        fullresult.Data=res;
+                        if(signCertificate!=null){
+                            fullresult.SerialNumber=signCertificate.SerialNumber;
+                            fullresult.Thumbprint=signCertificate.Thumbprint;
+                        }
+                        fullresult.Index=i;
+                        zAu.send(new zk.Event(zk.Widget.$('$winSignFiles'), "onSignFile", fullresult, {toServer:true}));
+                    }
+                    else
+                    {
+                        var error = response.ErrorMessage;
+                        zAu.send(new zk.Event(zk.Widget.$('$winSignFiles'), "onErrorSign", response.ErrorMessage, {toServer:true}));
+                    }
+                })
+                .fail(function(error) {
+                    zAu.send(new zk.Event(zk.Widget.$('$winSignFiles'), "onErrorSign", 'Ошибка при подписании. Запустите программу для электронной цифровой подписи!', {toServer:true}));
+                });
+        }
+
+    </script>
+
+    <!-- Подключение сторонних библиотек -->
+    <script type="text/javascript" src="../js/libs/lss-client.js"></script>
+</window>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="mainPage" pageWidth="595" pageHeight="842" columnWidth="482" leftMargin="85" rightMargin="28" topMargin="56" bottomMargin="56" uuid="1876cac3-e34d-4c97-bdc6-6cceb7df9c12">
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<style name="Default" isDefault="true" fontName="Courier New" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="cour.ttf" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="dateOfNotion" class="java.lang.String">
+		<fieldDescription><![CDATA[dateOfNotion]]></fieldDescription>
+	</field>
+	<field name="studentInfo" class="java.lang.String">
+		<fieldDescription><![CDATA[studentInfo]]></fieldDescription>
+	</field>
+	<field name="studentReason" class="java.lang.String">
+		<fieldDescription><![CDATA[studentReason]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="184" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="220" height="14" uuid="33d1481b-c453-42ca-81bb-ae218d64f185">
+					<property name="local_mesure_unitheight" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Courier New" size="10" isBold="true" isItalic="false" pdfFontName="courbd.ttf"/>
+				</textElement>
+				<text><![CDATA[Представление]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="14" width="120" height="14" uuid="b1cccf9c-d245-46da-ba80-2f8b0de447c1">
+					<property name="local_mesure_unitheight" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Courier New"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dateOfNotion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="220" y="0" width="260" height="14" uuid="553b9d9f-13d6-4e29-b7d5-8247b96095ea">
+					<property name="local_mesure_unitheight" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New"/>
+				</textElement>
+				<text><![CDATA[Ректору СФУ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="15" width="262" height="14" uuid="df204572-a35f-4171-8010-b863edb61a6b">
+					<property name="local_mesure_unitheight" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Courier New"/>
+				</textElement>
+				<text><![CDATA[М.В. Румянцеву]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="40" width="481" height="20" uuid="d5ee7047-5374-41c0-a3fb-68ea2bea0138"/>
+				<textElement>
+					<font fontName="Courier New"/>
+					<paragraph firstLineIndent="14"/>
+				</textElement>
+				<text><![CDATA[О студентах ИКИТ]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="70" width="480" height="14" uuid="841df36f-a95f-48bd-86b5-a425b33ae64c">
+					<property name="local_mesure_unitheight" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font fontName="Courier New"/>
+					<paragraph firstLineIndent="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{studentInfo}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="84" width="480" height="14" uuid="adcec893-c066-43d0-908b-257a6025bcb1">
+					<property name="local_mesure_unitheight" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.height" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font fontName="Courier New"/>
+					<paragraph firstLineIndent="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{studentReason}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="164" width="240" height="20" uuid="00dfca60-7a2b-4907-a7c2-68a72327d258">
+					<property name="local_mesure_unitwidth" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="10" isBold="true" isItalic="false" pdfFontName="courbd.ttf"/>
+				</textElement>
+				<text><![CDATA[Директор ИКИТ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="240" y="164" width="240" height="20" uuid="914cbed0-7bc2-48b5-a12d-77c08ce9c2d2">
+					<property name="local_mesure_unitwidth" value="cm"/>
+					<property name="com.jaspersoft.studio.unit.width" value="cm"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Courier New" size="10" isBold="true" isItalic="false" pdfFontName="courbd.ttf"/>
+				</textElement>
+				<text><![CDATA[Д. В. Капулин]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

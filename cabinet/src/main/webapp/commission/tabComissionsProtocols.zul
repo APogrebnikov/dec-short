@@ -1,0 +1,54 @@
+<zk>
+    <vbox hflex="1" vflex="1" apply="org.edec.commission.ctrl.TabComissionsProtocolsCtrl">
+        <hbox>
+            <combobox id = "cmbSemester" placeholder="Выберите семестр"></combobox>
+            <button id = "btnPrintReportXls" label="Реестр (.xls)" image="/imgs/excel.png"/>
+            <datebox id = "dbFrom" placeholder="С"/>
+            <datebox id = "dbTo" placeholder="По"/>
+            <checkbox id="chbSign" label="Подписанные" style="background :  #99FF99; padding: 3px"/>
+            <checkbox id="chbUnSign" label="Не подписанные" style="background :  #ff9494; padding: 3px"/>
+        </hbox>
+            <listbox id = "lbComissionsProtocols"  mold="paging" autopaging="true" hflex="1" vflex="1" >
+                <auxhead>
+                    <auxheader>
+                    </auxheader>
+                    <auxheader>
+                        <textbox id = "tbProtocolNumber" hflex="1" placeholder="№ протокола..."/>
+                    </auxheader>
+                    <auxheader>
+                        <textbox id = "tbSubjectname" hflex="1" placeholder="Предмет..."/>
+                    </auxheader>
+                    <auxheader>
+                        <textbox id = "tbFioStudent" hflex="1" placeholder="ФИО студента..."/>
+                    </auxheader>
+                    <auxheader>
+                        <textbox id = "tbGroupname" hflex="1" placeholder="Группа..."/>
+                    </auxheader>
+                    <auxheader>
+                        <textbox id = "tbChairName" hflex="1" placeholder="Название кафедры..."/>
+                    </auxheader>
+                </auxhead>
+                <listhead style="text-align: center">
+                    <listheader hflex="1">
+                        <label sclass="cwf-listheader-label"  value="Дата"></label>
+                    </listheader>
+                    <listheader hflex="1">
+                        <label sclass="cwf-listheader-label"  value="Номер протокола"></label>
+                    </listheader>
+                    <listheader hflex="2">
+                        <label sclass="cwf-listheader-label"  value="Предмет"></label>
+                    </listheader>
+                    <listheader hflex="2">
+                        <label sclass="cwf-listheader-label"  value="ФИО студента"></label>
+                    </listheader>
+                    <listheader hflex="1">
+                        <label sclass="cwf-listheader-label"  value="Группа"></label>
+                    </listheader>
+                    <listheader hflex="2">
+                        <label sclass="cwf-listheader-label"  value="Кафедра"></label>
+                    </listheader>
+                </listhead>
+            </listbox>
+
+    </vbox>
+</zk>

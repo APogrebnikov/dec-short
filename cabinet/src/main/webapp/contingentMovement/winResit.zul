@@ -1,0 +1,71 @@
+<window id="winResit" width="90%" height="90%"
+        apply="org.edec.contingentMovement.ctrl.WinResitCtrl">
+    <caption>
+        <label id="lResitStudent"/>
+    </caption>
+    <vbox hflex="1" vflex="1">
+        <hbox height="30px" hflex="1">
+            <hbox hflex="1" vflex="1" pack="start" align="center">
+                <button id="btnAutoResit" label="Автоперезачет" />
+                <button id="btnManualResit" label="Ручное сопоставление" />
+            </hbox>
+            <hbox hflex="1" vflex="1" pack="end" align="center">
+                <button id="btnDeleteSingleResit" image="/imgs/cross.png" hoverImage="/imgs/crossCLR.png" tooltiptext="Удалить выбранный перезачет" />
+                <button id="btnDeleteAllResit" sclass="z-icon-trash-alt" image="/imgs/del.png" hoverImage="/imgs/delaltCLR.png" tooltiptext="Удалить все перезачеты" />
+                <button id="btnShowResitReport" sclass="z-icon-file-pdf" image="/imgs/pdf.png" tooltiptext="Показ PDF отчета"/>
+                <button id="btnDownloadResitReport" sclass="z-icon-file-word" tooltiptext="Скачать DOCX отчет" image="/imgs/docs.png" hoverImage="/imgs/docsCLR.png" />
+                <button id="btnSaveResit" label="Сохранить" tooltiptext="Сохранить в БД все перезачеты" />
+                <button id="btnWinResitExit" label="Выйти" tooltiptext="Выйти из окна без сохранения"/>
+            </hbox>
+        </hbox>
+        <hbox hflex="1" vflex="1">
+            <vbox hflex="1" vflex="1">
+                <label value="Оценки из предыдущих групп"/>
+                <listbox id="lbResitOldGroup" hflex="1" vflex="1">
+                    <listhead>
+                        <listheader hflex="1">
+                            <label sclass="cwf-listheader-label" value="Предмет"/>
+                        </listheader>
+                        <listheader width="100px" align="center">
+                            <label sclass="cwf-listheader-label" value="Группа"/>
+                        </listheader>
+                        <listheader width="80px" align="center">
+                            <label sclass="cwf-listheader-label" value="Семестр"/>
+                        </listheader>
+                        <listheader width="75px" align="center">
+                            <label sclass="cwf-listheader-label" value="ФК"/>
+                        </listheader>
+                        <listheader width="70px" align="center">
+                            <label sclass="cwf-listheader-label" value="Часы"/>
+                        </listheader>
+                        <listheader width="80px" align="center">
+                            <label sclass="cwf-listheader-label" value="Оценка"/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </vbox>
+            <vbox hflex="1" vflex="1">
+                <label value="Предметы текущей группы"/>
+                <listbox id="lbResitCurrentGroup" hflex="1" vflex="1">
+                    <listhead>
+                        <listheader hflex="1">
+                            <label sclass="cwf-listheader-label" value="Предмет"/>
+                        </listheader>
+                        <listheader width="80px" align="center">
+                            <label sclass="cwf-listheader-label" value="Семестр"/>
+                        </listheader>
+                        <listheader width="75px" align="center">
+                            <label sclass="cwf-listheader-label" value="ФК"/>
+                        </listheader>
+                        <listheader width="70px" align="center">
+                            <label sclass="cwf-listheader-label" value="Часы"/>
+                        </listheader>
+                        <listheader width="80px" align="center">
+                            <label sclass="cwf-listheader-label" value="Оценка"/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </vbox>
+        </hbox>
+    </vbox>
+</window>

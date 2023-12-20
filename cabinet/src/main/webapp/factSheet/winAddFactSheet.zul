@@ -1,0 +1,62 @@
+<window id="winAddFactSheet" width="50%" height="50%" closable="true" apply="org.edec.student.factSheet.ctrl.FactSheetAddCtrl">
+    <caption>
+        <label value="Добавление новой справки"/>
+    </caption>
+    <vbox hflex="1" vflex="1" style="padding: 2% 5% 1% 5%">
+        <style src="/css/order/order_dec.css"/>
+
+        <hbox hflex="1" vflex="1">
+            <listbox hflex="1" vflex="1" id="lbFactSheetAdd" emptyMessage="Нет студентов">
+                <auxhead>
+                    <auxheader>
+                        <textbox width="100%" id="tbFullNameAdd" placeholder="ФИО.." type="text"/>
+                    </auxheader>
+                    <auxheader>
+                        <textbox width="100%" id="tbGroupAdd" placeholder="Группа.." type="text"/>
+                    </auxheader>
+                    <auxheader>
+                        <textbox width="100%" id="tbRecordBook" placeholder="№ Зачетной книжки.." type="text"/>
+                    </auxheader>
+                </auxhead>
+                <listhead>
+
+                    <listheader hflex="1" id="lhFullName">
+                        <label value="ФИО" sclass="cwf-listheader-label" />
+                    </listheader>
+                    <listheader width="85px" id="lhGroup">
+                        <label value="Группа" sclass="cwf-listheader-label" />
+                    </listheader>
+                    <listheader hflex="1" id="lhRecordBook">
+                        <label value="№ Зачетной книжки" sclass="cwf-listheader-label" />
+                    </listheader>
+
+                </listhead>
+            </listbox>
+            <vbox style="padding-left: 10px; width: 150px">
+                <!--label style="background-color: #79c699;" value="Отчислен" />
+                <label style="background-color: #dd6262;" value="В академ. отпуске" /-->
+                <vbox pack="center">
+                    <hbox>
+                        <div style="width: 20px; height: 20px; background: #95FF82; border: 1px solid black;"></div>
+                        <label style="line-height: 20px"> - Отчислен</label>
+                    </hbox>
+                    <hbox>
+                        <div style="width: 20px; height: 20px; background: #FF7373; border: 1px solid black;"></div>
+                        <label style="line-height: 20px"> - В академ. отпуске</label>
+                    </hbox>
+                </vbox>
+            </vbox>
+        </hbox>
+
+
+        <hbox height="25px">
+            <label>Наличие гербовой печати:</label>
+            <checkbox id="cbOfficialSealAdd"></checkbox>
+        </hbox>
+        <hbox height="25px">
+            <combobox constraint="no empty: Не указан вид справки" readonly="true" style="width:285px" sclass="cmb_kind" id="cmbKind"/>
+            <button id="btnOk" style="float: right;">Добавить</button>
+        </hbox>
+    </vbox>
+</window>
+

@@ -1,0 +1,12 @@
+<window id="winTheme" style="width: 400px; height: 250px;" closable="true" apply="org.edec.teacher.ctrl.WinThemeEditCtrl">
+    <caption>
+        <label value="Редактирование темы"/>
+    </caption>
+    <vlayout style="width: 100%; height: 100%; text-align: center;">
+        <textbox id="textBoxTheme" style="max-width: 100%; max-height: 150px; min-width: 100%; min-height: 150px;" rows="8">
+
+        </textbox>
+        <separator spacing="5px"/>
+        <button id="btnSave" label="Сохранить" style="width: 100px; height: 35px; color: black; font-weight: 700;"></button>
+    </vlayout>
+</window>

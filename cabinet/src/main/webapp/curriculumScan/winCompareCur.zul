@@ -1,0 +1,120 @@
+<window id="winCompareCur" closable="true" position="center" width="80%" height="80%"
+        apply="org.edec.curriculumScan.ctrl.WinCompareCurCtrl">
+
+    <style>
+        .z-listheader-content{
+            color: white;
+        }
+    </style>
+
+    <caption>
+        <label id="lCaption" value="Загрузить файлы УП" style="font-size: 16px; font-weight: 500; color: #fff;"></label>
+    </caption>
+    <vbox vflex="1">
+        <hbox id="hbMain" hflex="1" vflex="1">
+
+            <!--Левая колонка "Новый"-->
+            <vbox id="vbLeftSide" vflex="1" hflex="1">
+                <!--Основная инфа-->
+                <hbox>
+                    <vbox>
+                        <label>Имя файла</label>
+                        <textbox id="tbFileNameNew"></textbox>
+                    </vbox>
+                    <vbox>
+                        <label>Дата создания</label>
+                        <textbox id="tbCreateDateNew"></textbox>
+                    </vbox>
+                    <vbox>
+                        <label>Дата поступления</label>
+                        <textbox id="tbEnterDateNew"></textbox>
+                    </vbox>
+                </hbox>
+                <hbox>
+                    <vbox>
+                        <label>Форма обучения</label>
+                        <textbox id="tbFormOfStudyNew"></textbox>
+                    </vbox>
+                    <vbox>
+                        <label>Квалификация</label>
+                        <textbox id="tbQualificationNew"></textbox>
+                    </vbox>
+                </hbox>
+            </vbox>
+
+            <!--Правая колонка "Старый"-->
+            <vbox id="vbRightSide" hflex="1" vflex="1">
+                <!--Основная инфа-->
+                <hbox>
+                    <vbox>
+                        <label>Имя файла</label>
+                        <textbox id="tbFileNameOld"></textbox>
+                    </vbox>
+                    <vbox>
+                        <label>Дата создания</label>
+                        <textbox id="tbCreateDateOld"></textbox>
+                    </vbox>
+                    <vbox>
+                        <label>Дата поступления</label>
+                        <textbox id="tbEnterDateOld"></textbox>
+                    </vbox>
+                </hbox>
+                <hbox>
+                    <vbox>
+                        <label>Форма обучения</label>
+                        <textbox id="tbFormOfStudyOld"></textbox>
+                    </vbox>
+                    <vbox>
+                        <label>Квалификация</label>
+                        <textbox id="tbQualificationOld"></textbox>
+                    </vbox>
+                </hbox>
+            </vbox>
+        </hbox>
+
+        <!--Общая таблица сопоставления учебных планов-->
+        <hbox hflex="1" vflex="3">
+            <listbox id="lbCompareCur" vflex="1">
+                <listhead >
+                    <listheader label="Сем"></listheader>
+                    <listheader label="Цикл"></listheader>
+                    <listheader label="Код"></listheader>
+                    <listheader label="Название" width="200px"></listheader>
+                    <listheader label="Часы (все)"></listheader>
+                    <listheader label="Лек"></listheader>
+                    <listheader label="Лаб"></listheader>
+                    <listheader label="Практ"></listheader>
+                    <listheader label="СРС"></listheader>
+                    <listheader label="Кафедра"></listheader>
+                    <listheader label="Компетенции"></listheader>
+
+                    <listheader label="Сем"></listheader>
+                    <listheader label="Цикл"></listheader>
+                    <listheader label="Код"></listheader>
+                    <listheader label="Название" width="200px"></listheader>
+                    <listheader label="Часы (все)"></listheader>
+                    <listheader label="Лек"></listheader>
+                    <listheader label="Лаб"></listheader>
+                    <listheader label="Практ"></listheader>
+                    <listheader label="СРС"></listheader>
+                    <listheader label="Кафедра"></listheader>
+                    <listheader label="Компетенции"></listheader>
+                </listhead>
+            </listbox>
+        </hbox>
+
+        <hbox id="hbFooter" hflex="1">
+            <vbox hflex="1">
+                <separator spacing="5px" />
+                <button id="btAcceptNew" label="Использовать новый"></button>
+                <separator spacing="5px" />
+            </vbox>
+            <vbox hflex="1">
+                <separator spacing="5px" />
+                <button id="btAcceptOld" label="Использовать старый"></button>
+                <separator spacing="5px" />
+            </vbox>
+        </hbox>
+    </vbox>
+
+</window>

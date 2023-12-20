@@ -1,0 +1,26 @@
+<window id="winModuleStartPage" width="50%" height="60%" closable="true"
+        apply="org.edec.profile.ctrl.WinModuleStartPageCtrl">
+    <caption>
+        <label value="Установка стартовой страницы"/>
+    </caption>
+    <vbox vflex="1">
+        <hbox height="20px">
+            <label value="Стартовая страница: " />
+            <label id="lEditStartPage" style="font-weight: 700;"/>
+        </hbox>
+        <label value="Список доступых модулей: " style="font-weight: 700; height: 20px;"/>
+        <listbox id="lbModuleForStartPage" vflex="1">
+            <listhead>
+                <listheader align="center" width="40px">
+                    <label sclass="cwf-listheader-label" value="#"/>
+                </listheader>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Название"/>
+                </listheader>
+            </listhead>
+        </listbox>
+        <hbox width="100%" height="20px" pack="end" align="center" style="padding-top: 5px;">
+            <button id="btnSaveStartPage" label="Сохранить" />
+        </hbox>
+    </vbox>
+</window>

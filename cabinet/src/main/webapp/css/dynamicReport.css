@@ -1,0 +1,27 @@
+
+.parameters {
+    padding-right: 50px;
+    padding-bottom: 25px;
+    color: #3c3c3c;
+}
+
+.vlayout-parameters {
+    font-family: opensans,arial,freesans,sans-serif;
+    border: 1px solid #dbdbdb; /*1px solid #000; /* Чёрная рамка */
+    padding: 10px;
+    width: 23%;
+}
+
+.label-parameters{
+    font-family: opensans,arial,freesans,sans-serif;
+    color: #48546e;
+    font-weight: bold;
+}
+
+#pivotgrid {
+    margin-top: 20px;
+}
+
+.currency {
+    text-align: center;
+}

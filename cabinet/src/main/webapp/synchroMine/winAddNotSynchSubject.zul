@@ -1,0 +1,54 @@
+<window id="winAddNotSynchSubject" width="80%" height="95%" closable="true"
+        apply="org.edec.synchroMine.ctrl.WinAddNotSynchSubjectCtrl">
+    <caption>
+        <label value="Синхронизация недостающих предметов"/>
+    </caption>
+    <vbox vflex="1" hflex="1">
+        <hbox height="50px" hflex="1">
+            Группа:
+            <label id="lNotSynchGroupName" />
+            Курс:
+            <label id="lNotSynchCourse" />
+            Семестр:
+            <label id="lNotSynchSemester" />
+            <button id="btnSynchCurrWithWorkload" label="Соединить дисциплины" />
+        </hbox>
+        <hbox hflex="1" vflex="1">
+            <vbox hflex="1" vflex="1">
+                Дисциплины из плана
+                <listbox id="lbNotSynchCurriculumSubjects" hflex="1" vflex="1" checkmark="true">
+                    <listhead>
+                        <listheader hflex="1">
+                            <label sclass="cwf-listheader-label" value="Предмет"/>
+                        </listheader>
+                        <listheader width="150px">
+                            <label sclass="cwf-listheader-label" value="ФК"/>
+                        </listheader>
+                        <listheader width="50px">
+                            <label sclass="cwf-listheader-label" value="Действие"/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </vbox>
+            <vbox hflex="1" vflex="1">
+                Дисциплины из нагрузки
+                <listbox id="lbNotSynchWorkloadSubjects" hflex="1" vflex="1" checkmark="true" multiple="true">
+                    <listhead>
+                        <listheader hflex="1">
+                            <label sclass="cwf-listheader-label" value="Предмет"/>
+                        </listheader>
+                        <listheader width="100px">
+                            <label sclass="cwf-listheader-label" value="Курс"/>
+                        </listheader>
+                        <listheader width="100px">
+                            <label sclass="cwf-listheader-label" value="Семестр"/>
+                        </listheader>
+                        <listheader hflex="1">
+                            <label sclass="cwf-listheader-label" value="ФИО"/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </vbox>
+        </hbox>
+    </vbox>
+</window>

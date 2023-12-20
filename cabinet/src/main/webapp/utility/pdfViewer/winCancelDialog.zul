@@ -1,0 +1,14 @@
+<window id="winCancelDialog" closable="true" border="normal" position="top center"
+	style="margin-top: 7%; background: #ff7e00; width: 400px; height: 250px; border-radius: 0px;"
+	apply="org.edec.utility.pdfViewer.ctrl.ViewCancelDialogPageCtrl">
+	<caption>
+		<label value="Отклонить задачу?"/>
+	</caption>
+	<vlayout hflex="10" vflex="10">
+		<vbox hflex="10" vflex="10" pack="center" align="center">
+			<label value="Укажите причину отклонения:" style=" font-family: opensans,arial,freesans,sans-serif; font-weight: 700; font-size: 14px; font-style: normal;  color: #000;"></label>
+			<textbox id="txBoxCancelReason" hflex="10" vflex="5" rows="5" style=" font-family: opensans,arial,freesans,sans-serif; font-size: 14px; font-style: normal;  color: #000;"></textbox>
+			<button id="btnCancel" label="Отклонить"></button>
+		</vbox>
+	</vlayout>
+</window>

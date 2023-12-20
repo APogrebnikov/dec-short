@@ -1,0 +1,228 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vlayout self="@define(content)" vflex="1" style="min-width: 700px; min-height: 500px; margin: 5px;"
+    apply="org.edec.commission.ctrl.IndexPageCtrl">
+    <tabbox vflex="1">
+        <tabs>
+            <tab label="Поиск должников" />
+            <tab label="Просмотр комиссий" id="tabShowCommission" />
+            <tab label="Реестр протоколов" id="tabComissionsProtocols" />
+        </tabs>
+        <tabpanels>
+            <tabpanel height="100%" width="100%">
+                <!-- Фильтры -->
+                <hbox height="80px">
+                    <groupbox vflex="1" >
+                        <caption>
+                            <label value="Фильтры" style="font-weight: 700;"/>
+                        </caption>
+                        <hbox align="center">
+                            <vbox id="vbInst" vflex="1" style="border-right: 1px solid #ccc; padding: 5px">
+                                <vbox>
+                                    <label value="Институт" style="font-weight: 600;"/>
+                                    <combobox id="cmbInst" readonly="true">
+                                    </combobox>
+                                </vbox>
+                                <vbox id="vbFormOfStudy">
+                                    <label value="Форма обучения" style="font-weight: 600;"/>
+                                    <combobox id="cmbFormOfStudy" readonly="true">
+                                    </combobox>
+                                </vbox>
+                            </vbox>
+                            <vbox vflex="1" style="border-right: 1px solid #ccc; padding: 5px;" >
+                                <label value="Квалификация" style="font-weight: 600;" />
+                                <hbox>
+                                    <checkbox id="chEngineer" label="Спец." checked="true"/>
+                                    <checkbox id="chBachelor" label="Бак." checked="true"/>
+                                    <checkbox id="chMaster" label="Маг." checked="true"/>
+                                </hbox>
+                            </vbox>
+                            <vbox vflex="1" style="border-right: 1px solid #ccc; padding: 5px">
+                                <label value="Бюджет" style="font-weight: 600;"/>
+                                <combobox id="cmbGovernment" width="100px" readonly="true"
+                                          onCreate="cmbGovernment.setSelectedIndex(0)">
+                                    <comboitem label="Все"/>
+                                    <comboitem label="Бюджет"/>
+                                    <comboitem label="Договор"/>
+                                </combobox>
+                            </vbox>
+                            <vbox vflex="1" style="border-right: 1px solid #ccc; padding: 5px">
+                                <label value="Курс" style="font-weight: 600;"/>
+                                <combobox id="cmbCourse" width="100px" readonly="true"
+                                          onCreate="cmbCourse.setSelectedIndex(0)">
+                                    <comboitem label="Все"/>
+                                    <comboitem label="1"/>
+                                    <comboitem label="2"/>
+                                    <comboitem label="3" />
+                                    <comboitem label="4" />
+                                    <comboitem label="5" />
+                                    <comboitem label="6" />
+                                </combobox>
+                            </vbox>
+                            <vbox width="70%" vflex="1" style="border-right: 1px solid #ccc; padding: 5px">
+                                <label value="Количество долгов" style="font-weight: 600;"/>
+                                <combobox id="cmbTypeDebt" readonly="true"
+                                          onCreate="cmbTypeDebt.setSelectedIndex(0)">
+                                    <comboitem label="Больше либо равно" />
+                                    <comboitem label="Меньше либо равно" />
+                                    <comboitem label="Равно" />
+                                    <comboitem label="Не равно" />
+                                </combobox>
+                                <spinner id="spinDebt" constraint="no empty, min 0 max 15" value="0"/>
+                            </vbox>
+                            <vbox vflex="1" style="border-right: 1px solid #ccc; padding: 5px">
+                                <label value="Продление" style="font-weight: 600;"/>
+                                <checkbox id="chProlongation" label="Учитывать" />
+                                <hbox>
+                                    <label value="После" />
+                                    <datebox id="dbProlongation" />
+                                </hbox>
+                            </vbox>
+                            <vbox width="80px" align="center" pack="center" vflex="1">
+                                <button id="btnSearch" label="Поиск" style="margin-top:-7px;"
+                                        image="/imgs/search.png" hoverImage="/imgs/searchCLR.png" />
+                            </vbox>
+                        </hbox>
+                    </groupbox>
+
+                    <groupbox vflex="1">
+                        <caption>
+                            <label value="Сгруппировать должников" style="font-weight: 700;"/>
+                        </caption>
+                        <hbox align="center">
+                            <vbox>
+                                <label value="Начало / окончание комиссии" />
+                                <datebox id="dbBeginCommission" />
+                                <datebox id="dbEndCommission" />
+                            </vbox>
+                            <button id="btnGoToCreateCommission" label="Сгруппировать"  hflex="1"/>
+                        </hbox>
+                    </groupbox>
+                </hbox>
+                <!-- центр -->
+                <hbox vflex="1" style="margin-top: 5px;">
+                    <!-- левый блок со списком семестров -->
+                    <listbox id="lbSemester" checkmark="true" hflex="4" vflex="1"  multiple="true" style="margin-right: 5px;"
+                             itemRenderer="org.edec.utility.component.renderer.SemesterListRenderer">
+                        <listhead>
+                            <listheader>
+                                <label sclass="cwf-listheader-label" value="Учебный год" />
+                            </listheader>
+                            <listheader>
+                                <label sclass="cwf-listheader-label" value="Семестр" />
+                            </listheader>
+                        </listhead>
+                    </listbox>
+                    <listbox id="lbFoundStudents" hflex="7" vflex="1" multiple="true" checkmark="true" mold="paging" autopaging="true">
+                        <listhead>
+                            <listheader hflex="1">
+                                <textbox id="tbFioFoundStudent" placeholder="ФИО"/>
+                            </listheader>
+                            <listheader width="100px">
+                                <textbox id="tbGroupFoundStudent" width="90px" placeholder="Группа"/>
+                            </listheader>
+                            <listheader width="80px">
+                                <label sclass="cwf-listheader-label" value="Долги" />
+                            </listheader>
+                            <listheader label="" align="center" width="100px">
+                                <button id="btnMoveToGroup" image="/imgs/right.png" />
+                            </listheader>
+                        </listhead>
+                    </listbox>
+                    <listbox id="lbStudentForGrouping" hflex="6" vflex="1" multiple="true" checkmark="true" mold="paging" autopaging="true">
+                        <listhead>
+                            <listheader hflex="1">
+                                <textbox id="tbFioStudentForGrouping" placeholder="ФИО"/>
+                            </listheader>
+                            <listheader width="100px">
+                                <textbox id="tbGroupStudentForGrouping" width="90px" placeholder="Группа"/>
+                            </listheader>
+                            <listheader label="" align="center" width="100px">
+                                <button id="btnRemove" image="/imgs/crossCLR.png" />
+                            </listheader>
+                        </listhead>
+                    </listbox>
+                </hbox>
+            </tabpanel>
+            <tabpanel height="100%" width="100%">
+                <vlayout vflex="1">
+                        <!-- Поиск и статусы -->
+                        <hbox hflex="1" height="40px">
+                            <vbox width="300px" vflex="1" pack="center" align="center">
+                                <label value="Группа/Предмет/ФИО студента/Кафедра" style="font-size: 14px; font-weight: 700; color: #000;"/>
+                                <textbox id="tbSearchComission" hflex="1" />
+                            </vbox>
+                            <vbox width="200px" vflex="1" pack="center" align="center">
+                                <label value="Периоды комиссий" style="font-size: 14px; font-weight: 700; color: #000;"/>
+                                <combobox id="cmbPeriodCommission" readonly="true" hflex="1"/>
+                            </vbox>
+                            <vbox vflex="1" pack="center" align="center">
+                                <combobox id="cmbReportPdf" placeholder="Отчет PDF" readonly="true"/>
+                                <button id="btnShowPdf" label="Печать" image="/imgs/pdf.png" hflex="1"/>
+                            </vbox>
+                            <vbox vflex="1" pack="center" align="center">
+                                <combobox id="cmbReportDocx" placeholder="Отчет DOCX" readonly="true"/>
+                                <button id="btnDownloadDocx" label="Скачать" image="/imgs/docs.png" hflex="1"/>
+                            </vbox>
+                            <groupbox style="margin-top: -12px">
+                                <caption>Отчеты по должникам(по семестру)</caption>
+                                <button style="margin-left:5px" id="btnDebtorReports" label="Выбрать семестры" hflex="1"/>
+                            </groupbox>
+                        </hbox>
+                    <listbox id="lbShowCommission" hflex="10" vflex="1">
+                        <listhead>
+                            <listheader id = "lhSubject" hflex="3">
+                                <label sclass="cwf-listheader-label" value="Предмет" />
+                            </listheader>
+                            <listheader width="135px">
+                                <label sclass="cwf-listheader-label" value="Форма контроля" />
+                            </listheader>
+                            <listheader id = "lhChair" hflex="3">
+                                <label sclass="cwf-listheader-label" value="Кафедра" />
+                            </listheader>
+                            <listheader width="195px">
+                                <combobox width="180px" id="cmbSem" readonly="true"
+                                          onCreate="cmbSem.setSelectedIndex(0)">
+                                    <comboitem label="Все" />
+                                </combobox>
+                                <!-- костыль для Иевлевой для отображения комиссий у выпускников 2020 -->
+                                <combobox width="180px" id="cmbPeriodComGraduate" visible="false" readonly="true">
+                                </combobox>
+                            </listheader>
+                            <listheader hflex="min">
+                                <label sclass="cwf-listheader-label" value="Дата проведения" />
+                            </listheader>
+                            <listheader width="135px">
+                                <label sclass="cwf-listheader-label" value="Аудитория" />
+                            </listheader>
+                            <listheader hflex="min">
+                                <label sclass="cwf-listheader-label" value="Проверено" />
+                            </listheader>
+                        </listhead>
+                    </listbox>
+                    <hbox height="30px">
+                        <hbox>
+                            <hbox style="width: 28px; height: 28px; border: 1px solid black; background: #ccc;"></hbox>
+                            <label value=" - не назначена"/>
+                        </hbox>
+                        <hbox>
+                            <hbox style="width: 28px; height: 28px; border: 1px solid black; background: #fff;"></hbox>
+                            <label value=" - назначена"/>
+                        </hbox>
+                        <hbox>
+                            <hbox style="width: 28px; height: 28px; border: 1px solid black; background: #ffcccc;"></hbox>
+                            <label value=" - срок комиссии истек"/>
+                        </hbox>
+                        <hbox>
+                            <hbox style="width: 28px; height: 28px; border: 1px solid black; background: #99ff99;"></hbox>
+                            <label value=" - подписана"/>
+                        </hbox>
+                    </hbox>
+                </vlayout>
+            </tabpanel>
+            <tabpanel>
+                <include id="includeComissionProtocol" src="tabComissionsProtocols.zul" />
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+</vlayout>

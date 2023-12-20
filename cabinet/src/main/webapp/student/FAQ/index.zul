@@ -1,0 +1,132 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" width="100%" height="100%" apply="org.edec.student.FAQ.ctrl.IndexPageCtrl">
+    <groupbox id="gbSocialScholarship;" open="false">
+        <caption style="font-size: 10pt;" label="Памятка по назначению государственной социальной стипендии"/>
+        <grid style = "font-size: 10pt;" width="100%">
+            <columns>
+                <column style = "font-size: 10pt;" label="Процедура оформления социальной стипендии:"/>
+            </columns>
+            <rows>
+                <row>
+                    <label style = "font-size: 10pt;" value="Социальная стипендия назначается на основании оригинала уведомления из Управления социальной защиты населения (УСЗН) и личного заявления студента. "/>
+                </row>
+                <row>
+                    <label style = "font-size: 10pt;" value="Для получения социальной стипендии необходимо предоставить следующие документы: "/>
+                </row>
+                <row>
+                    <label style = "font-size: 10pt;" value="  1. Справка о том, что вы являетесь студентом ИКИТ СФУ для УСЗН
+                    (заказывается в личном кабинете студента dec.sfu-kras.ru/ cabinet).
+                    Забрать готовую справку можно в каб. УЛК207 лично под подпись,
+                    при предъявлении документа, удостоверяющего личность (СТРОГО в ЧАСЫ ПРИЕМА)."/>
+                </row>
+                <row>
+                    <label style = "font-size: 10pt;" value="  2. Справка о размере получаемой стипендии (заказывается в стипендиальной группе
+                    СФУ – пр. Свободный 79, ауд. 12-13, т. 206-203-8 или на сайте СФУ)."/>
+                </row>
+                <row>
+                    <label style = "font-size: 10pt;" value="  3. В УСЗН по постоянному месту прописки предоставить:
+                    справку о составе семьи (выписка из домовой книги),
+                    справки о доходах всех членов семьи,
+                    справка о том, что вы являетесь студентом ИКИТ СФУ,
+                    справка о размере получаемой стипендии."/>
+                </row>
+                <row>
+                    <label style = "font-size: 10pt;" value="  4. На основании предоставленных документов УСЗН выдает уведомление установленного
+                образца о назначении «Государственной социальной помощи»."/>
+                </row>
+                <row>
+                    <label style = "font-size: 10pt;" value="  5. Уведомление из УСЗН предоставить в учебно-организационный отдел ИКИТ (УЛК207)
+                    и написать заявление на получение социальной стипендии СТРОГО в ЧАСЫ ПРИЕМА. При себе иметь паспорт и зачетную книжку!"/>
+                </row>
+                <row>
+                    <label style = "font-size: 10pt;" value="  Часы приема – ежедневно с 11:00 до 12:00 и с 13:00 до 15:00 кроме среды
+                    (среда - НЕПРИЕМНЫЙ день!)"/>
+                </row>
+                <row>
+                    <label style = "font-size: 10pt;" value="  ВНИМАНИЕ! УСЗН выдает справку на один календарный год. Затем выплаты соц. стипендии
+                    приостанавливаются до момента предоставления новой справки!"/>
+                </row>
+            </rows>
+        </grid>
+    </groupbox>
+
+    <groupbox open="false">
+        <caption style="font-size: 10pt;" label="Режим работы УОО ИКИТ"/>
+        <grid style = "font-size: 10pt;" width="100%">
+            <columns>
+                <column style = "font-size: 10pt;" label="Режим работы"/>
+                <column style = "font-size: 10pt;" label="Контаткты"/>
+            </columns>
+            <rows>
+                <row>
+                    <vbox style="width: 260px; font-size: 10pt;">
+                        <label style = "font-size: 10pt;" value="ПОНЕДЕЛЬНИК - ПЯТНИЦА  8:30-17:00 ОБЕД 12:00-13:00"/>
+                    </vbox>
+                    <label style = "font-size: 10pt;" value="ауд. УЛК207 т. 2912-237"/>
+                </row>
+                <row>
+                    <vbox style="width: 300px;">
+                        <label style = "font-size: 10pt;" value="ПРИЕМ СТУДЕНТОВ 11:00-12:00, 13:00-15:00  СРЕДА – НЕПРИЕМНЫЙ ДЕНЬ (работа с приказами)"/>
+                    </vbox>
+                    <label style = "font-size: 10pt;" value="ауд. УЛК208 т. 243-07-24"/>
+                </row>
+                <row>
+                    <label style = "font-size: 10pt;" value=" СУББОТА 10:00-14:00 (только дежурный сотрудник)"/>
+                </row>
+            </rows>
+        </grid>
+    </groupbox>
+
+    <groupbox open="false">
+        <caption style="font-size: 10pt;" label="По вопросам заселения"/>
+        <vbox>
+            <label style = "font-size: 10pt;" value="Гончарик Галина Владимировна"/>
+            <label style = "font-size: 10pt;" value="ауд. УЛК424, т. 249-75-09"/>
+        </vbox>
+    </groupbox>
+
+    <groupbox open="false">
+        <caption style="font-size: 10pt;" label="Обучение студентов"/>
+        <vbox>
+            <label style = "font-size: 10pt;" value="Электронные обучающие курсы – e.sfu-kras.ru"/>
+            <label style = "font-size: 10pt;" value="Личный кабинет студентов – dec.sfu-kras.ru/cabinet "/>
+        </vbox>
+    </groupbox>
+
+    <groupbox open="false">
+        <caption style="font-size: 10pt;" label="Помощник директора по воспитательной работе"/>
+        <vbox>
+            <label style = "font-size: 10pt;" value="Русак Илья Андреевич"/>
+            <label style = "font-size: 10pt;" value="ауд. УЛК424, т. 249-75-09"/>
+            <label style = "font-size: 10pt;" value="irusak@sfu-kras.ru"/>
+            <a href="https://vk.com/ikitinfo" target="_blank" style = "font-size: 10pt; color:#0093f9 !important; cursor:pointer;" label="https://vk.com/ikitinfo"/>
+        </vbox>
+    </groupbox>
+
+    <groupbox open="false">
+        <caption style="font-size: 10pt;" label="Военная кафедра"/>
+        <vbox>
+            <label style = "font-size: 10pt;" value="По вопросам поступления и обучения студентов на военной кафедре можно обращаться
+по адресу: "/>
+            <label style = "font-size: 10pt;" value="ул. Академгородок 13а (3 этаж, каб. 308а), тел. 83912063320."/>
+        </vbox>
+    </groupbox>
+
+    <groupbox id = "gbChangePassword" open="false">
+        <caption style="font-size: 10pt;" label="Смена пароля"/>
+        <vbox>
+            <hbox>
+                <textbox id="tbOldPassword" type="password" style="width: 200px;"
+                         placeholder="Введите текущий пароль"/>
+                <textbox id="tbNewPassword" type="password" style=" width: 200px;"
+                         placeholder="Введите новый пароль"/>
+                <textbox id="tbNewPasswordTwo" type="password" style=" width: 200px;"
+                         placeholder="Повторите новый пароль"/>
+                <button id="btnChangePassword" label="Изменить пароль"/>
+                <button label="Показать/скрыть пароль" id = "btnShowPassword"/>
+            </hbox>
+            <label  value="Если забыли пароль, сообщите на почту dec.developers@gmail.com для восстановления."/>
+        </vbox>
+    </groupbox>
+</vbox>

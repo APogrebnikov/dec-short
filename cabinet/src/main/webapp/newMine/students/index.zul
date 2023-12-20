@@ -1,0 +1,70 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.newMine.students.ctrl.IndexPageCtrl">
+    <vbox vflex="1">
+        <hbox>
+            <combobox id="cmbInst" visible="false"/>
+            <combobox id="cmbFos" placeholder="Форма контроля"/>
+            <combobox id="cmbSemester" placeholder="Семестр"/>
+            <combobox id="cmbGroups" placeholder="Группа"/>
+            <button id="btnUpdateStudent" label="Обновить студентов в группе"/>
+            <button id="btnUpdateHash" label="Обновить HASH в группе"/>
+            <button id="btnCreateStudent" label="Создать студентов"/>
+            <button id="btnDeleteStudent" label="Удалить студентов" style="position: absolute; right: 10px"/>
+        </hbox>
+        <hbox vflex="1">
+            <vbox hflex="1" vflex="1">
+                <label value="Студенты из Шахт"/>
+                <listbox id="lbStudentsFromMine" hflex="1" vflex="1" emptyMessage="Студенты не найдены">
+                    <listhead>
+                        <listheader hflex="3" >
+                            <label sclass="cwf-listheader-label" value="ФИО"/>
+                        </listheader>
+                        <listheader hflex="1" >
+                            <label sclass="cwf-listheader-label" value="Зачетная книжка"/>
+                        </listheader>
+                        <listheader hflex="1" >
+                            <label sclass="cwf-listheader-label" value="Статус"/>
+                        </listheader>
+                        <listheader hflex="1">
+                            <label sclass="cwf-listheader-label" value="Основание"/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </vbox>
+            <vbox hflex="1" vflex="1">
+                <label value="Студенты из АСУ"/>
+                <listbox id="lbStudentsFromASU" hflex="1" vflex="1" emptyMessage="Студенты не найдены"  multiple="true" checkmark="true">
+                    <listhead>
+                        <listheader hflex="3">
+                            <label sclass="cwf-listheader-label" value="ФИО"/>
+                        </listheader>
+                        <listheader hflex="1" >
+                            <label sclass="cwf-listheader-label" value="Зачетная книжка"/>
+                        </listheader>
+                        <listheader hflex="1">
+                            <label sclass="cwf-listheader-label" value="Статус"/>
+                        </listheader>
+                        <listheader hflex="1">
+                            <label sclass="cwf-listheader-label" value="Основание"/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </vbox>
+        </hbox>
+        <hbox  pack="end">
+            <hbox align="center">
+                <hbox style="width: 15px; height: 15px; border: 1px solid black; background: #99ff99;"/>
+                <label value=" - Информация о студенте синхронизирована;"/>
+            </hbox>
+            <hbox align="center">
+                <hbox style="width: 15px; height: 15px; border: 1px solid black; background:#FFFE7E;"/>
+                <label value=" - Не совпадают номер зачетной книжки или статус;"/>
+            </hbox>
+            <hbox align="center">
+                <hbox style="width: 15px; height: 15px; border: 1px solid black; background: #FF7373;"/>
+                <label value=" - Не совпадают id Шахт;"/>
+            </hbox>
+        </hbox>
+    </vbox>
+</vbox>

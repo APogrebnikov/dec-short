@@ -1,0 +1,43 @@
+<window id="winCreateSchedule" width="45%" height="50%" closable="true"
+        apply="org.edec.schedule.ctrl.WinCreateScheduleCtrl">
+    <caption>
+        <label value="Окно создания расписания"/>
+    </caption>
+    <vbox hflex="1" vflex="1">
+        <hbox hflex="1">
+           <label id="lSelectedGroup" value="Выбранная группа: " style="font-size: 14pt; font-weight: 700" />
+        </hbox>
+        <hbox hflex="1">
+            <combobox id="cmbCreateScheSubject" placeholder="Выберите предмет" readonly="true"/>
+            <combobox id="cmbCreateScheWeek" placeholder="Неделя" constraint="no empty" readonly="true" onCreate="cmbCreateScheWeek.setSelectedIndex(0)">
+                <comboitem label="1" />
+                <comboitem label="2" />
+            </combobox>
+        </hbox>
+        <hbox hflex="1">
+            <combobox id="cmbCreateScheLessonDay" placeholder="День недели.." constraint="no empty" readonly="true" onCreate="cmbCreateScheLessonDay.setSelectedIndex(0)">
+                <comboitem label="Понедельник" />
+                <comboitem label="Вторник" />
+                <comboitem label="Среда" />
+                <comboitem label="Четверг" />
+                <comboitem label="Пятница" />
+                <comboitem label="Суббота" />
+            </combobox>
+            <combobox id="cmbCreateScheLessonTime" placeholder="Время занятия.." readonly="true" constraint="no empty" onCreate="cmbCreateScheLessonTime.setSelectedIndex(0)">
+                <comboitem label="8:30 - 10:05" />
+                <comboitem label="10:15 - 11:50" />
+                <comboitem label="12:00 - 13:35" />
+                <comboitem label="14:10 - 15:45" />
+                <comboitem label="15:55 - 17:30" />
+                <comboitem label="14:40 - 19:15" />
+                <comboitem label="19:25 - 21:00" />
+            </combobox>
+            <checkbox id="chLesson" label="Лекция" />
+        </hbox>
+        <hbox hflex="1">
+            <textbox id="tbCreateScheRoom" placeholder="Аудитория.." constraint="no empty" width="150px"/>
+            <textbox id="tbCreateScheTeacher" placeholder="Преподаватель.." constraint="no empty" width="150px"/>
+            <button id="btnCreateSche" label="Создать" />
+        </hbox>
+    </vbox>
+</window>

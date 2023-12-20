@@ -1,0 +1,10 @@
+<window id="winNewFiles" closable="true" position="center" width="60%"
+        apply="org.edec.curriculumScan.ctrl.WinNewFilesCtrl">
+    <caption>
+        <label id="lCaption" value="Загрузить файлы УП"/>
+    </caption>
+    <vbox>
+        <separator></separator>
+    </vbox>
+
+</window>

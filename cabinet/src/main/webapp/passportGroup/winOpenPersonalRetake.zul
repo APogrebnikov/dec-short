@@ -1,0 +1,20 @@
+<window id="winOpenPersonalRetake" closable="true"
+        apply="org.edec.passportGroup.ctrl.WinOpenPersonalRetakeCtrl" >
+    <!--<caption>-->
+        <!--<label value="Открыть пересдачу"/>-->
+    <!--</caption>-->
+    <vbox vflex="1">
+        <separator height="10px"/>
+        <hbox height="20px">
+            <separator width="10px"/>
+            <label value="с: "/>
+            <datebox id="dateOfBeginRetake" width="150px"/>
+            <label value="по: "/>
+            <datebox id="dateOfEndRetake" width="150px"/>
+            <button id="btnOpenRetake" label="Открыть"/>
+        </hbox>
+        <label id = "lStudents" multiline="true"></label>
+        <label id = "cStudents" style="color: red;" multiline="true"></label>
+    </vbox>
+
+</window>

@@ -1,0 +1,52 @@
+<window id="winCreateNewStudent" closable="true" position="center" width="20%" apply="org.edec.contingentMovement.ctrl.WinCreateNewStudentCtrl">
+    <caption>
+        <label id="lCaption" value="Создание новой записи"></label>
+    </caption>
+    <grid>
+    <rows>
+        <row>
+            <label value="Фамилия:"
+                   style="font-weight: 500; color: #000000; font-size: 14px;"></label>
+            <textbox id="tbFamily" placeholder="Фамилия..." hflex="1"/>
+        </row>
+        <row style="margin-left: 10px;">
+            <label value="Имя:"
+                   style="font-weight: 500; color: #000000; font-size: 14px;"></label>
+            <textbox id="tbName" placeholder="Имя..." hflex="1"/>
+        </row>
+        <row style="margin-left: 10px;">
+            <label value="Отчество:"
+                   style="font-weight: 500; color: #000000; font-size: 14px;"></label>
+            <textbox id="tbPatronymic" placeholder="Отчество..." hflex="1"/>
+        </row>
+        <row style="margin-left: 10px;">
+            <label value="Пол"
+                   style="font-weight: 500; color: #000000; font-size: 14px;"></label>
+            <radiogroup vflex="1">
+                <radio id="rbMen" label="М" checked="true"></radio><space></space>
+                <radio id="rbWomen" label="Ж"></radio><space></space>
+            </radiogroup>
+        </row>
+        <row style="margin-left: 10px;">
+            <label value="Дата рождения:"
+                   style="font-weight: 500; color: #000000; font-size: 14px;"></label>
+            <datebox id="dbDob" format="dd.MM.yyyy" hflex="1" placeholder="дд.мм.гггг"/>
+        </row>
+        <row style="margin-left: 10px;">
+            <label value="Номер зачетной книжки:"
+                   style="font-weight: 500; color: #000000; font-size: 14px;"></label>
+            <textbox id="tbRecordbook" placeholder="Номер..." hflex="1"/>
+        </row>
+    </rows>
+    </grid>
+
+    <separator></separator>
+
+    <hbox style="margin-right: 10px;" width="100%" pack="end">
+        <button id="btnCreate" label="Создать" style="font-weight:bold;"></button>
+        <button id="btnCancel" label="Отменить"></button>
+    </hbox>
+
+    <separator></separator>
+
+</window>

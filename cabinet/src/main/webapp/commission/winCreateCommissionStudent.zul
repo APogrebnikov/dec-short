@@ -1,0 +1,28 @@
+<window id="winCreateCommissionStudent" closable="true" apply="org.edec.commission.ctrl.WinCreateCommissionStudentCtrl"
+        position="center" width="60%" height="80%">
+    <caption>
+        <label id="lInfo" value="Информация о комиссии" />
+    </caption>
+    <vbox vflex="1">
+        <hbox height="50px">
+            <label value="Создать комиссию для выбранных студентов" />
+            <button id="btnCreateCommissionForSubject" label="Создать" style="font-size: 14px; font-weight: 700; color: #000;"/>
+            <hbox style="width: 28px; height: 28px; border: 1px solid black; background: #99ff99;"></hbox>
+            <label value=" - комиссия создана"/>
+        </hbox>
+        <listbox id="lbCreateCommissionStudent" checkmark="true" multiple="true" vflex="1"
+            itemRenderer="org.edec.commission.ctrl.renderer.StudentCommissionRenderer">
+            <listhead>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="ФИО" />
+                </listheader>
+                <listheader width="100px">
+                    <label sclass="cwf-listheader-label" value="Группа" />
+                </listheader>
+            </listhead>
+        </listbox>
+        <hbox height="50px" hflex="1" pack="end" align="center" >
+            <button id="btnSaveExit" label="Сохранить и выйти" style="font-size: 14px; font-weight: 700; color: #000;"/>
+        </hbox>
+    </vbox>
+</window>

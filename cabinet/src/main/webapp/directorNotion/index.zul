@@ -1,0 +1,56 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.directorNotion.ctrl.IndexPageCtrl">
+    <vbox id="vbFormOfStudy">
+        <label value="Форма обучения" />
+        <combobox id="cmbFormOfStudy" readonly="true" />
+    </vbox>
+
+    <listbox id="lbStudent" width="100%" vflex="1" mold="paging" autopaging="true" checkmark="true" multiple="true">
+        <auxhead>
+            <auxheader/>
+            <auxheader colspan="3">
+                <textbox id="tbFio" hflex="1" placeholder="Введите ФИО.." />
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox id="tbRecordbook" hflex="1" />
+            </auxheader>
+            <auxheader>
+                <textbox id="tbGroup" hflex="1" />
+            </auxheader>
+            <auxheader />
+            <auxheader />
+            <auxheader />
+            <auxheader />
+        </auxhead>
+        <listhead>
+            <listheader width="30px"/>
+            <listheader hflex="1">
+                <label sclass="cwf-listheader-label" value="Фамилия"/>
+            </listheader>
+            <listheader hflex="1">
+                <label sclass="cwf-listheader-label" value="Имя"/>
+            </listheader>
+            <listheader hflex="1">
+                <label sclass="cwf-listheader-label" value="Отчество"/>
+            </listheader>
+            <listheader align="center" width="120px">
+                <label sclass="cwf-listheader-label" value="№ Зач. книж."/>
+            </listheader>
+            <listheader align="center" width="120px">
+                <label sclass="cwf-listheader-label" value="Группа"/>
+            </listheader>
+            <listheader align="center" width="60px">
+                <label sclass="cwf-listheader-label" value="Курс"/>
+            </listheader>
+        </listhead>
+    </listbox>
+
+    <hbox>
+        <label value="Дата представления:"/>
+        <datebox id="dbNotionDate"/>
+        <separator width="2px"></separator>
+        <button id="btnGetReportPdf" label="Печать" image="/imgs/pdf.png" />
+        <button id="btnGetReportDocx" label="Скачать" image="/imgs/docs.png"/>
+    </hbox>
+</vbox>

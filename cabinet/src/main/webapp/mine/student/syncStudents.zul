@@ -1,0 +1,87 @@
+<zk>
+    <vlayout hflex="1" vflex="1" apply="org.edec.mine.ctrl.student.SyncStudentsCtrl">
+        <hlayout height="80px" hflex="1">
+            <vlayout>
+                <label value="Отсутствие студентов" sclass="b" />
+                <checkbox id="chOnlyNullMine" label="В Шахтах" />
+                <checkbox id="chOnlyNullCabinet" label="В АСУ ИКИТ" />
+            </vlayout>
+            <space/>
+            <vlayout>
+                <label value="Иностранец" sclass="b" />
+                <checkbox id="chOnlyForeignerMine" label="В Шахтах" />
+                <checkbox id="chOnlyForeignerCabinet" label="В АСУ ИКИТ" />
+            </vlayout>
+            <space/>
+            <vlayout id="vlStudentStatus">
+                <label value="Статусы" sclass="b" />
+            </vlayout>
+            <space />
+            <vlayout id="vlConditionOfEducation">
+                <label value="Условия обучения" sclass="b" />
+            </vlayout>
+            <space />
+            <vlayout>
+                <label value="Действия" sclass="b" />
+                <button id="btnSearch" label="Поиск" />
+                <hlayout>
+                    <button id="btnSyncAllSelectedItems" label="Синхронизировать выбранных студентов" />
+                    <button id="btnSyncAllItems" label="Синхронизировать всех найденных студентов" />
+                </hlayout>
+            </vlayout>
+        </hlayout>
+        <listbox id="lbStudents" hflex="1" vflex="1" mold="paging" autopaging="true" checkmark="true" multiple="true">
+            <auxhead>
+                <auxheader />
+                <auxheader label="АСУ ИКИТ" align="center" colspan="3" />
+                <auxheader label="ШАХТЫ" align="center" colspan="3" />
+            </auxhead>
+            <auxhead>
+                <auxheader>
+                    <textbox id="tbGroupName" placeholder="Группа" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbCabinetFamily" placeholder="Фамилия" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbCabinetName" placeholder="Имя" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbCabinetPatronymic" placeholder="Отчество" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbMineFamily" placeholder="Фамилия" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbMineName" placeholder="Имя" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbMinePatronymic" placeholder="Отчество" hflex="1" />
+                </auxheader>
+            </auxhead>
+            <listhead>
+                <listheader width="120px">
+                    <label sclass="cwf-listheader-label" value="Группа"/>
+                </listheader>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Фамилия"/>
+                </listheader>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Имя"/>
+                </listheader>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Отчество"/>
+                </listheader>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Фамилия"/>
+                </listheader>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Имя"/>
+                </listheader>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Отчество"/>
+                </listheader>
+            </listhead>
+        </listbox>
+    </vlayout>
+</zk>

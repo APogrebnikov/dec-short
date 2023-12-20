@@ -1,0 +1,24 @@
+<window id="winEditOrder" closable="true" apply="org.edec.order.ctrl.WinEditOrderCtrl" width="90%" height="100%">
+    <caption>
+        <label value="Редактирование приказа"/>
+    </caption>
+    <vlayout vflex="1">
+        <hlayout height="30px">
+            <label value="Описание приказа"/>
+            <textbox id="tbDescOrder" placeholder="Введите описание приказа" width="250px"/>
+            <button id="btnSaveDesc" label="Сохранить описание"/>
+        </hlayout>
+        <hlayout height="100px">
+            <button hflex="1" vflex="1" id="btnDeleteSelectedStudents" label="Удалить выбр. студентов"/>
+            <button hflex="1" vflex="1" id="btnAddStudents" label="Добавить студентов"/>
+            <button hflex="1" vflex="1" id="btnShowPreviewPdf" label="Предпросмотр"/>
+            <button visible="true" hflex="1" vflex="1" id="btnPdfEditor" label="Редактор PDF"/>
+            <button hflex="1" vflex="1" id="btnAttachedFiles" label="Прикрепленные файлы"/>
+            <button hflex="1" vflex="1" id="btnAttachNewFiles" label="Прикрепить файлы"/>
+            <button visible="false" hflex="1" vflex="1" id="btnCreateNewServiceNote" label="Служ. записка"/>
+            <button hflex="1" vflex="1" id="btnSendToServer" label="Отправить на согласование"/>
+            <button visible="false" hflex="1" vflex="1" id="btnSyncOrder" label="Синхронизировать приказ"/>
+        </hlayout>
+        <groupbox id="gbContent" vflex="1" contentStyle="overflow:auto;"/>
+    </vlayout>
+</window>

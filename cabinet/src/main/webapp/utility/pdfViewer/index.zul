@@ -1,0 +1,78 @@
+<window id="winPdfViewer" mode="modal" closable="true" width="70%" height="100%"
+        apply="org.edec.utility.pdfViewer.ctrl.PdfViewerCtrl">
+    <caption>
+        <label value="Просмотр документа" />
+    </caption>
+    <vbox width="100%" height="100%">
+        <hbox id="hbBtn" height="20%" width="100%" pack="end" style="marin-bottom: 10px; margin-top: 10px; margin-right: 15px;"/>
+        <separator/>
+        <iframe id="iframePdfViwer" />
+    </vbox>
+
+    <script type="text/javascript">
+        /*Инициализация процесса подписи
+        * принимает base64 данные для подписания
+        */
+        function sign(base,pdfname)
+        {
+        var client = new LssClient(jQuery);
+        signProc(client,base,pdfname);
+        }
+
+        /*Процесс подписания*/
+        function signProc(client,base,pdfname)
+        {
+        var options =
+        {
+        base64Data: base,
+        description: "Ведомость",
+        documentName: pdfname,
+        fileExtension: "pdf",
+        isAttached: true,
+        base64Certificate: "",
+        };
+
+        //Подписание с колбэком
+        client.sign(options).done(function(response)
+        {
+        if (response.IsSuccessful)
+        {
+        var fullresult={};
+        var res=response.SignedData;
+        var signCertificate = $.parseJSON(response.SignCertificateJson);
+        fullresult.Data=res;
+        if(signCertificate!=null){
+            fullresult.SerialNumber=signCertificate.SerialNumber;
+            fullresult.Thumbprint=signCertificate.Thumbprint;
+        }
+        zAu.send(new zk.Event(zk.Widget.$('$winReport'), "onFinish", fullresult, {toServer:true}));
+        }
+        else
+        {
+        var error = response.ErrorMessage;
+        zAu.send(new zk.Event(zk.Widget.$('$winReport'), "onErrorSign", response.ErrorMessage, {toServer:true}));
+        }
+        }).fail(function(error)
+        {
+        zAu.send(new zk.Event(zk.Widget.$('$winReport'), "onErrorSign", 'Ошибка при подписании.  Запустите программу для электронной цифровой подписи!', {toServer:true}));
+        });
+        }
+
+        //Для тестирования обнаружения подписи
+        function verifySign(base, filename)
+        {
+        var options = {
+        base64Data: base,
+        base64DataWithoutSign: "",
+        isAttached: true,
+        description: "",
+        documentName: filename,
+        fileExtension: "pdf",
+        };
+
+        var client = new LssClient(jQuery);
+        process(client, options);
+        }
+    </script>
+    <script type="text/javascript" src="../js/libs/lss-client.js"/>
+</window>

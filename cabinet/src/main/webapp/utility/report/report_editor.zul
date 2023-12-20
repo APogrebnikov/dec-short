@@ -1,0 +1,23 @@
+<window id="winReportEditor" mode="modal" closable="true" width="90%" height="90%"
+        apply="org.edec.utility.pdfViewer.ctrl.PdfLineEditorCtrl">
+    <caption vflex="min" height="30px">
+        <hbox hflex="1" vflex="1">
+            <span class="z-icon-gears" style="font-size: 25px; color: #fff; margin-left: 4px; margin-top: 2px; " />
+            <label value="Редактор строк" style="margin-top: 2px; margin-left: 2px; font-family: opensans,arial,freesans,sans-serif; font-weight: 700; font-size: 18px; font-style: normal;  color: #fff;"/>
+        </hbox>
+    </caption>
+    <hbox hflex="1" vflex="1">
+        <vbox id="vbContent" vflex="1" hflex="5">
+            <iframe id="iframeReport" vflex="1" hflex="1"/>
+        </vbox>
+        <vbox hflex="3" vflex="1" >
+            <hbox hflex="1" vflex="1">
+                <textbox id="tbEditor" hflex="1" vflex="1" multiline="true"></textbox>
+            </hbox>
+            <hbox hflex="1">
+                <button id="btnRefreshView" label="Обновить"/>
+                <button id="btnSaveLines" label="Сохранить"/>
+            </hbox>
+        </vbox>
+    </hbox>
+</window>

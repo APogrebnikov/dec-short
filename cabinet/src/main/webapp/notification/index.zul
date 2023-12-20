@@ -1,0 +1,96 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+
+<?link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=cyrillic" rel="stylesheet"?>
+<?link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"?>
+
+<vbox self="@define(content)" height="100%" width="100%" apply="org.edec.notification.ctrl.IndexPageCtrl">
+    <tabbox hflex="1" vflex="1">
+        <tabs id="tab">
+            <tab id="tabSend" label="Отправить"/>
+            <tab id="tabIncoming" label="Непрочитанные"/>
+        </tabs>
+        <tabpanels>
+            <tabpanel width="100%">
+                <vbox vflex="1" hflex="1">
+                    <hbox height="100px">
+                        <vbox>
+                            <label>Кому: </label>
+                        </vbox>
+                        <space width="10px"/>
+                        <vbox>
+                            <radiogroup>
+                                <vbox><radio id="radioEmployee" label="Сотрудник" selected="true" /></vbox>
+                                <vbox><radio id="radioStudent" label="Студент" /></vbox>
+                            </radiogroup>
+                        </vbox>
+                        <space width="50px" />
+                        <vbox>
+                            <label value="Институт"/>
+                            <combobox id="cmbInst" readonly="true" />
+                        </vbox>
+                        <vbox>
+                            <label value="Форма обучения" />
+                            <combobox id="cmbFormOfStudy" readonly="true" />
+                        </vbox>
+                        <vbox id="vboxEmployee" visible="true">
+                            <hbox>
+                                <combobox id="cmbDepartment" placeholder="Кафердра" readonly="true" />
+                                <checkbox id="chSecretaryChair" label="Секретарь" />
+                            </hbox>
+                            <hbox>
+                                <textbox id="tbFioEmployee" placeholder="ФИО" width="360px" />
+                            </hbox>
+                        </vbox>
+
+                        <vbox id="vboxStudent" visible="false">
+                            <hbox>
+                                <combobox placeholder="Курс"/>
+                                <combobox placeholder="Группа"/>
+                            </hbox>
+                            <hbox>
+                                <checkbox id="chBachelor" label="Бакалавриат"/>
+                                <checkbox id="chSpeciallity" label="Специалитет"/>
+                                <checkbox id="chMaster" label="Магистратура"/>
+                            </hbox>
+                            <checkbox id="chGroupLeader" label="Староста"/>
+                            <textbox id="tbFioStudent" placeholder="ФИО" width="360px"/>
+                        </vbox>
+                        <button id="btnSearch" label="Поиск"/>
+                    </hbox>
+
+                    <vbox id="vbDepartment" vflex="1" hflex="1">
+                        <groupbox hflex="1" mold="3d">
+                            <caption>
+                                <hbox hflex="1" vflex="1" align="center">
+                                    <label value="КИ12-18Б" />
+                                    <checkbox label="Добавить всех" />
+                                </hbox>
+                            </caption>
+                        </groupbox>
+                    </vbox>
+                    <hbox height="240px" hflex="1">
+                        <ckeditor id="ckMessage" width="100%" customConfigurationsPath="/widgets/input/ckeditor/config.js"/>
+                        <button label="Отправить" width="120px"/>
+                    </hbox>
+                </vbox>
+            </tabpanel>
+            <tabpanel>
+                <hbox height="40px" hflex="1" align="center">
+                    <label value="Обновить список: " sclass="cwf-head-label" style="font-size: 15px;" width="120px"/>
+                    <button id="btnRefresh" iconSclass="z-icon-refresh" width="120px" label="Обновить"/>
+                </hbox>
+                <listbox id="box" vflex="1" width="100%" mold="paging" autopaging="true">
+                    <listhead>
+                        <listheader hflex="8" />
+                        <listheader hflex="2" />
+
+                    </listhead>
+
+                </listbox>
+
+
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+</vbox>

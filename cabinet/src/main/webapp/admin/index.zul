@@ -1,0 +1,114 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<div self="@define(content)" height="100%"
+         apply="org.edec.admin.ctrl.IndexPageCtrl">
+    <tabbox height="100%">
+        <tabs>
+            <tab label="Добавление ролей пользователям" />
+            <tab id="tabCreateRoles" label="Создание ролей" />
+            <tab id="tabCreateModule" label="Создание модулей" />
+        </tabs>
+        <tabpanels>
+            <tabpanel height="100%" width="100%">
+                <hbox vflex="1" width="100%">
+                    <listbox id="lbEmployee" vflex="1">
+                        <listhead>
+                            <listheader>
+                                <label value="ФИО" sclass="cwf-listheader-label"/>
+                                <textbox id="tbSearchFio"/>
+                            </listheader>
+                        </listhead>
+                    </listbox>
+                    <listbox id="lbEmployeeRole" vflex="1">
+                        <listhead>
+                            <listheader>
+                                <hbox>
+                                    <label value="Роль" sclass="cwf-listheader-label"/>
+                                    <button id="btnAddRoleEmp" image="/imgs/addaltCLR.png" />
+                                </hbox>
+                            </listheader>
+                            <listheader width="60px" align="center" />
+                        </listhead>
+                    </listbox>
+                </hbox>
+                <listbox id="lbEmployeeModule" vflex="1">
+                    <listhead>
+                        <listheader >
+                            <label value="Модуль" sclass="cwf-listheader-label" />
+                        </listheader>
+                        <listheader >
+                            <label value="Подразделение" sclass="cwf-listheader-label" />
+                        </listheader>
+                        <listheader >
+                            <label value="Институт" sclass="cwf-listheader-label" />
+                        </listheader>
+                        <listheader width="150px" align="center">
+                            <label value="Форма обучения" sclass="cwf-listheader-label" />
+                        </listheader>
+                        <listheader width="150px" align="center">
+                            <label value="Редактирование" sclass="cwf-listheader-label" />
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </tabpanel>
+            <tabpanel vflex="1">
+                <hbox width="100%" vflex="1">
+                    <listbox id="lbRole" hflex="1" vflex="1">
+                        <listhead>
+                            <listheader>
+                                <label value="Роль" sclass="cwf-listheader-label"/>
+                                <button id="btnAddRole" image="/imgs/addaltCLR.png" />
+                                <textbox id="tbAddRole" placeholder="Название.." visible="false"/>
+                            </listheader>
+                        </listhead>
+                    </listbox>
+                    <listbox id="lbModuleForRole" hflex="3" vflex="1">
+                        <listhead>
+                            <listheader >
+                                <label value="Модуль" sclass="cwf-listheader-label" />
+                                <button id="btnAddModuleToRole" image="/imgs/addaltCLR.png" />
+                            </listheader>
+                            <listheader >
+                                <label value="Подразделение" sclass="cwf-listheader-label" />
+                            </listheader>
+                            <listheader >
+                                <label value="Институт" sclass="cwf-listheader-label" />
+                            </listheader>
+                            <listheader width="150px" align="center">
+                                <label value="Форма обучения" sclass="cwf-listheader-label" />
+                            </listheader>
+                            <listheader width="150px" align="center">
+                                <label value="Редактирование" sclass="cwf-listheader-label" />
+                            </listheader>
+                            <listheader width="50px" align="center"/>
+                        </listhead>
+                    </listbox>
+                </hbox>
+            </tabpanel>
+            <tabpanel>
+                <hbox vflex="1" hflex="1">
+                    <listbox id="lbModule" hflex="1" vflex="1">
+                        <listhead>
+                            <listheader hflex="1">
+                                <label id="lModule" value="Модуль" sclass="cwf-listheader-label"/>
+                                <button id="btnAddModule" image="/imgs/addaltCLR.png" />
+                                <textbox id="tbAddModuleName" placeholder="Название.." visible="false"/>
+                                <textbox id="tbAddModuleUrl" placeholder="URL.." visible="false" />
+                                <textbox id="tbAddModuleImage" placeholder="Path img.." visible="false"/>
+                                <button id="btnSaveModule" image="/imgs/okCLR.png" visible="false"/>
+                            </listheader>
+                            <listheader width="60px"/>
+                        </listhead>
+                    </listbox>
+                    <listbox id="lbRoleForModule" hflex="1" vflex="1">
+                        <listhead>
+                            <listheader>
+                                <label value="Роль" sclass="cwf-listheader-label"/>
+                            </listheader>
+                        </listhead>
+                    </listbox>
+                </hbox>
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+</div>

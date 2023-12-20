@@ -1,0 +1,115 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vlayout self="@define(content)" hflex="1" vflex="1" apply="org.edec.reference.ctrl.IndexPageCtrl">
+    <hbox hflex="1" vflex="1">
+        <!--Отображение студентов-->
+        <vbox hflex="2" vflex="1">
+            <hbox hflex="1">
+                <textbox id="tbStudentFioSearch" hflex="4" placeholder="Введите фамилию студента..."/>
+                <button id="btnStudentFioSearch" label="Поиск" hflex="1"/>
+            </hbox>
+            <listbox id="lbStudents" hflex="1" vflex="1" emptyMessage="Список пуст">
+                <listhead>
+                    <listheader align="center" hflex="2">
+                        <label sclass="cwf-listheader-label" value="ФИО"/>
+                    </listheader>
+                    <listheader align="center" hflex="1">
+                        <label sclass="cwf-listheader-label" value="Группа"/>
+                    </listheader>
+                    <listheader align="center" hflex="1">
+                        <label sclass="cwf-listheader-label" value="Статус"/>
+                    </listheader>
+                </listhead>
+            </listbox>
+            <groupbox hflex="1">
+                <hbox hflex="1">
+                    <button id="btnExcelReport" label="Сохранить отчет"/>
+                </hbox>
+            </groupbox>
+        </vbox>
+
+        <separator width="4px"/>
+
+        <!--Отображение справок-->
+        <vbox hflex="3" vflex="1">
+            <separator height="1px"/>
+            <hbox>
+                <label id="lbStudentFio" style="font-weight: 700; font-size: 22px"/>
+                <groupbox contentStyle="border: 0" height="30px"/>
+            </hbox>
+            <combobox id="cmbInst"/>
+
+            <groupbox title="Редактирование статуса" style="min-height: 0px;min-width: 0px;width: 500px">
+                <vbox>
+                    <hbox height="24px">
+                        <checkbox id="chbOrphan" label="Сирота"/>
+                        <separator width="4px"/>
+                        <datebox id="dateOfBirth" visible="false"/>
+                    </hbox>
+
+                    <separator height="2px"/>
+
+                    <hbox height="24px">
+                        <checkbox id="chbInvalid" label="Инвалид"/>
+                        <separator width="4px"/>
+                        <combobox id="cmbInvalidType" visible="false">
+                            <comboitem label="Инвалид детства"/>
+                            <comboitem label="Инвалид (1 гр.)"/>
+                            <comboitem label="Инвалид (2 гр.)"/>
+                            <comboitem label="Инвалид (3 гр.)"/>
+                        </combobox>
+
+                    </hbox>
+
+                    <separator height="2px"/>
+
+                    <hbox>
+                        <checkbox id="chbIndigent" label="Малоимущий"/>
+                    </hbox>
+
+                    <separator height="2px"/>
+
+                    <hbox height="24px">
+                        <checkbox id="chbVeteran" label="Ветеран боевых действий"/>
+                    </hbox>
+                </vbox>
+                <separator/>
+                <button id="btnSaveStatus" label="Сохранить статус"/>
+            </groupbox>
+
+            <listbox id="lbReferences" hflex="1" vflex="1" emptyMessage="Список пуст">
+                <listhead>
+                    <listheader align="center">
+                        <label sclass="cwf-listheader-label" value="Номер записи"/>
+                    </listheader>
+                    <listheader align="center">
+                        <label sclass="cwf-listheader-label" value="Тип записи"/>
+                    </listheader>
+                    <listheader align="center">
+                        <label sclass="cwf-listheader-label" value="Дата начала"/>
+                    </listheader>
+                    <listheader align="center">
+                        <label sclass="cwf-listheader-label" value="Дата окончания"/>
+                    </listheader>
+                    <listheader align="center">
+                        <label sclass="cwf-listheader-label" value="Скан справки"/>
+                    </listheader>
+                    <listheader align="center">
+                        <label sclass="cwf-listheader-label" value="Скан заявления"/>
+                    </listheader>
+                </listhead>
+            </listbox>
+
+            <groupbox hflex="1">
+                <hbox hflex="1">
+                    <button id="btnCreateDsppReference" label="Добавить справку УСЗН" disabled="true"/>
+                    <button id="btnCreateInvalidReference" label="Добавить справку об инвалидности" disabled="true"/>
+                    <button id="btnCreateOrphanReference" label="Добавить справку сироты" disabled="true"/>
+                    <button id="btnCreateVeteranReference" label="Добавить удостоверение ВБД" disabled="true"/>
+                    <button id="btnEditReference" label="Редактировать" disabled="true"/>
+                    <button id="btnDeleteReference" label="Удалить" disabled="true"/>
+                </hbox>
+            </groupbox>
+        </vbox>
+    </hbox>
+</vlayout>

@@ -1,0 +1,22 @@
+<window id="winRefusalFactSheet" closable="true"
+        apply="org.edec.student.factSheet.ctrl.FactSheetCancelCtrl" width="500px">
+    <caption>
+        <label value="Опишите причину отмены"/>
+    </caption>
+    <vlayout height="100%">
+        <style src="/css/order/order_dec.css"/>
+
+        <div style="margin: 2% 5% 1% 5%">
+            <vlayout>
+                <vlayout vflex="1">
+                    <textbox id="tbCancel" sclass="tbCancel" style="width: 100%" rows="10"></textbox>
+                    <hlayout style="float: right;">
+                        <button id="btnOk">Принять</button>
+                        <button id="btnCancel">Отмена</button>
+                    </hlayout>
+                </vlayout>
+            </vlayout>
+        </div>
+    </vlayout>
+</window>
+

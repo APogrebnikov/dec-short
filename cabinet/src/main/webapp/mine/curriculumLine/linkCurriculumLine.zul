@@ -1,0 +1,77 @@
+<zk>
+    <vlayout hflex="1" vflex="1" apply="org.edec.mine.ctrl.curriculumLine.LinkCurriculumLineCtrl">
+        <hlayout height="80px" hflex="1">
+            <vlayout id="vlLinked">
+                <label value="Несопоставленные дисциплины" sclass="b" />
+                <radiogroup>
+                    <radio id="rAll" label="Все" selected="true"/>
+                    <radio id="rOnlyLinked" label="Только сопоставленные" />
+                    <radio id="rOnlyUnlinked" label="Только несопоставленные" />
+                </radiogroup>
+            </vlayout>
+            <space />
+            <vlayout id="vlFoc">
+                <label value="Форма контроля АСУ ИКИТ" />
+            </vlayout>
+            <space />
+            <vlayout>
+                <label value="Действия" sclass="b" />
+                <button id="btnSearchLinkSubjects" label="Поиск" />
+                <button id="btnSetMineParameters" label="Заполнить все выделенные дисциплины"/>
+            </vlayout>
+        </hlayout>
+        <listbox id="lbLinkSubjects" hflex="1" vflex="1" checkmark="true" multiple="true" mold="paging" autopaging="true">
+            <auxhead>
+                <auxheader />
+                <auxheader label="АСУ ИКИТ" align="center" colspan="3" />
+                <auxheader label="ШАХТЫ" align="center" colspan="3" />
+            </auxhead>
+            <auxhead>
+                <auxheader>
+                    <textbox id="tbGroupName" placeholder="Группа" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbSubjectNameCabinet" placeholder="Предмет" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <intbox id="ibCourseCabinet" placeholder="Курс" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <intbox id="ibSemesterNumberCabinet" placeholder="Семестр" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbSubjectNameMine" placeholder="Предмет" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <intbox id="ibCourseMine" placeholder="Курс" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <intbox id="ibSemesterNumberMine" placeholder="Семестр" hflex="1" />
+                </auxheader>
+            </auxhead>
+            <listhead>
+                <listheader width="120px">
+                    <label sclass="cwf-listheader-label" value="Группа"/>
+                </listheader>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Предмет"/>
+                </listheader>
+                <listheader width="80px">
+                    <label sclass="cwf-listheader-label" value="Курс"/>
+                </listheader>
+                <listheader width="80px">
+                    <label sclass="cwf-listheader-label" value="Семестр"/>
+                </listheader>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Предмет"/>
+                </listheader>
+                <listheader width="80px">
+                    <label sclass="cwf-listheader-label" value="Курс"/>
+                </listheader>
+                <listheader width="80px">
+                    <label sclass="cwf-listheader-label" value="Семестр"/>
+                </listheader>
+            </listhead>
+        </listbox>
+    </vlayout>
+</zk>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.dialect">org.edec.commons.hibernate.PostgresSQLCabinetDialect</property>
+        <!-- Локальная версия-->
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/eDecanat</property>
+        <property name="hibernate.show_sql">false</property>
+
+        <!-- серверная версия-->
+        <property name="hibernate.connection.username"></property>
+        <property name="connection.password"></property>
+        <property name="javax.persistence.validation.mode">none</property>
+        <!-- Исправлю, честно :( -->
+        <mapping class="org.edec.synchroMine.model.eso.entity.DicGroup" />
+        <mapping class="org.edec.synchroMine.model.eso.entity.EsoCourse2" />
+        <mapping class="org.edec.synchroMine.model.eso.entity.HumanFace" />
+        <mapping class="org.edec.synchroMine.model.eso.entity.Institute" />
+        <mapping class="org.edec.synchroMine.model.eso.entity.LinkGroupSemester" />
+        <mapping class="org.edec.synchroMine.model.eso.entity.Order" />
+        <mapping class="org.edec.synchroMine.model.eso.entity.OrderRule" />
+        <mapping class="org.edec.synchroMine.model.eso.entity.OrderStatusType" />
+        <mapping class="org.edec.synchroMine.model.eso.entity.OrderType" />
+        <mapping class="org.edec.synchroMine.model.eso.entity.Parent" />
+        <mapping class="org.edec.synchroMine.model.eso.entity.Register" />
+        <mapping class="org.edec.synchroMine.model.eso.entity.SchoolYear" />
+        <mapping class="org.edec.synchroMine.model.eso.entity.Semester" />
+        <mapping class="org.edec.synchroMine.model.eso.entity.StudentSemesterStatus" />
+        <mapping class="org.edec.contingentMovement.model.StudentStatusModel" />
+
+        <mapping class="org.edec.commons.entity.dec.mine.LinkRegister" />
+
+        <!-- Учебный план, траектории -->
+        <mapping class="org.edec.synchroMine.model.eso.entity.Curriculum" />
+        <mapping class="org.edec.synchroMine.model.eso.entity.Direction" />
+        <mapping class="org.edec.commons.entity.dec.DicTrajectory" />
+        <mapping class="org.edec.commons.entity.dec.Trajectory" />
+
+    </session-factory>
+</hibernate-configuration>

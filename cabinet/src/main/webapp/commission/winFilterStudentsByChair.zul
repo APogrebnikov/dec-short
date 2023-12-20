@@ -1,0 +1,16 @@
+<window id="winFilterStudentsByChair" closable="true" apply="org.edec.commission.ctrl.WinFilterStudentsByChairCtrl" position="center">
+    <caption>
+        <label value="Список студентов по кафедрам" />
+    </caption>
+
+    <groupbox >
+        <vbox>
+
+            <checkbox id = "chNoBudget" label="Платники" checked="true"></checkbox>
+            <checkbox id = "chBudget" label="Бюджетники" checked="true"></checkbox>
+
+            <button label="Печать" id = "btnShowStudentsByChair"></button>
+        </vbox>
+    </groupbox>
+
+</window>

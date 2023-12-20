@@ -1,0 +1,27 @@
+<window border="normal" contentStyle="overflow:auto;"
+        closable="true" id="winAddStudentManualy" apply="org.edec.order.ctrl.WinAddStudentManualyCtrl" width="60%" height="60%">
+    <caption>
+        <label value="Добавление студента" />
+    </caption>
+    <vbox width="100%" style="">
+        <hbox style="margin-top:5px">
+            <label>Студент ищется в семестре:</label>
+            <combobox id="cmbListSem" readonly="true"></combobox>
+        </hbox>
+        <hbox>
+            <textbox id="family" placeholder="Введите фамилию..."></textbox>
+            <button id="search">Поиск</button>
+        </hbox>
+        <listbox id="searchResults" multiple="true" checkmark="true">
+            <listhead>
+                <listheader><label value="ФИО" sclass="cwf-listheader-label"/></listheader>
+                <listheader><label value="Группа" sclass="cwf-listheader-label"/></listheader>
+            </listhead>
+        </listbox>
+        <hbox>
+            <button id="btnAdd">Добавить выбранных студентов</button>
+            <button id="returnToOrder">Вернуться к созданию приказа</button>
+        </hbox>
+    </vbox>
+    <groupbox id="gbBodyOrder" sclass="orderbody" width="100%" vflex="1"/>
+</window>

@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="register" pageWidth="595" pageHeight="842" columnWidth="511" leftMargin="56" rightMargin="28" topMargin="56" bottomMargin="28" uuid="f94ae741-d5fc-4185-a03e-810a22c843f4">
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="reg" uuid="96a0eeeb-1d3b-4d86-9ab4-2b4cca6a0221">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="fio" class="java.lang.String"/>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="signatorytutor" class="java.lang.String">
+		<fieldDescription><![CDATA[signatorytutor]]></fieldDescription>
+	</field>
+	<field name="certnumber" class="java.lang.String">
+		<fieldDescription><![CDATA[certnumber]]></fieldDescription>
+	</field>
+	<field name="department" class="java.lang.String">
+		<fieldDescription><![CDATA[department]]></fieldDescription>
+	</field>
+	<field name="signdate" class="java.lang.String">
+		<fieldDescription><![CDATA[signdate]]></fieldDescription>
+	</field>
+	<field name="mainstring1" class="java.lang.String"/>
+	<field name="mainstring2" class="java.lang.String"/>
+	<title>
+		<band height="95" splitType="Stretch">
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="250" height="20" uuid="9e868e75-7176-41dc-9706-ae858f3a0cb3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ФГАОУ ВО СФУ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="19" width="250" height="30" uuid="1702cc3b-b1d5-487d-b323-4f6d2ea665f1"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<text><![CDATA[ИНСТИТУТ КОСМИЧЕСКИХ И
+ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="50" width="250" height="20" uuid="1341752e-abe3-4c5f-8437-67ba22cae06f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{department}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="70" width="250" height="20" uuid="37aa937f-8fe2-4275-b5a5-1b2051f4c078"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[СЛУЖЕБНАЯ ЗАПИСКА]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="250" y="41" width="260" height="20" uuid="418626f7-2477-4271-a884-0179bb36d3d0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Директору ИКИТ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="250" y="61" width="260" height="20" uuid="09a0770e-8ab0-4c4c-b07b-ea2b8263fd3c"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Д.В. Капулину]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="200" splitType="Stretch">
+			<textField>
+				<reportElement positionType="Float" x="360" y="142" width="130" height="12" uuid="240b9c5b-1b0f-4009-9bb6-1b4b0f7ca097">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{signatorytutor}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="290" y="142" width="70" height="12" uuid="af610cf8-d959-4b85-b636-e2402194c086">
+					<property name="local_mesure_unitheight" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Преподаватель]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="40" y="142" width="240" height="42" uuid="78e26923-23bd-4f08-94b4-99fce7679f50">
+					<printWhenExpression><![CDATA[!$F{certnumber}.equals("")&&!$F{signatorytutor}.equals("")]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Left">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Подписано электронно. \n" +
+"ФИО: " + $F{signatorytutor} + "\n" +
+"Номер сертификата: " + $F{certnumber}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="-5" width="250" height="20" uuid="8b96bfde-daad-4035-a999-ab2d76217082"/>
+				<textElement textAlignment="Center">
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{signdate}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="14" width="250" height="20" uuid="442cd917-76bb-45d0-a03b-6daae6189dce"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="false"/>
+				</textElement>
+				<text><![CDATA[О внесении изменений в ведомость]]></text>
+			</staticText>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="30" y="50" width="460" height="30" uuid="36defea8-c441-4653-8760-1e0741e53483"/>
+				<textElement textAlignment="Left">
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mainstring1}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="30" y="80" width="460" height="30" uuid="dfc290f9-2021-48a6-a361-0c5577a8686b"/>
+				<textElement textAlignment="Justified">
+					<font isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{mainstring2}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

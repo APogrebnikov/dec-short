@@ -1,0 +1,177 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<zk xmlns:n="native" xmlns:w="client">
+
+<script type="text/javascript" src="https://www.gstatic.com/firebasejs/3.6.8/firebase.js"></script>
+<script type="text/javascript" src="/js/libs/firebase_subscribe.js"></script>
+<n:style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+body {
+  background: #5e6a84;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.login {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px;
+}
+
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.login-header {
+  background: #e66e24;
+  padding: 20px;
+  font-size: 1.2em;
+  font-weight: normal;
+  text-align: center;
+  /*text-transform: uppercase;*/
+  color: #fff;
+}
+
+.login-container {
+  background: #ebebeb;
+  padding: 12px;
+}
+
+.login p {
+  padding: 5px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+
+.login input[type="button"] {
+  background: #28d;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login input[type="button"]:hover {
+  background: #17c;
+}
+
+.login input[type="button"]:focus {
+  border-color: #05a;
+}
+
+.sfu-avt {
+    background: url(imgs/sfu_avt.png)no-repeat;
+    width: 103px;
+    height: 113px;
+    padding-bottom: 10px;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+}
+
+.asu-avt {
+	margin-top: 1px;
+    font-size: 30pt;
+    padding-bottom: 10px;
+    position: absolute;
+    right: 110%;
+    text-align: right;
+    color: #8e97a9;
+}
+
+.bx-auth-note {
+    font-family: "OpenSans-Regular",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    color: #e4683d;
+    border-bottom: 1px solid #e4683d;
+    margin-bottom: 20px!important;
+    margin-top: 15px!important;
+    margin-left: 10px!important;
+    margin-right: 10px!important;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 14px;
+}
+
+.subError {
+    padding: 2px 0 2px 5px;
+    font-size: 10pt;
+    color: red;
+}
+</n:style>
+    <vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.main.ctrl.SubscribeCtrl">
+        <div class="sfu-avt"><n:p class="asu-avt"><n:b>АСУ ИКИТ</n:b></n:p></div>
+        <hbox id="hbMain" height="100%" width="100%" pack="center" align="center" >
+            <div class="login" id="divLogin">
+
+                <n:h2 class="login-header">Подписка</n:h2>
+                <n:form class="login-container" onkeypress="onOK(event.keyCode)">
+                    <n:p>
+                        <n:input type="button"
+                            value="Подписаться на уведомления" id="subscribe" onclick="subscribeLocal();">
+                        </n:input>
+                    </n:p>
+                </n:form>
+            </div>
+        </hbox>
+    </vbox>
+	<script type="type/javascript">
+            <!--function onOK(event)-->
+            <!--{-->
+                <!--if(event==13)-->
+                <!--{-->
+                    <!--subscribe();-->
+                <!--}-->
+            <!--}-->
+
+            function subscribeLocal(){
+                subscribe();
+            }
+
+            // отправка ID на сервер
+            function sendTokenToServer(currentToken) {
+                if (!isTokenSentToServer(currentToken)) {
+                    console.log('Отправка токена на сервер...');
+
+                    var result = {};
+                    result.URL = window.location.href;
+                    result.token = currentToken;
+                    alert('Подписка оформлена');
+                    $('#subscribe').prop( "disabled", true );
+                    zAu.send(new zk.Event(zk.Widget.$('$hbMain'), "onSubscribe", result, {toServer:true}));
+
+                    setTokenSentToServer(currentToken);
+                } else {
+                    console.log('Токен уже отправлен на сервер.');
+                    var result = {};
+                    result.URL = window.location.href;
+                    result.token = currentToken;
+                    $('#subscribe').prop( "disabled", true );
+                    zAu.send(new zk.Event(zk.Widget.$('$hbMain'), "onSubscribe", result, {toServer:true}));
+                }
+            }
+	</script>
+</zk>

@@ -1,0 +1,222 @@
+<window id="winIndCurrProtocol" closable="true"
+        apply="org.edec.contingentMovement.ctrl.individualCurriculum.WinIndCurrProtocolCtrl" width="1000px">
+
+    <style>
+        .labelfor {
+            line-height: 1.93rem;
+        }
+
+        .param {
+            border: none !important;
+            width: 490px;
+        }
+
+        .param .z-listbox-odd.z-listitem {
+            background: #fff;
+        }
+
+        .param .z-listitem.z-listitem-selected:hover>.z-listcell,
+        .param .z-listitem:hover>.z-listcell {
+            border-color: #dcdcdc;
+            background: #f3f3f3;
+            position: relative;
+        }
+
+        .param .z-listitem.z-listitem-selected>.z-listcell {
+            border-color: #dcdcdc;
+            background: #eef2ff;
+            background-clip: padding-box;
+            position: relative;
+        }
+
+        .param .z-listitem .z-listcell {
+            border: none;
+        }
+    </style>
+
+    <caption label="Печать протокола"/>
+    <vbox>
+        <hbox>
+            <radiogroup>
+                <radio label="Учетная карточка" id="rbIndexCard" selected="true"></radio>
+                <radio label="Справка и название университета" id="rbOtherInst"></radio>
+            </radiogroup>
+        </hbox>
+        <hbox>
+            <listbox sclass="param">
+                <listhead>
+                    <listheader width="180px" />
+                    <listheader />
+                </listhead>
+                <listitem>
+                    <listcell>
+                        <label sclass="labelfor">Номер протокола:</label>
+                    </listcell>
+                    <listcell>
+                        <intbox id="ibIndCurrProtocolNumber" width="300px"/>
+                    </listcell>
+                </listitem>
+                <listitem>
+                    <listcell>
+                        <label sclass="labelfor">Дата заседания комиссии:</label>
+                    </listcell>
+                    <listcell>
+                        <datebox id="dbIndCurrProtocolDateCommission" width="300px"/>
+                    </listcell>
+                </listitem>
+                <listitem>
+                    <listcell>
+                        <label sclass="labelfor">ФИО студента(заголовок):</label>
+                    </listcell>
+                    <listcell>
+                        <textbox id="tbIndCurrProtocolFioStudent" width="300px"/>
+                    </listcell>
+                </listitem>
+                <listitem>
+                    <listcell>
+                        <label sclass="labelfor">ФИО студента(1 пункт):</label>
+                    </listcell>
+                    <listcell>
+                        <textbox id="tbIndCurrProtocolFioStudentFirstSection" width="300px"/>
+                    </listcell>
+                </listitem>
+                <listitem>
+                    <listcell>
+                        <label sclass="labelfor">Новый университет:</label>
+                    </listcell>
+                    <listcell>
+                        <textbox id="tbIndCurrProtocolUniversityNew" width="300px"/>
+                    </listcell>
+                </listitem>
+                <listitem>
+                    <listcell>
+                        <label sclass="labelfor">Старый университет:</label>
+                    </listcell>
+                    <listcell>
+                        <textbox id="tbIndCurrProtocolUniversityOld" width="300px"/>
+                    </listcell>
+                </listitem>
+                <listitem visible="false">
+                    <listcell>
+                        <label visible="false" sclass="labelfor">Статус</label>
+                    </listcell>
+                    <listcell>
+                        <textbox visible="false" id="tbIndCurrProtocolDirectionOld" width="300px" multiline="true" height="48px"/>
+                    </listcell>
+                </listitem>
+                <listitem>
+                    <listcell>
+                        <label sclass="labelfor">Перемещение:</label>
+                    </listcell>
+                    <listcell>
+                        <combobox id="cmbStatus" value="Восстановление" width="300px">
+                            <comboitem label="Восстановление"/>
+                            <comboitem label="Перевод"/>
+                            <comboitem label="Выход из академ. отпуска"/>
+                        </combobox>
+                    </listcell>
+                </listitem>
+                <listitem>
+                    <listcell>
+                        <label sclass="labelfor">ФИО председателя:</label>
+                    </listcell>
+                    <listcell>
+                        <textbox id="tbIndCurrChairman" value = "Д.В. Капулин" width="300px"/>
+                    </listcell>
+                </listitem>
+            </listbox>
+
+            <!-- Правая колонка -->
+            <listbox sclass="param">
+                <listhead>
+                    <listheader width="180px" />
+                    <listheader />
+                </listhead>
+                <listitem>
+                    <listcell>
+                        <label sclass="labelfor" id = "lDateOfIssue">Дата выдачи справки:</label>
+                    </listcell>
+                    <listcell>
+                        <datebox id="dbIndCurrProtocolRecordbook" width="300px" disabled="true"/>
+                    </listcell>
+                </listitem>
+                <listitem>
+                    <listcell>
+                        <label sclass="labelfor" id = "lRecordBook">Номер справки:</label>
+                    </listcell>
+                    <listcell>
+                        <textbox id="tbIndCurrProtocolRecordbook" width="300px" disabled="true"/>
+                    </listcell>
+                </listitem>
+                <listitem>
+                    <listcell>
+                        <label sclass="labelfor">Тип из:</label>
+                    </listcell>
+                    <listcell>
+                        <combobox id="cmbType" value="Направление подготовки" width="300px">
+                            <comboitem label="Направление подготовки"/>
+                            <comboitem label="Специальность"/>
+                        </combobox>
+                    </listcell>
+                </listitem>
+                <listitem>
+                    <listcell>
+                        <label sclass="labelfor">В группу: </label>
+                    </listcell>
+                    <listcell>
+                        <textbox id="tbIndCurrProtocolGroupNew" width="300px" />
+                    </listcell>
+                </listitem>
+                <listitem>
+                    <listcell>
+                        <label sclass="labelfor">Курс:</label>
+                    </listcell>
+                    <listcell>
+                        <textbox id="tbIndCurrProtocolGroupCourse" width="300px" />
+                    </listcell>
+                </listitem>
+                <listitem>
+                    <listcell>
+                        <label sclass="labelfor">Форма обучения:</label>
+                    </listcell>
+                    <listcell>
+                        <textbox id="tbIndCurrProtocolGroupFos" width="300px" />
+                    </listcell>
+                </listitem>
+                <listitem>
+                    <listcell>
+                        <label style="line-height: 48px">Направление на:</label>
+                    </listcell>
+                    <listcell>
+                        <textbox id="tbIndCurrProtocolDirectionNew" multiline="true" width="300px" height="48px"/>
+                    </listcell>
+                </listitem>
+                <listitem>
+                    <listcell>
+                        <label style="line-height: 48px">Срок аттестации:</label>
+                    </listcell>
+                    <listcell>
+                        <datebox id="dbDateResit" width="300px" disabled="true" height="38px"/>
+                    </listcell>
+                </listitem>
+            </listbox>
+        </hbox>
+        <groupbox>
+            <caption label="Заголовок протокола"/>
+            <label id="lIndCurrProtocolAgenda"/>
+        </groupbox>
+        <groupbox>
+            <caption label="Члены комиссии"/>
+            <vbox id="vbIndCurrProtocolCommission">
+                <hbox>
+                    <textbox id="tbIndCurrProtocolCommission" placeholder="ФИО члена комиссии"/>
+                    <button id="btnIndCurrProtocolAddCommission" label="Добавить" />
+                </hbox>
+            </vbox>
+        </groupbox>
+        <hbox>
+            <button id="btnIndCurrProtocolPrint" label="Печать" />
+            <button id="btnIndCurrProtocolDocx" label="Скачать Docx" />
+        </hbox>
+    </vbox>
+</window>

@@ -1,0 +1,193 @@
+<?page title="Личный кабинет: Авторизация" contentType="text/html;charset=UTF-8"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<zk xmlns:n="native" xmlns:w="client">
+<n:style type="text/css">
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+body {
+  background: #5e6a84;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.login {
+  width: 400px;
+  margin: 16px auto;
+  font-size: 16px;
+}
+
+.login-header,
+.login p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.login-header {
+  background: #e66e24;
+  padding: 20px;
+  font-size: 1.2em;
+  font-weight: normal;
+  text-align: center;
+  /*text-transform: uppercase;*/
+  color: #fff;
+}
+
+.login-container {
+  background: #ebebeb;
+  padding: 12px;
+}
+
+.login p {
+  padding: 5px;
+}
+
+.login input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+.login input[type="text"]:focus,
+.login input[type="password"]:focus {
+  border-color: #888;
+}
+
+.login input[type="button"] {
+  background: #28d;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login input[type="button"]:hover {
+  background: #17c;
+}
+
+.login input[type="button"]:focus {
+  border-color: #05a;
+}
+
+.sfu-avt {
+    background: url(imgs/ikit_avt.png)no-repeat;
+    width: 106px;
+    height: 113px;
+    padding-bottom: 10px;
+    position: absolute;
+    right: 10%;
+    top: 10%;
+    background-size: 103px;
+    background-position: center;
+}
+
+.asu-avt {
+	margin-top: 1px;
+    font-size: 30pt;
+    padding-bottom: 10px;
+    position: absolute;
+    right: 110%;
+    text-align: right;
+    color: #fff;
+}
+
+.bx-auth-note {
+    font-family: "OpenSans-Regular",Helvetica,Arial,sans-serif;
+    font-size: 22px;
+    color: #e4683d;
+    border-bottom: 1px solid #e4683d;
+    margin-bottom: 20px!important;
+    margin-top: 15px!important;
+    margin-left: 10px!important;
+    margin-right: 10px!important;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 14px;
+}
+
+.subError {
+    padding: 2px 0 2px 5px;
+    font-size: 10pt;
+    color: red;
+}
+
+.z-loading {
+    top: 45% !important;
+    left: 45% !important;
+    align: center;
+    vertical-align: middle;
+    background: #5e6a84;
+}
+
+.z-loading-icon {
+    width: 100px !important;
+    height: 100px !important;
+    background-size: 100px 100px;
+    left: 42% !important;
+}
+</n:style>
+	<div class="sfu-avt"><n:p class="asu-avt"><n:b>АСУ ИКИТ</n:b></n:p></div>
+	<hbox id="hbMain" height="100%" width="100%" pack="center" align="center" apply="org.edec.main.ctrl.LoginPageCtrl">
+		<div class="login" id="divLogin">
+
+			<n:h2 class="login-header">Личный кабинет</n:h2>
+			<n:form class="login-container" onkeypress="onOK(event.keyCode)">
+				<!-- <div class="bx-auth-note">Войдите через аккаунт СФУ</div> -->
+				<n:p>
+					<n:input id="tbLogin" type="text" onkeypress="onOK(event.keyCode)"
+						placeholder="Логин..." oninput ="jq('#errLogin').text('')">
+					</n:input>
+					<n:span id="errLogin" class="subError"></n:span>
+				</n:p>
+				<n:p>
+					<n:input id="tbPassword" type="password" onkeypress="onOK(event.keyCode)"
+						placeholder="Пароль..." oninput ="jq('#errPassword').text('')">
+					</n:input>
+					<n:span id="errPassword" class="subError"></n:span>
+				</n:p>
+				<n:p>
+					<n:input id="btSubmit" type="button"
+						value="Войти" onclick="sendToServer();">
+					</n:input>
+				</n:p>
+			</n:form>
+		</div>
+	</hbox>
+	<script type="type/javascript">
+            function onOK(event)
+            {
+                if(event==13)
+                {
+                    sendToServer();
+                }
+            }
+			function sendToServer(data)
+			{
+				if(jq("#tbLogin").val()=="")
+				{
+					jq("#errLogin").text("введите логин");
+					return;
+				}				
+				if(jq("#tbPassword").val()=="")
+				{
+					jq("#errPassword").text("введите пароль");
+					return;
+				}
+				var result = {};
+				result.login=jq("#tbLogin").val();
+				result.password=jq("#tbPassword").val();
+				result.URL=window.location.href;
+				zAu.send(new zk.Event(zk.Widget.$('$winReport'), "onFinish", result, {toServer:true}));
+			}
+	</script>
+</zk>

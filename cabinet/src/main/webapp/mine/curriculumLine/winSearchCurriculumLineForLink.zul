@@ -1,0 +1,54 @@
+<window id="winSearchCurriculumLineForLink" width="70%" height="90%" closable="true" title="Поиск дисциплин для сопоставления"
+    apply="org.edec.mine.ctrl.curriculumLine.WinSearchCurriculumLineForLinkCtrl">
+
+    <vlayout hflex="1" vflex="1">
+
+        <vlayout hflex="1" height="65px">
+            <label value="Информация по дисциплине из АСУ ИКИТ:" />
+            <label id="lSubjectName" value="Предмет: " />
+            <hlayout hflex="1" height="20px">
+                <label id="lGroupName" />
+                <space />
+                <label id="lCourse" />
+                <space />
+                <label id="lSemesterNumber" />
+            </hlayout>
+        </vlayout>
+
+        <label value="Несопоставленные дисциплины из системы Шахты: " sclass="b" />
+
+        <listbox id="lbCurriculumLine" hflex="1" vflex="1">
+            <auxhead>
+                <auxheader>
+                    <textbox id="tbGroupName" hflex="1" readonly="true"/>
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbSubjectName" placeholder="Предмет" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <intbox id="ibCourse" placeholder="Курс" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <intbox id="ibSemesterNumber" placeholder="Семестр" hflex="1" />
+                </auxheader>
+                <auxheader />
+            </auxhead>
+            <listhead>
+                <listheader width="120px">
+                    <label sclass="cwf-listheader-label" value="Группа"/>
+                </listheader>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Предмет"/>
+                </listheader>
+                <listheader width="80px">
+                    <label sclass="cwf-listheader-label" value="Курс"/>
+                </listheader>
+                <listheader width="80px">
+                    <label sclass="cwf-listheader-label" value="Семестр"/>
+                </listheader>
+                <listheader width="220px" align="center" />
+            </listhead>
+        </listbox>
+
+    </vlayout>
+</window>

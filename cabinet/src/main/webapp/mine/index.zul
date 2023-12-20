@@ -1,0 +1,63 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vlayout self="@define(content)" hflex="1" vflex="1" apply="org.edec.mine.ctrl.IndexPageCtrl" >
+    <hbox height="1px" hflex="1" id="hbFilter">
+        <vbox id="vbInst">
+            <label value="Институт"/>
+            <combobox id="cmbInst" readonly="true"/>
+        </vbox>
+        <vbox id="vbFormOfStudy">
+            <label value="Форма обучения"/>
+            <combobox id="cmbFormOfStudy" readonly="true"/>
+        </vbox>
+    </hbox>
+    <tabbox hflex="1" vflex="1">
+        <tabs>
+            <tab label="Учебный план" />
+            <tab id="tabSyncStudents" label="Студенты" />
+            <tab label="Сравнение УП и ведомостей" />
+        </tabs>
+        <tabpanels>
+            <tabpanel>
+                <vlayout hflex="1" vflex="1">
+                    <tabbox hflex="1" vflex="1">
+                        <tabs>
+                            <tab id="tabLinkCurriculumLine" label="Сопоставление" />
+                            <tab id="tabCompareCurriculumLine" label="Сравнение" />
+                        </tabs>
+                        <tabpanels>
+                            <tabpanel>
+                                <include id="includeLinkCurriculumLine" src="curriculumLine/linkCurriculumLine.zul" />
+                            </tabpanel>
+                            <tabpanel>
+                                <include id="includeCompareCurriculumLine" src="curriculumLine/compareCurriculumLine.zul" />
+                            </tabpanel>
+                        </tabpanels>
+                    </tabbox>
+                </vlayout>
+            </tabpanel>
+            <tabpanel>
+                <include id="includeSyncStudents" src="student/syncStudents.zul" />
+            </tabpanel>
+            <tabpanel>
+                <vlayout hflex="1" vflex="1">
+                    <tabbox hflex="1" vflex="1">
+                        <tabs>
+                            <tab id="tabCompareCurRegCurriculumSubject" label="Учебный план" />
+                            <tab id="tabCompareCurRegRegister" label="Ведомость" />
+                        </tabs>
+                        <tabpanels>
+                            <tabpanel>
+                                <include id="includeCompareCurRegCurriculumSubject" src="compareCurriculumAndRegister/curriculumSubject.zul" />
+                            </tabpanel>
+                            <tabpanel>
+                                <include id="includeCompareCurRegRegister" src="compareCurriculumAndRegister/register.zul" />
+                            </tabpanel>
+                        </tabpanels>
+                    </tabbox>
+                </vlayout>
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+
+</vlayout>

@@ -1,0 +1,15 @@
+<listbox id="lbSearchStudent" hflex="1" vflex="1">
+    <auxhead>
+        <auxheader colspan="2">
+            <textbox id="tbSearchStudentFilter" placeholder="Введите ФИО" hflex="1"/>
+        </auxheader>
+    </auxhead>
+    <listhead>
+        <listheader hflex="1">
+            <label sclass="cwf-listheader-label" value="ФИО"/>
+        </listheader>
+        <listheader width="100px" align="center">
+            <label sclass="cwf-listheader-label" value="Группа"/>
+        </listheader>
+    </listhead>
+</listbox>

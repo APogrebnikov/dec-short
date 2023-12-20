@@ -1,0 +1,29 @@
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<!--?link href="/css/normalize.css" rel="stylesheet"?-->
+
+
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+
+<window self="@define(content)" id="windowChatDecanat" apply="org.edec.notification.ctrl.WindowChatCtrl"
+        width="80%" height="95%" position="center, center" closable="true" action="show: slideDown; hide: slideUp">
+    <caption>
+        <label value="Диалог"/>
+    </caption>
+    <style src="/css/chat.css"/>
+    <style src="/css/chatModal.css"/>
+    <div sclass="modal-container">
+        <div sclass="message-box">
+            <div  id="aboutDec" sclass="message-about" />
+
+            <div sclass="dec-message-history_wrap">
+                <div id="messagesDec" sclass=" div-scroll-group message-history">
+
+                </div>
+            </div>
+
+            <div id="sendDec" sclass="dec-send-panel_wrap" />
+        </div>
+    </div>
+    <script src="/js/chat.js" type="text/javascript" />
+    <timer id="timer" delay="1000" repeats="true" />
+</window>

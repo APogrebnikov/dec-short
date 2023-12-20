@@ -1,0 +1,98 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.newMine.subjects.ctrl.IndexPageCtrl">
+    <hbox height="40px" hflex="1" id="hbFilter">
+        <combobox id="cmbInst" visible="false"/>
+        <combobox id="cmbFos" placeholder="Форма контроля"/>
+        <combobox id="cmbSemester" placeholder="Семестр"/>
+        <combobox id="cmbGroups" placeholder="Группа"/>
+
+        <button id="btnSynchSubjectGroupByHours" label="Синхронизировать часы" tooltiptext="Синхронизировать часы у предметов группы" visible="false"/>
+        <button id="btnSynchSubjectByGroup" label="Создать предметы" tooltiptext="Создать предметы у группы"/>
+        <button id="btnLinkTeacherForSubjects" label="Привязать преподавателей" tooltiptext="Привязать преподавателей" visible="true"/>
+        <checkbox id="shortForm" label="упрощенная форма" tooltiptext="Для индивидуальных планов"></checkbox>
+    </hbox>
+    <vbox hflex="1" vflex="1">
+        <hbox hflex="1" vflex="1">
+            <vbox hflex="1" vflex="1">
+                <label value="Предметы из ШАХТЫ"/>
+                <listbox id="lbSubjectGroupMine" hflex="1" vflex="1" emptyMessage="Предметов нет">
+                    <listhead>
+                        <listheader  hflex="1" align="center">
+                            <label sclass="cwf-listheader-label" value="Код" />
+                        </listheader>
+                        <listheader hflex="4" align="center">
+                            <label sclass="cwf-listheader-label" value="Название предмета"/>
+                        </listheader>
+                        <listheader hflex="1" align="center">
+                            <label sclass="cwf-listheader-label" value="ЗЕ"/>
+                        </listheader>
+                        <listheader hflex="1" align="center">
+                            <label sclass="cwf-listheader-label" value="Ауд. ч"/>
+                        </listheader>
+                        <listheader hflex="1" align="center">
+                            <label sclass="cwf-listheader-label" value="Всего ч"/>
+                        </listheader>
+                        <listheader  hflex="1" align="center">
+                            <label sclass="cwf-listheader-label" value="ФК"/>
+                        </listheader>
+<!--                        <listheader  hflex="1" align="center">-->
+<!--                            <label sclass="cwf-listheader-label" value="Практика"/>-->
+<!--                        </listheader>-->
+                        <listheader  hflex="1" align="center">
+                            <label sclass="cwf-listheader-label" value="ИД шахт"/>
+                        </listheader>
+                        <listheader  hflex="1" align="center">
+                            <label sclass="cwf-listheader-label" value="Сессия"/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </vbox>
+            <vbox hflex="1" vflex="1">
+                <label value="Предметы из АСУ ИКИТ"/>
+                <listbox id="lbSubjecGroupASU" hflex="1" vflex="1" emptyMessage="Предметов нет">
+                    <listhead>
+                        <listheader  hflex="1" align="center">
+                            <label sclass="cwf-listheader-label" value="Код"/>
+                        </listheader>
+                        <listheader hflex="4" align="center">
+                            <label sclass="cwf-listheader-label" value="Название предмета"/>
+                        </listheader>
+                        <listheader hflex="1" align="center">
+                            <label sclass="cwf-listheader-label" value="ЗЕ"/>
+                        </listheader>
+                        <listheader hflex="1" align="center">
+                            <label sclass="cwf-listheader-label" value="Ауд. ч"/>
+                        </listheader>
+                        <listheader hflex="1" align="center">
+                            <label sclass="cwf-listheader-label" value="Всего ч"/>
+                        </listheader>
+                        <listheader  hflex="1" align="center">
+                            <label sclass="cwf-listheader-label" value="ФК"/>
+                        </listheader>
+<!--                        <listheader  hflex="1" align="center">-->
+<!--                            <label sclass="cwf-listheader-label" value="Практика"/>-->
+<!--                        </listheader>-->
+                        <listheader  hflex="1" align="center">
+                            <label sclass="cwf-listheader-label" value="ИД шахт"/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </vbox>
+        </hbox>
+        <hbox  pack="end">
+            <hbox align="center">
+                <hbox style="width: 15px; height: 15px; border: 1px solid black; background: #99ff99;"/>
+                <label value=" - Информация о предмете синхронизирована;"/>
+            </hbox>
+            <hbox align="center">
+                <hbox style="width: 15px; height: 15px; border: 1px solid black; background:#FFFE7E;"/>
+                <label value=" - Не совпадают название/idШахт/код предмета;"/>
+            </hbox>
+            <hbox align="center">
+                <hbox style="width: 15px; height: 15px; border: 1px solid black; background: #FF7373;"/>
+                <label value=" - Предмет не синхронизирован;"/>
+            </hbox>
+        </hbox>
+    </vbox>
+</vbox>

@@ -1,0 +1,91 @@
+<window id="winNotificationCreator" apply="org.edec.notificationCenter.ctrl.WinNotificationEditorCtrl" border="normal" width="90%"
+        height="90%" style="min-width: 1000px; min-height: 700px;" position="center,center" closable="true">
+    <caption>
+        <label value="Создание уведомления"/>
+    </caption>
+    <hbox hflex="1" vflex="1" style="margin: 8px">
+
+        <separator width="8px"/>
+
+        <vbox hflex="1" vflex="1">
+            <separator height="8px"/>
+
+            <hbox>
+                <label value="Тип уведомления: "/>
+                <label id="lType" style="font-weight: bold;"></label>
+            </hbox>
+
+            <separator height="8px"/>
+
+            <vbox>
+                <label value="Загловок уведомления:"/>
+                <textbox id="tbHeader" width="500px"></textbox>
+            </vbox>
+
+            <separator height="8px"/>
+            <vbox>
+                <label value="Текст уведомления:"/>
+                <textbox id="tbText" multiline="true" style="resize: none" rows="5" cols="15" width="500px" height="200px">
+                </textbox>
+            </vbox>
+
+            <separator height="8px"/>
+
+            <vbox vflex="1">
+                <label value="Список прикрепленных файлов:"/>
+                <listbox id="lbAttachedFiles" vflex="1" width="500px" emptyMessage="Нет прикрепленных файлов">
+                    <listhead>
+                        <listheader>
+                            <label sclass="cwf-listheader-label" value="Название файла"/>
+                        </listheader>
+                        <listheader width="60px" align="center">
+                            <label sclass="cwf-listheader-label" value=""/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+                <button id="btnUploadFile" label="Прикрепить файл" upload="true"/>
+            </vbox>
+
+            <separator height="8px"/>
+
+            <hbox hflex="1">
+                <button id="btnSaveNotification" label="Сохранить" width="250px" height="50px"
+                        style="font-weight: 700; font-size: 15px;"></button>
+
+                <separator width="32px"/>
+
+                <button id="btnSendNotification" label="Разослать" width="250px" height="50px"
+                        style="font-weight: 700; font-size: 15px;"></button>
+            </hbox>
+
+        </vbox>
+
+        <separator width="30px"/>
+
+        <vbox hflex="1" vflex="1">
+            <separator height="8px"/>
+
+            <label value="Список получателей:"/>
+            <listbox height="450px" id="lbReceivers" width="600px" emptyMessage="Нет получателей для рассылки" mold="paging" autopaging="true"></listbox>
+            <hbox>
+                <button id="btnAddReceiver" label="Добавить получателя"/>
+                <separator width="8px"/>
+                <button id="btnAddAll" label="Добавить Всех"/>
+            </hbox>
+
+            <groupbox>
+                <caption>Получатель</caption>
+                <hbox pack="center" align="center">
+                    <div style="width: 30px; height: 30px; background: #38D6E8; border: 1px solid black"/>
+                    <label style="line-height: 30px" value="Добавлен в список"/>
+                    <div style="width: 30px; height: 30px; background: #99ff99; border: 1px solid black; margin-left: 10px"/>
+                    <label style="line-height: 30px" value="Сохранен в рассылке"/>
+                    <div style="width: 30px; height: 30px; background: white; border: 1px solid black; margin-left: 10px"/>
+                    <label style="line-height: 30px" value="Получил уведомление"/>
+                </hbox>
+            </groupbox>
+        </vbox>
+    </hbox>
+
+
+</window>

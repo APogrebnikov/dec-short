@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="main" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="f76506a0-03d6-4c01-96a0-8cc68c74afd2">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+	<subDataset name="commissionMembers" uuid="9c94c629-bb85-4125-84a6-60a9b2647dc7">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="_THIS" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="resitSubjects" uuid="0d50fc5c-3a70-43c5-bb3b-2fe2118c0bfa">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="subjectname" class="java.lang.String">
+			<fieldDescription><![CDATA[subjectname]]></fieldDescription>
+		</field>
+		<field name="hoursCount" class="java.lang.Double">
+			<fieldDescription><![CDATA[hoursCount]]></fieldDescription>
+		</field>
+		<field name="foc" class="java.lang.String">
+			<fieldDescription><![CDATA[foc]]></fieldDescription>
+		</field>
+		<field name="type" class="java.lang.Integer">
+			<fieldDescription><![CDATA[type]]></fieldDescription>
+		</field>
+		<field name="strRatingFull" class="java.lang.String">
+			<fieldDescription><![CDATA[strRatingFull]]></fieldDescription>
+		</field>
+		<field name="subjectcode" class="java.lang.String">
+			<fieldDescription><![CDATA[subjectcode]]></fieldDescription>
+		</field>
+		<field name="semesternumber" class="java.lang.Integer">
+			<fieldDescription><![CDATA[semesternumber]]></fieldDescription>
+		</field>
+		<variable name="number" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+		</variable>
+	</subDataset>
+	<parameter name="typeProtocol" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="numberProtocol" class="java.lang.Integer">
+		<fieldDescription><![CDATA[numberProtocol]]></fieldDescription>
+	</field>
+	<field name="dateCommission" class="java.util.Date">
+		<fieldDescription><![CDATA[dateCommission]]></fieldDescription>
+	</field>
+	<field name="fioStudent" class="java.lang.String">
+		<fieldDescription><![CDATA[fioStudent]]></fieldDescription>
+	</field>
+	<field name="resitSubjects" class="java.util.List">
+		<fieldDescription><![CDATA[resitSubjects]]></fieldDescription>
+	</field>
+	<field name="сommissionMembers" class="java.util.List">
+		<fieldDescription><![CDATA[сommissionMembers]]></fieldDescription>
+	</field>
+	<field name="chairman" class="java.lang.String">
+		<fieldDescription><![CDATA[chairman]]></fieldDescription>
+	</field>
+	<field name="typeStudentMove" class="java.lang.String">
+		<fieldDescription><![CDATA[typeStudentMove]]></fieldDescription>
+	</field>
+	<field name="templateFioStudent" class="java.lang.String">
+		<fieldDescription><![CDATA[templateFioStudent]]></fieldDescription>
+	</field>
+	<field name="institute" class="java.lang.String">
+		<fieldDescription><![CDATA[institute]]></fieldDescription>
+	</field>
+	<field name="direction" class="java.lang.String">
+		<fieldDescription><![CDATA[direction]]></fieldDescription>
+	</field>
+	<field name="recordbookDate" class="java.lang.String">
+		<fieldDescription><![CDATA[recordbookDate]]></fieldDescription>
+	</field>
+	<field name="recordbook" class="java.lang.String">
+		<fieldDescription><![CDATA[recordbook]]></fieldDescription>
+	</field>
+	<field name="typeMovement" class="java.lang.String">
+		<fieldDescription><![CDATA[typeMovement]]></fieldDescription>
+	</field>
+	<field name="directionRestore" class="java.lang.String">
+		<fieldDescription><![CDATA[directionRestore]]></fieldDescription>
+	</field>
+	<field name="selectedQualification" class="java.lang.Integer">
+		<fieldDescription><![CDATA[selectedQualification]]></fieldDescription>
+	</field>
+	<field name="oldQualification" class="java.lang.Integer">
+		<fieldDescription><![CDATA[oldQualification]]></fieldDescription>
+	</field>
+	<field name="agenda" class="java.lang.String">
+		<fieldDescription><![CDATA[agenda]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="116" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="555" height="14" uuid="3e1cc7b0-ea53-49c3-bae2-29871f30a164">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ПРОТОКОЛ № " + $F{numberProtocol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="14" width="555" height="14" uuid="149d0493-0275-42f8-b0f7-31b33fb251e5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["заседания аттестационной комиссии от "  + new SimpleDateFormat("dd.MM.yyyy").format($F{dateCommission})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="40" width="555" height="20" uuid="77e2a770-7395-41fa-a553-0ed233cfb3f1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Повестка дня:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="91" width="555" height="20" uuid="d87c3c84-4af3-44a2-b980-d322911aa327"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+					<paragraph lineSpacing="Proportional" lineSpacingSize="1.5"/>
+				</textElement>
+				<text><![CDATA[Постановили:]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="60" width="555" height="30" uuid="04ea8c4f-eacf-4d2d-90cd-04b171902f02"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{agenda}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="88" splitType="Stretch">
+			<textField>
+				<reportElement positionType="Float" x="0" y="0" width="555" height="30" uuid="3b8f4d19-93b0-4a6b-b587-35228f675de8">
+					<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="12"/>
+					<paragraph firstLineIndent="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["1. Перезачесть " + $F{fioStudent} + " следующие учебные дисциплины, практики:"]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="30" width="555" height="50" uuid="839e8f89-61aa-4789-be1f-8c1865845d47">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="resitSubjects" uuid="cdd00d85-0540-4dc5-bb47-c6af7b1e6887">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{resitSubjects})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="40" uuid="0db6be33-9156-45c2-8a87-100e0b4949fc">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="74021ec6-1f72-4f39-8244-2004abfebb1e"/>
+								<box>
+									<topPen lineWidth="0.25"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[№
+п/п]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="20">
+							<textField isStretchWithOverflow="true">
+								<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="40" height="20" uuid="357546d0-594a-4a93-9061-3ff601bbaf0a"/>
+								<box>
+									<topPen lineWidth="0.25"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$V{number}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="cb3eb5bd-57c1-44fd-b210-aa1727e8d842">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="8279ba4b-de25-4b05-a254-049f53d93643"/>
+								<box>
+									<topPen lineWidth="0.25"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Блок]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="20">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="80" height="20" uuid="5239e4fc-b77f-4f85-b5f5-2e1293162a2d"/>
+								<box padding="5">
+									<topPen lineWidth="0.25"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{subjectcode} == null ? "" : $F{subjectcode}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="210" uuid="6af21892-2752-4b11-81da-d2b526e71590">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="210" height="30" uuid="24c82d14-7439-4f00-a644-aad625ab956b"/>
+								<box>
+									<topPen lineWidth="0.25"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Наименование учебных предметов, курсов, дисциплин (модулей), практики]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="20">
+							<textField isStretchWithOverflow="true">
+								<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="210" height="20" uuid="76cbd0c3-9146-4c59-aaaa-a7ff600f238f">
+									<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+								</reportElement>
+								<box leftPadding="5">
+									<topPen lineWidth="0.25"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+								<textElement verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{subjectname}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="7b23dae0-0cf6-4207-a521-0604e37035cc">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="144e6709-b3f5-4ae5-a815-a354fad7146f"/>
+								<box>
+									<topPen lineWidth="0.25"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Семестр]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="20">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="20" uuid="7c58e453-7fda-4069-9e8b-287fcfbf8f77"/>
+								<box>
+									<bottomPen lineWidth="0.25"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{semesternumber}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="1b01237d-c7cd-428d-9afa-ac87f55dd9f7">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column5"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="afd33d15-202d-4105-a500-0793550910f8"/>
+								<box>
+									<topPen lineWidth="0.25"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Трудоёмкость (ЗЕ)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="20">
+							<textField isStretchWithOverflow="true">
+								<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="70" height="20" uuid="e4f25d98-a82e-45af-a6e5-6512ea701707"/>
+								<box>
+									<topPen lineWidth="0.25"/>
+									<leftPen lineWidth="0.25"/>
+									<bottomPen lineWidth="0.25"/>
+									<rightPen lineWidth="0.25"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{subjectname}.toLowerCase().contains("прикладн") 
+&& $F{subjectname}.toLowerCase().contains("физическ")
+&& $F{subjectname}.toLowerCase().contains("культур")
+? "-"
+: ($F{hoursCount} % 36.0 == 0.0 ? (int)($F{hoursCount} / 36.0) : String.format("%.1f", $F{hoursCount} / 36.0))]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="115" uuid="b4eae7a7-d86a-489c-a7c2-10a0dc91f8a8">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column6"/>
+						<jr:columnHeader height="30" rowSpan="1">
+							<property name="com.jaspersoft.studio.unit.width" value="px"/>
+							<box>
+								<pen lineWidth="0.25"/>
+							</box>
+							<staticText>
+								<reportElement style="Default" x="0" y="0" width="115" height="30" uuid="369ca09d-b2a5-4708-b2aa-7a83cbc9fa6b">
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+								</reportElement>
+								<box>
+									<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<text><![CDATA[Форма контроля]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell height="20">
+							<textField>
+								<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="115" height="20" uuid="c9342616-97c2-4818-8e77-fe91ad326573"/>
+								<box>
+									<topPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<leftPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<bottomPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+									<rightPen lineWidth="0.25" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{strRatingFull}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+		<band height="230" splitType="Prevent">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="1" width="555" height="30" uuid="acf855cf-6ee8-42f1-9c83-94d7b6186c5a">
+					<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" firstLineIndent="10"/>
+				</textElement>
+				<text><![CDATA[2. На основании анализа представленных документов, определить следующий перечень и объем учебных дисциплин, практик, подлежащих аттестации:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="39" width="40" height="50" uuid="805409f9-8d89-47d1-824e-6c989bd98e0f"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[№ 
+п/п]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="40" y="39" width="80" height="50" uuid="55422bb4-02b4-408a-a10d-c80ea77c2f53"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Блок]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="120" y="39" width="210" height="50" uuid="b54d662a-b1de-4803-935e-3b9326e40584"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Наименование учебных
+дисциплин (модулей), практики]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="370" y="39" width="70" height="50" uuid="836b96dd-7863-4c67-b7dd-b57f1f857aa0"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Трудоёмкость (ЗЕ)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="440" y="39" width="115" height="50" uuid="cf85020d-f04b-4535-9be8-63ca50b22e2c"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Форма аттестации (экзамен, зачет, собеседование)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="89" width="40" height="20" uuid="c826d408-e8ef-4d2e-a611-5888054379a8"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="40" y="89" width="80" height="20" uuid="8b8c6e78-94a0-4fd5-aa04-5f59c55dd8bf"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="120" y="89" width="210" height="20" uuid="62ff654b-3b09-47d7-a1bc-a767447e07c6"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="370" y="89" width="70" height="20" uuid="5aec377c-dc4c-4c6b-82ff-4dcead1a8a49"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="440" y="89" width="115" height="20" uuid="91897b90-102e-4198-840d-ffec6f64a2e5"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="109" width="40" height="20" uuid="e18c5bd2-5fed-4a4f-acaf-837b34a6f0ac"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="40" y="109" width="80" height="20" uuid="ca32e45e-7286-4685-9bad-6f71e1d6f9d0"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="120" y="109" width="210" height="20" uuid="e26cee28-7970-4eb1-93d5-7b8fbb33c547"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="370" y="109" width="70" height="20" uuid="0d3f8c92-ddbf-4064-8b23-7c50e951f590"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="440" y="109" width="115" height="20" uuid="95ab8907-78a5-4822-839f-4703d5fe46fa"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="129" width="40" height="20" uuid="bc9a4d3f-16e6-4c23-b272-0179a416c28c"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="40" y="129" width="80" height="20" uuid="d4d22c2d-d61a-479d-b056-b3cd5f0835ca"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="120" y="129" width="210" height="20" uuid="a5eb4805-a30a-4a43-acd4-4159b75bf10b"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="370" y="129" width="70" height="20" uuid="21cd642a-313c-41a4-9acf-a13e53709f82"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="440" y="129" width="115" height="20" uuid="308ea0fc-a655-40bf-8603-26e6ed536a2a"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="330" y="129" width="40" height="20" uuid="8b2bf0cb-7d7d-461f-b185-1941b8845760"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="330" y="109" width="40" height="20" uuid="7eed9330-d812-4f9e-a44e-0895f10b9054"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="330" y="39" width="40" height="50" uuid="8ce9bea5-8c2a-41f2-ba7c-b253ba538ff7"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[Семестр]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="330" y="89" width="40" height="20" uuid="d52ce7d8-5cf7-482b-a1b8-943ba9e1ed15"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="20" y="170" width="260" height="30" uuid="bb06f118-a489-4e55-a77f-f5b8edb83a8e"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Председатель комиссии]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="280" y="170" width="100" height="30" uuid="78f07d8a-5702-4b6f-8eb8-e7850c7b2603"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[_____________]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="380" y="170" width="175" height="30" uuid="28e37e56-f6e8-467c-9367-f16659ed95b5"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{chairman}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="20" y="200" width="260" height="30" uuid="f9d2c2da-ef8e-4582-9757-26a5b495d63a"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Члены комиссии:]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement positionType="Float" x="280" y="200" width="275" height="30" uuid="2faacc71-8aee-42cd-a151-a547ca9269a6"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="commissionMembers" uuid="003fe68a-9fed-4b87-b1df-5c71b900e0ac">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{сommissionMembers})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="275">
+						<staticText>
+							<reportElement x="0" y="0" width="100" height="30" uuid="19376b1e-9346-4dc8-ba55-d3d0a4eb45c6"/>
+							<textElement textAlignment="Right" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<text><![CDATA[_____________]]></text>
+						</staticText>
+						<textField>
+							<reportElement x="100" y="0" width="170" height="30" uuid="303685f8-0fc2-4481-afdf-23b09a2365f9"/>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{_THIS}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

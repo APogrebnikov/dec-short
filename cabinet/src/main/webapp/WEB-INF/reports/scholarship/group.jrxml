@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="group" pageWidth="480" pageHeight="842" whenNoDataType="NoPages" columnWidth="480" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="2ea17ff6-afd7-484a-8424-ea7401bf5f0b">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+	<parameter name="realpath" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="groupname" class="java.lang.String">
+		<fieldDescription><![CDATA[groupname]]></fieldDescription>
+	</field>
+	<field name="predicatingfio" class="java.lang.String">
+		<fieldDescription><![CDATA[predicatingfio]]></fieldDescription>
+	</field>
+	<field name="predicatingpost" class="java.lang.String">
+		<fieldDescription><![CDATA[predicatingpost]]></fieldDescription>
+	</field>
+	<field name="employees" class="java.util.List">
+		<fieldDescription><![CDATA[employees]]></fieldDescription>
+	</field>
+	<field name="sections" class="java.util.List">
+		<fieldDescription><![CDATA[sections]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="21" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+			<textField>
+				<reportElement x="0" y="0" width="480" height="14" uuid="6e66d048-4e08-4857-98d0-fa6d3c5c1490">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Группа " + $F{groupname}]]></textFieldExpression>
+			</textField>
+			<subreport isUsingCache="true" runToBottom="true">
+				<reportElement x="0" y="14" width="480" height="6" uuid="348c9a9f-b90c-4a92-94ff-05540eebc39d"/>
+				<subreportParameter name="predicatingfio">
+					<subreportParameterExpression><![CDATA[$F{predicatingfio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="predicatingpost">
+					<subreportParameterExpression><![CDATA[$F{predicatingpost}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="employees">
+					<subreportParameterExpression><![CDATA[$F{employees}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{sections})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{realpath} + "section.jasper"]]></subreportExpression>
+			</subreport>
+			<break>
+				<reportElement x="0" y="20" width="100" height="1" uuid="4992bd92-2ace-48b1-894e-30c532b6350b"/>
+			</break>
+		</band>
+	</detail>
+</jasperReport>

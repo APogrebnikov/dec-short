@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="protocol" pageWidth="595" pageHeight="800" columnWidth="511" leftMargin="56" rightMargin="28" topMargin="56" bottomMargin="28" uuid="ae58f75f-de83-4acc-8698-9f87a2dccf3b">
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+	<subDataset name="comiseeman" uuid="c99d360e-c6fb-4c6f-bf1d-d5f88d4dc906">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="fio" class="java.lang.String">
+			<fieldDescription><![CDATA[fio]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="formOfControl" class="java.lang.String"/>
+	<field name="subject" class="java.lang.String">
+		<fieldDescription><![CDATA[subject]]></fieldDescription>
+	</field>
+	<field name="hoursCountStr" class="java.lang.String">
+		<fieldDescription><![CDATA[hoursCountStr]]></fieldDescription>
+	</field>
+	<field name="semesterStr" class="java.lang.String">
+		<fieldDescription><![CDATA[semesterStr]]></fieldDescription>
+	</field>
+	<field name="commissionDate" class="java.util.Date">
+		<fieldDescription><![CDATA[commissionDate]]></fieldDescription>
+	</field>
+	<field name="chairman" class="java.lang.String">
+		<fieldDescription><![CDATA[chairman]]></fieldDescription>
+	</field>
+	<field name="groupname" class="java.lang.String">
+		<fieldDescription><![CDATA[groupname]]></fieldDescription>
+	</field>
+	<field name="fio" class="java.lang.String">
+		<fieldDescription><![CDATA[fio]]></fieldDescription>
+	</field>
+	<field name="commission" class="java.util.List">
+		<fieldDescription><![CDATA[commission]]></fieldDescription>
+	</field>
+	<field name="fullCommission" class="java.util.List">
+		<fieldDescription><![CDATA[fullCommission]]></fieldDescription>
+	</field>
+	<field name="ratingStr" class="java.lang.String">
+		<fieldDescription><![CDATA[ratingStr]]></fieldDescription>
+	</field>
+	<field name="protocolNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[protocolNumber]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="500" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="0" y="116" width="510" height="14" uuid="07148b6f-807b-4c80-9c72-9ec5322d0366">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Состав комиссии:]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="130" width="310" height="14" uuid="26c451c8-657a-488c-a833-e48bc545544a">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{chairman}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="147" width="510" height="14" uuid="2440294f-871e-4612-aa27-1eba451c4e51">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="10" isItalic="false"/>
+				</textElement>
+				<text><![CDATA[Члены комиссии:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="310" y="130" width="200" height="14" uuid="3f18d33a-0416-4981-bad6-a0cd6a1e31e8">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[- председатель]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="183" width="90" height="14" uuid="c2818829-d453-4694-9ced-4c7f2caa055c">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Студент группы ]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="100" y="183" width="100" height="14" uuid="dac94661-2240-45a8-98e9-f157b875ca0b"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{groupname}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="220" y="183" width="260" height="14" uuid="f32ff198-c908-4229-9c9a-b02a96cf85b0"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="220" y="199" width="260" height="11" isPrintWhenDetailOverflows="true" uuid="84d150c9-581e-4d07-ae14-fe3eb2c81e51">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(Ф.И.О.)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="-1" y="210" width="511" height="14" uuid="cbd38a4d-78b1-439e-9411-b68d45b5b7f9">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Билет № _________ (прилагается к протоколу)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="228" width="510" height="14" uuid="1d45d70a-cb1b-4d7a-ace4-d48f24b136ea">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Дополнительно заданные вопросы:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="243" width="110" height="14" uuid="44ca4630-a4fe-4486-9f95-a0a1f6120eff">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Ф.И.О. члена комиссии:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="261" width="60" height="14" uuid="38565212-eaab-40ae-a6a4-f67d8be06b81">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[ВОПРОС-1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="281" width="60" height="14" uuid="cf5b8931-9ed2-4142-84d7-90aedc6a8fc7">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[ОТВЕТ-1]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="311" width="60" height="14" uuid="bc6f7c81-1859-4a4f-9fac-20756fe6be52">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[ВОПРОС-2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="331" width="60" height="14" uuid="8435d139-7d4e-4d4d-9951-19c60ca50c96">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[ОТВЕТ-2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="348" width="511" height="11" uuid="2f08ee63-0cc8-4858-9814-d5ced14824a8">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(устно, письменно)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="298" width="511" height="11" uuid="3a4dc96c-7c72-4afc-8f6f-c33d632c49d0">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(устно, письменно)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="415" width="150" height="14" uuid="c401ae69-9146-4958-9b2a-7b4458317207">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[Подписи членов комиссии:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="453" width="100" height="14" uuid="759972a9-3947-4678-b460-7e90e539a77d">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Приложение:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="110" y="453" width="401" height="14" uuid="8ebdd699-f984-4a71-be74-8e329f915620">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<text><![CDATA[ экзаменационный билет № ________ листы с письменными ответами  студента:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="489" width="260" height="11" uuid="35b08c78-3939-4cc4-86ea-aeaa193aea02">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(Ф.И.О.)]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="29" width="510" height="14" uuid="6928b0b7-034c-4b7c-8ce7-75db8ae011de">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Протокол № " + (($F{protocolNumber}!=null) ? $F{protocolNumber} : " ______" ) + " заседания комиссии"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="43" width="511" height="14" uuid="47395175-2d90-4693-8535-94d6a42f0253">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["по приему " + $F{formOfControl}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="57" width="510" height="14" uuid="2b3427a9-e693-475e-8748-f82d55d3a3be"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["за " + $F{semesterStr}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="15" width="510" height="14" uuid="fe8247c2-aa39-4993-b22f-e92d7f81f086">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Институт космических и информационных технологий]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="96" width="510" height="14" uuid="69214245-521b-426f-ac7f-6add91a270b8">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd.MM.yyyy").format($F{commissionDate})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="85" width="510" height="11" uuid="84158592-8404-44cb-a1ae-4f9b8115470c">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="8" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[(название дисциплины)]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="71" width="510" height="14" uuid="851fed65-bbde-4257-931c-d0322f86ef78"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["по дисциплине:  \""+ $F{subject}+"\" (" + $F{hoursCountStr} + ")"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="1" width="510" height="14" uuid="de2376b9-9eb9-43f9-bda8-11e0af8953c4">
+					<property name="local_mesure_unity" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[ФГАОУ ВО "Сибирский федеральный университет"]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="162" width="511" height="14" uuid="1b7e72c2-a313-4431-9c62-d2bdb34baef6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="comiseeman" uuid="4b959205-2976-4746-aee5-f6d9f3f01a2e">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{commission})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="14" width="511">
+						<textField>
+							<reportElement x="0" y="0" width="300" height="14" uuid="9ef9a7aa-01c8-4296-85df-7f90695fa2a6">
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							</reportElement>
+							<textFieldExpression><![CDATA[$F{fio}]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement x="300" y="0" width="211" height="14" uuid="a4c775f2-1b38-4a26-a90b-65627f1ef22a"/>
+							<text><![CDATA[- член комиссии;]]></text>
+						</staticText>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<staticText>
+				<reportElement positionType="Float" x="65" y="261" width="445" height="14" uuid="0e3a8c95-8e20-4990-9e22-a16c8583c0ce"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="65" y="281" width="445" height="14" uuid="4c4f77ac-6b26-422d-87ac-861cdf7ec4bb"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="65" y="311" width="445" height="14" uuid="697a5ee1-79e5-4d34-b02e-6f4472bfa49b"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="65" y="331" width="445" height="14" uuid="0f7f1322-7ea4-4f45-b69f-bf2e8776ca3f"/>
+				<box>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="434" width="511" height="14" uuid="912b70f7-2a6e-415d-809a-123331fd30f6">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="comiseeman" uuid="54bf6177-a87d-41e4-adf6-d9f38e5de907">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{fullCommission})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="14" width="511">
+						<textField>
+							<reportElement x="0" y="0" width="511" height="14" uuid="46740c14-270b-43b0-9207-0b7c72e28276">
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							</reportElement>
+							<textElement>
+								<font fontName="Times New Roman"/>
+							</textElement>
+							<textFieldExpression><![CDATA["______________ Ф.И.О./" + $F{fio} +"/"]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="363" width="511" height="27" uuid="ddb46ee3-502c-43e9-992b-c6b564cbfca5"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<text><![CDATA[Общая характеристика ответа: ________________________________________________________________________ __________________________________________________________________________________________________]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="473" width="260" height="14" uuid="8870008c-fc5f-4b13-9799-cc692ae3ce2c"/>
+				<box>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isUnderline="false"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="394" width="510" height="15" uuid="70877f6b-c78e-4e77-964a-5a68d2a9a8cb"/>
+				<textElement>
+					<font fontName="Times New Roman" isBold="true" isUnderline="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Оценка: " + ($F{ratingStr}.equals("")
+?"отлично/хорошо/удовлетворительно/неудовлетворительно/зачтено/не зачтено/не явился"
+:$F{ratingStr})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

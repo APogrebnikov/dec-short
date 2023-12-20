@@ -1,0 +1,39 @@
+<window id="winArchive" closable="true" position="center" width="70%" height="80%"
+    apply="org.edec.workflow.ctrl.WinArcchiveCtrl">
+    <caption vflex="min" height="30px">
+        <label id="lProcessSign" value="Процесс подписания"/>
+    </caption>
+    <vbox>
+        <hbox height="100px">
+            <vbox width="200px">
+                <label value="Дата создания бизнес-процесса" />
+                <label value="Дата окончания бизнес-процесса" />
+                <label value="Просмотреть документы" />
+            </vbox>
+            <vbox>
+                <label id="lDateBeginBP"/>
+                <label id="lDateEndBP"/>
+                <button id="btnShowArchiveAttachFile" label="Открыть" image="/imgs/pdf.png"/>
+            </vbox>
+        </hbox>
+        <listbox id="lbConfirming" vflex="1">
+            <listhead>
+                <listheader>
+                    <label sclass="cwf-listheader-label" value="Подтверждающее лицо" />
+                </listheader>
+                <listheader>
+                    <label sclass="cwf-listheader-label" value="Дата поступления" />
+                </listheader>
+                <listheader>
+                    <label sclass="cwf-listheader-label" value="Дата подтверждения" />
+                </listheader>
+                <listheader align="center">
+                    <label sclass="cwf-listheader-label" value="Статус" />
+                </listheader>
+                <listheader align="center">
+                    <label sclass="cwf-listheader-label" value="Подписывался" />
+                </listheader>
+            </listhead>
+        </listbox>
+    </vbox>
+</window>

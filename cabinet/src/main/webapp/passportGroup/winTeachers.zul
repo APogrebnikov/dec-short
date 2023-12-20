@@ -1,0 +1,41 @@
+<!--apply="org.edec.passportGroup.ctrl.WinTeachersCtrl"-->
+<window id="winTeachers" apply="org.edec.passportGroup.ctrl.WinTeachersCtrl" border="normal" width="70%"
+        height="70%" style="min-width: 1000px; min-height: 650px;" position="center,center">
+    <vlayout hflex="10" vflex="10">
+        <groupbox vflex="10" hflex="10">
+            <listbox id="listTeachers" vflex="10" hflex="7" style="float: left" checkmark="true">
+                <listhead>
+                    <listheader width="26px">
+                    </listheader>
+                    <listheader>
+                        <vbox>
+                            <label sclass="cwf-listheader-label" value="Преподаватель"/>
+                            <textbox id="tbSearchEmployee" placeholder="Поиск..."/>
+                        </vbox>
+                    </listheader>
+                    <listheader>
+                        <vbox>
+                            <label sclass="cwf-listheader-label" value="Институт"/>
+                            <textbox id="tbSearchInst" placeholder="Поиск..."/>
+                        </vbox>
+                    </listheader>
+                    <listheader>
+                        <vbox>
+                            <label sclass="cwf-listheader-label" value="Кафедра"/>
+                            <textbox id="tbSearchDep" placeholder="Поиск..."/>
+                        </vbox>
+                    </listheader>
+                </listhead>
+            </listbox>
+        </groupbox>
+        <hbox id="footer" width="100%">
+            <hbox hflex="10">
+                <button id="report_close_btn" label="Закрыть" width="150px" height="50px" image="/imgs/cross.png"
+                        hoverImage="/imgs/crossCLR.png" style="font-weight: 700; font-size: 15px;"/>
+            </hbox>
+            <button id="attach_btn" label="Прикрепить преподавателя" width="265px" height="50px"
+                    image="/imgs/addalt.png" hoverImage="/imgs/addaltCLR.png"
+                    style="font-weight: 700; font-size: 15px; float: right"/>
+        </hbox>
+    </vlayout>
+</window>

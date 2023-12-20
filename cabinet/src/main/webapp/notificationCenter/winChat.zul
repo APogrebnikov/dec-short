@@ -1,0 +1,33 @@
+<window id="winChat" apply="org.edec.notificationCenter.ctrl.WinChatCtrl"
+        border="normal"
+        width="35%"
+        height="35%"
+        style="min-width: 400px; min-height: 650px;"
+        position="center,center"
+        title="Чат"
+        closable="true">
+
+    <style src="/css/chatNew.css"/>
+
+    <vbox vflex="1" hflex="1">
+
+        <div id="divChat" hflex="1" vflex="1" style="overflow: auto;" />
+
+        <hbox hflex="1">
+            <textbox id="tbMessage"
+                     placeholder="Введите новое сообщение..."
+                     style="resize: none"
+                     rows="5"
+                     cols="15"
+                     hflex="7"
+                     height="50px">
+            </textbox>
+
+            <button id="btnSendMessage" hflex="1" image="/imgs/send.png"/>
+        </hbox>
+
+    </vbox>
+
+    <timer id="timerUnreadMessages" delay="3000" repeats="false"/>
+
+</window>

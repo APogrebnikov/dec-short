@@ -1,0 +1,41 @@
+<window id="winCreateOrderRule" apply="org.edec.signEditor.ctrl.WinCreateOrderRuleCtrl" closable="true">
+    <caption>
+        <label value="Создание типа приказа"/>
+    </caption>
+    <vlayout hflex="1" vflex="1">
+
+        <label value="Название приказа"/>
+        <textbox id="tbNameOrderRule" placeholder="Название приказа" width="500px" height="100px" multiline="true"/>
+
+        <label value="Описание приказа"/>
+        <textbox id="tbDescription" placeholder="Заголовок (описание)" width="500px" height="100px" multiline="true"/>
+
+        <label value="Заголовок приказа"/>
+        <textbox id="tbHeadDescription" placeholder="Заголовок (название)" width="500px" height="100px" multiline="true"/>
+
+        <hbox>
+            <vbox>
+                <label value="Тип приказа"/>
+                <combobox id="cmbTypeRule" placeholder="Выберите тип приказа" width="240px"/>
+            </vbox>
+            <vbox>
+                <label value="Форма контроля"/>
+                <listbox id="lbFK" rows="1" mold="select" width="120px">
+                    <listitem label="1" value="1" selected="true"/>
+                    <listitem label="2" value="2"/>
+                </listbox>
+            </vbox>
+
+            <vbox>
+                <label value="Автоматический"/>
+                <listbox id="lbIsAuto" rows="1" mold="select" width="120px">
+                    <listitem label="+" value="+" selected="true"/>
+                    <listitem label="-" value="-"/>
+                </listbox>
+            </vbox>
+        </hbox>
+
+        <button id="btnCreate" label="Сохранить"/>
+
+    </vlayout>
+</window>

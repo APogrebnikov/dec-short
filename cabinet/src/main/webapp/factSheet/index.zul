@@ -1,0 +1,117 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<div self="@define(content)" width="100%" height="100%" apply="org.edec.factSheet.ctrl.IndexPageCtrl">
+    <style src="/css/order/order_dec.css"/>
+
+    <script><![CDATA[
+        zk.afterLoad("zul.db", function () {
+            // Datebox Calendar Renderer
+            var _Cwgt = {};
+            zk.override(zul.db.CalendarPop.prototype, _Cwgt, {
+                // switch the view after redraw or open as needed
+                _setView: function (val, force) {
+                    var pscls = this.parent._sclass,
+                        args = arguments;
+                    if (pscls && pscls.indexOf('ymdbx') > -1 && pscls.indexOf(val) == -1)
+                        args = [pscls.indexOf('month') > -1? 'month' : 'year', force]; // modify arguments as needed
+                    _Cwgt._setView.apply(this, args); //call the original method
+                },
+                _chooseDate: function (target, val) {
+                    var pscls = this.parent._sclass,
+                        view = this._view,
+                        nview = (view == 'decade'? 'year' : view == 'year'? 'month' : 'day'), // next view
+                        args = arguments;
+                    if (pscls && pscls.indexOf('ymdbx') > -1 && pscls.indexOf(nview) == -1) { // next view not allowed
+                        if (view == 'year')
+                            this._setTime(val);
+                        else if (view == 'month')
+                            this._setTime(null, val, 1);
+                        this._view = 'day'; // update self status to trigger setValue
+                        args = [target, 1]; // update arguments as needed
+                    }
+                    _Cwgt._chooseDate.apply(this, args); //call the original method
+      		}
+            });
+        });
+    ]]></script>
+
+    <div hflex="1" vflex="1" style="padding: 2% 2% 1% 2%">
+        <vlayout hflex="1" vflex="1">
+            <hlayout height="40px" hflex="1">
+                <label sclass="label_title">Заявления на заказ справок</label>
+                <button id="btnAdd" style="float: right;">Добавить вручную</button>
+            </hlayout>
+            <hlayout height="40px" hflex="1">
+                <datebox readonly="true" id="dbFrom" width="150px" placeholder="Дата с" format="dd.MM.yyyy HH:mm"/>
+                <datebox readonly="true" id="dbTo" width="150px" placeholder="Дата по" format="dd.MM.yyyy HH:mm"/>
+                <button id="btnSearch" label="Найти"/>
+                <button id="btnPrint" label="Распечатать"/>
+                <button id="btnReset" label="Сброс фильтров"/>
+            </hlayout>
+            <hlayout hflex="1" vflex="1">
+                <listbox hflex="1" vflex="1" mold="paging" id="lbFactSheet">
+                    <auxhead>
+                        <auxheader>
+                            <textbox hflex="1" id="tbRegisterNumberSearch" placeholder="№ регистрации.." />
+                        </auxheader>
+                        <auxheader>
+                            <textbox hflex="1" id="tbFullNameSearch" placeholder="ФИО.." />
+                        </auxheader>
+                        <auxheader>
+                            <textbox hflex="1" id="tbGroupSearch" placeholder="Группа.." />
+                        </auxheader>
+                        <auxheader colspan="2">
+                            <textbox hflex="1" id="tbTypeSearch" placeholder="Вид.." />
+                        </auxheader>
+                        <auxheader colspan="1">
+                            <datebox width="75%" readonly="true" id="dbYear" placeholder="Год заказа"
+                                     sclass="ymdbx decade year"
+                                     format="yyyy" onCreate="self.value = new Date()"
+                                     constraint="no future, after 20180101: ${('Диапазон не может быть меньше 01.01.2018 и больше текущей даты')}"/>
+                            <button width="25%" id="btnYear" label="↓"/>
+                        </auxheader>
+                        <auxheader colspan="2">
+                            <textbox hflex="1" id="tbStatusSearch" placeholder="Статус.." />
+                        </auxheader>
+                        <auxheader colspan="1" />
+                        <auxheader colspan="1" />
+                    </auxhead>
+                    <listhead>
+                        <listheader width="130px" id="lhRegisterNumber">
+                            <label value="№ регистрации" sclass="cwf-listheader-label"/>
+                        </listheader>
+                        <listheader hflex="1" id="lhFullName">
+                            <label value="ФИО" sclass="cwf-listheader-label"/>
+                        </listheader>
+                        <listheader width="85px" id="lhGroup">
+                            <label value="Группа" sclass="cwf-listheader-label"/>
+                        </listheader>
+                        <listheader hflex="1" id="lhType">
+                            <label value="Вид" sclass="cwf-listheader-label"/>
+                        </listheader>
+                        <listheader width="40px">
+                            <label value="ГП" sclass="cwf-listheader-label"/>
+                        </listheader>
+                        <listheader width="140px">
+                            <label value="Дата подачи" sclass="cwf-listheader-label"/>
+                        </listheader>
+                        <listheader width="40px" tooltiptext="Справка создана студентом самостоятельно">
+                            <label value="CbS" sclass="cwf-listheader-label"/>
+                        </listheader>
+                        <listheader width="105px" id="lhStatus">
+                            <label value="Статус" sclass="cwf-listheader-label"/>
+                        </listheader>
+                        <listheader width="135px">
+                            <label value="Дата выполнения" sclass="cwf-listheader-label"/>
+                        </listheader>
+                        <listheader width="120px">
+                            <label value="Факт выдачи" sclass="cwf-listheader-label"/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </hlayout>
+        </vlayout>
+    </div>
+</div>
+
+

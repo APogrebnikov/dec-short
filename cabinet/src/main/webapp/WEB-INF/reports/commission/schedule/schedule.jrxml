@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.1.1.final using JasperReports Library version 6.1.1  -->
+<!-- 2021-09-13T23:26:35 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="shedule" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3e25b5ad-f75f-4b26-a2a6-32c0f02dc923">
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="subjects" uuid="ce4c3f1a-011f-438c-b716-4526cfba280c">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="subjectname" class="java.lang.String">
+			<fieldDescription><![CDATA[subjectname]]></fieldDescription>
+		</field>
+		<field name="datecommission" class="java.util.Date">
+			<fieldDescription><![CDATA[datecommission]]></fieldDescription>
+		</field>
+		<field name="classroom" class="java.lang.String">
+			<fieldDescription><![CDATA[classroom]]></fieldDescription>
+		</field>
+		<field name="teachers" class="java.lang.String">
+			<fieldDescription><![CDATA[teachers]]></fieldDescription>
+		</field>
+		<field name="groups" class="java.lang.String">
+			<fieldDescription><![CDATA[groups]]></fieldDescription>
+		</field>
+		<field name="groupstudentfionames" class="java.lang.String">
+			<fieldDescription><![CDATA[groupstudentfionames]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="fulltitle" class="java.lang.String">
+		<fieldDescription><![CDATA[fulltitle]]></fieldDescription>
+	</field>
+	<field name="subjects" class="java.util.List">
+		<fieldDescription><![CDATA[subjects]]></fieldDescription>
+	</field>
+	<field name="printGroups" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[printGroups]]></fieldDescription>
+	</field>
+	<field name="printMembersComm" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[printMembersComm]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="49" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="25" uuid="bb42446b-6fd1-4e30-8927-0659da367372"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14"/>
+				</textElement>
+				<text><![CDATA[Расписание комиссионных пересдач]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="26" width="550" height="20" uuid="29ac85f5-1d31-4576-b0da-a3e3d0571fdb"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fulltitle}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="95" splitType="Stretch">
+			<printWhenExpression><![CDATA[$F{printGroups} == false && $F{printMembersComm} == true]]></printWhenExpression>
+			<componentElement>
+				<reportElement x="0" y="4" width="550" height="60" uuid="74131712-db3e-4f56-b957-1eeedfdbcc7b">
+					<property name="net.sf.jasperreports.export.headertoolbar.table.name" value=""/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="subjects" uuid="3a752d0b-b4bd-4cde-ac64-d75ca071bd0b">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{subjects})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="110" uuid="40e25f8d-799a-4884-bbb6-79282eb59cdf">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="110" height="30" uuid="1879758b-49f1-4ea1-986a-d96f370c6d8e"/>
+								<box>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Предмет]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="110" height="30" uuid="36731e52-de6c-4656-89d1-49972dc71535"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{subjectname}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="7f0722cb-806a-4e95-8ecf-9c9c652af8a7">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="704504b0-3787-4568-9561-26705c7cd88b"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Дата]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="30" uuid="97041a50-6295-4820-894a-99dd94146263"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{datecommission}==null?"":new SimpleDateFormat("dd.MM.yyyy").format($F{datecommission})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="40" uuid="7f0722cb-806a-4e95-8ecf-9c9c652af8a7">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="704504b0-3787-4568-9561-26705c7cd88b"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Время]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="40" height="30" uuid="97041a50-6295-4820-894a-99dd94146263"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{datecommission}==null?"":new SimpleDateFormat("HH:mm").format($F{datecommission})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="c5f4758d-f608-4f94-8ef2-3373f5362917">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="9ebe8ecc-6996-4922-ad86-57d7268ddf68"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Аудитория]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="90" height="30" uuid="7cff2725-5283-4488-bf7e-c22d2a9252a1"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{classroom}==null?"":$F{classroom}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="3cec0deb-a91d-4598-8355-596c5a50a340">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="e14d5e49-ff9d-4456-80c5-6d2500747b5c"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Состав комиссии]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="80" height="30" uuid="3d98d143-f8ed-4e48-84d9-1721946b317f"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement verticalAlignment="Middle" markup="html">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{teachers}==null?"":$F{teachers}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="170" uuid="023fdec2-1e04-49b8-86ce-5862772e8815">
+						<jr:columnHeader style="Table_CH" height="30">
+							<staticText>
+								<reportElement x="0" y="0" width="170" height="30" uuid="737d7306-1a3e-49d5-a9f2-2766e9f4ddb6"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Студенты]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true" pattern="">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="170" height="30" uuid="5065a749-1479-4edb-8985-b38959b901be"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement verticalAlignment="Middle" markup="none">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{groupstudentfionames}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<break>
+				<reportElement x="0" y="69" width="99" height="1" uuid="bd93cf9c-614c-4ff7-becd-54a3c10ea5c7"/>
+			</break>
+		</band>
+		<band height="93">
+			<printWhenExpression><![CDATA[$F{printGroups} == true && $F{printMembersComm} == false]]></printWhenExpression>
+			<componentElement>
+				<reportElement stretchType="RelativeToBandHeight" x="0" y="5" width="550" height="60" uuid="72801c71-b146-4dd4-8360-43689ad2dace"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="subjects" uuid="a9ccb32f-dc95-43db-95d4-19e5f3bb53c7">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{subjects})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="220" uuid="8045d6a2-3340-4c87-a504-435a0f81fea9">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="220" height="30" uuid="02c0d8f2-6c13-46c2-b298-a5bdb198f94b"/>
+								<box>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Предмет]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="220" height="30" uuid="e83f6c49-5e22-4354-8903-66b099004a5a"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{subjectname}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="ac8f6a57-ef76-4914-9e98-8f3a116e3770">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="69f9b4d6-ed6c-47ac-970c-24621f4d0d95"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Дата]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="90" height="30" uuid="4764c8cd-b6ba-4418-be66-af053a04e857"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{datecommission}==null?"":new SimpleDateFormat("dd.MM.yyyy").format($F{datecommission})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="6747fd4e-2415-435f-960e-fd6cf6b82daa">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="c2c54b2c-ad1d-4968-9ec3-058516107644"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Время]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="90" height="30" uuid="dc9aebc8-41b3-4e75-8030-b5576f1d6a3e"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{datecommission}==null?"":new SimpleDateFormat("HH:mm").format($F{datecommission})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="15c5b400-e817-4fdb-9c13-b320b672d582">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="118a7465-c7ad-4fb2-8dce-8731e9e9fa4e"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Аудитория]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="90" height="30" uuid="a280fcc1-64d2-4d28-96d8-5a7b01107dba"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{classroom}==null?"":$F{classroom}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="38d95fb4-3560-405d-898d-7c0c6274b88e">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="dfaa562d-1e26-4b28-9acd-b1f99d717d87"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="12"/>
+								</textElement>
+								<text><![CDATA[Группы]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="30" uuid="62f91204-eea7-4709-a4d1-0608536f4063"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{groups}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<break>
+				<reportElement x="0" y="70" width="99" height="1" uuid="7905cf6d-e3f7-4315-8246-d75d4026c57a"/>
+			</break>
+		</band>
+		<band height="90">
+			<printWhenExpression><![CDATA[$F{printGroups} ==true && $F{printMembersComm} == true]]></printWhenExpression>
+			<componentElement>
+				<reportElement x="0" y="7" width="550" height="60" uuid="01edd40b-a8da-4bce-8590-6c27c5dda24a"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="subjects" uuid="bd7c8db6-6641-43d9-8f2e-c91e95b894c8">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{subjects})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="190" uuid="236c241c-5a31-46be-be9d-5c49c787f76e">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="190" height="30" uuid="a4cbc255-2dd7-4577-99da-0ce41224511d"/>
+								<box>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Предмет]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="190" height="30" uuid="f5e712c9-26e1-4e50-b742-131cc3dd6ad1"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{subjectname}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="b2156949-54cc-4f80-be7b-e1592eb62d68">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="57d48b3d-8b14-4755-9206-d4913150b5bc"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Дата]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="70" height="30" uuid="a1a9cebe-07b0-43e8-b6b3-8b6af1186a55"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{datecommission}==null?"":new SimpleDateFormat("dd.MM.yyyy").format($F{datecommission})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="7237aabf-df5f-4547-a030-e6f7e5a6a1cc">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="03ef1624-25bd-4ef9-8a2e-d18ec04b4b77"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Время]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="30" uuid="c2e5162d-e179-4131-b114-dbecd5b9ed7b"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{datecommission}==null?"":new SimpleDateFormat("HH:mm").format($F{datecommission})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="70" uuid="78a19f2c-cc56-4b66-a77c-3416477cea26">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="70" height="30" uuid="fa14fa4c-28e2-42b9-8cdc-ac4e0a387a44"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Аудитория]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="70" height="30" uuid="67b2dd3d-7b5b-48f5-a1ad-7f49db837f39"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{classroom}==null?"":$F{classroom}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="1ccf6900-91ff-4d8c-8395-fd4a65a4ed53">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="30" uuid="c4b3c3b3-a614-4112-b02e-2122dd1af7ba"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Состав]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="100" height="30" uuid="659121d3-bdbc-41cd-ab97-5124b273ba42"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement verticalAlignment="Middle" markup="html">
+									<font size="9"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{teachers}==null?"":$F{teachers}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="60" uuid="18f7751c-1e86-4a3d-9317-37568f1a6f9e">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="60" height="30" uuid="39167528-d77f-4a9f-acaf-ed0523fe520a"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="12"/>
+								</textElement>
+								<text><![CDATA[Группы]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement stretchType="RelativeToTallestObject" x="0" y="0" width="60" height="30" uuid="849a4423-3453-4d56-8f18-ab548ac89f6f"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle"/>
+								<textFieldExpression><![CDATA[$F{groups}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<break>
+				<reportElement x="0" y="72" width="98" height="1" uuid="e0a3e8c4-7cde-41a8-a632-a81e7a7b8006"/>
+			</break>
+		</band>
+		<band height="90">
+			<printWhenExpression><![CDATA[$F{printGroups} ==false && $F{printMembersComm} == false]]></printWhenExpression>
+			<componentElement>
+				<reportElement x="0" y="7" width="550" height="60" uuid="2e823dcf-591e-465d-b2ba-95fe6f8771ba"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="subjects" uuid="07e73f18-1c6a-4c24-ba7a-c2766c8d98ae">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{subjects})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="240" uuid="de429d52-a45e-4a0f-9832-275acf057971">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="240" height="30" uuid="fca71cdf-33d9-4ad0-a8f8-547908cbbe67"/>
+								<box>
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Предмет]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="240" height="30" uuid="1406ffbe-d4e1-4451-bb82-59716a414d4b"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{subjectname}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="110" uuid="d7d184b2-dae4-4267-9d86-ead13518c277">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="110" height="30" uuid="4408945e-95af-42f4-892b-42ae035d3838"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Дата]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="110" height="30" uuid="f202b01d-e2c3-43ac-be45-3666384c914b"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{datecommission}==null?"":new SimpleDateFormat("dd.MM.yyyy").format($F{datecommission})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="90" uuid="67368ed6-a00b-4eaa-90d9-2b151f177d2f">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="90" height="30" uuid="f8b63b98-27ff-444b-9489-8b66885fe865"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Время]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="90" height="30" uuid="e3210a68-c10a-4890-b03d-7a7175ed576f"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{datecommission}==null?"":new SimpleDateFormat("HH:mm").format($F{datecommission})]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="110" uuid="1a2758f3-e8a6-437c-baf9-657593de8c5e">
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="110" height="30" uuid="712f7536-c358-4b38-a5a7-deae67bfe661"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Аудитория]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="30">
+							<textField isStretchWithOverflow="true">
+								<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="110" height="30" uuid="f336f52a-a16a-47d0-811b-799836602a26"/>
+								<box topPadding="2" leftPadding="5" bottomPadding="2"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{classroom}==null?"":$F{classroom}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<break>
+				<reportElement x="0" y="72" width="98" height="1" uuid="226fb30c-6515-4a50-901f-df73a3cf6c09"/>
+			</break>
+		</band>
+	</detail>
+</jasperReport>

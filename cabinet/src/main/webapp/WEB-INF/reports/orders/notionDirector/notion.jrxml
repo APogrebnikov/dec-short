@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="notion" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0cbac26b-c1fb-4071-b0d4-e925392b7aed">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Default" isDefault="true" fontName="Courier New" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="cour.ttf" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+	<subDataset name="NotionDataset" uuid="6d6143c5-2783-4f1f-bf86-91d2393883dc">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="dateNotion" class="java.lang.String">
+			<fieldDescription><![CDATA[dateNotion]]></fieldDescription>
+		</field>
+		<field name="recordbook" class="java.lang.String">
+			<fieldDescription><![CDATA[recordbook]]></fieldDescription>
+		</field>
+		<field name="fio" class="java.lang.String">
+			<fieldDescription><![CDATA[fio]]></fieldDescription>
+		</field>
+		<field name="groupname" class="java.lang.String">
+			<fieldDescription><![CDATA[groupname]]></fieldDescription>
+		</field>
+		<field name="directionNumber" class="java.lang.String">
+			<fieldDescription><![CDATA[directionNumber]]></fieldDescription>
+		</field>
+		<field name="season" class="java.lang.String">
+			<fieldDescription><![CDATA[season]]></fieldDescription>
+		</field>
+		<field name="directionName" class="java.lang.String">
+			<fieldDescription><![CDATA[directionName]]></fieldDescription>
+		</field>
+		<field name="formOfStudy" class="java.lang.String">
+			<fieldDescription><![CDATA[formOfStudy]]></fieldDescription>
+		</field>
+		<field name="schoolYear" class="java.lang.String">
+			<fieldDescription><![CDATA[schoolYear]]></fieldDescription>
+		</field>
+		<field name="debts" class="java.lang.String">
+			<fieldDescription><![CDATA[debts]]></fieldDescription>
+		</field>
+		<field name="course" class="java.lang.String">
+			<fieldDescription><![CDATA[course]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="notions" class="java.util.List">
+		<fieldDescription><![CDATA[notions]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="802" splitType="Stretch">
+			<componentElement>
+				<reportElement x="0" y="0" width="550" height="802" uuid="17fd1d21-46c2-43d4-b724-1455303880a1">
+					<property name="net.sf.jasperreports.export.headertoolbar.table.name" value=""/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="NotionDataset" uuid="677630af-8b5f-4c8c-8828-dc73de33efd0">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{notions})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="802" width="550">
+						<staticText>
+							<reportElement x="10" y="11" width="100" height="14" uuid="5a892cc6-78cf-4b78-996d-7092151ab19e">
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							</reportElement>
+							<textElement verticalAlignment="Top">
+								<font fontName="Courier New" isBold="true"/>
+							</textElement>
+							<text><![CDATA[Представление]]></text>
+						</staticText>
+						<textField textAdjust="StretchHeight">
+							<reportElement key="" positionType="Float" x="10" y="80" width="540" height="70" uuid="ff16ebf2-b15a-4d88-b79a-b8548790fe9f"/>
+							<textElement textAlignment="Justified" markup="html">
+								<paragraph firstLineIndent="15"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Предлагаю отчислить из университета как не выполнившего обязанностей по добросовестному освоению образовательной программы и выполнению учебного плана студента (рег. " + $F{recordbook} + "), <b>" + $F{fio} + "</b>, " + $F{course} + " курс, гр. " + $F{groupname} + ", напр. " + $F{directionNumber} + " «" + $F{directionName} + "», " + $F{formOfStudy} + " форма обучения по результатам промежуточной аттестации " + $F{season} + "."]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement x="10" y="25" width="100" height="14" uuid="fd49e0e9-159b-480b-b6e4-63b502a2f9da">
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							</reportElement>
+							<textFieldExpression><![CDATA[$F{dateNotion}]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement x="425" y="10" width="120" height="14" uuid="53318bd7-7011-4e06-934c-264c90cc9364">
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							</reportElement>
+							<text><![CDATA[Ректору СФУ]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="425" y="24" width="120" height="14" uuid="3e9ce294-d253-43ee-af87-b7697717e7f3">
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							</reportElement>
+							<text><![CDATA[М.В. Румянцеву]]></text>
+						</staticText>
+						<staticText>
+							<reportElement x="25" y="52" width="120" height="14" uuid="0b0e6308-736e-4229-80dc-73076de3d554">
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							</reportElement>
+							<text><![CDATA[О студентах ИКИТ]]></text>
+						</staticText>
+						<textField textAdjust="StretchHeight">
+							<reportElement positionType="Float" x="10" y="150" width="540" height="21" uuid="0a9090ea-fbbc-4967-b4d7-3d1d98167422"/>
+							<textElement textAlignment="Justified">
+								<paragraph firstLineIndent="15"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Студент имеет задолженности по дисциплинам: " + $F{debts}]]></textFieldExpression>
+						</textField>
+						<staticText>
+							<reportElement positionType="Float" x="70" y="211" width="110" height="30" uuid="e30d9cd4-f29a-44b8-b363-c3650ba065c6"/>
+							<textElement>
+								<font isBold="true"/>
+							</textElement>
+							<text><![CDATA[Директор]]></text>
+						</staticText>
+						<staticText>
+							<reportElement positionType="Float" x="360" y="211" width="156" height="30" uuid="a19f5452-47f8-42b8-88ee-1127bea79880"/>
+							<textElement>
+								<font isBold="true"/>
+							</textElement>
+							<text><![CDATA[Д. В. Капулин]]></text>
+						</staticText>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

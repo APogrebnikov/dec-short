@@ -1,0 +1,8 @@
+<vbox hflex="1">
+    <hbox hflex="1" align="center" pack="center" height="20px">
+        <button id="btnPrevMonth" label="Предыдущий"/>
+        <label id="lCurrentMonth" value="Май" style="font-size: 12pt;"/>
+        <button id="btnNextMonth" label="Следующий"/>
+    </hbox>
+    <vbox id="vbCalendar" hflex="1" vflex="min"/>
+</vbox>

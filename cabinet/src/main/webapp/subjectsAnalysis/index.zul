@@ -1,0 +1,93 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.subjectsAnalysis.ctrl.IndexPageCtrl">
+    <hbox hflex="1" >
+        <hbox hflex="1" >
+            <combobox id="cmbFOS" placeholder="Форма обучения"/>
+            <combobox id="cmbSemester" placeholder="Семестр"/>
+            <combobox id="cmbCourse" placeholder="Курс">
+                <comboitem label="Все"/>
+                <comboitem label="1"/>
+                <comboitem label="2"/>
+                <comboitem label="3"/>
+                <comboitem label="4"/>
+                <comboitem label="5"/>
+                <comboitem label="6"/>
+            </combobox>
+            <radiogroup style="position: relative; top: 5px" >
+                <radio id="rExam" label="Экзамен" checked="true"/>
+                <radio id="rPass" label="Зачет"/>
+            </radiogroup>
+            <combobox id="cmbTotalRiskScore" placeholder="Суммарный балл риска">
+                <comboitem label="Все"/>
+                <comboitem label="0"/>
+                <comboitem label="1"/>
+                <comboitem label="2"/>
+                <comboitem label="3"/>
+                <comboitem label="4"/>
+                <comboitem label="5"/>
+            </combobox>
+        </hbox>
+        <hbox hflex="1" align="center" pack="end">
+            <button id="btnBorder">
+                Границы
+            </button>
+        </hbox>
+    </hbox>
+    <listbox id="lbExam" hflex="1" vflex="1">
+        <listhead>
+            <listheader  hflex="3"  id ="lhrSubjectExam">
+                <label sclass="cwf-listheader-label" value="Предмет"/>
+            </listheader>
+            <listheader align="center" hflex="1" id ="lhrAvgRating">
+                <label sclass="cwf-listheader-label" value="Средний балл"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrModa">
+                <label sclass="cwf-listheader-label" value="Мода среднего балла"/>
+            </listheader>
+            <listheader align="center" hflex="1" id = "lhrOneRetakeExam">
+                <label sclass="cwf-listheader-label" value="1 пересдача, %"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrMoreThanOneRetakeExam">
+                <label sclass="cwf-listheader-label" value="> 1 пересдачи, %"/>
+            </listheader>
+            <listheader align="center" hflex="1" id = "lhrThree">
+                <label sclass="cwf-listheader-label" value="Оценка 3, %"/>
+            </listheader>
+            <listheader align="center" hflex="1" id = "lhrFour">
+                <label sclass="cwf-listheader-label" value="Оценка 4, %"/>
+            </listheader>
+            <listheader align="center" hflex="1" id = "lhrFive">
+                <label sclass="cwf-listheader-label" value="Оценка 5, %"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrTwo">
+                <label sclass="cwf-listheader-label" value="Не аттестация, %"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrTotalRiskExamScore">
+                <label sclass="cwf-listheader-label" value="Суммарный балл риска"/>
+            </listheader>
+        </listhead>
+    </listbox>
+    <listbox id ="lbPass" hflex="1" vflex="1">
+        <listhead>
+            <listheader  hflex="3" id="lhrSubjectPass">
+                <label sclass="cwf-listheader-label" value="Предмет"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrOneRetakePass">
+                <label sclass="cwf-listheader-label" value="1 пересдача, %"/>
+            </listheader>
+            <listheader align="center" hflex="1" id = "lhrMoreThamOneRetakePass">
+                <label sclass="cwf-listheader-label" value="> 1 пересдачи, %"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrPass">
+                <label sclass="cwf-listheader-label" value="Зачет, %"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrNotPass">
+                <label sclass="cwf-listheader-label" value="Не аттестация, %"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrTotalPassScore">
+                <label sclass="cwf-listheader-label" value="Суммарный балл риска"/>
+            </listheader>
+        </listhead>
+    </listbox>
+</vbox>

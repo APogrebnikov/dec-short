@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="regWIthoutMarksHum" pageWidth="510" pageHeight="28" columnWidth="510" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d8c33c04-f780-4cbe-8997-2abe6acfc5e8">
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="times.ttf" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="fio" class="java.lang.String">
+		<fieldDescription><![CDATA[fio]]></fieldDescription>
+	</field>
+	<field name="recordBook" class="java.lang.String">
+		<fieldDescription><![CDATA[recordBook]]></fieldDescription>
+	</field>
+	<variable name="number" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+	</variable>
+	<detail>
+		<band height="15">
+			<textField>
+				<reportElement x="20" y="0" width="170" height="15" uuid="bfea8440-c5bf-4af2-8ac7-aa7a17fbd923">
+					<property name="local_mesure_unitx" value="pixel"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box leftPadding="2">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{fio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="190" y="0" width="100" height="15" uuid="065b685f-d7d0-4cb1-b82a-d66f92dc5d2a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{recordBook}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="20" height="15" uuid="c2c8b8c9-c42d-4398-92ce-68088bafc214">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{number}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="290" y="0" width="220" height="15" uuid="9dec6986-0521-4f82-90fc-df1bf625a472"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<text><![CDATA[]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

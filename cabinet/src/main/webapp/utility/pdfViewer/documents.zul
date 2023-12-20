@@ -1,0 +1,149 @@
+<window id="winPdfViewer" mode="modal" closable="true" width="70%" height="100%"
+        apply="org.edec.utility.pdfViewer.ctrl.PdfViewerDocumentsCtrl">
+    <caption vflex="min" height="30px">
+        <hbox hflex="1" vflex="1">
+            <span class="z-icon-gears" style="font-size: 25px; color: #fff; margin-left: 4px; margin-top: 2px; " />
+            <label value="Просмотр документов" style="margin-top: 2px; margin-left: 2px; font-family: opensans,arial,freesans,sans-serif; font-weight: 700; font-size: 18px; font-style: normal;  color: #fff;"/>
+        </hbox>
+    </caption>
+    <hbox hflex="1" vflex="1">
+        <vbox vflex="1" width="250px">
+            <vbox id="vbDocs" hflex="1"/>
+            <listbox id="lbDocSign" hflex="1" vflex="2" emptyMessage="Список файлов пуст">
+                <listhead hflex="10">
+                    <listheader hflex="10">
+                        <span class="z-icon-file-text-o"
+                              style="margin-right: 2px; font-size: 20px; color: #fff;"/>
+                        <label sclass="cwf-listheader-label" value="Приказ" />
+                    </listheader>
+                </listhead>
+            </listbox>
+            <listbox id="lbAttach" hflex="1" vflex="5" emptyMessage="Список файлов пуст">
+                <listhead hflex="10">
+                    <listheader hflex="10">
+                        <span class="z-icon-paperclip"
+                              style="margin-right: 2px; font-size: 20px; color: #fff;"/>
+                        <label sclass="cwf-listheader-label" value="Прикрепленные документы"/>
+                    </listheader>
+                </listhead>
+            </listbox>
+            <listbox id="lbCanceled" hflex="1" vflex="2" emptyMessage="Список файлов пуст">
+                <listhead hflex="10">
+                    <listheader hflex="10">
+                        <span class="z-icon-paperclip"
+                              style="margin-right: 2px; font-size: 20px; color: #fff;"/>
+                        <label sclass="cwf-listheader-label" value="Отмененные документы"/>
+                    </listheader>
+                </listhead>
+            </listbox>
+        </vbox>
+        <vbox id="vbContent" vflex="1" hflex="1">
+            <iframe id="iframePdfViwer" vflex="1" hflex="1"/>
+        </vbox>
+    </hbox>
+    <script type="text/javascript">
+        /*Инициализация процесса подписи
+        * принимает base64 данные для подписания
+        */
+        function sign(base,pdfname)
+        {
+	        var client = new LssClient(jQuery);
+	        signProc(client,base,pdfname);
+        }
+
+        /*Процесс подписания*/
+        function signProc(client,base,pdfname)
+        {
+	        var options =
+	        {
+	        base64Data: base,
+	        description: "Ведомость",
+	        documentName: pdfname,
+	        fileExtension: "pdf",
+	        isAttached: true,
+	        base64Certificate: "",
+	        };
+	
+	        //Подписание с колбэком
+	        client.sign(options).done(function(response)
+	        {
+	        if (response.IsSuccessful)
+	        {
+		        var fullresult={};
+		        var res=response.SignedData;
+		        var signCertificate = $.parseJSON(response.SignCertificateJson);
+		        fullresult.Data=res;
+                if(signCertificate!=null){
+		            fullresult.SerialNumber=signCertificate.SerialNumber;
+		            fullresult.Thumbprint=signCertificate.Thumbprint;
+		            zAu.send(new zk.Event(zk.Widget.$('$winPdfViewer'), "onFinish", fullresult, {toServer:true}));
+                }else{
+                    verifySignShadow(res, options, fullresult);
+                }
+
+	        }
+	        else
+	        {
+	            var error = response.ErrorMessage;
+	            zAu.send(new zk.Event(zk.Widget.$('$winPdfViewer'), "onErrorSign", response.ErrorMessage, {toServer:true}));
+	        }
+	        }).fail(function(error)
+		        {
+		        zAu.send(new zk.Event(zk.Widget.$('$winPdfViewer'), "onErrorSign", 'Ошибка при подписании. Запустите программу для электронной цифровой подписи!', {toServer:true}));
+		        }
+	        );
+        }
+
+        /**
+        *   Получение информации о сертификате, через скрытую проверку подписи
+        */
+        function verifySignShadow(base, options, res)
+        {
+            options["base64Data"] = base;
+            var client = new LssClient(jQuery).withBypass();
+            client.verifySign(options).done(function(response) {
+                if (response.IsSuccessful) {
+                var signCertificate = $.parseJSON(response.SignInfo[0].SignCertificateJson);
+                res.Data = base;
+                res.SerialNumber = signCertificate.SerialNumber;
+                res.Thumbprint = signCertificate.Thumbprint;
+                zAu.send(new zk.Event(zk.Widget.$('$winReport'), "onFinish", res, {toServer:true}));
+                return res;
+            } else {
+                alert(response.ErrorMessage);
+            }
+            }).fail(function(error) {
+                alert('Ошибка при вызове метода verifySign.');
+            });
+        }
+
+        //Для тестирования обнаружения подпись
+        function verifySign(base, filename)
+        {
+            var client = new LssClient(jQuery);
+	        var options = {
+                base64Data: base,
+                base64DataWithoutSign: "",
+                isAttached: true,
+                description: "",
+                documentName: filename,
+                fileExtension: "pdf",
+            };
+
+            client.verifySign(options).done(function(response) {
+                if (response.IsSuccessful) {
+                    if (response.IsVerified) {
+                        //alert('Все подписи успешно проверены.');
+                    } else {
+                        alert('Одна или несколько подписей не прошли проверку.');
+                    }
+                } else {
+                        alert(response.ErrorMessage);
+                }
+            }).fail(function(error) {
+                alert('Ошибка при вызове метода проверки подписи. Проверьте что WebUnit активна.');
+            });
+        }
+    </script>
+    <script type="text/javascript" src="../js/libs/lss-client.js"></script>
+</window>

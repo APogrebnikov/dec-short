@@ -1,0 +1,159 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<div self="@define(content)" height="100%" width="100%" apply="org.edec.efficiency.ctrl.IndexPageCtrl">
+     <tabbox id="tbEfficiency" hflex="1" vflex="1">
+        <tabs>
+            <tab id="tabProblemStudent" label="Распределение студентов"/>
+            <tab id="tabConfiguration" label="Настройка" />
+            <tab id="tabManageStudent" label="Управление студентами" />
+            <tab id="tabAllStudent" label="Все студенты в работе" />
+        </tabs>
+         <tabpanels>
+             <tabpanel>
+                 <vbox hflex="1" vflex="1">
+                     <hbox height="20px" hflex="1">
+                         <combobox id="cmbProblemStudentCourse" onCreate="cmbProblemStudentCourse.setSelectedIndex(0)">
+                             <comboitem label="Все" />
+                             <comboitem label="1" />
+                             <comboitem label="2" />
+                             <comboitem label="3" />
+                             <comboitem label="4" />
+                             <comboitem label="5" />
+                         </combobox>
+                         <textbox id="tbProblemStudentGroupname" placeholder="Группа.."/>
+                         <textbox id="tbProblemStudentFio" placeholder="ФИО студента.." />
+                         <button id="btnSearchProblemStudent" label="Поиск" />
+                     </hbox>
+                     <label value="Проблемные студенты: " />
+                     <listbox id="lbProblemGroup" hflex="1" vflex="1" emptyMessage="Необработанных проблемных студентов нет">
+                         <listhead>
+                             <listheader hflex="1">
+                                 <label value="Группа" sclass="cwf-listheader-label" />
+                             </listheader>
+                         </listhead>
+                     </listbox>
+                 </vbox>
+             </tabpanel>
+             <tabpanel>
+                 <vbox hflex="1" vflex="1">
+                     <hbox height="40px" hflex="1" align="center">
+                         <vbox pack="center">
+                             <hbox align="center">
+                                 <label id="lRedLevel" style="word-wrap: normal; display: block; width: 160px;" value="Красный уровень: 0 - 49" />
+                                 <slider id="slRed" style="background: #FF7373;" minpos="0" maxpos="50"/>
+                             </hbox>
+                             <hbox align="center">
+                                 <label id="lYellowLevel" style="word-wrap: normal; display: block; width: 160px;" value="Желтый уровень: 50 - 77" />
+                             </hbox>
+                             <hbox>
+                                 <label id="lGreenLevel" style="word-wrap: normal; display: block; width: 160px;" value="Зеленый уровень: 78 - 100" />
+                                 <slider id="slGreen" style="background: #95FF82;" minpos="50" maxpos="100" />
+                             </hbox>
+                         </vbox>
+                         <vbox pack="center">
+                             <checkbox id="chAttendance" label="Учитывать посещаемость" checked="true"/>
+                             <checkbox id="chPerformance" label="Учитывать успеваемость" checked="true"/>
+                             <checkbox id="chActivityEok" label="Учитывать активность ЭОК" checked="true"/>
+                             <checkbox id="chFizra" label="Учитывать физ-ру" checked="true"/>
+                             <checkbox id="chMagister" label="Учитывать магистров" checked="true" />
+                         </vbox>
+                         <space width="40px"/>
+                         <vbox align="center" pack="center" vflex="1">
+                             <button id="btnSave" label="Сохранить" />
+                         </vbox>
+                     </hbox>
+                     <hbox hflex="1" vflex="1">
+                         <listbox id="lbGroupConfig" vflex="1" hflex="1" emptyMessage="Список групп пуст">
+                             <listhead>
+                                 <listheader hflex="1">
+                                     <label value="Группа" sclass="cwf-listheader-label" />
+                                 </listheader>
+                                 <listheader width="60px" align="center">
+                                     <label value="Курс" sclass="cwf-listheader-label" />
+                                 </listheader>
+                                 <listheader width="100px" align="center">
+                                     <label value="Учитывать" sclass="cwf-listheader-label" />
+                                 </listheader>
+                             </listhead>
+                         </listbox>
+                         <listbox id="lbSubjectConfig" vflex="1" hflex="3" emptyMessage="Список предметов пуст">
+                             <listhead>
+                                 <listheader hflex="1">
+                                     <label value="Предмет" sclass="cwf-listheader-label" />
+                                 </listheader>
+                                 <listheader width="90px" align="center">
+                                     <label value="ФК" sclass="cwf-listheader-label" />
+                                 </listheader>
+                                 <listheader hflex="min" align="center">
+                                     <label value="ЭОК" sclass="cwf-listheader-label" />
+                                 </listheader>
+                                 <listheader width="130px" align="center">
+                                     <label value="Преподаватель" sclass="cwf-listheader-label" />
+                                 </listheader>
+                                 <listheader width="120px" align="center">
+                                     <label value="Посещаемость" sclass="cwf-listheader-label" />
+                                 </listheader>
+                                 <listheader width="130px" align="center">
+                                     <label value="Активность ЭОК" sclass="cwf-listheader-label" />
+                                 </listheader>
+                                 <listheader width="110px" align="center">
+                                     <label value="Успеваемость" sclass="cwf-listheader-label" />
+                                 </listheader>
+                             </listhead>
+                         </listbox>
+                     </hbox>
+                 </vbox>
+             </tabpanel>
+             <tabpanel>
+                <vbox hflex="1" vflex="1">
+                    <hbox height="20px" hflex="1">
+                        <combobox id="cmbManageStudentCourse" onCreate="cmbManageStudentCourse.setSelectedIndex(0)">
+                            <comboitem label="Все" />
+                            <comboitem label="1" />
+                            <comboitem label="2" />
+                            <comboitem label="3" />
+                            <comboitem label="4" />
+                            <comboitem label="5" />
+                        </combobox>
+                        <textbox id="tbManageStudentGroupname" placeholder="Группа.."/>
+                        <textbox id="tbManageStudentFio" placeholder="ФИО студента.." />
+                        <button id="btnSearchManageStudent" label="Поиск" />
+                    </hbox>
+                    <label value="Менеджер по работе со студентами"/>
+                    <listbox id="lbManageGroup" hflex="1" vflex="1" emptyMessage="Назначенных проблемных студентов нет">
+                        <listhead>
+                            <listheader hflex="1">
+                                <label value="Группа" sclass="cwf-listheader-label" />
+                            </listheader>
+                        </listhead>
+                    </listbox>
+                </vbox>
+             </tabpanel>
+             <tabpanel>
+                 <vbox hflex="1" vflex="1">
+                     <hbox height="20px" hflex="1">
+                         <combobox id="cmbCourseAllStudent" onCreate="cmbCourseAllStudent.setSelectedIndex(0)">
+                             <comboitem label="Все" />
+                             <comboitem label="1" />
+                             <comboitem label="2" />
+                             <comboitem label="3" />
+                             <comboitem label="4" />
+                             <comboitem label="5" />
+                         </combobox>
+                         <textbox id="tbAllStudentGroupname" placeholder="Группа.."/>
+                         <textbox id="tbAllStudentFio" placeholder="ФИО студента.." />
+                         <button id="btnSearchAllStudent" label="Поиск" />
+                     </hbox>
+                     <label value="Менеджер по работе со студентами"/>
+                     <listbox id="lbAllStudent" hflex="1" vflex="1" emptyMessage="Назначенных проблемных студентов нет">
+                         <listhead>
+                             <listheader hflex="1">
+                                 <label value="Группа" sclass="cwf-listheader-label" />
+                             </listheader>
+                         </listhead>
+                     </listbox>
+                 </vbox>
+             </tabpanel>
+         </tabpanels>
+     </tabbox>
+</div>

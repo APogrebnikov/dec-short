@@ -1,0 +1,10 @@
+<window id="winFillOrderInfo" closable="true" hflex="1" title="Синхронизация приказа"
+        apply="org.edec.newOrder.ctrl.WinFillOrderInfoCtrl" >
+    <vbox hflex="1">
+        <label value="Номер приказа:"/>
+        <textbox id="tbOrderNumber" hflex="1"/>
+        <label value="Дата приказа:"/>
+        <datebox id="dbOrderDate" hflex="1"/>
+        <button id="btnSync" label="Синхронизировать" hflex="1" vflex="0.5"/>
+    </vbox>
+</window>

@@ -1,0 +1,65 @@
+<window id="winRecovery" closable="true" position="center" width="60%"
+        apply="org.edec.contingentMovement.ctrl.WinRecoveryCtrl">
+    <caption>
+        <label id="lCaption" value="Восстановление"></label>
+    </caption>
+    <vbox>
+        <hbox style="margin-left: 10px;">
+            <label value="Студент:"
+                   style="font-weight: 500; color: #000000; font-size: 14px;"></label>
+            <label id="lFIO" style="text: 14pt bold TimesNewRoman;"/>
+            <button id="btnCreateNewStudent" label="Создать нового студента" visible="true"></button>
+        </hbox>
+        <separator></separator>
+        <label id="lSem" value="На какой семестр востановить:"
+               style="font-weight: 500; color: #000000; font-size: 14px; margin-left: 10px;"/>
+        <hbox style="margin-left: 10px;">
+            <combobox id="cmbFormOfStudyRecovery" readonly="true">
+                <comboitem label="Очное отд."/>
+                <comboitem label="Заочное отд."/>
+            </combobox>
+            <checkbox id="chGovernment" label="Бюджет" checked="true"/>
+            <checkbox id="chTrustagreement" label="Целевое" checked="false"/>
+            <combobox id="cmbSem" placeholder="Выберите семестр" readonly="true"/>
+        </hbox>
+        <separator></separator>
+        <label value="Полный номер приказа:"
+               style="font-weight: 500; color: #000000; font-size: 14px; margin-left: 10px;"/>
+        <textbox id="tbOrderNumber" hflex="1" placeholder="Номер приказа..." style="margin-left: 10px;"/>
+        <separator></separator>
+        <hbox>
+            <vbox>
+                <label id="lDateStart" value="Выберите с какого числа востановить:"
+                       style="font-weight: 500; color: #000000; font-size: 14px; margin-left: 10px;"/>
+                <datebox id="dpFrom" format="short " onCreate="self.value = new Date()" style="margin-left: 10px;"/>
+            </vbox>
+            <vbox>
+                <label id="lDateFinish" value="Выберите крайний срок ликвидации задолженностей:"
+                       style="font-weight: 500; color: #000000; font-size: 14px; margin-left: 10px;"/>
+                <datebox id="dpLimit" format="short " onCreate="self.value = new Date()" style="margin-left: 10px;"/>
+            </vbox>
+        </hbox>
+        <separator></separator>
+        <label id="lGroup" value="В какую группу восстанавливать:"
+               style="font-weight: 500; color: #000000; font-size: 14px; margin-left: 10px;"/>
+        <listbox id="lbGroup" rows="10" checkmark="true">
+            <auxhead>
+                <auxheader>
+                    <textbox id="tbGroupFilter" hflex="1" placeholder="Введите Группу..."/>
+                </auxheader>
+            </auxhead>
+            <listhead>
+                <listheader label="Название группы" style="color: #fff;"/>
+            </listhead>
+        </listbox>
+        <separator></separator>
+        <hbox pack="center" align="end" hflex="1">
+            <button id="btnRecovery" label="Восстановить"
+                    style="height: 40px; width: 110px; font-weight: 700;"/>
+            <button id="btnCancel" label="Отмена"
+                    style="height: 40px; width: 110px; font-weight: 300;"/>
+        </hbox>
+        <separator></separator>
+    </vbox>
+
+</window>

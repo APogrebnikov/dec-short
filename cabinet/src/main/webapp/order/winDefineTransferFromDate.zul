@@ -1,0 +1,24 @@
+<window  border="normal" contentStyle="overflow:auto;"
+        closable="false" id="winDefineTransferFromDate" apply="org.edec.order.ctrl.WinDefineTransferFromDateCtrl" width="60%" height="60%">
+    <caption>
+        <label value="Установить дату 'Перевести с'" />
+    </caption>
+    <vbox width="100%" style="">
+        <hbox>
+            <textbox id="family" placeholder="Введите фамилию..."></textbox>
+            <button id="search">Поиск</button>
+        </hbox>
+        <listbox id="searchResults" height="300px">
+            <listhead>
+                <listheader><label value="ФИО" sclass="cwf-listheader-label"/></listheader>
+                <listheader><label value="Группа" sclass="cwf-listheader-label"/></listheader>
+                <listheader><label value="Дата перевода" sclass="cwf-listheader-label"/></listheader>
+            </listhead>
+        </listbox>
+        <hbox>
+            <button id="addDocuments">Добавить файлы</button>
+            <label id="countDocuments" style="color: red; margin-left: 10px;">0</label>
+        </hbox>
+        <button id="showOrder">Сохранить и перейти к просмотру</button>
+    </vbox>
+</window>

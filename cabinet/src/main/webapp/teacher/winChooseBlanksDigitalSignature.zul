@@ -1,0 +1,24 @@
+<window id="winChooseBlankDigitalSignature " border="normal" closable="true" height="300px" width="500px" contentStyle="overflow:auto"
+        apply="org.edec.teacher.ctrl.WinChooseDigitalBlankCtrl">
+    <caption>
+        <label value="Бланки на ЭП" style="color: #000; font-size: 14px;  margin-left: 5px;"/>
+    </caption>
+      <vlayout>
+          <groupbox id = "gbNewSignature" mold = "3d" hflex="1" open = "false">
+              <caption label="Получить новый / сменить ключ "/>
+              <hbox hflex="1">
+                  <button id = "btnRequestNew" label="Заявление №1" width="220px" image="/imgs/docs.png"></button>
+                  <button id = "btnRequestAccess" label="Заявление №2" width="220px" image="/imgs/docs.png"></button>
+              </hbox>
+          </groupbox >
+          <groupbox id = "gbRestoreSignature" mold = "3d" hflex="1" open = "false">
+              <caption label="При утрате ключа"/>
+              <hbox hflex="1">
+                  <button id = "btnRequestNewAfterLoss" label = "Заявление №1" width="130px"   image="/imgs/docs.png"></button>
+                  <button id = "btnRequestAccessAfterLoss" label="Заявление №2" width="130px"   image="/imgs/docs.png"></button>
+                  <button id = "btnRequestGetBackAfterLoss" label="Заявление №3" width="130px"   image="/imgs/docs.png"></button>
+              </hbox>
+          </groupbox>
+          <button id = "btnDownloadGuide" label="Руководство пользователя ЭП" image="/imgs/pdf.png"/>
+      </vlayout>
+</window>

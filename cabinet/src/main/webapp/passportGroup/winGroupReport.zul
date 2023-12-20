@@ -1,0 +1,93 @@
+<window id="winGroupReport" apply="org.edec.passportGroup.ctrl.WinGroupReportCtrl" border="normal" width="98%"
+        height="95%" style="min-width: 1000px; min-height: 650px;" position="center,center">
+    <style>
+        div.z-listheader-content {
+        height: 250px;
+        }
+    </style>
+    <vlayout hflex="10" vflex="10">
+        <tabbox id="tb" vflex="8" hflex="10">
+            <tabs>
+                <tab label="Журнал"/>
+            </tabs>
+            <tabpanels>
+                <tabpanel style="width: 100%; height: 100%;" vflex="8" hflex="10">
+                    <listbox id="listReport" vflex="8">
+                        <listhead>
+                        </listhead>
+                    </listbox>
+                </tabpanel>
+            </tabpanels>
+        </tabbox>
+        <hbox hflex="10" style="height: 50px;">
+            <hbox hflex="5" align="top">
+                <hbox vflex="1" align="center" style="width: 60px; height: 40px; background: #FF7373;">
+                    <label style="font-size: 12px; position: absolute; margin-top: -7px; font-weight: 700; width: 60px; text-align: center;">
+                        Экзамен
+                    </label>
+                </hbox>
+                <hbox vflex="1" align="center" style="width: 60px; height: 40px; background: #4DE2F7;">
+                    <label style="font-size: 12px; position: absolute; margin-top: -7px; font-weight: 700; width: 60px; text-align: center;">
+                        Зачет
+                    </label>
+                </hbox>
+                <hbox vflex="1" align="center" style="width: 60px; height: 40px; background: #95FF82;">
+                    <label style="font-size: 12px; position: absolute; margin-top: -13px; font-weight: 700; width: 60px; text-align: center;">
+                        Курсовой проект
+                    </label>
+                </hbox>
+                <hbox vflex="1" align="center" style="width: 60px; height: 40px; background: #FFFE7E;">
+                    <label style="font-size: 12px; position: absolute; margin-top: -13px; font-weight: 700; width: 60px; text-align: center;">
+                        Курсовая работа
+                    </label>
+                </hbox>
+                <hbox vflex="1" align="center" style="width: 60px; height: 40px; background: #EDEDED;">
+                    <label style="font-size: 12px; position: absolute; margin-top: -7px; font-weight: 700; width: 60px; text-align: center;">
+                        Практика
+                    </label>
+                </hbox>
+                <hbox vflex="1" align="center">
+                    <checkbox id="chbShowNegativeMarks" label=" Показывать отрицательные оценки" checked="false"/>
+                </hbox>
+
+                <hbox  hflex="1" align="center">
+                    <vbox>
+                        <hbox align="center">
+                            <hbox style="width: 15px; height: 15px; border: 1px solid black; background: red;"/>
+                            <label value=" - отчислен "/>
+                        </hbox>
+                        <hbox  >
+                            <hbox style="width: 15px; height: 15px; border: 1px solid black; background: green;"/>
+                            <label value=" - академист"/>
+                        </hbox>
+                    </vbox>
+                    <vbox>
+                        <hbox >
+                            <hbox style="width: 15px; height: 15px; border: 1px solid black; background: blue;"/>
+                            <label value=" - слушатель"/>
+                        </hbox>
+                        <hbox >
+                            <hbox style="width: 15px; height: 15px; border: 1px solid black; background: #b3b3b3;"/>
+                            <label value=" - переведен"/>
+                        </hbox>
+                    </vbox>
+                    <vbox>
+                        <hbox >
+                            <hbox style="width: 15px; height: 15px; border: 1px solid black; background: #9c40b3;"/>
+                            <label value=" - договор"/>
+                        </hbox>
+                        <hbox >
+                            <hbox style="width: 15px; height: 15px; background: white;"/>
+                            <label value=""/>
+                        </hbox>
+                    </vbox>
+                </hbox>
+            </hbox>
+
+            <hbox id="footer">
+                <button id="report_close_btn" label="Закрыть" width="150px" height="50px" image="/imgs/cross.png"
+                        hoverImage="/imgs/crossCLR.png" style="font-weight: 700; font-size: 15px;"/>
+            </hbox>
+        </hbox>
+    </vlayout>
+</window>

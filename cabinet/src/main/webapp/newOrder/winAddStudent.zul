@@ -1,0 +1,56 @@
+<window id="winAddStudents" closable="true"
+        apply="org.edec.newOrder.ctrl.WinAddStudentCtrl" width="1000px">
+    <caption>
+        <label value="Добавить студента в приказ" />
+    </caption>
+    <hbox>
+        <label>Студент вносится в пункт:</label>
+        <combobox id="cmbListSections" readonly="true"/>
+    </hbox>
+    <hbox>
+        <vbox>
+            <label>Фамилия:</label>
+            <textbox id="tbFamily" />
+        </vbox>
+        <vbox>
+            <label>Имя:</label>
+            <textbox id="tbName" />
+        </vbox>
+        <vbox>
+            <label>Отчество:</label>
+            <textbox id="tbPatronymic" />
+        </vbox>
+        <vbox>
+            <label>Группа:</label>
+            <combobox id="cmbGroup" readonly="true"/>
+        </vbox>
+
+    </hbox>
+    <button id="btnSearchStudents" sclass="btn-search" label="Найти" style="margin-top: 10px; margin-bottom:10px"/>
+    <hbox>
+        <vbox>
+            <label>Найденные студенты:</label>
+            <listbox mold="paging" pageSize="10" multiple="true" checkmark="true" id="lbSearchStudents" height="300px" hflex="1" style="margin-bottom: 10px">
+                <listhead>
+                    <listheader sclass="cwf-listheader-label">
+                        <label sclass="cwf-listheader-label" value="Фамилия"/>
+                    </listheader>
+                    <listheader sclass="cwf-listheader-label">
+                        <label sclass="cwf-listheader-label" value="Имя"/>
+                    </listheader>
+                    <listheader sclass="cwf-listheader-label">
+                        <label sclass="cwf-listheader-label" value="Отчество"/>
+                    </listheader>
+                    <listheader sclass="cwf-listheader-label" >
+                        <label sclass="cwf-listheader-label" value="Группа"/>
+                    </listheader>
+                </listhead>
+            </listbox>
+        </vbox>
+    </hbox>
+    <hbox sclass="footer">
+        <button id="btnAddStudents">Добавить студентов</button>
+        <button id="closeSearch">Вернуться к приказу</button>
+    </hbox>
+
+</window>

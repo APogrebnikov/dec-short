@@ -1,0 +1,138 @@
+<window id="winPersonalStudent" width="80%" height="90%" closable="true"
+        apply="org.edec.studentPassport.ctrl.WinPersonalStudentCtrl" >
+    <caption>
+        <label value="Изменение данных студента"/>
+    </caption>
+    <tabbox vflex="1" hflex="1">
+        <tabs>
+            <tab label="Персональная информация" />
+            <tab label="Успеваемость" id="tabEduPerformance"/>
+            <tab label="Стипендия" id="tabEduScholarship"/>
+            <tab label="История стипендий" id="tabEduScholarshipHistory"/>
+        </tabs>
+        <tabpanels>
+            <!-- Персональная информация -->
+            <tabpanel>
+                <vbox hflex="1" vflex="1">
+                    <grid hflex="1" vflex="1">
+                        <columns>
+                            <column/>
+                            <column/>
+                        </columns>
+                        <rows>
+                            <row>
+                                <label value="Фамилия" />
+                                <textbox id="tbEditFamily" constraint="no empty" />
+                            </row>
+                            <row>
+                                <label value="Имя" />
+                                <textbox id="tbEditName" constraint="no empty"/>
+                            </row>
+                            <row>
+                                <label value="Отчество" />
+                                <textbox id="tbEditPatronymic" />
+                            </row>
+                            <row>
+                                <label value="№ Зачетной книжки" />
+                                <textbox id="tbEditRecordbook"/>
+                            </row>
+                            <row>
+                                <label value="Почта" />
+                                <textbox id="tbEditEmail" type="email" />
+                            </row>
+                            <row>
+                                <label value="Дата рождения" />
+                                <datebox id="dbEditDateOfBirth" />
+                            </row>
+                            <row>
+                                <label value="Иностранец" />
+                                <checkbox id="chForeigner" label="Иностранец" />
+                            </row>
+                            <row>
+                                <label value="Добавить недостающие семестры" />
+                                <button id="btnAddHiddenSem" label="Добавить"/>
+                            </row> <row>
+                                <label value="Имеет задолженность по оплате" />
+                                <checkbox id="chDebtor" label="Имеет задолженность"/>
+                            </row>
+                        </rows>
+                    </grid>
+                    <hbox width="100%" height="50px" pack="end">
+                        <button id="btnSaveEditStudent" label="Сохранить"/>
+                    </hbox>
+                </vbox>
+            </tabpanel>
+            <!-- Успеваемость -->
+            <tabpanel vflex="1">
+                <vbox vflex="1">
+                    <checkbox id="chDebt" label="Показывать только долги" />
+                    <listbox id="lbEduPerformance" hflex="1" vflex="1">
+                        <listhead>
+                            <listheader align="center" width="30px">
+                                <label sclass="cwf-listheader-label" value="#"/>
+                            </listheader>
+                            <listheader>
+                                <label sclass="cwf-listheader-label" value="Предмет"/>
+                            </listheader>
+                            <listheader align="center" width="140px">
+                                <label sclass="cwf-listheader-label" value="Форма контроля"/>
+                            </listheader>
+                            <listheader align="center" width="140px">
+                                <label sclass="cwf-listheader-label" value="Семестр"/>
+                            </listheader>
+                            <listheader align="center" width="100px">
+                                <label sclass="cwf-listheader-label" value="Оценка"/>
+                            </listheader>
+                        </listhead>
+                    </listbox>
+                </vbox>
+            </tabpanel>
+
+            <tabpanel vflex="1">
+                <vbox vflex="1">
+                    <listbox id="lbEduScholarship" hflex="1" vflex="1">
+                        <listhead>
+                            <listheader>
+                                <label sclass="cwf-listheader-label" value="Название"/>
+                            </listheader>
+                            <listheader align="center" width="140px">
+                                <label sclass="cwf-listheader-label" value="Дата с"/>
+                            </listheader>
+                            <listheader align="center" width="140px">
+                                <label sclass="cwf-listheader-label" value="Дата по"/>
+                            </listheader>
+                            <listheader align="center" width="50px"/>
+                        </listhead>
+                    </listbox>
+                </vbox>
+            </tabpanel>
+
+            <tabpanel vflex="1">
+                <vbox vflex="1">
+                    <listbox id="lbEduScholarshipHistory" hflex="1" vflex="1">
+                        <listhead>
+                            <listheader>
+                                <label sclass="cwf-listheader-label" value="Название"/>
+                            </listheader>
+                            <listheader align="center" width="140px">
+                                <label sclass="cwf-listheader-label" value="Дата с"/>
+                            </listheader>
+                            <listheader align="center" width="140px">
+                                <label sclass="cwf-listheader-label" value="Дата по"/>
+                            </listheader>
+                            <listheader align="center" width="140px">
+                                <label sclass="cwf-listheader-label" value="Номер приказа"/>
+                            </listheader>
+                            <listheader align="center" width="140px">
+                                <label sclass="cwf-listheader-label" value="Дата отмены"/>
+                            </listheader>
+                            <listheader align="center" width="180px">
+                                <label sclass="cwf-listheader-label" value="Номер приказа отмены"/>
+                            </listheader>
+                        </listhead>
+                    </listbox>
+                </vbox>
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+</window>

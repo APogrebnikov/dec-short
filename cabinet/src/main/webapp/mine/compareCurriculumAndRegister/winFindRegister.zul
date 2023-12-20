@@ -1,0 +1,33 @@
+<window id="winFindRegister" width="50%" height="60%"
+        apply="org.edec.mine.ctrl.compareCurriculumAndRegister.WinFindRegisterCtrl"
+        title="Поиск ведомостей" closable="true">
+
+    <listbox id="lbFindRegister" hflex="1" vflex="1">
+        <auxhead>
+            <auxheader>
+                <textbox id="tbGroupName" placeholder="Группа" hflex="1" />
+            </auxheader>
+            <auxheader>
+                <textbox id="tbSubjectName" placeholder="Предмет" hflex="1" />
+            </auxheader>
+            <auxheader>
+                <intbox id="ibSemesterNumber" placeholder="Семестр" hflex="1" />
+            </auxheader>
+            <auxheader/>
+        </auxhead>
+        <listhead>
+            <listheader width="120px">
+                <label sclass="cwf-listheader-label" value="Группа"/>
+            </listheader>
+            <listheader hflex="1">
+                <label sclass="cwf-listheader-label" value="Предмет"/>
+            </listheader>
+            <listheader width="80px">
+                <label sclass="cwf-listheader-label" value="Семестр"/>
+            </listheader>
+            <listheader width="120px">
+                <label sclass="cwf-listheader-label" value="Тип ведомости"/>
+            </listheader>
+        </listhead>
+    </listbox>
+</window>

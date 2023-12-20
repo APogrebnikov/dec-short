@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="newNote" pageWidth="595" pageHeight="842" columnWidth="468" leftMargin="85" rightMargin="42" topMargin="56" bottomMargin="56" uuid="3d30906e-3ebc-4142-8c1b-291333aaf5f0">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="subjects" uuid="89600d0e-4494-4a7a-8c2d-1a8e808162c6">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="subjectName" class="java.lang.String"/>
+		<field name="focStr" class="java.lang.String"/>
+		<field name="semesterNumber" class="java.lang.Integer"/>
+		<variable name="number" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+		</variable>
+	</subDataset>
+	<parameter name="dateNotion" class="java.util.Date"/>
+	<parameter name="dateExamination" class="java.util.Date"/>
+	<parameter name="executorFio" class="java.lang.String"/>
+	<parameter name="executorTel" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="studentFio" class="java.lang.String"/>
+	<field name="course" class="java.lang.Integer"/>
+	<field name="groupName" class="java.lang.String"/>
+	<field name="speciality" class="java.lang.String"/>
+	<field name="profile" class="java.lang.String"/>
+	<field name="debts" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="478" splitType="Stretch">
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" x="0" y="160" width="470" height="70" uuid="9790ef3b-172d-48af-8f3f-3fa04f342dea"/>
+				<textElement textAlignment="Justified" markup="styled">
+					<font size="12"/>
+					<paragraph firstLineIndent="42"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Прошу отчислить за невыполнение обязанностей по добросовестному освоению образовательной программы и выполнению учебного плана (как не прошедшего вторую повторную промежуточную аттестацию) с <u>" + 
+new SimpleDateFormat("dd.MM.yyyy").format($P{dateExamination}) +
+"</u> обучающегося <u>" + 
+$F{studentFio} + 
+"</u>,  <u>" + String.valueOf($F{course}) + "</u>  курса, группы <u>" +
+$F{groupName} + "</u>, направления подготовки <u>" + 
+$F{speciality} + "</u>" 
++ ($F{profile} != null ? ", профиля <u>" + $F{profile} + "</u>." : ".")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="236" width="470" height="14" uuid="5a541470-2017-457a-b49e-0be88c49bfbc"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Перечень академических задолженностей]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="250" width="470" height="50" uuid="49da773c-0362-41b2-920d-1322d29a79fe">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+					<property name="com.jaspersoft.studio.table.style.table_header" value="Table_TH"/>
+					<property name="com.jaspersoft.studio.table.style.column_header" value="Table_CH"/>
+					<property name="com.jaspersoft.studio.table.style.detail" value="Table_TD"/>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="subjects" uuid="9d50fea2-69c9-4ff5-b4fb-2b0645deeb12">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{debts})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:column width="40" uuid="cfa1de77-4e42-4489-b78d-29311b3eb8b2">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column1"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="40" height="30" uuid="42b1b8d5-cfee-4a5e-9de8-17a69f1817bc"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[№ п/п]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField>
+								<reportElement x="0" y="0" width="40" height="20" uuid="3864d361-cba2-42de-8888-dccf2ea77c1e"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{number} + "."]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="220" uuid="7881975c-d228-42d0-9556-6c2f1fd8cd40">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column2"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="220" height="30" uuid="4410a342-73cc-4302-9e64-70e92e76b1dd"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Наименование дисциплины]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField textAdjust="StretchHeight">
+								<reportElement x="0" y="0" width="220" height="20" uuid="76320699-f409-4681-a590-3d53b5a20923"/>
+								<box padding="5"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{subjectName}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="80" uuid="c78c6341-d21a-4b19-bc65-be22a48a4b03">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column3"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="80" height="30" uuid="76e44b3a-a2f1-4bb6-b2e6-72ee075f4184"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Семестр]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField textAdjust="StretchHeight">
+								<reportElement x="0" y="0" width="80" height="20" uuid="3fbcbe07-8a9c-4778-926d-66e46a96106f"/>
+								<box padding="5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{semesterNumber}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="130" uuid="f32f5167-8c9d-4963-807c-f99c7af6a2a6">
+						<property name="com.jaspersoft.studio.components.table.model.column.name" value="Column4"/>
+						<jr:columnHeader style="Table_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="130" height="30" uuid="ce11ea1e-cc6f-4611-b94d-4ff21b0ff6ef"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="12"/>
+								</textElement>
+								<text><![CDATA[Вид аттестации 
+(зачет / экзамен)]]></text>
+							</staticText>
+						</jr:columnHeader>
+						<jr:detailCell style="Table_TD" height="20">
+							<textField textAdjust="StretchHeight">
+								<reportElement x="0" y="0" width="130" height="20" uuid="afa2444b-6e44-4d1f-9f6f-8b42a948b21e"/>
+								<box padding="5"/>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font size="11"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$F{focStr}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="310" width="470" height="30" uuid="df04ed36-060a-48cf-8828-9e1bdea26113"/>
+				<textElement markup="styled">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Прилагаемые документы:
+Зачетная книжка, студенческий билет (<i>При наличии</i>)]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="440" width="220" height="20" uuid="0ae54b17-a2b2-4140-9c01-af781af4c153"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Директор Института]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="340" y="440" width="130" height="20" uuid="892fc9af-cd65-4a88-91c5-1698aea38a16"/>
+				<textElement>
+					<font size="12" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[Д. В. Капулин]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="220" height="30" uuid="a1b8b9ba-f4b8-4251-a5d8-7bc0952c7646"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ФГАОУ ВО
+«Сибирский федеральный университет»]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="30" width="220" height="30" uuid="66b676c9-e768-481e-8e96-040294472b6e"/>
+				<textElement>
+					<font size="12" isUnderline="true"/>
+				</textElement>
+				<text><![CDATA[ «ИНСТИТУТ КОСМИЧЕСКИХ И ИНФОРМАЦИОННЫХ ТЕХНОЛОГИЙ» ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="90" width="190" height="15" uuid="c867d6cc-511d-4a2f-995a-5e43fab4bfc2"/>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ПРЕДСТАВЛЕНИЕ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="120" width="190" height="20" uuid="139f5a1e-fc7b-4489-8e99-a80fdda1511d"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd.MM.yyyy").format($P{dateNotion})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="290" y="0" width="180" height="30" uuid="1502521f-5d8d-4d7f-9a9f-63552a6fcb13"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Ректору 
+М.В. Румянцеву]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="470" width="479" height="1" uuid="526faad1-e2d8-4d3e-a318-00ec035dfaf5"/>
+			</break>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="350" width="100" height="15" uuid="b9398e9e-6cd9-4e1b-8707-1cf1956433c0"/>
+				<textElement>
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[или]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="376" width="470" height="44" uuid="17bf6214-96bf-4d86-8e5f-208471f76648"/>
+				<textElement textAlignment="Justified">
+					<font size="12"/>
+					<paragraph firstLineIndent="42"/>
+				</textElement>
+				<text><![CDATA[Студенческий билет и / или зачетная книжка к проекту приказа не прилагается(ются), т.к. не сданы обучающимся в учебно-организационный отдел института.]]></text>
+			</staticText>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="32" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="12" width="220" height="10" uuid="f42bedc5-f7d6-4b49-85b9-cec4b450808f"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["ФИО: " + $P{executorFio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="22" width="220" height="10" uuid="50fade26-aeba-4faa-9cc4-623e02f35887"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Тел: " + $P{executorTel}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

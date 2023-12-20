@@ -1,0 +1,74 @@
+<window id="winEditCommission" width="80%" height="95%" closable="true"
+    apply="org.edec.secretaryChair.ctrl.WinEditCommissionCtrl">
+    <caption>
+        <label id="lInfoCommission" />
+    </caption>
+    <vbox hflex="1" vflex="1">
+        <hbox hflex="1" height="40px">
+            <vbox>
+                <label value="Дата комиссии" />
+                <datebox id="dbCommission" format="dd.MM.yyyy" readonly="true" />
+            </vbox>
+            <vbox>
+                <label value="Время комиссии" />
+                <timebox id="timebCommission" format="HH:mm"/>
+            </vbox>
+            <vbox>
+                <label value="Аудитория" />
+                <textbox id="tbClassroom" placeholder="Аудитория" />
+            </vbox>
+            <vbox>
+                <label value="Дата начала периода" />
+                <label id="lDateOfBeginCommission" />
+            </vbox>
+            <vbox>
+                <label value="Дата окончания периода" />
+                <label id="lDateOfEndCommission" />
+            </vbox>
+            <vbox>
+                <label value="Студенты" />
+                <button id="btnShowStudent" label="Показать" />
+            </vbox>
+            <vbox>
+                <label value="Поиск свободного времени" />
+                <button id="btnSearchFreeTime" label="Найти" />
+            </vbox>
+        </hbox>
+        <hbox hflex="1" vflex="1">
+            <vbox hflex="1" vflex="1">
+                <label value="Сотрудники кафедры:" />
+                <listbox id="lbStaff" hflex="1" vflex="1">
+                    <listhead>
+                        <listheader width="40px" align="center"/>
+                        <listheader hflex="2">
+                            <label sclass="cwf-listheader-label" value="ФИО"/>
+                        </listheader>
+                        <listheader hflex="1">
+                            <label sclass="cwf-listheader-label" value="Должность"/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </vbox>
+            <vbox hflex="1" vflex="1">
+                <label value="Состав комиссии:" />
+                <listbox id="lbCommissionStaff" hflex="1" vflex="1">
+                    <listhead>
+                        <listheader width="120px" align="center">
+                            <label sclass="cwf-listheader-label" value="Председатель"/>
+                        </listheader>
+                        <listheader hflex="2">
+                            <label sclass="cwf-listheader-label" value="ФИО"/>
+                        </listheader>
+                        <listheader hflex="1">
+                            <label sclass="cwf-listheader-label" value="Должность"/>
+                        </listheader>
+                        <listheader width="40px" align="center"/>
+                    </listhead>
+                </listbox>
+            </vbox>
+        </hbox>
+        <hbox hflex="1" height="40px" align="center" pack="center">
+            <button id="btnSaveCommission" label="Сохранить" style="height: 40px; width: 100px; font-size: 14px; font-weight: 700; color: #000;"/>
+        </hbox>
+    </vbox>
+</window>

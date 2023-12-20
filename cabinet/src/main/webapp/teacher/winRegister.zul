@@ -1,0 +1,237 @@
+<window id="winRegister" closable="true" height="95%" width="800px"
+        style="min-width: 800px;" apply="org.edec.teacher.ctrl.WinRegisterCtrl">
+    <caption>
+        <label value="Ведомости"/>
+    </caption>
+    <vlayout style="width: 100%; height: 100%;">
+        <!-- Информация о дисциплине -->
+        <hbox spacing="10px" pack="center" style="width: 100%;">
+            <vbox spacing="10px" style="width: 390px;">
+                <hbox style="width: 100%;">
+                    <vbox width="120px" align="right" style="background: #eeeeee;">
+                        <label value="Дисциплина:" style="font-weight: bold; color: #000000;"/>
+                    </vbox>
+                    <vbox>
+                        <label id="lbNameSubject" style="color: black;"/>
+                    </vbox>
+                </hbox>
+                <hbox style="width: 100%;">
+                    <vbox width="120px" align="right" style="background: #eeeeee;">
+                        <label value="Форма контроля:" style="font-weight: bold; color: #000000;"/>
+                    </vbox>
+                    <vbox>
+                        <label id="lbFormOfControl" style="color: black;"/>
+                    </vbox>
+                </hbox>
+                <hbox style="width: 100%;">
+                    <vbox width="120px" align="right" style="background: #eeeeee;">
+                        <label value="Кол-во часов:" style="font-weight: bold; color: #000000;"/>
+                    </vbox>
+                    <vbox>
+                        <label id="lbHoursCount" style="color: black;"/>
+                    </vbox>
+                </hbox>
+            </vbox>
+
+            <vbox spacing="10px" style="width: 360px;">
+                <hbox style="width: 100%;">
+                    <vbox width="120px" align="right" style="background: #eeeeee;">
+                        <label value="Семестр:" style="font-weight: bold; color: #000000;"/>
+                    </vbox>
+                    <vbox>
+                        <label id="lbSemester" style="color: black;"/>
+                    </vbox>
+                </hbox>
+                <hbox style="width: 100%;">
+                    <vbox width="120px" align="right" style="background: #eeeeee;">
+                        <label value="Группа:" style="font-weight: bold; color: #000000;"/>
+                    </vbox>
+                    <vbox>
+                        <label id="lbNameGroup" style="color: black;"/>
+                    </vbox>
+                </hbox>
+                <hbox style="width: 100%;">
+                    <vbox width="120px" align="right" style="background: #eeeeee;">
+                        <label value="Курс:" style="font-weight: bold; color: #000000;"/>
+                    </vbox>
+                    <vbox>
+                        <label id="lbCourse" style="color: black;"/>
+                    </vbox>
+                </hbox>
+            </vbox>
+        </hbox><!-- Информация о дисциплине -->
+        <space spacing="20px"/>
+        <!-- Ведомость -->
+        <hbox spacing="10px" pack="center" vflex="1" hflex="1">
+            <tabbox style="width: 760px;" vflex="1">
+                <tabs>
+                    <tab id="tabMainRegister">
+                        Основная
+                    </tab>
+                    <tab id="tabMainRetake" visible="false">
+                        Общая пересдача
+                    </tab>
+                    <tab id="tabIndividualRetake">
+                        Индивидуальные пересдачи
+                    </tab>
+                </tabs>
+                <tabpanels id="tabPanelsRegister">
+                    <!-- Основная -->
+                    <tabpanel>
+                        <vbox style="width: 100%;" vflex="1">
+                            <hbox style="margin: 5px; ">
+                                <label value="Дата проведения: " style="color: #000000;"/>
+                                <label id="lblMainRegisterDate" style="color: #000000;"/>
+                                <label id="lblMainRegisterErrorDate" style="color: red" sclass="b" />
+                            </hbox>
+                            <listbox id="lbMainRegister" emptyMessage="Нет студентов" vflex="1">
+                                <listhead style="width: 50px;">
+                                    <listheader label="" width="30px"/>
+                                    <listheader
+                                            style="text-align: center;">
+                                        <label sclass="cwf-listheader-label" value="Студент"/>
+                                    </listheader>
+                                    <listheader>
+                                        <hbox pack="center" style="width: 100%;">
+                                            <label sclass="cwf-listheader-label" value="Оценка" style="font-weight: 700;"/>
+                                            <space spacing="5px"/>
+                                            <combobox id="cmbRatingMainRegister" readonly="true" visible="false"
+                                                      style="width: 100px; color: #000000;">
+                                            </combobox>
+                                            <button id="btnEnterRatingMainRegister" label="Ввод" visible="false" style="width: 80px; font-weight: 700; color: #000000;"/>
+                                        </hbox>
+                                    </listheader>
+                                    <listheader id="lhrThemeMainRegister" visible="false"
+                                                style="width: 50px; text-align: center;">
+                                        <label sclass="cwf-listheader-label" value="Тема"/>
+                                    </listheader>
+                                    <listheader id = "lhrShowMemo" align="center" visible="false" width="70px">
+                                    </listheader>
+                                </listhead>
+                            </listbox>
+                            <hbox style="width: 100%;" pack="right" visible="true" id="hboxMainRegisterBottomPanel" height="40px">
+                                <hbox hflex="1" align="left">
+                                    <button id="btnCorrectRatingRequestSuccess"
+                                            visible="false"
+                                            style="height: 40px; width: 100px; font-size: 14px; font-weight: 700; color: #000000;"
+                                            label="Выбрать"/>
+                                    <button id="btnCorrectRatingRequestCancel"
+                                            visible="false"
+                                            style="height: 40px; width: 100px; font-size: 14px; font-weight: 700; color: #000000;"
+                                            label="Отмена"/>
+                                    <button id="btnCorrectRatingRequest"
+                                            visible="false"
+                                            style="height: 40px; width: 200px; font-size: 14px; font-weight: 700; color: #000000;"
+                                            label="Корректировка оценок"/>
+                                    <button id = "btnBlankForDigitalSignature"
+                                            label="Бланки на ЭП"
+                                            image="/imgs/docs.png"
+                                            style="height: 40px; width: 140px; font-size: 12px; font-weight: 100; color: #000000;align:left ">
+                                    </button>
+                                </hbox>
+
+                                <button id="btnStudentListMainRegisterPrint" label="Список"
+                                        image="/imgs/pdf.png" visible="true"
+                                        style="height: 40px; width: 100px; font-size: 14px; font-weight: 700; color: #000000;"/>
+                                <button id="btnMainRegisterPrint" label="Печать ведомости"
+                                        visible="false"/>
+                            </hbox>
+                            <vbox align="right" hflex="1">
+                                <label id="lblMainRegisterSignStatusInfo" hflex="1"
+                                       style="color: #000000; padding: 20px; "/>
+                            </vbox>
+                        </vbox>
+                    </tabpanel>
+                    <!-- Общая пересдача -->
+                    <tabpanel>
+                        <vbox style="width: 100%;" vflex="1">
+                            <hbox style="margin: 5px; ">
+                                <label id="lblMainRetakeDate" style="color: #000000;"/>
+                            </hbox>
+                            <listbox id="lbMainRetakeRegister" vflex="1">
+                                <listhead>
+                                    <listheader label="" style="width: 30px;"/>
+                                    <listheader
+                                            style="text-align: center;">
+                                        <label value="Студент" sclass="cwf-listheader-label"/>
+                                    </listheader>
+                                    <listheader>
+                                        <separator spacing="5px"/>
+                                        <hbox pack="center" style="width: 100%;">
+                                            <label sclass="cwf-listheader-label" value="Оценка"
+                                                   style="font-weight: 700;"/>
+                                            <space spacing="5px"/>
+                                            <combobox id="cmbRatingMainRetakeRegister" readonly="true" visible="false"
+                                                      style="width: 100px; color: #000000;">
+                                            </combobox>
+                                            <space spacing="5px"/>
+                                            <button id="btnEnterRatingMainRetakeRegister" label="Ввод" visible="false"
+                                                    style="width: 100px; font-weight: 700; color: #000000;"/>
+                                        </hbox>
+                                    </listheader>
+                                    <listheader id="lhrThemeMainRetakeRegister" visible="false"
+                                                style="width: 50px;">
+                                        <label sclass="cwf-listheader-label" value="Тема"/>
+                                    </listheader>
+                                    <listheader id = "lhrShowMemoMainRetake" align="center" visible="false" width="70px">
+                                    </listheader>
+                                </listhead>
+                            </listbox>
+                            <hbox style="width: 100%;" pack="right">
+                                <hbox hflex="1" align="left">
+                                    <button id="btnCorrectMainRetakeRatingRequestSuccess"
+                                            visible="false"
+                                            style="height: 40px; width: 100px; font-size: 14px; font-weight: 700; color: #000000;"
+                                            label="Выбрать"/>
+                                    <button id="btnCorrectMainRetakeRatingRequestCancel"
+                                            visible="false"
+                                            style="height: 40px; width: 100px; font-size: 14px; font-weight: 700; color: #000000;"
+                                            label="Отмена"/>
+                                    <button id="btnCorrectMainRetakeRatingRequest"
+                                            visible="false"
+                                            style="height: 40px; width: 200px; font-size: 14px; font-weight: 700; color: #000000;"
+                                            label="Корректировка оценок"/>
+                                </hbox>
+                                <button id="btnPrintStudentListMainRetakeRegister" label="Список студентов"
+                                        image="/imgs/pdf.png" visible="false"
+                                        style="height: 40px; width: 200px; font-size: 14px; font-weight: 700; color: #000000;"/>
+                                <button id="btnPrintMainRetakeRegister" label="Печать ведомости"
+                                        image="/imgs/pdf.png"
+                                        style="height: 40px; width: 200px; font-size: 14px; font-weight: 700; color: #000000;"
+                                        visible="false"/>
+                            </hbox>
+                            <vbox align="right" hflex="1">
+                                <label id="lblMainRetakeRegisterSignStatusInfo" hflex="1"
+                                       style="color: #000000; padding: 20px;"/>
+                            </vbox>
+                        </vbox>
+                    </tabpanel>
+                    <!-- Индивидуальные пересдачи -->
+                    <tabpanel>
+                        <vbox style="width: 100%;" vflex="1">
+                            <button id="btnOpenRegisterRequest" label="Заявки на открытие ведомостей"/>
+                            <listbox id="lbIndivRetakeRegister" vflex="1">
+                                <listhead>
+                                    <listheader style="text-align: center;">
+                                        <label sclass="cwf-listheader-label" value="Студент"/>
+                                    </listheader>
+                                    <listheader style="text-align: center; width: 140px;">
+                                        <label sclass="cwf-listheader-label" value="Сроки"/>
+                                    </listheader>
+                                    <listheader style="text-align: center; width: 140px;">
+                                        <label sclass="cwf-listheader-label" value="Оценка"/>
+                                    </listheader>
+                                    <listheader style="text-align: center; color: #000000; width: 140px;"/>
+                                    <listheader id="lhrThemeIndivRegister" visible="false" style="width: 50px;">
+                                        <label sclass="cwf-listheader-label" value="Тема"/>
+                                    </listheader>
+                                </listhead>
+                            </listbox>
+                        </vbox>
+                    </tabpanel>
+                </tabpanels>
+            </tabbox>
+        </hbox>
+    </vlayout>
+    <space spacing="10px"/>
+</window>

@@ -1,0 +1,1279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="deductionOrder" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="482" leftMargin="85" rightMargin="28" topMargin="56" bottomMargin="56" uuid="dc19edf6-1675-46c3-8b9e-e70a2ff0f7cb">
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+	<style name="Table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="matching" uuid="6ccfad9c-2797-4ecb-be83-68167ba64879">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="role" class="java.lang.String">
+			<fieldDescription><![CDATA[role]]></fieldDescription>
+		</field>
+		<field name="fio" class="java.lang.String">
+			<fieldDescription><![CDATA[fio]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="studentsIndividual" uuid="905cadee-f39d-4261-8d1d-be5fb836548e">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="formofstudy" class="java.lang.String"/>
+		<field name="recordbook" class="java.lang.String"/>
+		<field name="fio" class="java.lang.String"/>
+		<field name="course" class="java.lang.Integer"/>
+		<field name="groupname" class="java.lang.String"/>
+		<field name="speciality" class="java.lang.String"/>
+		<field name="economyformofstudy" class="java.lang.String"/>
+		<field name="date1" class="java.util.Date"/>
+		<field name="date2" class="java.util.Date"/>
+		<field name="foundation" class="java.lang.String"/>
+		<field name="sex" class="java.lang.Integer">
+			<fieldDescription><![CDATA[sex]]></fieldDescription>
+		</field>
+		<variable name="countNumber" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="section" uuid="307d89f8-25bd-4b8c-a8a6-3ed08b3ab527">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<parameter name="typeSection" class="java.lang.Integer"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="description" class="java.lang.String">
+			<fieldDescription><![CDATA[description]]></fieldDescription>
+		</field>
+		<field name="foundation" class="java.lang.String">
+			<fieldDescription><![CDATA[foundation]]></fieldDescription>
+		</field>
+		<field name="subsections" class="java.util.List">
+			<fieldDescription><![CDATA[subsections]]></fieldDescription>
+		</field>
+		<field name="courses" class="java.util.List">
+			<fieldDescription><![CDATA[courses]]></fieldDescription>
+		</field>
+		<variable name="countNumber" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="course" uuid="895aec0a-d104-4111-9dd6-9ac72b6f6d37">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<parameter name="typeCourse" class="java.lang.Integer"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="course" class="java.lang.Integer">
+			<fieldDescription><![CDATA[course]]></fieldDescription>
+		</field>
+		<field name="groups" class="java.util.List">
+			<fieldDescription><![CDATA[groups]]></fieldDescription>
+		</field>
+		<field name="fullcourse" class="java.lang.String">
+			<fieldDescription><![CDATA[fullcourse]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="group" uuid="348ef538-a0bd-42ae-89f0-c7dd4716b4a9">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="groupname" class="java.lang.String">
+			<fieldDescription><![CDATA[groupname]]></fieldDescription>
+		</field>
+		<field name="students" class="java.util.List">
+			<fieldDescription><![CDATA[students]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="student" uuid="84a35e33-0a42-4ead-886e-52d34ecac306">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="fio" class="java.lang.String">
+			<fieldDescription><![CDATA[fio]]></fieldDescription>
+		</field>
+		<field name="recordbook" class="java.lang.String">
+			<fieldDescription><![CDATA[recordbook]]></fieldDescription>
+		</field>
+		<field name="scholarship" class="java.lang.String">
+			<fieldDescription><![CDATA[scholarship]]></fieldDescription>
+		</field>
+		<field name="INN" class="java.lang.String"/>
+		<variable name="countNumber" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+		</variable>
+	</subDataset>
+	<parameter name="realPath" class="java.lang.String"/>
+	<parameter name="type" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="descriptiontitle" class="java.lang.String">
+		<fieldDescription><![CDATA[descriptiontitle]]></fieldDescription>
+	</field>
+	<field name="institute" class="java.lang.String">
+		<fieldDescription><![CDATA[institute]]></fieldDescription>
+	</field>
+	<field name="ordernumber" class="java.lang.String">
+		<fieldDescription><![CDATA[ordernumber]]></fieldDescription>
+	</field>
+	<field name="datesign" class="java.util.Date">
+		<fieldDescription><![CDATA[datesign]]></fieldDescription>
+	</field>
+	<field name="typeorder" class="java.lang.String">
+		<fieldDescription><![CDATA[typeorder]]></fieldDescription>
+	</field>
+	<field name="printorder" class="java.lang.Boolean">
+		<fieldDescription><![CDATA[printorder]]></fieldDescription>
+	</field>
+	<field name="formofstudy" class="java.lang.String">
+		<fieldDescription><![CDATA[formofstudy]]></fieldDescription>
+	</field>
+	<field name="predicatingpost" class="java.lang.String"/>
+	<field name="predicatingfio" class="java.lang.String"/>
+	<field name="executorfio" class="java.lang.String"/>
+	<field name="executortel" class="java.lang.String"/>
+	<field name="employees" class="java.util.List">
+		<fieldDescription><![CDATA[employees]]></fieldDescription>
+	</field>
+	<field name="individualsStudents" class="java.util.List"/>
+	<field name="certfio" class="java.lang.String">
+		<fieldDescription><![CDATA[certfio]]></fieldDescription>
+	</field>
+	<field name="certnumber" class="java.lang.String">
+		<fieldDescription><![CDATA[certnumber]]></fieldDescription>
+	</field>
+	<field name="sections" class="java.util.List">
+		<fieldDescription><![CDATA[sections]]></fieldDescription>
+	</field>
+	<field name="descriptiontitle2" class="java.lang.String">
+		<fieldDescription><![CDATA[descriptiontitle2]]></fieldDescription>
+	</field>
+	<field name="groups" class="java.util.List">
+		<fieldDescription><![CDATA[groups]]></fieldDescription>
+	</field>
+	<variable name="countNumber" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+	</variable>
+	<title>
+		<band height="205" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="149" width="320" height="3" uuid="217cf696-b549-4a76-874b-a7902fda017e"/>
+				<textElement markup="html">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{typeorder}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="" x="250" y="96" width="116" height="14" uuid="9613505f-dde1-403e-b871-8882644e36ea">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{datesign}!=null)?(new SimpleDateFormat("dd.MM.yyyyг.").format($F{datesign})):""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="0" width="482" height="17" uuid="b400a33a-22e6-43f0-b81f-04ef16a761a2">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Министерство науки и высшего образования Российской федерации]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="75" width="482" height="17" uuid="0d51ed11-6c1d-4045-89f7-0e4664889c51">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[ПРИКАЗ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="366" y="96" width="116" height="14" uuid="6bd357cf-b497-4e89-85b7-c808330ec88f">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<box>
+					<bottomPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{ordernumber}!=null)?"№ "+$F{ordernumber}:""]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="17" width="482" height="14" uuid="b6770562-6d4d-4e03-aaf7-e92d88b6dc5e">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Федеральное государственное автономное образовательное учреждение]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="31" width="482" height="14" uuid="9196d526-4bd5-4ea8-b9bb-61d924fdbaab">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[высшего образования]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="45" width="482" height="17" uuid="43b4f4fd-f98b-47b9-87bf-8660c80b572f">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[«СИБИРСКИЙ ФЕДЕРАЛЬНЫЙ УНИВЕРСИТЕТ»]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="0" y="124" width="250" height="17" uuid="166ccda4-c1ec-4ceb-8354-eee172283709">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{formofstudy}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="161" width="482" height="1" uuid="fa989066-7cad-42d8-b3ef-e019c7703016">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph firstLineIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descriptiontitle}==null?"":$F{descriptiontitle}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="96" width="250" height="28" uuid="ba4ce76b-921b-41aa-b6bb-26243954f969"/>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{institute}.toUpperCase()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="" positionType="Float" x="0" y="173" width="90" height="17" uuid="92022e41-e80a-4eb8-9f70-42d1bba34c60">
+					<printWhenExpression><![CDATA[$F{printorder}==true]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[ПРИКАЗЫВАЮ:]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="202" width="490" height="1" uuid="94346d40-8148-4adf-8b2c-42757df0c0fd">
+					<printWhenExpression><![CDATA[$P{type}==1]]></printWhenExpression>
+				</reportElement>
+			</break>
+		</band>
+	</title>
+	<detail>
+		<band height="50">
+			<printWhenExpression><![CDATA[$P{type}==0]]></printWhenExpression>
+			<componentElement>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="482" height="50" uuid="1faa0b65-5a77-4df6-b2cf-4e2f70defd54">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.table.name" value=""/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="studentsIndividual" uuid="258c802d-80ea-4346-bd85-6453c78806e8">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{individualsStudents})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="50" width="482">
+						<textField isStretchWithOverflow="true">
+							<reportElement x="0" y="0" width="482" height="14" uuid="72745dbe-abdd-438d-89f4-5f71c1d2776e">
+								<property name="local_mesure_unitheight" value="pixel"/>
+							</reportElement>
+							<textElement textAlignment="Justified">
+								<font fontName="Times New Roman" size="12"/>
+								<paragraph firstLineIndent="15" spacingBefore="0"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{countNumber}+". (# " + $F{recordbook} + ") " +$F{fio}+", "+$F{course}+" курс, гр. " + $F{groupname} + ", " + $F{speciality} + ", " + $F{formofstudy}+", "+($F{sex} ==1 ?" обучающегося " : "обучающуюся")+" "+$F{economyformofstudy}+", отчислить по собственному желанию с " + new SimpleDateFormat("dd.MM.yyyyг.").format($F{date1})]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="14" width="482" height="3" uuid="ab0bd7dc-5284-4ec9-b1d1-d489ade6caab">
+								<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+								<property name="local_mesure_unity" value="pixel"/>
+								<property name="com.jaspersoft.studio.unit.y" value="px"/>
+								<property name="local_mesure_unitheight" value="pixel"/>
+								<printWhenExpression><![CDATA[$F{date2} != null]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Justified">
+								<font size="12"/>
+								<paragraph firstLineIndent="15"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Ранее назначенные выплаты отменить с " + new SimpleDateFormat("dd.MM.yyyyг.").format($F{date2})]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="27" width="482" height="12" uuid="db447d2c-43e5-4d4e-b54b-0f9a012c83a7">
+								<property name="local_mesure_unitheight" value="pixel"/>
+							</reportElement>
+							<textElement textAlignment="Justified">
+								<font fontName="Times New Roman" size="12"/>
+								<paragraph lineSpacing="Single" firstLineIndent="15" spacingBefore="0" spacingAfter="0"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Прилагаемые документы: " + $F{foundation}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="55">
+			<printWhenExpression><![CDATA[($P{type}==4)||($P{type}==5)]]></printWhenExpression>
+			<componentElement>
+				<reportElement x="0" y="0" width="482" height="55" uuid="442c82d8-e746-4baf-82b6-401a4259089c"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="section" uuid="b408e94c-b4a7-438c-95ab-02a95f3e56d0">
+						<datasetParameter name="REPORT_MAX_COUNT">
+							<datasetParameterExpression><![CDATA[$F{sections}.size()]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="typeSection">
+							<datasetParameterExpression><![CDATA[$P{type}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{sections})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="55" width="482">
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="0552dc24-5638-4458-9308-bda85c001bd0"/>
+							<textElement textAlignment="Justified">
+								<font size="12"/>
+								<paragraph firstLineIndent="15"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{countNumber}+") "+$F{description}]]></textFieldExpression>
+						</textField>
+						<componentElement>
+							<reportElement positionType="Float" x="0" y="14" width="482" height="30" uuid="9e39b6ae-a85d-49dd-be66-4ec99b6e8f94"/>
+							<jr:list printOrder="Vertical">
+								<datasetRun subDataset="course" uuid="cb2fa394-c649-451b-8d5e-15771d2e1560">
+									<datasetParameter name="typeCourse">
+										<datasetParameterExpression><![CDATA[$P{typeSection}]]></datasetParameterExpression>
+									</datasetParameter>
+									<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{courses})]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="30" width="482">
+									<textField isStretchWithOverflow="true">
+										<reportElement positionType="Float" x="0" y="0" width="482" height="1" uuid="1265c6c3-3683-48eb-906e-eea29efde9e9">
+											<printWhenExpression><![CDATA[$P{typeCourse}==4]]></printWhenExpression>
+										</reportElement>
+										<textElement textAlignment="Center">
+											<font size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA["На " + $F{course} + " курс"]]></textFieldExpression>
+									</textField>
+									<componentElement>
+										<reportElement positionType="Float" x="0" y="2" width="482" height="28" uuid="2298eea8-26a5-4daf-90e9-ca137772594d"/>
+										<jr:list printOrder="Vertical">
+											<datasetRun subDataset="group" uuid="733942e9-2b6c-4937-b5d3-d6750fe7d7d2">
+												<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{groups})]]></dataSourceExpression>
+											</datasetRun>
+											<jr:listContents height="28" width="482">
+												<textField isStretchWithOverflow="true">
+													<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="953e7fd0-eec0-491c-b4f2-b6dc9f52d789">
+														<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+													</reportElement>
+													<textElement>
+														<font size="12"/>
+													</textElement>
+													<textFieldExpression><![CDATA["Группа " + $F{groupname}]]></textFieldExpression>
+												</textField>
+												<componentElement>
+													<reportElement positionType="Float" x="0" y="14" width="482" height="14" uuid="67a16ed1-e784-4c15-9406-089f62f6bf42">
+														<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+													</reportElement>
+													<jr:list printOrder="Vertical">
+														<datasetRun subDataset="student" uuid="04e7f6be-bba8-4c53-8d02-6c8ffabd1eae">
+															<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{students})]]></dataSourceExpression>
+														</datasetRun>
+														<jr:listContents height="14" width="482">
+															<textField isStretchWithOverflow="true">
+																<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="91ebffcb-6b00-42f0-afb4-0314dcb63a8f"/>
+																<textElement>
+																	<font size="12"/>
+																	<paragraph firstLineIndent="15"/>
+																</textElement>
+																<textFieldExpression><![CDATA[$V{countNumber}+". (#"+$F{recordbook}+") "+$F{fio}]]></textFieldExpression>
+															</textField>
+														</jr:listContents>
+													</jr:list>
+												</componentElement>
+											</jr:listContents>
+										</jr:list>
+									</componentElement>
+									<textField isStretchWithOverflow="true">
+										<reportElement positionType="Float" x="0" y="1" width="482" height="1" uuid="ee6dbcb2-cabc-43d4-a16f-16bcbd7e4f75">
+											<printWhenExpression><![CDATA[$P{typeCourse}==5]]></printWhenExpression>
+										</reportElement>
+										<textElement textAlignment="Left">
+											<font size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{fullcourse}]]></textFieldExpression>
+									</textField>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="85" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{type}==3]]></printWhenExpression>
+			<componentElement>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="482" height="85" uuid="0a01ccd9-0343-4a08-8823-f7b92dcef477">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="section" uuid="ddc7f8a8-5d8d-4afe-af20-b0c64aeb71af">
+						<datasetParameter name="REPORT_MAX_COUNT">
+							<datasetParameterExpression><![CDATA[$F{sections}.size()]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{sections})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="89" width="482">
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="9d20d1da-3410-4205-ad81-4c3264eaed33">
+								<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							</reportElement>
+							<textElement textAlignment="Justified">
+								<font size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{countNumber}+". "+$F{description}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="71" width="482" height="18" isRemoveLineWhenBlank="true" uuid="5a6a09a0-6782-4c6b-8eef-d193516d1f6c">
+								<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+								<printWhenExpression><![CDATA[($P{REPORT_MAX_COUNT}-$V{REPORT_COUNT})==0]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Justified">
+								<font size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Основание: " + $F{foundation}]]></textFieldExpression>
+						</textField>
+						<componentElement>
+							<reportElement positionType="Float" x="0" y="19" width="482" height="51" uuid="3dd7d12e-f049-49cb-b12f-0646ef533719">
+								<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							</reportElement>
+							<jr:list printOrder="Vertical">
+								<datasetRun subDataset="section" uuid="09624a59-4b5d-49da-af78-9c459f56bcd2">
+									<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{subsections})]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="51" width="482">
+									<textField isStretchWithOverflow="true">
+										<reportElement positionType="Float" x="0" y="0" width="482" height="1" uuid="0251f24f-385f-41b5-b3bc-7501af3b85a1"/>
+										<textElement>
+											<font fontName="Times New Roman" size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+									</textField>
+									<componentElement>
+										<reportElement positionType="Float" x="0" y="1" width="482" height="42" uuid="5d54aab7-dd9f-4492-a71e-a75f5b1f65e7">
+											<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+											<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+										</reportElement>
+										<jr:list printOrder="Vertical">
+											<datasetRun subDataset="course" uuid="32a04a7e-5f08-478d-9d02-58f483d46da9">
+												<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{courses})]]></dataSourceExpression>
+											</datasetRun>
+											<jr:listContents height="42" width="482">
+												<textField isStretchWithOverflow="true">
+													<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="3e4dc8d8-2c17-4101-9c35-32bb2b453c59">
+														<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+														<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+													</reportElement>
+													<textElement textAlignment="Justified" verticalAlignment="Middle">
+														<font size="12"/>
+														<paragraph spacingBefore="0"/>
+													</textElement>
+													<textFieldExpression><![CDATA["Курс " + $F{course}]]></textFieldExpression>
+												</textField>
+												<componentElement>
+													<reportElement x="0" y="14" width="482" height="28" uuid="1036ff4f-7b75-471c-9f6f-019478a1802e">
+														<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+													</reportElement>
+													<jr:list printOrder="Vertical">
+														<datasetRun subDataset="group" uuid="2f69c7ae-2b0a-4d94-85f1-e447d570d022">
+															<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{groups})]]></dataSourceExpression>
+														</datasetRun>
+														<jr:listContents height="28" width="482">
+															<textField isStretchWithOverflow="true">
+																<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="221fed69-4206-493c-b44a-4f98badeeb78"/>
+																<textElement textAlignment="Justified" verticalAlignment="Middle">
+																	<font size="12"/>
+																</textElement>
+																<textFieldExpression><![CDATA["Группа " + $F{groupname}]]></textFieldExpression>
+															</textField>
+															<componentElement>
+																<reportElement positionType="Float" x="0" y="14" width="482" height="14" uuid="b072f9b5-7cd4-4171-8ce9-32e0da04a30d">
+																	<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+																	<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+																</reportElement>
+																<jr:list printOrder="Vertical">
+																	<datasetRun subDataset="student" uuid="0b38d677-7f04-444a-9bfa-5215ea224ebb">
+																		<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{students})]]></dataSourceExpression>
+																	</datasetRun>
+																	<jr:listContents height="14" width="482">
+																		<textField isStretchWithOverflow="true">
+																			<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="6230d48e-9712-4ef9-92b1-0fd38a2ebc7c">
+																				<printWhenExpression><![CDATA[$F{scholarship} != null]]></printWhenExpression>
+																			</reportElement>
+																			<textElement textAlignment="Justified" verticalAlignment="Middle">
+																				<font size="12"/>
+																				<paragraph firstLineIndent="15"/>
+																			</textElement>
+																			<textFieldExpression><![CDATA[$V{countNumber} + ". (# " + $F{recordbook} + ") " + $F{fio} + " - " + $F{scholarship} + "(руб.)"]]></textFieldExpression>
+																		</textField>
+																		<textField isStretchWithOverflow="true">
+																			<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="6230d48e-9712-4ef9-92b1-0fd38a2ebc7c">
+																				<printWhenExpression><![CDATA[$F{scholarship} == null]]></printWhenExpression>
+																			</reportElement>
+																			<textElement textAlignment="Justified" verticalAlignment="Middle">
+																				<font size="12"/>
+																				<paragraph firstLineIndent="15"/>
+																			</textElement>
+																			<textFieldExpression><![CDATA[$V{countNumber} + ". (# " + $F{recordbook} + ") " + $F{fio}]]></textFieldExpression>
+																		</textField>
+																	</jr:listContents>
+																</jr:list>
+															</componentElement>
+														</jr:listContents>
+													</jr:list>
+												</componentElement>
+											</jr:listContents>
+										</jr:list>
+									</componentElement>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="100" splitType="Stretch">
+			<printWhenExpression><![CDATA[$P{type}==8]]></printWhenExpression>
+			<componentElement>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="482" height="100" uuid="0a01ccd9-0343-4a08-8823-f7b92dcef477">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="section" uuid="ddc7f8a8-5d8d-4afe-af20-b0c64aeb71af">
+						<datasetParameter name="REPORT_MAX_COUNT">
+							<datasetParameterExpression><![CDATA[$F{sections}.size()]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{sections})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="100" width="482">
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="9d20d1da-3410-4205-ad81-4c3264eaed33">
+								<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							</reportElement>
+							<textElement textAlignment="Justified">
+								<font size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{countNumber}+". "+$F{description}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="72" width="482" height="17" uuid="5a6a09a0-6782-4c6b-8eef-d193516d1f6c">
+								<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							</reportElement>
+							<textElement textAlignment="Justified">
+								<font size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Основание: " + $F{foundation}]]></textFieldExpression>
+						</textField>
+						<componentElement>
+							<reportElement positionType="Float" x="0" y="16" width="482" height="56" uuid="c24ef5d7-8542-47d4-a48a-9deac89503f3">
+								<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							</reportElement>
+							<jr:list printOrder="Vertical">
+								<datasetRun subDataset="course" uuid="fdbbfab5-9d83-49e7-beed-651f1c34d471">
+									<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{courses})]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="56" width="482">
+									<textField isStretchWithOverflow="true">
+										<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="6e149351-9d09-4f9d-a170-8bfdd1b5e33e">
+											<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+											<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+										</reportElement>
+										<textElement textAlignment="Justified" verticalAlignment="Middle">
+											<font size="12"/>
+											<paragraph spacingBefore="0"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$F{course} + " курс"]]></textFieldExpression>
+									</textField>
+									<componentElement>
+										<reportElement x="0" y="14" width="482" height="28" uuid="b715157c-f8be-4636-bbc0-f8442da2326f">
+											<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+										</reportElement>
+										<jr:list printOrder="Vertical">
+											<datasetRun subDataset="group" uuid="c2597ead-fe36-450e-922a-ae7fae880204">
+												<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{groups})]]></dataSourceExpression>
+											</datasetRun>
+											<jr:listContents height="28" width="482">
+												<textField isStretchWithOverflow="true">
+													<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="dc41aeec-34be-458c-a0dc-46586fa5af27"/>
+													<textElement textAlignment="Justified" verticalAlignment="Middle">
+														<font size="12"/>
+													</textElement>
+													<textFieldExpression><![CDATA["Группа " + $F{groupname}]]></textFieldExpression>
+												</textField>
+												<componentElement>
+													<reportElement positionType="Float" x="0" y="14" width="482" height="14" uuid="749d2462-6edd-4161-bfbc-33a0986abd4d">
+														<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+														<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+													</reportElement>
+													<jr:list printOrder="Vertical">
+														<datasetRun subDataset="student" uuid="2000aba8-e488-49c5-811b-a273d0ef8e47">
+															<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{students})]]></dataSourceExpression>
+														</datasetRun>
+														<jr:listContents height="14" width="482">
+															<textField isStretchWithOverflow="true">
+																<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="bb2759ca-fdc1-4ef7-84ce-54905ab7f336"/>
+																<textElement textAlignment="Justified" verticalAlignment="Middle">
+																	<font size="12"/>
+																	<paragraph firstLineIndent="15"/>
+																</textElement>
+																<textFieldExpression><![CDATA[$V{countNumber} + ". (# " + $F{recordbook} + ") " + $F{fio}]]></textFieldExpression>
+															</textField>
+														</jr:listContents>
+													</jr:list>
+												</componentElement>
+											</jr:listContents>
+										</jr:list>
+									</componentElement>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="67">
+			<printWhenExpression><![CDATA[$P{type}==2]]></printWhenExpression>
+			<componentElement>
+				<reportElement x="0" y="0" width="482" height="67" uuid="ac741776-ff91-427a-ad36-cd8632c7eed7">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="section" uuid="5c359d01-acc3-4ab9-803b-0ff3dd77bd28">
+						<datasetParameter name="REPORT_MAX_COUNT">
+							<datasetParameterExpression><![CDATA[$F{sections}.size()]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{sections})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="67" width="482">
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="9b7e6169-693e-41dd-adbf-ed9d65f742d1"/>
+							<textElement>
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{countNumber}+". " +$F{description}]]></textFieldExpression>
+						</textField>
+						<componentElement>
+							<reportElement positionType="Float" x="0" y="14" width="482" height="52" uuid="18f146d5-c1c6-44ba-9fc3-4897c32058dd">
+								<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+							</reportElement>
+							<jr:list printOrder="Vertical">
+								<datasetRun subDataset="course" uuid="a6a58000-a87f-4d88-a8c1-df1185f5779b">
+									<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{courses})]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="52" width="482">
+									<componentElement>
+										<reportElement x="0" y="14" width="482" height="32" uuid="21de6b38-0d8a-4004-a7e6-9ce16a37faee"/>
+										<jr:list printOrder="Vertical">
+											<datasetRun subDataset="group" uuid="1c1df724-8b64-4df9-b074-6276ed0af5c1">
+												<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{groups})]]></dataSourceExpression>
+											</datasetRun>
+											<jr:listContents height="32" width="482">
+												<componentElement>
+													<reportElement x="50" y="15" width="432" height="15" uuid="2e863108-e58c-40bd-8635-7fa4a496f2ca">
+														<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+														<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+													</reportElement>
+													<jr:list printOrder="Vertical">
+														<datasetRun subDataset="student" uuid="b1147223-9c4a-4d0a-9127-f6d690917dd0">
+															<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{students})]]></dataSourceExpression>
+														</datasetRun>
+														<jr:listContents height="15" width="432">
+															<textField>
+																<reportElement x="0" y="0" width="432" height="15" uuid="527404a6-5e0b-47bb-82d6-ea57421b21bc">
+																	<property name="com.jaspersoft.studio.unit.x" value="cm"/>
+																	<property name="com.jaspersoft.studio.unit.y" value="cm"/>
+																</reportElement>
+																<textElement>
+																	<font size="12"/>
+																</textElement>
+																<textFieldExpression><![CDATA[$V{countNumber}+". (# "+$F{recordbook}+") " + $F{fio} + " - " + $F{scholarship} + "(руб.)"]]></textFieldExpression>
+															</textField>
+														</jr:listContents>
+													</jr:list>
+												</componentElement>
+												<textField>
+													<reportElement x="0" y="0" width="482" height="14" uuid="f4d1a514-9a50-4d51-b1e8-88a29526c3fb"/>
+													<textElement>
+														<font size="12"/>
+													</textElement>
+													<textFieldExpression><![CDATA["Группа "+ $F{groupname}]]></textFieldExpression>
+												</textField>
+											</jr:listContents>
+										</jr:list>
+									</componentElement>
+									<textField>
+										<reportElement x="0" y="0" width="482" height="14" uuid="a6233498-2c2b-49ef-975e-af1a01359233">
+											<property name="com.jaspersoft.studio.unit.x" value="cm"/>
+										</reportElement>
+										<textElement>
+											<font size="12"/>
+										</textElement>
+										<textFieldExpression><![CDATA["Курс " + $F{course}]]></textFieldExpression>
+									</textField>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="66" width="482" height="1" uuid="afcbea9e-668b-41f9-9ff4-1e3ca789308a">
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+								<printWhenExpression><![CDATA[($P{REPORT_MAX_COUNT}-$V{REPORT_COUNT})==0]]></printWhenExpression>
+							</reportElement>
+							<textElement>
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Основание: " + $F{foundation}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="90">
+			<printWhenExpression><![CDATA[$P{type}==6]]></printWhenExpression>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="0" width="482" height="90" uuid="b973057b-3061-4e77-bc5d-55672d9619b0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="section" uuid="50985697-b6b2-44d0-9029-1db8223dda5c">
+						<datasetParameter name="REPORT_MAX_COUNT">
+							<datasetParameterExpression><![CDATA[$F{sections}.size()]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{sections})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="90" width="482">
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="5e2c7b35-902d-4f77-8414-8a00fb358060">
+								<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+							</reportElement>
+							<textElement textAlignment="Justified">
+								<font size="12"/>
+								<paragraph firstLineIndent="15"/>
+							</textElement>
+							<textFieldExpression><![CDATA[($P{REPORT_MAX_COUNT} > 1 ? ( $V{countNumber}+") " ) : "")+$F{description}]]></textFieldExpression>
+						</textField>
+						<componentElement>
+							<reportElement positionType="Float" x="0" y="25" width="482" height="45" uuid="4ed5e6a5-29b9-4ca6-8a4e-9e2a328e5cff">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<jr:list printOrder="Vertical">
+								<datasetRun subDataset="section" uuid="7c967afa-6aa3-4099-a1e2-b32f1157fcaa">
+									<datasetParameter name="REPORT_MAX_COUNT">
+										<datasetParameterExpression><![CDATA[$F{subsections}.size()]]></datasetParameterExpression>
+									</datasetParameter>
+									<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{subsections})]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="45" width="482">
+									<componentElement>
+										<reportElement positionType="Float" x="0" y="4" width="482" height="30" uuid="089ac690-01cc-4d33-a6a9-f2faca2c182b"/>
+										<jr:list printOrder="Vertical">
+											<datasetRun subDataset="course" uuid="88d7ac21-d954-4370-adb7-4ea3d5840d5e">
+												<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{courses})]]></dataSourceExpression>
+											</datasetRun>
+											<jr:listContents height="30" width="494">
+												<textField isStretchWithOverflow="true">
+													<reportElement positionType="Float" x="0" y="0" width="482" height="1" uuid="20f57acf-62dc-4f23-afc7-e37eaa29341b">
+														<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+													</reportElement>
+													<textElement textAlignment="Left">
+														<font size="12" isBold="false"/>
+														<paragraph firstLineIndent="0"/>
+													</textElement>
+													<textFieldExpression><![CDATA["Курс " + $F{course}]]></textFieldExpression>
+												</textField>
+												<componentElement>
+													<reportElement positionType="Float" x="0" y="2" width="494" height="28" uuid="987c20b4-1fb8-49d5-946b-829ebf5e5831"/>
+													<jr:list printOrder="Vertical">
+														<datasetRun subDataset="group" uuid="71c4c0b5-689e-45cf-8b8a-4fd2b6ea86f9">
+															<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{groups})]]></dataSourceExpression>
+														</datasetRun>
+														<jr:listContents height="28" width="494">
+															<textField isStretchWithOverflow="true">
+																<reportElement positionType="Float" x="0" y="0" width="494" height="14" uuid="2f3bbe61-7ab7-45cc-9a3c-592ffe543488">
+																	<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+																</reportElement>
+																<textElement>
+																	<font size="12"/>
+																</textElement>
+																<textFieldExpression><![CDATA["Группа " + $F{groupname}]]></textFieldExpression>
+															</textField>
+															<componentElement>
+																<reportElement positionType="Float" x="0" y="14" width="494" height="14" uuid="fe7cc700-7972-4662-99cb-321fb9d93ae7">
+																	<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+																</reportElement>
+																<jr:list printOrder="Vertical">
+																	<datasetRun subDataset="student" uuid="78b5b7e9-4c42-496c-aac0-1c7842bc576c">
+																		<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{students})]]></dataSourceExpression>
+																	</datasetRun>
+																	<jr:listContents height="14" width="494">
+																		<textField isStretchWithOverflow="true">
+																			<reportElement positionType="Float" x="0" y="0" width="494" height="14" uuid="33cc5d69-d1f7-45b4-91b1-7f0d77e4f73f">
+																				<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+																			</reportElement>
+																			<textElement>
+																				<font size="12"/>
+																				<paragraph firstLineIndent="15"/>
+																			</textElement>
+																			<textFieldExpression><![CDATA[$V{countNumber}+". (#"+$F{recordbook}+") "+$F{fio}]]></textFieldExpression>
+																		</textField>
+																	</jr:listContents>
+																</jr:list>
+															</componentElement>
+														</jr:listContents>
+													</jr:list>
+												</componentElement>
+											</jr:listContents>
+										</jr:list>
+									</componentElement>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="75" width="482" height="3" uuid="10181dcb-0c44-419f-a31b-9c51060bf49e">
+								<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+								<printWhenExpression><![CDATA[($P{REPORT_MAX_COUNT}-$V{REPORT_COUNT})==0]]></printWhenExpression>
+							</reportElement>
+							<textElement>
+								<font size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Прилагаемые документы: " + $F{foundation}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="83">
+			<printWhenExpression><![CDATA[$P{type}==7]]></printWhenExpression>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="0" width="482" height="83" uuid="b973057b-3061-4e77-bc5d-55672d9619b0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="section" uuid="018eb48e-6ed3-4488-8f9f-30fa8f619461">
+						<datasetParameter name="REPORT_MAX_COUNT">
+							<datasetParameterExpression><![CDATA[$F{sections}.size()]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{sections})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="83" width="482">
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="5e2c7b35-902d-4f77-8414-8a00fb358060">
+								<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+							</reportElement>
+							<textElement textAlignment="Justified">
+								<font size="12"/>
+								<paragraph firstLineIndent="15"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{countNumber} + ") " +$F{description}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="80" width="482" height="3" isRemoveLineWhenBlank="true" uuid="10181dcb-0c44-419f-a31b-9c51060bf49e">
+								<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+								<printWhenExpression><![CDATA[($P{REPORT_MAX_COUNT}-$V{REPORT_COUNT})==0]]></printWhenExpression>
+							</reportElement>
+							<textElement>
+								<font size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA["Прилагаемые документы: " + $F{foundation}]]></textFieldExpression>
+						</textField>
+						<componentElement>
+							<reportElement positionType="Float" x="0" y="27" width="482" height="30" isRemoveLineWhenBlank="true" uuid="e5fea10e-8492-4ca6-a69c-26cb14ec7891"/>
+							<jr:list printOrder="Vertical">
+								<datasetRun subDataset="course" uuid="893f3085-b9db-4cd0-8486-562ee9b51ad3">
+									<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{courses})]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="30" width="494">
+									<textField isStretchWithOverflow="true">
+										<reportElement positionType="Float" x="0" y="0" width="482" height="1" uuid="74d02a6f-79f3-407a-bb7c-3f2640a602bf">
+											<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+										</reportElement>
+										<textElement textAlignment="Left">
+											<font size="12" isBold="false"/>
+											<paragraph firstLineIndent="0"/>
+										</textElement>
+										<textFieldExpression><![CDATA["Курс " + $F{course}]]></textFieldExpression>
+									</textField>
+									<componentElement>
+										<reportElement positionType="Float" x="0" y="2" width="494" height="28" uuid="c124cd7c-1914-42b6-bb85-69dcfc7d4874"/>
+										<jr:list printOrder="Vertical">
+											<datasetRun subDataset="group" uuid="49438f3b-34b4-4cff-b919-5a09e1d4adc5">
+												<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{groups})]]></dataSourceExpression>
+											</datasetRun>
+											<jr:listContents height="28" width="494">
+												<textField isStretchWithOverflow="true">
+													<reportElement positionType="Float" x="0" y="0" width="494" height="14" uuid="04627517-2fe1-4128-8359-7c1ab12ae2d6">
+														<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+													</reportElement>
+													<textElement>
+														<font size="12"/>
+													</textElement>
+													<textFieldExpression><![CDATA["Группа " + $F{groupname}]]></textFieldExpression>
+												</textField>
+												<componentElement>
+													<reportElement positionType="Float" x="0" y="14" width="494" height="14" uuid="fd8c3ab7-9a0c-4a0b-b6e7-401d501ffd94">
+														<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+													</reportElement>
+													<jr:list printOrder="Vertical">
+														<datasetRun subDataset="student" uuid="29999380-0933-4144-94e5-a91e1ab1b5ea">
+															<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{students})]]></dataSourceExpression>
+														</datasetRun>
+														<jr:listContents height="14" width="494">
+															<textField isStretchWithOverflow="true">
+																<reportElement positionType="Float" x="0" y="0" width="494" height="14" uuid="5608767d-a070-4d7f-9c2a-c63a695a9a5c">
+																	<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+																</reportElement>
+																<textElement>
+																	<font size="12"/>
+																	<paragraph firstLineIndent="15"/>
+																</textElement>
+																<textFieldExpression><![CDATA[$V{countNumber}+". (#"+$F{recordbook}+") "+$F{fio}]]></textFieldExpression>
+															</textField>
+														</jr:listContents>
+													</jr:list>
+												</componentElement>
+											</jr:listContents>
+										</jr:list>
+									</componentElement>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="153">
+			<printWhenExpression><![CDATA[$P{type}==9]]></printWhenExpression>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="0" width="482" height="130" uuid="fd7b98c6-b5f6-45d2-96af-f6b3851c014a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="section" uuid="ba00cf3f-181e-4157-b8c5-f2fd7d7a2d2d">
+						<datasetParameter name="REPORT_MAX_COUNT">
+							<datasetParameterExpression><![CDATA[$F{sections}.size()]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{sections})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="130" width="482">
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="ad979b2e-dfbb-4801-8d68-ddd7e340cd42">
+								<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							</reportElement>
+							<textElement textAlignment="Justified" markup="html">
+								<font size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{description}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="91" width="482" height="38" uuid="4483805e-bb7f-4bac-bd83-b0478ca21aaf">
+								<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+							</reportElement>
+							<textElement textAlignment="Justified">
+								<font size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA["_________________________________________\n" +
+$F{foundation}]]></textFieldExpression>
+						</textField>
+						<componentElement>
+							<reportElement positionType="Float" x="0" y="17" width="482" height="66" uuid="532b3a5a-e977-49d1-87eb-2697e881d13d">
+								<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							</reportElement>
+							<jr:list printOrder="Vertical">
+								<datasetRun subDataset="course" uuid="e97fc75a-6162-4023-9d6e-49099db839fd">
+									<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{courses})]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="66" width="482">
+									<componentElement>
+										<reportElement x="0" y="6" width="482" height="55" uuid="1c74408e-1f65-40ee-8c9d-3e9dd12e72eb">
+											<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+										</reportElement>
+										<jr:list printOrder="Vertical">
+											<datasetRun subDataset="group" uuid="1253ca13-e6e1-4b11-815a-7f4f42da2f52">
+												<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{groups})]]></dataSourceExpression>
+											</datasetRun>
+											<jr:listContents height="55" width="482">
+												<textField isStretchWithOverflow="true">
+													<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="3d5fc5b5-5768-41c2-bc10-b0a7cff95f2a"/>
+													<textElement textAlignment="Justified" verticalAlignment="Middle">
+														<font size="12"/>
+													</textElement>
+													<textFieldExpression><![CDATA["Группа № " + $F{groupname}]]></textFieldExpression>
+												</textField>
+												<componentElement>
+													<reportElement positionType="Float" x="0" y="14" width="482" height="28" uuid="899d0f4a-42d0-4d87-a25a-62aae545b67b">
+														<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+														<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+													</reportElement>
+													<jr:list printOrder="Vertical">
+														<datasetRun subDataset="student" uuid="55313203-373a-4130-b35e-96c1c971963b">
+															<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{students})]]></dataSourceExpression>
+														</datasetRun>
+														<jr:listContents height="28" width="482">
+															<textField isStretchWithOverflow="true">
+																<reportElement positionType="Float" x="0" y="0" width="482" height="14" uuid="56d0788b-bb03-4883-9956-97b0690ef77a"/>
+																<textElement textAlignment="Justified" verticalAlignment="Middle">
+																	<font size="12"/>
+																	<paragraph firstLineIndent="15"/>
+																</textElement>
+																<textFieldExpression><![CDATA["                  "+$V{countNumber} + ".     " + $F{recordbook} + "     " + $F{fio} + " " + $F{scholarship} + " (руб.)"]]></textFieldExpression>
+															</textField>
+															<textField isStretchWithOverflow="true">
+																<reportElement positionType="Float" x="146" y="14" width="282" height="14" uuid="517b18d4-1c26-48ca-888f-cf2f876d277d"/>
+																<textElement textAlignment="Justified" verticalAlignment="Middle">
+																	<font size="12"/>
+																	<paragraph firstLineIndent="15"/>
+																</textElement>
+																<textFieldExpression><![CDATA["( № "+$F{INN}+"  )"]]></textFieldExpression>
+															</textField>
+														</jr:listContents>
+													</jr:list>
+												</componentElement>
+											</jr:listContents>
+										</jr:list>
+									</componentElement>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+		<band height="4">
+			<printWhenExpression><![CDATA[$P{type}==1]]></printWhenExpression>
+			<subreport>
+				<reportElement x="0" y="0" width="482" height="4" uuid="aa500326-ced8-472e-a0e3-b650539f35aa"/>
+				<subreportParameter name="realPath">
+					<subreportParameterExpression><![CDATA[$P{realPath}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{groups})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{realPath} + "group.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="70">
+			<printWhenExpression><![CDATA[$F{predicatingfio}!=null]]></printWhenExpression>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="" positionType="Float" x="0" y="9" width="250" height="14" uuid="96fc5ff8-99ea-4bc0-ae77-e0346bc6fe57">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{predicatingpost}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement key="" positionType="Float" x="320" y="9" width="162" height="14" uuid="fcefe6df-11d2-4eda-8931-2573a0e63685">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{predicatingfio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement key="" positionType="Float" x="0" y="33" width="482" height="17" uuid="c3915313-d065-4dbb-822e-db3d43f59609">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[СОГЛАСОВАНО:]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement key="" positionType="Float" x="0" y="53" width="482" height="17" uuid="67ec9d73-77a5-4f20-91e5-434951835dd2">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="net.sf.jasperreports.export.headertoolbar.table.name" value=""/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.prolongation" value="com.jaspersoft.studio.editor.prolongation.FreeLayout"/>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="matching" uuid="037d066f-5bd7-4d79-82b2-393b93e0da25">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{employees})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="17" width="482">
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="8" width="250" height="9" uuid="7da316c8-e5fa-4110-b15e-9b35297a095b">
+								<property name="local_mesure_unitheight" value="pixel"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<textElement textAlignment="Left">
+								<font fontName="Times New Roman" size="12"/>
+								<paragraph spacingBefore="0"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{role}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="320" y="8" width="159" height="9" uuid="e11318db-e838-4672-a0bc-cc0b8e057b4a">
+								<property name="local_mesure_unitheight" value="pixel"/>
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+								<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							</reportElement>
+							<textElement>
+								<font fontName="Times New Roman" size="12"/>
+								<paragraph spacingBefore="0"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{fio}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="17" splitType="Stretch">
+			<property name="local_mesure_unitheight" value="pixel"/>
+			<textField>
+				<reportElement positionType="Float" x="450" y="0" width="30" height="17" uuid="3102af40-0cef-4a29-9c4d-2f74d047be2a">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" firstLineIndent="0" leftIndent="0" rightIndent="0" spacingBefore="0" spacingAfter="0" tabStopWidth="40"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<lastPageFooter>
+		<band height="90" splitType="Stretch">
+			<textField>
+				<reportElement positionType="Float" x="0" y="14" width="482" height="12" uuid="dc9a49f8-b3c6-42cd-9b04-e14a8de19ba3">
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{executorfio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="26" width="482" height="12" uuid="949ef57d-c9ee-460d-8ad5-6e3216ef0787">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{executortel}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="38" width="482" height="35" uuid="99c83e94-7d83-40ea-aed5-024683baeb6f">
+					<printWhenExpression><![CDATA[($F{certfio}!=null&&!$F{certfio}.equals(""))&&($F{certnumber}!=null&&!$F{certnumber}.equals(""))]]></printWhenExpression>
+				</reportElement>
+				<box>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Подписано электронно. \n" +
+"ФИО: " + $F{certfio} + "\n" +
+"Номер сертификата: " + $F{certnumber}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="2" width="481" height="12" uuid="c1a1e45e-c82c-4a75-a0ac-a9f3195b089d">
+					<printWhenExpression><![CDATA[$P{type} != 9]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<text><![CDATA[Исполнитель:]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="452" y="73" width="30" height="17" uuid="44e0c280-5926-4caa-b098-971aff15e325">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+					<paragraph lineSpacing="Single" lineSpacingSize="1.0" firstLineIndent="0" leftIndent="0" rightIndent="0" spacingBefore="0" spacingAfter="0" tabStopWidth="40"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+	<summary>
+		<band>
+			<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.2.2.final using JasperReports Library version 6.2.2  -->
+<!-- 2016-10-31T14:48:06 -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="curProgressGroup" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="822" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" uuid="19dd2ed3-a380-4239-bec7-176c41682852">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="eso"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<style name="Default" isDefault="true" forecolor="#000000" backcolor="#FFFFFF" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+	<subDataset name="students" uuid="661257b9-5ca9-4b14-9b65-8b709c2ba171">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="subjectname" class="java.lang.String">
+			<fieldDescription><![CDATA[subjectname]]></fieldDescription>
+		</field>
+		<field name="fio" class="java.lang.String">
+			<fieldDescription><![CDATA[fio]]></fieldDescription>
+		</field>
+		<field name="attend" class="java.lang.Integer">
+			<fieldDescription><![CDATA[attend]]></fieldDescription>
+		</field>
+		<field name="progress" class="java.lang.Integer">
+			<fieldDescription><![CDATA[progress]]></fieldDescription>
+		</field>
+		<variable name="number" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+		</variable>
+		<group name="ROW_COUNT">
+			<groupExpression><![CDATA[$V{number}]]></groupExpression>
+		</group>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="groupname" class="java.lang.String">
+		<fieldDescription><![CDATA[groupname]]></fieldDescription>
+	</field>
+	<field name="students" class="java.util.List">
+		<fieldDescription><![CDATA[students]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="220" splitType="Stretch">
+			<crosstab isRepeatColumnHeaders="false" isRepeatRowHeaders="false" ignoreWidth="true">
+				<reportElement x="0" y="17" width="800" height="200" uuid="47324d61-2320-4e41-9a99-7e19c5ed2164">
+					<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.VerticalRowLayout"/>
+				</reportElement>
+				<crosstabDataset>
+					<dataset>
+						<datasetRun subDataset="students" uuid="59df1dd6-a61c-4a92-b25b-dca00e6a90cb">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{students})]]></dataSourceExpression>
+						</datasetRun>
+					</dataset>
+				</crosstabDataset>
+				<crosstabHeaderCell>
+					<cellContents>
+						<box>
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<staticText>
+							<reportElement mode="Opaque" x="0" y="0" width="110" height="90" backcolor="#DEDEDE" uuid="4f5f458f-cb6c-4722-ad40-bd8cb855ba62"/>
+							<box padding="2">
+								<topPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								<leftPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<text><![CDATA[ФИО]]></text>
+						</staticText>
+					</cellContents>
+				</crosstabHeaderCell>
+				<rowGroup name="fio" width="110" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{fio}]]></bucketExpression>
+					</bucket>
+					<crosstabRowHeader>
+						<cellContents mode="Opaque">
+							<box>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<textField>
+								<reportElement mode="Transparent" x="0" y="0" width="110" height="16" uuid="fdd4f757-aad4-44bb-8112-27028b43cc88"/>
+								<box padding="2">
+									<topPen lineWidth="0.5"/>
+									<leftPen lineWidth="0.5"/>
+									<bottomPen lineWidth="0.5"/>
+									<rightPen lineWidth="0.5"/>
+								</box>
+								<textElement>
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{ROW_COUNT}+"."+$V{fio}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabRowHeader>
+					<crosstabTotalRowHeader>
+						<cellContents mode="Opaque">
+							<box>
+								<leftPen lineWidth="1.0"/>
+								<bottomPen lineWidth="1.0"/>
+								<rightPen lineWidth="1.0"/>
+							</box>
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="110" height="20" forecolor="#000000" backcolor="#DEDEDE" uuid="b988c6e3-86ce-4c73-bdb3-8df94ad6b537"/>
+								<box padding="2">
+									<topPen lineWidth="0.5" lineColor="#000000"/>
+									<leftPen lineWidth="0.5" lineColor="#000000"/>
+									<bottomPen lineWidth="0.5" lineColor="#000000"/>
+									<rightPen lineWidth="0.5" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Right" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<text><![CDATA[Итого:]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalRowHeader>
+				</rowGroup>
+				<columnGroup name="subjectname" height="90" totalPosition="End">
+					<bucket class="java.lang.String">
+						<bucketExpression><![CDATA[$F{subjectname}]]></bucketExpression>
+					</bucket>
+					<crosstabColumnHeader>
+						<cellContents mode="Opaque">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<textField>
+								<reportElement mode="Opaque" x="0" y="0" width="50" height="70" backcolor="#DEDEDE" uuid="1ff621e6-7e9d-42fc-aa09-29bae3c16ea6">
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+								</reportElement>
+								<box padding="2">
+									<topPen lineWidth="0.5" lineColor="#000000"/>
+									<leftPen lineWidth="0.5" lineColor="#000000"/>
+									<bottomPen lineWidth="0.5" lineColor="#000000"/>
+									<rightPen lineWidth="0.5" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Left" verticalAlignment="Middle" rotation="Left">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<textFieldExpression><![CDATA[$V{subjectname}]]></textFieldExpression>
+							</textField>
+							<staticText>
+								<reportElement positionType="Float" mode="Opaque" x="0" y="70" width="25" height="20" backcolor="#DEDEDE" uuid="4277d724-d352-4239-8543-cac316d91163">
+									<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+								</reportElement>
+								<box padding="2">
+									<topPen lineWidth="0.5" lineColor="#000000"/>
+									<leftPen lineWidth="0.5" lineColor="#000000"/>
+									<bottomPen lineWidth="0.5" lineColor="#000000"/>
+									<rightPen lineWidth="0.5" lineColor="#000000"/>
+								</box>
+								<textElement verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<text><![CDATA[Пр.]]></text>
+							</staticText>
+							<staticText>
+								<reportElement mode="Opaque" x="25" y="70" width="25" height="20" backcolor="#DEDEDE" uuid="bd32ef5d-d8f2-41a1-b66f-fd03d4c4d24f">
+									<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+									<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+								</reportElement>
+								<box padding="2">
+									<topPen lineWidth="0.5" lineColor="#000000"/>
+									<leftPen lineWidth="0.5" lineColor="#000000"/>
+									<bottomPen lineWidth="0.5" lineColor="#000000"/>
+									<rightPen lineWidth="0.5" lineColor="#000000"/>
+								</box>
+								<textElement verticalAlignment="Middle" rotation="None">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<text><![CDATA[Усп.]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabColumnHeader>
+					<crosstabTotalColumnHeader>
+						<cellContents mode="Opaque">
+							<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
+							<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="0" width="70" height="39" forecolor="#000000" backcolor="#DEDEDE" uuid="43b8929a-55d2-47c0-a979-bebf29a1811a"/>
+								<box padding="2">
+									<topPen lineWidth="0.5" lineColor="#000000"/>
+									<leftPen lineWidth="0.5" lineColor="#000000"/>
+									<bottomPen lineWidth="0.5" lineColor="#000000"/>
+									<rightPen lineWidth="0.5" lineColor="#000000"/>
+								</box>
+								<textElement textAlignment="Center" verticalAlignment="Middle">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<text><![CDATA[Всего]]></text>
+							</staticText>
+							<staticText>
+								<reportElement mode="Opaque" x="35" y="39" width="35" height="51" backcolor="#DEDEDE" uuid="c8db56ef-f201-40a8-96df-ec5021033a63">
+									<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+								</reportElement>
+								<box padding="2">
+									<topPen lineWidth="0.5" lineColor="#000000"/>
+									<leftPen lineWidth="0.5" lineColor="#000000"/>
+									<bottomPen lineWidth="0.5" lineColor="#000000"/>
+									<rightPen lineWidth="0.5" lineColor="#000000"/>
+								</box>
+								<textElement verticalAlignment="Middle" rotation="Left">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<text><![CDATA[Успеваем.]]></text>
+							</staticText>
+							<staticText>
+								<reportElement mode="Opaque" x="0" y="39" width="35" height="51" backcolor="#DEDEDE" uuid="f7b8f982-3fb8-43e6-a423-15412056e002"/>
+								<box padding="2">
+									<topPen lineWidth="0.5" lineColor="#000000"/>
+									<leftPen lineWidth="0.5" lineColor="#000000"/>
+									<bottomPen lineWidth="0.5" lineColor="#000000"/>
+									<rightPen lineWidth="0.5" lineColor="#000000"/>
+								</box>
+								<textElement verticalAlignment="Middle" rotation="Left">
+									<font fontName="Times New Roman" size="10"/>
+								</textElement>
+								<text><![CDATA[Пропуски]]></text>
+							</staticText>
+						</cellContents>
+					</crosstabTotalColumnHeader>
+				</columnGroup>
+				<measure name="attend_MEASURE" class="java.lang.Integer" calculation="Sum">
+					<measureExpression><![CDATA[$F{attend}==0?1:0]]></measureExpression>
+				</measure>
+				<measure name="progress_MEASURE" class="java.lang.Integer" calculation="Sum">
+					<measureExpression><![CDATA[$F{progress}]]></measureExpression>
+				</measure>
+				<crosstabCell width="50" height="16">
+					<cellContents mode="Opaque">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+						<box>
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<textField>
+							<reportElement mode="Transparent" x="0" y="0" width="25" height="16" uuid="ac8c7a27-4b9e-48a7-be22-1e40eef25cea"/>
+							<box padding="2">
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{attend_MEASURE}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement mode="Transparent" x="25" y="0" width="25" height="16" uuid="68b07ff5-daeb-47d0-be3c-af3d0c8b719f"/>
+							<box padding="2">
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{progress_MEASURE}+"%"]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="70" height="16" columnTotalGroup="subjectname">
+					<cellContents mode="Opaque">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+						<box>
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<textField>
+							<reportElement mode="Opaque" x="0" y="0" width="35" height="16" forecolor="#000000" backcolor="#DEDEDE" uuid="f927fc45-2c41-4307-a2f5-62845aa8d559"/>
+							<box padding="2">
+								<topPen lineWidth="0.5" lineColor="#000000"/>
+								<leftPen lineWidth="0.5" lineColor="#000000"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{attend_MEASURE}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement mode="Opaque" x="35" y="0" width="35" height="16" forecolor="#000000" backcolor="#DEDEDE" uuid="a5b0be1f-4453-457b-a4a1-2ff053919338"/>
+							<box padding="2">
+								<topPen lineWidth="0.5" lineColor="#000000"/>
+								<leftPen lineWidth="0.5" lineColor="#000000"/>
+								<bottomPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								<rightPen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+								<paragraph lineSpacing="1_1_2"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{progress_MEASURE}/$V{COLUMN_COUNT}+"%"]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="50" height="20" rowTotalGroup="fio">
+					<cellContents mode="Opaque">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+						<box>
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<textField>
+							<reportElement mode="Opaque" x="0" y="0" width="25" height="20" forecolor="#000000" backcolor="#DEDEDE" uuid="06f14c4b-9f59-4aa2-9da7-7819cfdc53bf"/>
+							<box padding="2">
+								<topPen lineWidth="0.5" lineColor="#000000"/>
+								<leftPen lineWidth="0.5" lineColor="#000000"/>
+								<bottomPen lineWidth="0.5" lineColor="#000000"/>
+								<rightPen lineWidth="0.5" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{attend_MEASURE}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement mode="Opaque" x="25" y="0" width="25" height="20" forecolor="#000000" backcolor="#DEDEDE" uuid="f3a29716-45e1-4e65-9f60-d8ba88c3759c"/>
+							<box padding="2">
+								<topPen lineWidth="0.5" lineColor="#000000"/>
+								<leftPen lineWidth="0.5" lineColor="#000000"/>
+								<bottomPen lineWidth="0.5" lineColor="#000000"/>
+								<rightPen lineWidth="0.5" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{progress_MEASURE}/$V{ROW_COUNT}+"%"]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+				<crosstabCell width="70" height="20" rowTotalGroup="fio" columnTotalGroup="subjectname">
+					<cellContents mode="Opaque">
+						<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.HorizontalRowLayout"/>
+						<box>
+							<topPen lineWidth="0.0"/>
+							<leftPen lineWidth="0.0"/>
+							<bottomPen lineWidth="0.0"/>
+							<rightPen lineWidth="0.0"/>
+						</box>
+						<textField>
+							<reportElement mode="Opaque" x="0" y="0" width="35" height="20" forecolor="#000000" backcolor="#DEDEDE" uuid="69374698-efc7-4f07-871c-d6d28b0eb3bc"/>
+							<box padding="2">
+								<topPen lineWidth="0.5" lineColor="#000000"/>
+								<leftPen lineWidth="0.5" lineColor="#000000"/>
+								<bottomPen lineWidth="0.5" lineColor="#000000"/>
+								<rightPen lineWidth="0.5" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{attend_MEASURE}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement mode="Opaque" x="35" y="0" width="35" height="20" forecolor="#000000" backcolor="#DEDEDE" uuid="47278d83-37aa-444a-9e2f-26c09a6da9e5"/>
+							<box padding="2">
+								<topPen lineWidth="0.5" lineColor="#000000"/>
+								<leftPen lineWidth="0.5" lineColor="#000000"/>
+								<bottomPen lineWidth="0.5" lineColor="#000000"/>
+								<rightPen lineWidth="0.5" lineColor="#000000"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<font fontName="Times New Roman" size="10"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$V{progress_MEASURE_fio_subjectname_ALL}/($V{ROW_COUNT}*$V{COLUMN_COUNT}) + "%"]]></textFieldExpression>
+						</textField>
+					</cellContents>
+				</crosstabCell>
+			</crosstab>
+			<break>
+				<reportElement x="0" y="217" width="99" height="1" uuid="39a87f0d-2787-4f34-a5d0-2933a6386862"/>
+			</break>
+			<textField>
+				<reportElement x="2" y="0" width="800" height="16" uuid="e8a6308e-1571-4967-b111-a1faff4d50b7"/>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ведомость текущей успеваемости группы " + $F{groupname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

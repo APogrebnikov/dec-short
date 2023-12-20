@@ -1,0 +1,54 @@
+<window id="winFeedback" apply="org.edec.notificationCenter.ctrl.WinFeedbackCtrl" border="normal"
+        width="80%"
+        height="80%" style="min-width: 600px; min-height: 650px;"
+        position="center,center" closable="true">
+    <caption>
+        <label value="Обратная связь"/>
+    </caption>
+    <style src="/css/chatNew.css"/>
+
+    <hlayout hflex="1" vflex="1">
+
+        <listbox id="lbReceiversFeedback" vflex="1" hflex="1" checkmark="true" emptyMessage="Список ответов пуст"
+                 mold="paging" autopaging="true">
+            <auxhead>
+                <auxheader/>
+                <auxheader>
+                    <textbox id="tbSearchReceiver" placeholder="Получатель..." hflex="1"/>
+                </auxheader>
+                <auxheader/>
+            </auxhead>
+            <listhead>
+                <listheader width="25px"/>
+                <listheader hflex="2">
+                    <label sclass="cwf-listheader-label" value="Отправитель" />
+                </listheader>
+                <listheader hflex="1" align="center">
+                    <label sclass="cwf-listheader-label" value="Новых"/>
+                </listheader>
+            </listhead>
+        </listbox>
+
+        <vlayout vflex="1" hflex="1">
+
+            <div id="divChat" width="600px" vflex="1" style="overflow: auto;"/>
+
+            <hlayout height="50px" hflex="1">
+
+                <textbox id="tbMessage"
+                         placeholder="Введите новое сообщение..."
+                         rows="5" cols="15"
+                         hflex="1"
+                         vflex="1"
+                         disabled="true">
+                </textbox>
+                <button id="btnSendMessage" image="/imgs/send.png" width="50px" vflex="1" disabled="true"/>
+            </hlayout>
+
+        </vlayout>
+
+    </hlayout>
+
+    <timer id="timer" delay="1000" repeats="false"/>
+
+</window>

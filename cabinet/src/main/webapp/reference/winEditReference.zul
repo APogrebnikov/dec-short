@@ -1,0 +1,52 @@
+<window id="winEditReference" closable="true"
+        apply="org.edec.reference.ctrl.WinEditReferenceCtrl">
+
+    <vbox hflex="1" vflex="1">
+        <hbox>
+            <separator height="2px"/>
+            <label id="lbBookNumber" value="Номер записи в книге"/>
+        </hbox>
+        <hbox>
+            <separator height="2px"/>
+            <textbox id="tbBookNumber"/>
+        </hbox>
+        <separator height="2px"/>
+        <hbox hflex="1" id="boxFiles">
+            <separator width="2px"/>
+            <vbox hflex="1">
+                <button id="btnAddReferenceScan" label="Добавить скан справки" upload="true"/>
+                <button id="btnAddApplicationScan" label="Добавить скан заявления" upload="true"/>
+            </vbox>
+            <separator width="2px"/>
+            <vbox hflex="1">
+                <label id="lbFileNameReference" style="font-style: italic"/>
+                <separator height="2px"/>
+                <label id="lbFileNameApplication" style="font-style: italic"/>
+            </vbox>
+        </hbox>
+        <separator height="2px"/>
+        <hbox>
+            <separator width="2px"/>
+            <label value="Дата действия справки"/>
+            <checkbox id="chbUnlimitedRefType" label="Бессрочная" visible="false"/>
+        </hbox>
+        <separator height="2px"/>
+        <hbox>
+            <separator width="2px"/>
+            <label id="lbFromDate" value="C"/>
+            <datebox id="dbDateOfStart"/>
+            <separator width="2px"/>
+            <label value="До"/>
+            <datebox id="dbDateOfEnd"/>
+        </hbox>
+        <separator height="2px"/>
+        <hbox hflex="1">
+            <separator width="2px"/>
+            <button id="btnRefSave" label="Сохранить" hflex="1"/>
+            <button id="btnCancel" label="Отмена" hflex="1"/>
+            <separator width="2px"/>
+        </hbox>
+        <separator width="2px"/>
+    </vbox>
+
+</window>

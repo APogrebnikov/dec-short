@@ -1,0 +1,19 @@
+<window closable="true" width="50%" height="60%" id="winAddRoleEmp"
+    apply="org.edec.admin.ctrl.WinAddRoleEmpCtrl">
+    <caption>
+        <label value="Добавление роли сотруднику" id="lAddRoleEmp" />
+    </caption>
+    <vbox hflex="1" vflex="1">
+        <listbox id="lbAddRoleEmp" hflex="1" vflex="1">
+            <listhead>
+                <listheader>
+                    <label value="Роль" sclass="cwf-listheader-label" />
+                </listheader>
+            </listhead>
+        </listbox>
+        <hbox hflex="1" height="40px" pack="center" align="end">
+            <button id="btnAddWinRoleEmp" label="Добавить"/>
+            <button id="btnExitWinAddRoleEmp" label="Выйти" />
+        </hbox>
+    </vbox>
+</window>

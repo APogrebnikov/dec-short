@@ -1,0 +1,13 @@
+<window id="winAddCorrectInfo" width="25%" height="20%" closable="true"
+        apply="org.edec.register.ctrl.WinAddCorrectInfoCtrl">
+    <caption>
+        <label value="Дополнительная информация к отказу"/>
+    </caption>
+    <vbox vflex="1" hflex="1">
+        <textbox id="tbAdditionalInformation" rows="5" vflex="1" hflex="1"
+                 tooltiptext="Вы можете оставить комментарий к отказу, чтобы преподаватель смог его увидеть"></textbox>
+        <hbox width="100%" height="20px" pack="end" align="center" style="padding-top: 2px;padding-bottom: 2px;">
+            <button id="btnDeny" label="Отказать"/>
+        </hbox>
+    </vbox>
+</window>

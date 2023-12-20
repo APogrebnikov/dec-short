@@ -1,0 +1,20 @@
+<window id="winAttachNewFiles" closable="true"
+        apply="org.edec.newOrder.ctrl.WinAttachNewFilesCtrl">
+    <caption>
+        <label value="Прикрепление файлов"/>
+    </caption>
+    <vbox>
+        <listbox id="lbFiles" height="300px"  width="500px" style="margin-bottom: 10px">
+            <listhead>
+                <listheader sclass="cwf-listheader-label">
+                    <label sclass="cwf-listheader-label" value="Название файла"/>
+                </listheader>
+                <listheader sclass="cwf-listheader-label" width="60px" align="center">
+                    <label sclass="cwf-listheader-label" value=""/>
+                </listheader>
+            </listhead>
+        </listbox>
+        <button id="btnUpload" label="Загрузить файлы" upload="true"/>
+    </vbox>
+
+</window>

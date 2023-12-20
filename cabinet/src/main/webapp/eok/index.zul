@@ -1,0 +1,121 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.eok.ctrl.IndexPageCtrl">
+    <groupbox id="gbFilter" hflex="1" style="min-height: 0px; height: 100px;" title="Фильтры">
+        <hbox>
+            <vbox id="vbInst">
+                <label value="Институт" />
+                <combobox id="cmbInst" readonly="true" />
+            </vbox>
+            <vbox id="vbFormOfStudy">
+                <label value="Форма обучения" />
+                <combobox id="cmbFormOfStudy" readonly="true"/>
+            </vbox>
+            <vbox id="vbSemester" visible="false">
+                <label value="Семестры" />
+                <combobox id="cmbSemester" readonly="true" />
+            </vbox>
+            <vbox id="vbQualification">
+                <label value="Квалификация" />
+                <hbox>
+                    <checkbox id="chSpec" label="Спец" checked="true"/>
+                    <checkbox id="chBach" label="Бак" checked="true"/>
+                    <checkbox id="chMaster" label="Маг" checked="true"/>
+                </hbox>
+            </vbox>
+        </hbox>
+    </groupbox>
+    <hbox hflex="1" height="30px">
+        <button id="btnSearch" label="Поиск" />
+        <bandbox id="bdSetEok" value="Выберите ЭОК" readonly="true">
+            <bandpopup>
+                <listbox id="lbSetEok" width="300px" height="300px" mold="paging" autopaging="true">
+                    <listhead>
+                        <listheader width="90px">
+                            <longbox id="longSetEokId" placeholder="Код.."/>
+                        </listheader>
+                        <listheader hflex="1">
+                            <textbox id="tbSetEokName" placeholder="Название.."/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </bandpopup>
+        </bandbox>
+        <button id="btnReport" label="Отчет" />
+        <button id="btnReportProgress" label="Успеваемость в ЭОК" image = "/imgs/excel.png" tooltiptext="Средняя успеваемость по предметам у групп"/>
+    </hbox>
+    <hbox hflex="1" vflex="1">
+        <listbox id="lbGroup" width="300px" vflex="1" multiple="true" checkmark="true">
+            <auxhead>
+                <auxheader>
+                    <textbox id="tbGroup" placeholder="Группа.." />
+                </auxheader>
+                <auxheader>
+                    <combobox id="cmbCourse" hflex="1">
+                        <comboitem label="Все"/>
+                        <comboitem label="1"/>
+                        <comboitem label="2"/>
+                        <comboitem label="3"/>
+                        <comboitem label="4"/>
+                        <comboitem label="5"/>
+                        <comboitem label="6"/>
+                    </combobox>
+                </auxheader>
+            </auxhead>
+            <listhead>
+                <listheader hflex="2">
+                    <label sclass="cwf-listheader-label" value="Группа"/>
+                </listheader>
+                <listheader hflex="1" align="center">
+                    <label sclass="cwf-listheader-label" value="Курс"/>
+                </listheader>
+            </listhead>
+        </listbox>
+        <listbox id="lbSubject" hflex="1" vflex="1" checkmark="true" multiple="true">
+            <auxhead>
+                <auxheader/>
+                <auxheader>
+                    <textbox id="tbDepartment" placeholder="Кафедра.." width="100%"/>
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbSubject" placeholder="Дисциплина.." hflex="1"/>
+                </auxheader>
+                <auxheader/>
+                <auxheader/>
+                <auxheader/>
+                <auxheader>
+                    <checkbox id="chEOK" label="Не прикреп." checked="false" />
+                </auxheader>
+                <auxheader>
+                    <checkbox id="chTeacher" label="Не прикрепленные" checked="false" />
+                </auxheader>
+            </auxhead>
+            <listhead>
+                <listheader width="60px">
+                    <label sclass="cwf-listheader-label" value="№"/>
+                </listheader>
+                <listheader width="90px">
+                    <label sclass="cwf-listheader-label" value="Кафедра"/>
+                </listheader>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Дисциплина"/>
+                </listheader>
+                <listheader width="120px" align="center">
+                    <label sclass="cwf-listheader-label" value="Группа"/>
+                </listheader>
+                <listheader width="140px" align="center">
+                    <label sclass="cwf-listheader-label" value="Форма контроля"/>
+                </listheader>
+                <listheader width="60px" align="center">
+                    <label sclass="cwf-listheader-label" value="Часов"/>
+                </listheader>
+                <listheader width="110px" align="center">
+                    <label sclass="cwf-listheader-label" value="ЭОК"/>
+                </listheader>
+                <listheader width="140px">
+                    <label sclass="cwf-listheader-label" value="Преподаватель"/>
+                </listheader>
+            </listhead>
+        </listbox>
+    </hbox>
+</vbox>

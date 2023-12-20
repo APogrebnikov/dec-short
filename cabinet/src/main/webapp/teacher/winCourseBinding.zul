@@ -1,0 +1,28 @@
+<window id="winCourseBinding" apply="org.edec.teacher.ctrl.WinCourseBindingCtrl" border="normal" width="70%"
+        height="50%" style="min-width: 500px; min-height: 300px;" position="center,center">
+    <vbox vflex="5">
+        <listbox id="listCourses" vflex="4" width="100%" checkmark="true" multiple="true" emptyMessage="Нет дисциплин, доступных для повторной привязки ЭОК">
+            <listhead>
+                <listheader width="26px"/>
+                <listheader hflex="4">
+                    <label sclass="cwf-listheader-label" value="Дисциплина"/>
+                </listheader>
+                <listheader hflex="4" align="center">
+                    <label sclass="cwf-listheader-label" value="ЭОК"/>
+                </listheader>
+                <listheader hflex="2" align="center">
+                    <label sclass="cwf-listheader-label" value="Группы"/>
+                </listheader>
+            </listhead>
+        </listbox>
+        <hbox id="footer" width="100%" vflex="1">
+            <hbox hflex="10">
+                <button id="btnClose" label="Закрыть" width="150px" height="50px" image="/imgs/cross.png"
+                        hoverImage="/imgs/crossCLR.png" style="font-weight: 700; font-size: 15px;"/>
+            </hbox>
+            <button id="btnAttach" label="Привязать курсы" width="265px" height="50px"
+                    image="/imgs/addalt.png" hoverImage="/imgs/addaltCLR.png"
+                    style="font-weight: 700; font-size: 15px; float: right"/>
+        </hbox>
+    </vbox>
+</window>

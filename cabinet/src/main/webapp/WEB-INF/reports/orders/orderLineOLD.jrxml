@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="orderLine" pageWidth="510" pageHeight="842" columnWidth="510" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" isSummaryWithPageHeaderAndFooter="true" uuid="a6cd74e7-e2b3-49b5-85ac-fd653ac2ae7c">
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="12" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+	<subDataset name="employees" uuid="a6464079-5af3-410b-8027-14ae6bdd5646">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="role" class="java.lang.String"/>
+		<field name="fio" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="subOrderLine" uuid="307d89f8-25bd-4b8c-a8a6-3ed08b3ab527">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<parameter name="typeSection" class="java.lang.Integer"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="lineInfo" class="java.lang.String">
+			<fieldDescription><![CDATA[lineInfo]]></fieldDescription>
+		</field>
+		<field name="lineType" class="java.lang.Integer">
+			<fieldDescription><![CDATA[lineType]]></fieldDescription>
+		</field>
+		<variable name="countNumber" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+		</variable>
+	</subDataset>
+	<parameter name="predicatingfio" class="java.lang.String"/>
+	<parameter name="predicatingpost" class="java.lang.String"/>
+	<parameter name="employees" class="java.util.List"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="subOrderLines" class="java.util.List">
+		<fieldDescription><![CDATA[subOrderLines]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="90" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<componentElement>
+				<reportElement positionType="Float" isPrintRepeatedValues="false" x="0" y="0" width="510" height="56" isRemoveLineWhenBlank="true" uuid="442c82d8-e746-4baf-82b6-401a4259089c"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="subOrderLine" uuid="3a02c7ef-51f9-4ddb-8e5b-a79b9a05c615">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($F{subOrderLines})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="56" width="510">
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="0" width="510" height="14" isRemoveLineWhenBlank="true" uuid="bd9bcdd0-0117-4c90-ab99-646a4da49ef3">
+								<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+								<printWhenExpression><![CDATA[$F{lineType} == 0]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Justified">
+								<font size="12"/>
+								<paragraph firstLineIndent="0"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{lineInfo}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="28" width="510" height="14" isRemoveLineWhenBlank="true" uuid="152a8541-94c5-4878-b3ef-1cd250275b16">
+								<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+								<printWhenExpression><![CDATA[$F{lineType} == 3]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Center">
+								<font size="12"/>
+								<paragraph firstLineIndent="0"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{lineInfo}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="42" width="510" height="14" isRemoveLineWhenBlank="true" forecolor="#FFFFFF" uuid="76757aff-77c1-4bf8-9d3c-74bca411a1f1">
+								<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+								<printWhenExpression><![CDATA[$F{lineType} == 4]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Center">
+								<font size="12"/>
+								<paragraph firstLineIndent="0"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{lineInfo}]]></textFieldExpression>
+						</textField>
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="14" width="510" height="14" isRemoveLineWhenBlank="true" uuid="5b5525ac-44eb-4e19-80f7-d416565d3970">
+								<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+								<printWhenExpression><![CDATA[$F{lineType} == 1]]></printWhenExpression>
+							</reportElement>
+							<textElement textAlignment="Justified">
+								<font size="12"/>
+								<paragraph firstLineIndent="35"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{lineInfo}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="91" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="250" height="17" uuid="08bb102d-a76a-4f95-b9ec-fd0ba87521d4">
+					<property name="com.jaspersoft.studio.unit.x" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{predicatingpost}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="370" y="0" width="140" height="17" uuid="f5c2180e-3b5f-4fe9-bc8a-4edb401a746b">
+					<property name="com.jaspersoft.studio.unit.y" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{predicatingfio}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="35" width="510" height="14" uuid="935983b8-0d3d-4572-883d-f09bfeec896c"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="employees" uuid="9fbc38ac-9023-4c5a-bf1a-b14e6b324727">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource ($P{employees})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="14" width="510">
+						<textField>
+							<reportElement positionType="Float" x="0" y="0" width="240" height="14" uuid="3630f7e1-cfe3-4a8c-a56f-0432fdb9817d"/>
+							<textElement>
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{role}]]></textFieldExpression>
+						</textField>
+						<textField>
+							<reportElement positionType="Float" x="370" y="0" width="139" height="14" uuid="1ca4f3fd-e1bb-4089-bbdf-2be3b819aeaf">
+								<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+							</reportElement>
+							<textElement textAlignment="Left">
+								<font fontName="Times New Roman" size="12"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{fio}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="18" width="510" height="17" uuid="410648a1-7c8c-451e-a480-d44569fd7b9a"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["СОГЛАСОВАНО:"]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

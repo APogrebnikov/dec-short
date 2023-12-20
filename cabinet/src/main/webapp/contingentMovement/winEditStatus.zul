@@ -1,0 +1,34 @@
+<window id="winEditStatus" position="center"
+	style="min-width: 400px; min-height: 500px; width: 65%; height: 95%; background: #dcdcdc;" border="normal"
+	apply="org.edec.contingentMovement.ctrl.WinEditStatusCtrl" closable="true">
+	<caption>
+		<label value="Редактор статусов студента"/>
+	</caption>
+	<vlayout style="padding: 10px;" hflex="10" vflex="10">
+		<vbox hflex="10" vflex="2">
+			<label id="lFIO" style="font-size: 14px; font-weight: bolder;"
+				value="ФИО" />
+			<label id="lGroup" style="font-size: 14px; font-weight: bolder;"
+				value="Группа" />
+			<label id="lSem" style="font-size: 14px; font-weight: bolder;"
+				value="Семестр" />
+			<label id="lCourse" style="font-size: 14px; font-weight: bolder;"
+				value="Курс" />
+		</vbox>
+
+		<listbox id="lbStatus" rows="10" hflex="10" vflex="8">
+			<listhead>
+				<listheader label="Статусы" hflex="2" style="color:#fff;"/>
+				<listheader hflex="2"/>
+				<listheader label="Действует с" hflex="2" style="color:#fff;"/>
+				<listheader label="Действует до" hflex="2" style="color:#fff;"/>
+			</listhead>
+		</listbox>
+		<hbox pack="center" align="right" hflex="10" vflex="1">
+			<button id="btnSave" label="Сохранить"
+				style="width: 200px; height: 50px; font-size: 14px; font-weight: 700;" />
+			<button id="btnCancel" label="Отмена"
+					style="width: 200px; height: 50px; font-size: 14px; font-weight: 700;" />
+		</hbox>
+	</vlayout>
+</window>

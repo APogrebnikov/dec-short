@@ -1,0 +1,26 @@
+<window id="winApproveDateStudents" closable="true"
+        apply="org.edec.order.ctrl.WinApproveDateStudentsCtrl" width="700px">
+    <caption>
+        <label value="Подтвердите даты студентов"/>
+    </caption>
+    <vbox>
+        <listbox id="lbStudents" height="300px" hflex="1" style="margin-bottom: 10px">
+            <listhead>
+                <listheader sclass="cwf-listheader-label">
+                    <label sclass="cwf-listheader-label" value="ФИО"/>
+                </listheader>
+                <listheader sclass="cwf-listheader-label">
+                    <label sclass="cwf-listheader-label" value="First_date"/>
+                </listheader>
+                <listheader sclass="cwf-listheader-label">
+                    <label sclass="cwf-listheader-label" value="Second_date"/>
+                </listheader>
+            </listhead>
+        </listbox>
+        <hbox>
+            <button id="btnApprove" label="Подтвердить"></button>
+            <button id="btnCancel" label="Отмена"></button>
+        </hbox>
+    </vbox>
+
+</window>

@@ -1,0 +1,18 @@
+<window id="winQuestionnaire" mode="modal" width="80%" height="95%" apply="org.edec.student.questionnaire.ctrl.QuestionnaireCtrl"
+        self="@define(content)" closable="true" position="center, center">
+    <style src="/student/questionnaire/css/questionnaire.css" />
+    <caption>
+        <label id="lSubject" value="Тема опросника" />
+    </caption>
+    <div sclass="row" style="height: 100%;" >
+        <!-- Список вопросов тут -->
+        <div id="divNavMenu" sclass="col-md-4" style="padding-bottom: 15px; height: 100%;">
+            <button id="btnDescription" sclass="button" label="Описание опросника" width="100%" height="5%" style="padding: 5px;"/>
+            <div id="divListBlock" style="height: 88%; overflow: auto; margin: 5px 0px 5px 0px;"/>
+            <button id="btnSend" sclass="primary-button" label="Отправить ответы" width="100%" height="8%"
+                    style="background: #ff7900; font-size: 14pt; padding-bottom: 10px; text-shadow: 0 0px; color: #000;"/>
+        </div>
+        <!-- Контент по нажатию кнопку вопроса -->
+        <div id="divContainer" sclass="col-md-8" height="100%" style="height: 100%; overflow: auto;" />
+    </div>
+</window>

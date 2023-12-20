@@ -1,0 +1,17 @@
+<window id="winGroupChooser" closable="true"
+        apply="org.edec.newOrder.ctrl.WinGroupChooserCtrl">
+    <caption>
+        <label value="Выбор групп" />
+    </caption>
+    <checkbox label="Только выбранные" id="chbOnlySelected"></checkbox>
+
+    <listbox multiple="true" id="lbGroups" height="300px" width="300px" style="margin-top: 10px">
+        <listhead>
+            <listheader>
+                <textbox id="tbGroupName" placeholder="Поиск группы..."></textbox>
+            </listheader>
+        </listhead>
+    </listbox>
+
+    <button id="btnApply" style="margin-top: 10px">Закрыть</button>
+</window>

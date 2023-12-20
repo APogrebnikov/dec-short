@@ -1,0 +1,14 @@
+<window id="winCreateOrder" closable="true" apply="org.edec.order.ctrl.WinCreateOrderCtrl" width="800px">
+    <caption>
+        <label value="Создать приказ"/>
+    </caption>
+    <vbox>
+        <hbox>
+            <label value="Тип приказа"/>
+            <combobox id="cmbListOrderTypes" readonly="true" width="300px" />
+        </hbox>
+        <vbox id="container" visible="false">
+
+        </vbox>
+    </vbox>
+</window>

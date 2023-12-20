@@ -1,0 +1,10 @@
+<window id="winCreateStudent" height="90%" width="70%" closable="true"
+    apply="org.edec.synchroMine.ctrl.WinCreateStudentCtrl">
+    <caption>
+        <label value="Создание нового студента" />
+    </caption>
+    <tabbox id="tbStudents" hflex="1" vflex="1">
+        <tabs />
+        <tabpanels />
+    </tabbox>
+</window>

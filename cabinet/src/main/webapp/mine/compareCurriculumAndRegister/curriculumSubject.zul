@@ -1,0 +1,42 @@
+<zk>
+    <vlayout hflex="1" vflex="1" apply="org.edec.mine.ctrl.compareCurriculumAndRegister.CurriculumSubjectCtrl">
+        <hlayout height="50px" hflex="1">
+            <vlayout id="vlTypeOfRegister">
+                <label value="Типы ведомостей" sclass="b" />
+            </vlayout>
+            <space/>
+            <vlayout>
+                <label value="Действия" sclass="b" />
+                <button id="btnSearch" label="Поиск" />
+            </vlayout>
+        </hlayout>
+        <listbox id="lbCurriculumSubject" hflex="1" vflex="1" mold="paging" autopaging="true">
+            <auxhead>
+                <auxheader>
+                    <textbox id="tbGroupName" placeholder="Группа" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbSubjectName" placeholder="Предмет" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <intbox id="ibSemesterNumber" placeholder="Семестр" hflex="1" />
+                </auxheader>
+                <auxheader />
+            </auxhead>
+            <listhead>
+                <listheader width="120px">
+                    <label sclass="cwf-listheader-label" value="Группа"/>
+                </listheader>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Предмет"/>
+                </listheader>
+                <listheader width="80px">
+                    <label sclass="cwf-listheader-label" value="Семестр"/>
+                </listheader>
+                <listheader width="120px">
+                    <label sclass="cwf-listheader-label" value="Тип ведомости"/>
+                </listheader>
+            </listhead>
+        </listbox>
+    </vlayout>
+</zk>

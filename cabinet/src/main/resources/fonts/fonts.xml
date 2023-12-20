@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fontFamilies>
+    <fontFamily name="Times New Roman">
+        <normal>fonts/times/times.ttf</normal>
+        <bold>fonts/times/timesbd.ttf</bold>
+        <italic>fonts/times/timesi.ttf</italic>
+        <boldItalic>fonts/times/timesbi.ttf</boldItalic>
+        <pdfEmbedded>true></pdfEmbedded>
+    </fontFamily>
+
+    <fontFamily name="Courier New">
+        <normal>fonts/cour/cour.ttf</normal>
+        <bold>fonts/cour/courbd.ttf</bold>
+        <pdfEmbedded>true></pdfEmbedded>
+    </fontFamily>
+
+</fontFamilies>

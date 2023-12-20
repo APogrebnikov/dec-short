@@ -1,0 +1,53 @@
+<zk>
+    <vlayout hflex="1" vflex="1" apply="org.edec.synchroMine.register.ctrl.RegisterLinksCtrl">
+        <checkbox id="chOnlyUnlinked" label="Показать только непривязанные" checked="true" />
+        <listbox id="lbRegisterLinks" hflex="1" vflex="1">
+            <auxhead>
+                <auxheader>
+                    <textbox id="tbSubjectnameCabinet" placeholder="Введите название предмета из АСУ ИКИТ" hflex="1"/>
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbSubjectnameMine" placeholder="Введите название предмета из Шахт" hflex="1"/>
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbGroupname" placeholder="Введите название группы" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <intbox id="ibCourse" placeholder="Введите курс" hflex="1"/>
+                </auxheader>
+                <auxheader>
+                    <intbox id="ibSemesterNumber" placeholder="Введите семестр" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <intbox id="ibCourseMine" placeholder="Введите курс" hflex="1" />
+                </auxheader>
+                <auxheader>
+                    <intbox id="ibSemesterNumberMine" placeholder="Введите семестр" hflex="1"/>
+                </auxheader>
+            </auxhead>
+            <listhead>
+                <listheader hflex="1">
+                    <label value="Предмет АСУ ИКИТ" />
+                </listheader>
+                <listheader hflex="1">
+                    <label value="Предмет Шахты" />
+                </listheader>
+                <listheader width="200px">
+                    <label value="Группа" />
+                </listheader>
+                <listheader width="120px">
+                    <label value="Курс" />
+                </listheader>
+                <listheader width="120px">
+                    <label value="Семестр" />
+                </listheader>
+                <listheader width="120px">
+                    <label value="Курс шахты" />
+                </listheader>
+                <listheader width="120px">
+                    <label value="Семестр шахты" />
+                </listheader>
+            </listhead>
+        </listbox>
+    </vlayout>
+</zk>

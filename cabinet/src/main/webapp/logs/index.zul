@@ -1,0 +1,42 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vlayout self="@define(content)" hflex="1" vflex="1" apply="org.edec.logs.ctrl.IndexPageCtrl">
+    <hbox>
+        <groupbox hflex="3" vflex="1" title="Тип поиска" style="min-height: 0px; min-width: 0px; width: 500px; height: 70px">
+            <hbox>
+                <vbox>
+                    <radiogroup vflex="2">
+                        <radio id="rAllFiles" label="По всем файлам" checked="true"/>
+                        <space spacing="25px"/>
+                        <radio id="rOneFile" label="По выбранному файлу"/>
+                    </radiogroup>
+                </vbox>
+                <space spacing="25px"/>
+                <combobox id="cmbLogsFileNames" sclass="filterElement" readonly="true" placeholder="Выберите файл" width="200px" visible="false"/>
+            </hbox>
+        </groupbox>
+        <space spacing="10px"/>
+        <groupbox hflex="1" vflex="1" title="Дата лога" style="min-height: 0px; min-width: 0px; width:300px">
+            <textbox id="tbLogsDate" hflex="1" placeholder="Дата в формате yyyy-MM-dd"/>
+        </groupbox>
+        <space spacing="10px"/>
+        <groupbox hflex="1" vflex="1" title="Текст лога">
+            <textbox id="tbLogsText" hflex="1" placeholder="Введите искомый текст лога"/>
+        </groupbox>
+        <space spacing="10px"/>
+        <button id="btnLogsSearch" style="margin-top: 15px" label="Поиск" iconSclass="z-icon-document"/>
+    </hbox>
+    <listbox mold="paging" autopaging="true" pageSize="10" hflex="1" vflex="100%" id="lbLogs" emptyMessage="Список логов пуст">
+        <listhead>
+            <listheader width="180px" align="center">
+                <label sclass="cwf-listheader-label" value="Дата и время"/>
+            </listheader>
+            <listheader width="100px" align="center">
+                <label sclass="cwf-listheader-label" value="Уровень"/>
+            </listheader>
+            <listheader hflex="1" align="center">
+                <label sclass="cwf-listheader-label" value="Текст"/>
+            </listheader>
+        </listhead>
+    </listbox>
+</vlayout>

@@ -1,0 +1,93 @@
+.order-container {
+    margin: 2% 20% 0 20%;
+}
+
+.label_title {
+    font: 16pt sans-serif;
+    color: #505A6E;
+}
+
+.label_kind {
+
+}
+
+.cmb_kind {
+
+}
+
+.spin {
+
+}
+
+.label_email {
+
+}
+
+.btn_order {
+  margin: 6% 0 0 0;
+  color: #fff; /* цвет текста */
+  background: #E66E24; /* фон кнопки */
+  padding: .7em 1.5em; /* отступ от текста */
+  text-shadow: #505A6E 0 0 0.5px;
+  }
+
+.btn_order:hover {
+  background: #F56E1E;
+  color: #fff;
+  text-shadow: #505A6E 0 0 0.5px;
+ }
+
+ .btn_order:focus {
+  color: #fff; /* цвет текста */
+  background: #F56E1E; /* фон кнопки */
+  padding: .7em 1.5em; /* отступ от текста */
+  text-shadow: #505A6E 0 0 0.5px;
+ }
+
+ .btn_order:active {
+   color: #fff; /* цвет текста */
+   background: #E66E24; /* фон кнопки */
+   padding: .7em 1.5em; /* отступ от текста */
+   text-shadow: #505A6E 0 0 0.5px;
+  }
+
+  .btn_history {
+    margin: 6% 0 0 0;
+    color: #fff; /* цвет текста */
+    background: #505A6E; /* фон кнопки */
+    padding: .7em 1.5em; /* отступ от текста */
+    text-shadow: #505A6E 0 0 0.5px;
+    }
+
+  .btn_history:hover {
+    background: #AFB9C3;
+    color: #fff;
+    text-shadow: #505A6E 0 0 0.5px;
+   }
+
+   .btn_history:focus {
+    color: #fff; /* цвет текста */
+    background: #AFB9C3; /* фон кнопки */
+    padding: .7em 1.5em; /* отступ от текста */
+    text-shadow: #505A6E 0 0 0.5px;
+   }
+
+   .btn_history:active {
+     color: #fff; /* цвет текста */
+     background: #505A6E; /* фон кнопки */
+     padding: .7em 1.5em; /* отступ от текста */
+     text-shadow: #505A6E 0 0 0.5px;
+    }
+
+.link_history {
+    text-decoration: none;
+    color: #505A6E;
+    text-align: right;
+}
+
+.link_history:hover {
+    color: #E66E24;
+}
+
+
+

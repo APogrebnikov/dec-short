@@ -1,0 +1,135 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vlayout self="@define(content)" hflex="1" vflex="1" apply="org.edec.passportGroup.ctrl.IndexPageCtrl">
+    <!-- титульный блок -->
+    <hbox hflex="10" height="40px">
+        <!-- название модуля -->
+        <vbox hflex="1" align="center">
+            <separator spacing="18px"/>
+            <label style="font-weight: 700; font-size: 22px" vflex="1" value="Паспорт Группы"/>
+        </vbox>
+        <!-- фильтр институтов -->
+        <groupbox hflex="1" id="gbInstitute">
+            <caption>
+                <label value="Институт:" style="font-weight: 700;"/>
+            </caption>
+            <combobox id="cmbInst" width="100%" readonly="true">
+
+            </combobox>
+        </groupbox>
+
+        <!-- фильтр семестров -->
+        <groupbox hflex="1" id="gbSemester">
+            <caption>
+                <label value="Семестр:" style="font-weight: 700;"/>
+            </caption>
+            <combobox id="typeOfSemesterFilter" width="100%" readonly="true">
+                <comboitem label="Все"/>
+                <comboitem label="Осенний"/>
+                <comboitem label="Весенний"/>
+            </combobox>
+        </groupbox>
+        <!-- фильтр формы обучения -->
+        <groupbox hflex="1" id="gbFormOfStudy">
+            <caption>
+                <label value="Форма обучения:" style="font-weight: 700;"/>
+            </caption>
+            <combobox id="formOfStudyFilter" width="100%" readonly="true">
+
+            </combobox>
+        </groupbox>
+        <!-- фильтр названия групп -->
+        <groupbox hflex="1">
+            <caption>
+                <label value="Группа:" style="font-weight: 700;"/>
+            </caption>
+            <textbox id="groupFilter" width="100%"/>
+        </groupbox>
+        <!-- фильтр курсов -->
+        <groupbox hflex="1">
+            <caption>
+                <label value="Курс:" style="font-weight: 700;"/>
+            </caption>
+            <combobox id="courseFilter" width="100%" readonly="true">
+            </combobox>
+        </groupbox>
+        <!-- фильтр квалификации -->
+        <groupbox hflex="1" id="qualificationFilter">
+            <caption>
+                <label value="Квалификация:" style="font-weight: 700;"/>
+            </caption>
+            <separator spacing="5px"/>
+            <checkbox id="engineer" label="Инж" style="font-weight: 700;"/>
+            <space spacing="10px"/>
+            <checkbox id="bachelor" label="Бак" style="font-weight: 700;"/>
+            <space spacing="10px"/>
+            <checkbox id="master" label="Маг" style="font-weight: 700;"/>
+        </groupbox>
+    </hbox>
+    <!-- центр -->
+    <hbox vflex="10" hflex="1">
+        <!-- левый блок со списком семестров -->
+        <vbox vflex="1" hflex="1" style="background: #EDEDED;">
+            <listbox id="semesterList" hflex="1" vflex="1">
+                <listhead>
+                    <listheader hflex="3">
+                        <label sclass="cwf-listheader-label" value="Учебный год"/>
+                    </listheader>
+                    <listheader hflex="3">
+                        <label sclass="cwf-listheader-label" value="Семестр"/>
+                    </listheader>
+                    <listheader hflex="3">
+                        <label sclass="cwf-listheader-label" value="Форма обучения"/>
+                    </listheader>
+                </listhead>
+            </listbox>
+        </vbox>
+        <!-- правый блок со списком групп -->
+        <vbox vflex="1" hflex="1" style="background: #EDEDED;">
+            <listbox id="groupList" hflex="1" vflex="1" multiple="true" checkmark="true">
+                <listhead>
+                    <listheader hflex="2">
+                        <label sclass="cwf-listheader-label" value="Группа"/>
+                    </listheader>
+                    <listheader hflex="2">
+                        <label sclass="cwf-listheader-label" value="Курс"/>
+                    </listheader>
+                    <listheader hflex="2">
+                        <label sclass="cwf-listheader-label" value="Квалификация"/>
+                    </listheader>
+                </listhead>
+            </listbox>
+        </vbox>
+    </hbox>
+
+    <hbox hflex="1">
+        <hbox vflex="1" hflex="1" pack="start">
+            <combobox height="28px" id="cmbReport">
+                <comboitem label="Должники"/>
+                <comboitem label="Форма-Контроль"/>
+            </combobox>
+            <button id="btnShowReport" label="Показать отчет" height="28px" image="/imgs/pdf.png"/>
+        </hbox>
+        <hbox vflex="1" hflex="1" pack="end">
+            <hbox>
+                <button id="btnReportEok" label="Отчет по ЭОК" visible="false"/>
+            </hbox>
+            <hbox>
+                <button id="btnShowGroup" label="Отчет по группе" disabled="true"/>
+            </hbox>
+            <hbox>
+                <button id="btnEditSubject" label="Редактор предметов" disabled="true"/>
+            </hbox>
+            <hbox>
+                <button id="btnCheckScholarship" label="Проверка стип." visible="false"/>
+            </hbox>
+            <hbox>
+                <button id="btnPdfCurrentProgress" label="Текущая успеваемость"/>
+            </hbox>
+            <hbox>
+                <button id="btnPassportGroupReport" label="Паспорт групп(отчет)"/>
+            </hbox>
+        </hbox>
+    </hbox>
+
+</vlayout>

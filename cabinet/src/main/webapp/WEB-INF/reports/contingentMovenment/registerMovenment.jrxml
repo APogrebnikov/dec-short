@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="registerMovenment" pageWidth="595" pageHeight="842" whenNoDataType="NoPages" columnWidth="539" leftMargin="28" rightMargin="28" topMargin="56" bottomMargin="56" uuid="d5367a0b-afd6-49fb-a5c6-7c8dd07b0450">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+	<subDataset name="marks" uuid="b9ea5922-1a17-4a8d-b32f-b56d7f2a9066">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="infoFrom" class="java.lang.String">
+			<fieldDescription><![CDATA[infoFrom]]></fieldDescription>
+		</field>
+		<field name="infoTo" class="java.lang.String">
+			<fieldDescription><![CDATA[infoTo]]></fieldDescription>
+		</field>
+		<field name="rating" class="java.lang.String">
+			<fieldDescription><![CDATA[rating]]></fieldDescription>
+		</field>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="fio" class="java.lang.String">
+		<fieldDescription><![CDATA[fio]]></fieldDescription>
+	</field>
+	<field name="directioncode" class="java.lang.String">
+		<fieldDescription><![CDATA[directioncode]]></fieldDescription>
+	</field>
+	<field name="groupname" class="java.lang.String">
+		<fieldDescription><![CDATA[groupname]]></fieldDescription>
+	</field>
+	<field name="marks" class="java.util.List">
+		<fieldDescription><![CDATA[marks]]></fieldDescription>
+	</field>
+	<field name="shortfio" class="java.lang.String">
+		<fieldDescription><![CDATA[shortfio]]></fieldDescription>
+	</field>
+	<field name="prevgroupname" class="java.lang.String">
+		<fieldDescription><![CDATA[prevgroupname]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="64" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="540" height="14" uuid="38cee097-cea1-45b3-b337-07a12a5b635a">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Ведомость перезачета дисциплин]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="14" width="540" height="14" uuid="6b0a7dee-6a44-47ea-aa56-c26d1dfb22d8">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="28" width="540" height="14" uuid="b4b2642d-042f-4c62-9832-156600d9cd0d">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Направление " + ($F{directioncode}!=null?$F{directioncode}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="42" width="540" height="12" uuid="999d761e-faaf-46ca-a19f-9d94e4f26f3b">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{groupname}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="187" splitType="Stretch">
+			<staticText>
+				<reportElement positionType="Float" x="110" y="131" width="170" height="14" uuid="d77af4f6-3684-40ad-9782-77388510f46c">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Директор ИКИТ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="330" y="131" width="210" height="14" uuid="d2a693cb-1ccb-418f-95b1-2b91da7754e4">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Д. В. Капулин]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="Float" x="110" y="171" width="170" height="14" uuid="d696044e-0c94-446b-8546-a96173576de9">
+					<property name="com.jaspersoft.studio.unit.height" value="pixel"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Обучающийся]]></text>
+			</staticText>
+			<textField>
+				<reportElement positionType="Float" x="330" y="171" width="210" height="14" uuid="2fa618db-00df-49a2-8fb0-93bd61db4f7a"/>
+				<textElement textAlignment="Left">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{shortfio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="Float" x="400" y="2" width="140" height="71" uuid="76a84deb-2f0b-4fc3-a5f0-d9400614b094"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Оценка]]></text>
+			</staticText>
+			<componentElement>
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="73" width="540" height="30" uuid="73e1bb03-8877-45bd-b973-e67aa1a5a2b5"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="marks" uuid="df4f9a96-6318-47d3-935e-dc965aa0751a">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{marks})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="30" width="540">
+						<textField textAdjust="StretchHeight">
+							<reportElement stretchType="RelativeToBandHeight" x="0" y="0" width="190" height="30" uuid="bae6a1c7-e20d-4a65-870b-f779a824d5a3"/>
+							<box>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$F{infoFrom}]]></textFieldExpression>
+						</textField>
+						<textField textAdjust="StretchHeight">
+							<reportElement stretchType="RelativeToBandHeight" x="190" y="0" width="210" height="30" uuid="08b5f5a0-8d05-45e6-b36d-28400888d5cb"/>
+							<box>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle"/>
+							<textFieldExpression><![CDATA[$F{infoTo}]]></textFieldExpression>
+						</textField>
+						<textField textAdjust="StretchHeight">
+							<reportElement stretchType="RelativeToBandHeight" x="400" y="0" width="140" height="30" uuid="ba48d7b3-20b3-46db-8902-7be16710bca8"/>
+							<box>
+								<topPen lineWidth="0.5"/>
+								<leftPen lineWidth="0.5"/>
+								<bottomPen lineWidth="0.5"/>
+								<rightPen lineWidth="0.5"/>
+							</box>
+							<textElement textAlignment="Center" verticalAlignment="Middle">
+								<paragraph tabStopWidth="0"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{rating}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<textField>
+				<reportElement positionType="Float" x="190" y="2" width="210" height="71" uuid="38768794-b249-4918-8aac-f639d8ada5ac"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Дисциплины по текущему учебному плану "+ $F{groupname} +" (семестр, часы - форма контроля)"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="0" y="2" width="190" height="71" uuid="820c3558-f8d5-4363-84f7-b39cf281a9ec"/>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Дисциплины по предыдущему учебному плану, последняя учебная группа "+($F{prevgroupname}.equals("")?"________":$F{prevgroupname})+" (семестр, часы - оценка)"]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

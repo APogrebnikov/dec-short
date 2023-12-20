@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="listOfStudentByChair" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b6e7131b-7ae9-400d-bd85-407ff5e0f807">
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+	<subDataset name="subjects" uuid="cbe23cdc-4b74-4753-b9a0-56f879ceb5fb">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="subjectname" class="java.lang.String">
+			<fieldDescription><![CDATA[subjectname]]></fieldDescription>
+		</field>
+		<field name="students" class="java.util.List">
+			<fieldDescription><![CDATA[students]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="students" uuid="91ce6024-d823-46ab-9eae-dcfc6c668aa0">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="groupname" class="java.lang.String">
+			<fieldDescription><![CDATA[groupname]]></fieldDescription>
+		</field>
+		<field name="fio" class="java.lang.String">
+			<fieldDescription><![CDATA[fio]]></fieldDescription>
+		</field>
+		<variable name="number" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+		</variable>
+	</subDataset>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="fulltitle" class="java.lang.String">
+		<fieldDescription><![CDATA[fulltitle]]></fieldDescription>
+	</field>
+	<field name="subjects" class="java.util.List">
+		<fieldDescription><![CDATA[subjects]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="52" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="550" height="17" uuid="b2953a59-8255-4336-8fda-534003997e9c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font size="12" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fulltitle}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="17" width="550" height="34" uuid="92183a9c-536b-496d-88e5-25ec6cd764da"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="subjects" uuid="a39983fd-5fa6-49f6-ae19-33337815f97e">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{subjects})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="34" width="550">
+						<textField isStretchWithOverflow="true">
+							<reportElement positionType="Float" x="0" y="0" width="550" height="17" uuid="3c88647f-635e-4030-a21c-d2f4f113c7be">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<textElement>
+								<font isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{subjectname}]]></textFieldExpression>
+						</textField>
+						<componentElement>
+							<reportElement positionType="Float" x="0" y="17" width="550" height="17" uuid="defc29c2-ec7f-40df-abad-a1ae8038fe3b"/>
+							<jr:list printOrder="Vertical">
+								<datasetRun subDataset="students" uuid="c759dd39-3235-4605-8eea-ff7f56b97620">
+									<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{students})]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="17" width="550">
+									<textField isStretchWithOverflow="true">
+										<reportElement positionType="Float" x="0" y="0" width="550" height="17" uuid="afa74e31-e1dc-4ce5-990a-1b9635d03a1a">
+											<property name="com.jaspersoft.studio.unit.height" value="px"/>
+											<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+										</reportElement>
+										<textElement>
+											<paragraph firstLineIndent="15"/>
+										</textElement>
+										<textFieldExpression><![CDATA[$V{number} + ". " + $F{fio} + " " + $F{groupname}]]></textFieldExpression>
+									</textField>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="17" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="550" height="17" uuid="f80c81e1-8e54-4ece-bcac-e59900bed760">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,69 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+
+<?link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=cyrillic" rel="stylesheet"?>
+<?link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"?>
+
+<!--?link href="/css/normalize.css" rel="stylesheet"?-->
+<!--?link href="/css/chat.css" rel="stylesheet"?-->
+<?link href="/css/chatModal.css" rel="stylesheet"?>
+
+<div self="@define(content)" xmlns:n="native" xmlns:w="client" apply="org.edec.chat.ctrl.IndexPageCtrl">
+
+    <style src="/css/chat.css"/>
+
+    <div sclass="container">
+        <tabbox>
+            <tabs id="tab">
+                <tab id="tabGroup" label=" Группа" />
+                <tab id="tabDecanat" label="Деканат" />
+            </tabs>
+            <tabpanels>
+                <tabpanel id="tpGroup">
+                    <div sclass="message-box">
+                        <div  id="aboutGroup" sclass="message-about" />
+
+                        <div sclass="message-history_wrap">
+                            <div id="messagesGroup" sclass="message-history" />
+                        </div>
+
+                        <div id="sendGroup" sclass="send-panel_wrap" />
+                    </div>
+                </tabpanel>
+
+                <tabpanel id="tpDecanat">
+                    <div sclass="message-box">
+                        <div sclass="message-about">
+                            <n:ul class="message-about_header">
+                                <n:li class="message-about_header-title"><label value="Деканат"></label></n:li>
+                                <n:li><button sclass="icons">search</button></n:li>
+                                <n:li><button sclass="icons">star</button></n:li>
+                                <n:li><button id="filesDecanat" sclass="icons">insert_drive_file</button></n:li>
+                            </n:ul>
+                        </div>
+
+                        <div sclass="message-history_wrap">
+                            <div id="lbDecanat" sclass="message-history"/>
+                        </div>
+
+                        <div sclass="send-panel_wrap">
+                            <n:ul class="send-panel">
+                                <n:li class="send-panel_clip"><button id="chooseFileDecanat" upload="true" sclass="icons">attach_file</button></n:li>
+                                <n:li class="send-panel_textarea">
+                                    <textbox id="textMessageDecanat" placeholder="Сообщение..." rows="2"/></n:li>
+                                <n:li class="send-panel_send"><button id="sendMessageDecanat" sclass="icons">send</button></n:li>
+                                <n:li><label id="loadFileDecanat" /></n:li>
+                            </n:ul>
+                        </div>
+                    </div>
+                </tabpanel>
+            </tabpanels>
+        </tabbox>
+    </div>
+
+    <script src="/js/chat.js" type="text/javascript" />
+    <timer id="timer" delay="1000" repeats="true" />
+</div>

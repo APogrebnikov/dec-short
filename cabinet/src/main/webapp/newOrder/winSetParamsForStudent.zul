@@ -1,0 +1,18 @@
+<window id="winSetParamsForStudent" closable="true"
+        apply="org.edec.newOrder.ctrl.WinSetParamsForStudentCtrl" width="1100px">
+    <caption>
+        <label value="Параметры студентов в приказе"/>
+    </caption>
+    <vbox>
+        <listbox id="lbStudents" height="300px" style="margin-bottom: 10px">
+            <listhead>
+
+            </listhead>
+        </listbox>
+        <hbox>
+            <button id="btnApprove" label="Подтвердить"></button>
+            <button id="btnCancel" label="Отмена"></button>
+        </hbox>
+    </vbox>
+
+</window>

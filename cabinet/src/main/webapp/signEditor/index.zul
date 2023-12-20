@@ -1,0 +1,47 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vlayout self="@define(content)" hflex="1" vflex="1" apply="org.edec.signEditor.ctrl.IndexPageCtrl">
+
+
+    <listbox vflex="1" id="lbOrderRule" width="100%"  mold="paging" autopaging="true" pageSize="7">
+        <listhead>
+            <listheader hflex="3" ><label sclass="cwf-listheader-label" />
+                <textbox hflex="1" id="tbSearchOrder" placeholder="Название..." />
+            </listheader>
+            <listheader hflex="6" ><label sclass="cwf-listheader-label" value = "Заголовок (Описание)"/></listheader>
+            <listheader hflex="4" ><label sclass="cwf-listheader-label" value = "Заголовок (Название)"/></listheader>
+            <listheader hflex="2" align="center"><label sclass="cwf-listheader-label" value = "Тип приказа"/></listheader>
+            <listheader hflex="2" align="center"><label sclass="cwf-listheader-label" value = "Институт"/></listheader>
+            <listheader hflex="2" align="center"><label sclass="cwf-listheader-label" value = "ФК"/></listheader>
+            <listheader hflex="2" align="center"><label sclass="cwf-listheader-label" value = "Автоматич."/></listheader>
+            <listheader hflex="2" align="center"><label sclass="cwf-listheader-label" value = ""/> </listheader>
+        </listhead>
+    </listbox>
+
+    <hlayout>
+    <hbox>
+        <button id ="btnCreateOrderRule" label="Создать правило"/>
+        <button id ="btnUpdateOrderRule" label="Редактировать правило"/>
+        <button id ="btnDeleteOrderRule" label="Удалить правило"/>
+    </hbox>
+    <separator spacing="30px"/>
+
+    <hbox>
+        <button id ="btnCreateOrderSection" label="Создать секцию"/>
+        <button id ="btnUpdateOrderSection" label="Редактировать секцию"/>
+        <button id ="btnDeleteOrderSection" label="Удалить секцию"/>
+    </hbox>
+    </hlayout>
+
+    <listbox vflex="1" id="lbOrderSection" width="100%"  mold="paging" autopaging="true" pageSize="7">
+        <listhead>
+            <listheader hflex="6" ><label sclass="cwf-listheader-label"  value = "Описание"/></listheader>
+            <listheader hflex="2" ><label sclass="cwf-listheader-label" value = "Порядок отображения"/></listheader>
+            <listheader hflex="2" ><label sclass="cwf-listheader-label" value = "Название секции"/></listheader>
+            <listheader hflex="3" align="center"><label sclass="cwf-listheader-label" value = "Основание"/></listheader>
+            <listheader hflex="2" align="center"><label sclass="cwf-listheader-label" value = "ID в шахтах"/></listheader>
+        </listhead>
+    </listbox>
+
+
+</vlayout>

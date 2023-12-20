@@ -1,0 +1,74 @@
+<zk>
+    <hbox hflex="1" vflex="1" apply="org.edec.secretaryChair.ctrl.TabComissionsProtocolsChairsCtrl">
+        <vbox hflex="1" vflex="1">
+            <groupbox>
+                <caption label="Выберите семестр"/>
+                <vbox>
+                    <radiogroup>
+                        <vbox>
+                            <radio id="rFullTime" label="Очная"></radio>
+                            <radio id="rExtramural" label="Заочная"></radio>
+                        </vbox>
+                    </radiogroup>
+                    <combobox id="cmbSemester" placeholder="Выберите семестр"></combobox>
+                    <button id="btnSearchComissionsProtocols" label="Найти протоколы"/>
+                </vbox>
+            </groupbox>
+            <groupbox>
+                <caption label="Даты комиссий"/>
+                <datebox id="dbFrom" placeholder="С"/>
+                <datebox id="dbTo" placeholder="По"/>
+            </groupbox>
+            <vbox>
+                <hbox>
+                    <hbox style="width: 15px; height: 15px; border: 1px solid black; background: #99ff99;"/>
+                    <checkbox id="chbSign" label="Подписанные" />
+                </hbox>
+                <hbox>
+                    <hbox style="width: 15px; height: 15px; border: 1px solid black; background: #FF7373;"/>
+                    <checkbox id="chbUnSign" label="Не подписанные" />
+                </hbox>
+
+            </vbox>
+
+            <button id="btnPrintReportXls" label="Скачать реестр(.xls)" image="/imgs/excel.png"/>
+
+        </vbox>
+        <listbox id="lbComissionsProtocols" mold="paging" autopaging="true" hflex="5" vflex="1">
+            <auxhead>
+                <auxheader>
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbProtocolNumber" hflex="1" placeholder="№ протокола..."/>
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbSubjectname" hflex="1" placeholder="Предмет..."/>
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbFioStudent" hflex="1" placeholder="ФИО студента..."/>
+                </auxheader>
+                <auxheader>
+                    <textbox id="tbGroupname" hflex="1" placeholder="Группа..."/>
+                </auxheader>
+            </auxhead>
+            <listhead style="text-align: center">
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Дата"></label>
+                </listheader>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Номер протокола"></label>
+                </listheader>
+                <listheader hflex="2">
+                    <label sclass="cwf-listheader-label" value="Предмет"></label>
+                </listheader>
+                <listheader hflex="2">
+                    <label sclass="cwf-listheader-label" value="ФИО студента"></label>
+                </listheader>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Группа"></label>
+                </listheader>
+            </listhead>
+        </listbox>
+
+    </hbox>
+</zk>

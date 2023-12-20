@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="subjects" columnCount="15" printOrder="Horizontal" pageWidth="600" pageHeight="360" columnWidth="40" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="238bcdf7-158e-4c23-a532-e8a97e8bda6a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="times.ttf" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="subject" class="java.lang.String"/>
+	<field name="statistic" class="java.lang.String"/>
+	<field name="formofcontrol" class="java.lang.String">
+		<fieldDescription><![CDATA[formofcontrol]]></fieldDescription>
+	</field>
+	<field name="hoursCount" class="java.lang.Double">
+		<fieldDescription><![CDATA[hoursCount]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="182" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="40" height="108" uuid="1c54f0a9-949a-4454-b1c3-28ee0db7a257">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Top" rotation="Left">
+					<paragraph leftIndent="5"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subject}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="120" width="40" height="30" uuid="9989a4c5-2b4e-4292-8e76-09bf04dc8cea">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{statistic}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="108" width="40" height="12" uuid="09e37875-e515-4aa4-9cd2-a242cb855cbf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$F{formofcontrol}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="150" width="40" height="30" uuid="36e6e605-79fd-4538-86b9-7ead6d44b07f">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[!$F{hoursCount}.equals(null) ? $F{hoursCount}.intValue() + " ч." : " "]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

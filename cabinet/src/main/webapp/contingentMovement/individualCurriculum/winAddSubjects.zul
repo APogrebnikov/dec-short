@@ -1,0 +1,44 @@
+<window id="winAddSubjects" height="60%" width="50%" closable="true" title="Добавить предметы к перезачтённым"
+        apply="org.edec.contingentMovement.ctrl.individualCurriculum.WinAddSubjectsCtrl">
+
+    <vlayout hflex="1" vflex="1">
+        <hlayout hflex="1" height="30px">
+            <textbox id="tbSubjectName" placeholder="Название предмета" constraint="no empty"/>
+            <textbox id="tbSubjectCode" placeholder="Код предмета" constraint="no empty" />
+            <intbox id="ibSemesterNumber" placeholder="Семестр" constraint="no negative, no empty" />
+            <doublebox id="doubleboxHours" placeholder="Часы" constraint="no negative, no empty" />
+        </hlayout>
+        <hlayout hflex="1" height="30px">
+            <combobox id="cmbFormOfControl" placeholder="Форма контроля" constraint="no empty"/>
+            <combobox id="cmbRating" placeholder="Оценка" constraint="no empty" />
+            <checkbox id="chDiffPass" label="Диф. зачет" />
+            <button id="btnAddSubject" label="Добавить" />
+        </hlayout>
+
+        <listbox id="lbAddedSubjects" hflex="1" vflex="1" emptyMessage="Добавленных предметов пока нет">
+            <listhead>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Предмет"/>
+                </listheader>
+                <listheader width="75px" align="center">
+                    <label sclass="cwf-listheader-label" value="Семестр"/>
+                </listheader>
+                <listheader width="50px" align="center">
+                    <label sclass="cwf-listheader-label" value="Часы"/>
+                </listheader>
+                <listheader width="80px" align="center">
+                    <label sclass="cwf-listheader-label" value="ФК"/>
+                </listheader>
+                <listheader width="90px" align="center">
+                    <label sclass="cwf-listheader-label" value="Перезачет"/>
+                </listheader>
+                <listheader width="90px" />
+            </listhead>
+        </listbox>
+
+        <hlayout hflex="1">
+            <button id="btnCancel" label="Отменить" />
+            <button id="btnSave" label="Сохранить" />
+        </hlayout>
+    </vlayout>
+</window>

@@ -1,0 +1,27 @@
+<window border="normal" contentStyle="overflow:auto;" closable="true"
+        id="winSelectStudentsForCreate" apply="org.edec.newOrder.ctrl.WinSelectStudentsForCreateCtrl" width="600px">
+    <caption>
+        <label value="Добавление студента"/>
+    </caption>
+    <vbox width="100%" style="">
+        <hbox style="margin-top:5px">
+            <label>Студент ищется в семестре:</label>
+            <combobox id="cmbSemester" readonly="true"></combobox>
+        </hbox>
+        <hbox>
+            <textbox id="tbFamily" placeholder="Введите фамилию..."></textbox>
+            <button id="btnSearch">Поиск</button>
+        </hbox>
+        <listbox id="lbSearchResults" multiple="true" checkmark="true" height="400px">
+            <listhead>
+                <listheader width="25px"></listheader>
+                <listheader><label value="ФИО" sclass="cwf-listheader-label"/></listheader>
+                <listheader><label value="Группа" sclass="cwf-listheader-label"/></listheader>
+            </listhead>
+        </listbox>
+        <hbox>
+            <button id="btnAdd">Добавить выбранных студентов</button>
+            <button id="btnReturnToOrder">Вернуться к созданию приказа</button>
+        </hbox>
+    </vbox>
+</window>

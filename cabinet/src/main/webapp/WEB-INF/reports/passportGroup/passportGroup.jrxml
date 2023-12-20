@@ -1,0 +1,344 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="passportGroup" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="822" leftMargin="20" rightMargin="0" topMargin="20" bottomMargin="20" whenResourceMissingType="Error" uuid="2766ebe6-389d-4022-9a87-64d9a4e6c37c">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<style name="Crosstab_CH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab_CG" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab_CT" mode="Opaque" backcolor="#005FB3">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab_CD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CG" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CT" mode="Opaque" backcolor="#005FB3">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Crosstab 1_CD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfFontName="times.ttf" pdfEncoding="cp1251" isPdfEmbedded="true"/>
+	<parameter name="realPath" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="stat_result" class="java.lang.String"/>
+	<field name="students" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<field name="subjects" class="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<field name="groupname" class="java.lang.String"/>
+	<field name="course" class="java.lang.String"/>
+	<field name="year" class="java.lang.String"/>
+	<field name="semester" class="java.lang.String"/>
+	<background>
+		<band height="30" splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="226" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="120" width="160" height="30" uuid="7c895ccc-39d0-40ab-beb1-289c66cdd501">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Статистика:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="120" width="40" height="30" uuid="e71d092e-6b20-422f-bc94-0ba8165ddba2">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{stat_result}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="160" y="120" width="20" height="30" uuid="d7859c07-e51b-4d1c-aebd-cc09ce71739d">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="0" width="160" height="30" uuid="5af1895d-ab24-44fe-bd4e-97637b7a087a">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{groupname}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="120" width="20" height="30" uuid="cdaf61de-3bcf-4364-9a99-0bd4408923d6">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="0" width="40" height="120" uuid="66d36cca-8df3-4c3d-bc12-bde32ba0ca4e">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box bottomPadding="5">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement rotation="Left">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Успеваемость"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="60" width="160" height="30" uuid="6ccf6f58-a8bc-4de2-a5d6-09a19bbd503f">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{year}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="160" y="0" width="20" height="120" uuid="7c5359b3-47c2-4c95-b607-b71e9e2fc55b">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box leftPadding="0" bottomPadding="6">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement rotation="Left">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Договор]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="30" width="160" height="30" uuid="07e23474-8fd7-475e-aa63-c27945c2516b">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{course}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="180" y="0" width="20" height="120" uuid="9041f4d1-d5c9-4331-9cad-d132ca3792d6">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box bottomPadding="4">
+					<topPen lineWidth="0.4"/>
+					<leftPen lineWidth="0.4"/>
+					<bottomPen lineWidth="0.4"/>
+					<rightPen lineWidth="0.4"/>
+				</box>
+				<textElement textAlignment="Left" rotation="Left">
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<text><![CDATA[Продление сессии]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="90" width="160" height="30" uuid="8a27ad00-8e06-4143-adde-254d0c60d1b3">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{semester}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="240" y="0" width="592" height="180" uuid="514b5ec5-acc4-4b04-8ebf-3f97ab5d9512"/>
+				<dataSourceExpression><![CDATA[$F{subjects}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{realPath} + "subjects.jasper"]]></subreportExpression>
+			</subreport>
+			<staticText>
+				<reportElement x="0" y="150" width="160" height="30" uuid="12a37ccc-7a41-42ad-ae33-5a3ee6b2ff69">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Часы:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="160" y="150" width="20" height="30" uuid="2fec7b8d-e6d1-4bf5-9607-dd0c685d5ca4">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="150" width="20" height="30" uuid="ac3ba2e3-b171-49a8-a81e-2139675c95f6">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement>
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="200" y="150" width="40" height="30" uuid="35346e4e-67a5-4914-a058-0addc3a840ad">
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" "]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="179" width="830" height="29" uuid="f3aa4999-4fae-4067-9dd5-7ccf038d5a98"/>
+				<subreportParameter name="realPath">
+					<subreportParameterExpression><![CDATA[$P{realPath}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[$F{students}]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{realPath} + "student_rating.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

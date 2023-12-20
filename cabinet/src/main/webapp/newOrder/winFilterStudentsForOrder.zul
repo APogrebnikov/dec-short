@@ -1,0 +1,31 @@
+<window id="winFilterStudentsForOrder" contentStyle="overflow:auto;" width="80%" height="90%" closable="true" title="Выбор студентов"
+        apply="org.edec.newOrder.ctrl.WinFilterStudentsForOrder" >
+    <vbox>
+        <hbox  vflex="1" hflex="1">
+            <vbox>
+                <checkbox id = "chNotBudget" label="Платники" checked="true"></checkbox>
+                <checkbox id = "chBudget" label="Бюджетники"  checked="true"></checkbox>
+            </vbox>
+            <vbox>
+                <checkbox id = "chForeigner" label="Иностранцы"  checked="true"></checkbox>
+                <checkbox id = "chNotForeigner" label="Не иностранцы"  checked="true"></checkbox>
+            </vbox>
+        </hbox>
+        <hbox  vflex="9" hflex="1" >
+            <listbox id="lbStudents" mold="paging" pageSize="10" multiple="true" checkmark="true" >
+                <listhead>
+                    <listheader >
+                        <label value="ФИО" sclass="cwf-listheader-label"/>
+                    </listheader>
+                    <listheader >
+                        <label value="Группа" sclass="cwf-listheader-label"/>
+                    </listheader>
+                </listhead>
+            </listbox>
+        </hbox>
+
+
+        <button id="btnCreate" label="Создать" vflex="0.5"></button>
+    </vbox>
+
+</window>

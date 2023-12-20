@@ -1,0 +1,125 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox sclass="panel-profile" self="@define(content)" apply="org.edec.profile.ctrl.IndexPageCtrl">
+    <style>
+        .profile{
+        border: none !important;
+        }
+
+        .profile .z-listbox-odd.z-listitem{
+        background: #fff;
+        }
+
+        .profile .z-listitem.z-listitem-selected:hover>.z-listcell,
+        .profile .z-listitem:hover>.z-listcell {
+        border-color: #dcdcdc;
+        background: #f3f3f3;
+        position: relative;
+        }
+
+        .profile .z-listitem.z-listitem-selected>.z-listcell {
+        border-color: #dcdcdc;
+        background: #eef2ff;
+        background-clip: padding-box;
+        position: relative;
+        }
+
+        .btnOk.z-button{
+        padding: 0px 6px;
+        }
+
+        .panel-profile {
+        border-radius: 15px;
+        border: 1px solid #cacaca;
+        height: 190px;
+        width: 630px;
+        padding: 15px 15px 15px 15px;
+        margin-top: 20px;
+        margin-left: 20px;
+        margin: auto;
+        }
+    </style>
+    <label id="lFio" style="font: 16pt/14pt bold sans-serif; width: 100%;"/>
+    <listbox width="600px" sclass="profile">
+        <listhead>
+            <listheader/>
+            <listheader/>
+        </listhead>
+        <listitem id="liBirthday">
+            <listcell>
+                <label value="День Рождения" style="font-weight: 700;"/>
+            </listcell>
+            <listcell id="btnEditBirthDay">
+                <label id="lBirthDay"/>
+                <datebox id="dbBirthDay" format="dd.MM.yyyy" visible="false"/>
+                <!--
+                <button id="btnEditBirthDay" image="/imgs/edit.png" visible="false"/>
+                -->
+                <button id="btnOkBirthDay" sclass="btnOk" image="/imgs/okCLR.png" visible="false"/>
+            </listcell>
+        </listitem>
+        <listitem id="liEmail">
+            <listcell>
+                <label value="E-mail" style="font-weight: 700;"/>
+            </listcell>
+            <listcell id="btnEditEmail">
+                <hbox>
+                    <label id="lEmail"/>
+                    <textbox id="tbEmail" visible="false"/>
+                    <!--
+                    <button id="btnEditEmail" image="/imgs/edit.png" visible="false"/>
+                    -->
+                    <button id="btnOkEmail" sclass="btnOk" image="/imgs/okCLR.png" visible="false"/>
+                </hbox>
+            </listcell>
+        </listitem>
+        <listitem id="liNotification">
+            <listcell>
+                <label value="Уведомление на почту" style="font-weight: 700;"/>
+            </listcell>
+            <listcell>
+                <checkbox id="chNotification" label="Получать"/>
+            </listcell>
+        </listitem>
+        <listitem>
+            <listcell>
+                <label value="Начальная страница" style="font-weight: 700;"/>
+            </listcell>
+            <listcell id="btnStartPage">
+                <label id="lStartPage"/>
+                <!--
+                <button id="btnStartPage" image="/imgs/edit.png" visible="false"/>
+                -->
+            </listcell>
+        </listitem>
+        <listitem visible="false" id="liReference">
+            <listcell>
+                <label value="Социальная справка" style="font-weight: 700;"/>
+            </listcell>
+            <listcell>
+                <label id="lReferenceDateFinish"/>
+            </listcell>
+        </listitem>
+        <listitem visible="false" id="liBlanksDigitalSignature">
+            <listcell>
+                <label value="Бланки на ЭП" style="font-weight: 700;"/>
+            </listcell>
+            <listcell>
+                <button id = "btnBlankDigitalSignature" label="Бланки" image="/imgs/docs.png" height="30px"  />
+                <button id = "btnGuideDigitalSignature" label="Руководство" image="/imgs/pdf.png" height="30px" />
+            </listcell>
+        </listitem>
+        <listitem visible="false" id="liBlanksScholarship">
+            <listcell>
+                <label value="Заявления" style="font-weight: 700;"/>
+            </listcell>
+            <listcell>
+                <button id = "btnBlankMaterialSupport" label="Мат. помощь" image="/imgs/docs.png" height="30px"  />
+                <button id = "btnBlankSocialScholarship" label="Соц. стипендия" image="/imgs/docs.png" height="30px" />
+            </listcell>
+        </listitem>
+    </listbox>
+    <separator spacing="20px" />
+    <label id="lLKstudent" style="font: 16pt/14pt bold sans-serif; width: 100%;" value="Android приложение 'Личный кабинет студента'"/>
+    <image src="/imgs/qrstudent.png"></image>
+</vbox>

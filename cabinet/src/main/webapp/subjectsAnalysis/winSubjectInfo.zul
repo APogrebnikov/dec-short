@@ -1,0 +1,22 @@
+<window id="winSubjectsInfo" border="normal" closable="true" height="40%" width="50%" contentStyle="overflow:auto"
+        apply="org.edec.subjectsAnalysis.ctrl.WinSubjectsInfoCtrl">
+    <caption>
+        <label value="Информация по предмету"/>
+    </caption>
+    <listbox id= "lbSubjectsInfo">
+        <listhead>
+            <listheader  hflex="3">
+                <label sclass="cwf-listheader-label" value="Предмет"/>
+            </listheader>
+            <listheader  hflex="3">
+                <label sclass="cwf-listheader-label" value="ФИО преподавтаелей"/>
+            </listheader>
+            <listheader  hflex="1">
+                <label sclass="cwf-listheader-label" value="Группы"/>
+            </listheader>
+            <listheader  hflex="3">
+                <label sclass="cwf-listheader-label" value="Кафедра"/>
+            </listheader>
+        </listhead>
+    </listbox>
+</window>

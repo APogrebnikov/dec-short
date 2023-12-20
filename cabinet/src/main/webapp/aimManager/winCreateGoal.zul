@@ -1,0 +1,38 @@
+<window height="90%" width="80%" apply="org.edec.aimManager.ctrl.WinCreateGoalCtrl">
+    <hbox height="40px" hflex="1">
+        <vbox id="vbTypeOfGoal">
+            <label value="Тип цели"/>
+            <combobox id="cmbTypeOfGoal"/>
+        </vbox>
+        <vbox>
+            <label value="Категория"/>
+            <combobox id="cmbTypeCategory"/>
+        </vbox>
+        <vbox>
+            <label value="Подкатегория"/>
+            <hbox>
+                <combobox id="cmbTypeSubCategory"/>
+                <button id="btnAddSubCategory" iconSclass="z-icon-plus-square pg_header_fon_cp"/>
+            </hbox>
+        </vbox>
+    </hbox>
+    <hbox>
+        <vbox>
+            Дата окончания приема заявок
+            <datebox id="dbDateOfFinishApplication"/>
+        </vbox>
+        <vbox>
+            Дата окончания приема заданий
+            <datebox id="dbDateOfFinishTask"/>
+        </vbox>
+        <vbox>
+            Порог количества баллов
+            <spinner id="spinThreshold"/>
+        </vbox>
+    </hbox>
+    <hbox hflex="1" height="20px" pack="center" align="center">
+        <button id="btnCancelGoal" label="Отмена" iconSclass="z-icon-ban"/>
+        <button id="btnUpdateGoal" label="Отмена" iconSclass="z-icon-sync-alt" visible="false" />
+        <button id="btnCreateGoal" label="Создать" iconSclass="z-icon-check"/>
+    </hbox>
+</window>

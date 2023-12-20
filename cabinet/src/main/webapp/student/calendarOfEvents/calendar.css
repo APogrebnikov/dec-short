@@ -1,0 +1,25 @@
+.day {
+    min-height: 30px;
+    border: 1px solid #000;
+    background: #fff;
+    cursor: pointer;
+}
+
+.day:focus, .day:hover {
+    background: #a3c6c0;
+}
+
+.day.today {
+    background: #8ac8ff;
+}
+
+.week {
+    min-height: 30px;
+    border: 1px solid #000;
+    background: #999;
+    cursor: pointer;
+}
+
+.z-listcell-content {
+    height: auto;
+}

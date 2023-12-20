@@ -1,0 +1,54 @@
+<window id="index" width="90%" height="82%" closable="false"
+        apply="org.edec.student.factSheet.ctrl.FactSheetHistoryCtrl">
+    <caption>
+        <label value="История заказа справок"/>
+    </caption>
+<vlayout vflex="1" hflex="1" >
+    <div vflex="1">
+        <vlayout hflex="1" vflex="1">
+            <hlayout vflex="1">
+                <listbox vflex="1" hflex="1" id="lbFactSheet">
+                    <listhead>
+                        <listheader width="125px">
+                            <label value="№ регистрации" sclass="cwf-listheader-label" />
+                        </listheader>
+                        <listheader hflex="1">
+                            <label value="ФИО" sclass="cwf-listheader-label" />
+                        </listheader>
+                        <listheader width="85px">
+                            <label value="Группа" sclass="cwf-listheader-label" />
+                        </listheader>
+                        <listheader hflex="1">
+                            <label value="Вид" sclass="cwf-listheader-label" />
+                        </listheader>
+                        <listheader width="45px">
+                            <label value="ГП" sclass="cwf-listheader-label" />
+                        </listheader>
+                        <listheader width="110px">
+                            <label value="Дата подачи" sclass="cwf-listheader-label" />
+                        </listheader>
+                        <listheader width="75px">
+                            <label value="Статус" sclass="cwf-listheader-label" />
+                        </listheader>
+                        <listheader width="145px">
+                            <label value="Дата выполнения" sclass="cwf-listheader-label" />
+                        </listheader>
+                        <listheader width="130px">
+                            <label value="Факт получения" sclass="cwf-listheader-label" />
+                        </listheader>
+                       <listheader width="140px">
+                            <label value="Отменить заявку" sclass="cwf-listheader-label" />
+                       </listheader>
+                    </listhead>
+                </listbox>
+            </hlayout>
+        </vlayout>
+    </div>
+    <hbox hflex="1" pack="end" height="100%">
+        <button id="btnClose" style="font-size:14px; font-weight: bold">Закрыть</button>
+    </hbox>
+</vlayout>
+
+
+</window>
+

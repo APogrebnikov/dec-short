@@ -1,0 +1,82 @@
+<window id="winSuccessfulStatistic" height="480px" closable="true" title="Статистика"
+        apply="org.edec.successful.ctrl.WinSuccessfulStatisticCtrl">
+    <style>
+        .z-listitem-checkable {
+            margin-right: 5px;
+        }
+    </style>
+    <hlayout hflex="1">
+        <vlayout width="300px">
+            <label id="lblSettings" style="cursor: pointer">Настройки ▼</label>
+            <listbox multiple="true" checkmark="true" height="400px">
+                <listhead>
+                    <listheader>
+                        <label sclass="cwf-listheader-label" value="Группа"/>
+                    </listheader>
+                </listhead>
+                <listitem><listcell>КИ17-03Б</listcell></listitem>
+                <listitem><listcell>КИ17-04Б</listcell></listitem>
+            </listbox>
+        </vlayout>
+        <!--<vlayout hflex="1">-->
+            <!--<hlayout hflex="1" style="margin-left: 20px">-->
+                <!--<combobox></combobox>-->
+                <!--<combobox></combobox>-->
+            <!--</hlayout>-->
+        <!--</vlayout>-->
+        <charts id="chart" type="line" title="Успеваемость"/>
+    </hlayout>
+    <popup id="popupSettings">
+        <hbox>
+            <groupbox title="Настройки графика" style="padding: 0">
+                <vbox>
+                    <combobox placeholder="Тип графика">
+                        <comboitem>По периоду обучения</comboitem>
+                        <comboitem>По семестру</comboitem>
+                    </combobox>
+                    <space height="21px"/>
+                </vbox>
+            </groupbox>
+            <groupbox title="Настройки данных" style="padding: 0; margin-left: 10px">
+                <vbox>
+                    <combobox placeholder="Тип данных">
+                        <comboitem>По курсам</comboitem>
+                        <comboitem>По группам</comboitem>
+                        <comboitem>По преподающей кафедре</comboitem>
+                    </combobox>
+                    <space height="21px"/>
+                </vbox>
+            </groupbox>
+            <groupbox title="Фильтры" style="padding: 0; margin-left: 10px">
+                <hbox>
+                    <vbox>
+                        <combobox placeholder="Форма обучения"></combobox>
+                        <combobox placeholder="Основа обучения"></combobox>
+                    </vbox>
+                    <vbox>
+                        <groupbox title="Квалификация" style="padding: 0;">
+                            <checkbox id="chSpec" label="Спец" checked="true"/>
+                            <checkbox id="chBach" label="Бак" checked="true"/>
+                            <checkbox id="chMaster" label="Маг" checked="true"/>
+                        </groupbox>
+                    </vbox>
+                    <vbox>
+                        <groupbox title="Курс" style="padding: 0 0 15px 0">
+                            <vbox>
+                                <hbox>
+                                    <checkbox id="chCourse1" label="1" checked="true"/>
+                                    <checkbox id="chCourse2" label="2" checked="true"/>
+                                    <checkbox id="chCourse3" label="3" checked="true"/>
+                                    <checkbox id="chCourse4" label="4" checked="true"/>
+                                    <checkbox id="chCourse5" label="5" checked="true"/>
+                                    <checkbox id="chCourse6" label="6" checked="true"/>
+                                </hbox>
+                            </vbox>
+                        </groupbox>
+                    </vbox>
+                </hbox>
+            </groupbox>
+        </hbox>
+        <button style="margin-top: 10px">Применить</button>
+    </popup>
+</window>

@@ -1,0 +1,42 @@
+<zk>
+    <hbox hflex="1" vflex="1" apply="org.edec.synchroMine.ctrl.TabStudentStatusCtrl">
+        <vbox hflex="1" vflex="1">
+            <label value="Студенты из шахт"/>
+            <listbox id="lbStudentsStatusMine" hflex="1" vflex="1">
+                <listhead>
+                    <listheader hflex="2" align="center">
+                        <label sclass="cwf-listheader-label" value="ФИО"/>
+                    </listheader>
+                    <listheader hflex="1" align="center">
+                        <label sclass="cwf-listheader-label" value="Группа"/>
+                    </listheader>
+                    <listheader hflex="1" align="center">
+                        <label sclass="cwf-listheader-label" value="Статус"/>
+                    </listheader>
+                    <listheader hflex="1" align="center">
+                        <label sclass="cwf-listheader-label" value="Основание"/>
+                    </listheader>
+                </listhead>
+            </listbox>
+        </vbox>
+        <vbox hflex="1" vflex="1">
+            <label value="Студенты из АСУ ИКИТ"/>
+            <listbox id="lbStudentsStatusESO" hflex="1" vflex="1">
+                <listhead>
+                    <listheader hflex="2" align="center">
+                        <label sclass="cwf-listheader-label" value="ФИО"/>
+                    </listheader>
+                    <listheader hflex="1" align="center">
+                        <label sclass="cwf-listheader-label" value="Группа"/>
+                    </listheader>
+                    <listheader hflex="1" align="center">
+                        <label sclass="cwf-listheader-label" value="Статус"/>
+                    </listheader>
+                    <listheader hflex="1" align="center">
+                        <label sclass="cwf-listheader-label" value="Основание"/>
+                    </listheader>
+                </listhead>
+            </listbox>
+        </vbox>
+    </hbox>
+</zk>

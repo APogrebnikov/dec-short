@@ -1,0 +1,11 @@
+<window id="winRegenerateDocuments" closable="true" apply="org.edec.newOrder.ctrl.WinRegenerateDocumentsCtrl">
+    <caption>
+        <label value="Документы"/>
+    </caption>
+    <vlayout vflex="1">
+        <vbox id="vboxLbDocumentContainer"/>
+        <hbox align="end" hflex="1">
+            <button id="btnRegenerateDocuments">Создать</button>
+        </hbox>
+    </vlayout>
+</window>

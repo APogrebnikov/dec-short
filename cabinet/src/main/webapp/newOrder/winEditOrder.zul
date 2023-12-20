@@ -1,0 +1,29 @@
+<window id="winEditOrder" closable="true" apply="org.edec.newOrder.ctrl.WinEditOrderCtrl" width="90%" height="100%">
+    <caption>
+        <label value="Редактирование приказа"/>
+    </caption>
+    <vlayout vflex="1">
+        <hlayout height="30px">
+            <label value="Описание приказа"/>
+            <textbox id="tbDescOrder" placeholder="Введите описание приказа" width="250px"/>
+            <button id="btnSaveDesc" label="Сохранить описание"/>
+            <button id="btnDownloadDoc" label="Скачать приказ (doc)" image="/imgs/docsCLR.png"/>
+        </hlayout>
+        <hlayout height="100px">
+            <button visible="true" hflex="1" vflex="1" id="btnDeleteSelectedStudents" label="Удалить выбр. студентов"/>
+            <button visible="true" hflex="1" vflex="1" id="btnAddStudents" label="Добавить студентов"/>
+            <button visible="true" hflex="1" vflex="1" id="btnShowPreviewPdf" label="Предпросмотр"/>
+            <button visible="true" hflex="1" vflex="1" id="btnPdfEditor" label="Редактор PDF"/>
+        </hlayout>
+        <hlayout height="100px">
+            <button visible="true" hflex="1" vflex="1" id="btnAttachedFiles" label="Прикрепленные файлы"/>
+            <button visible="true" hflex="1" vflex="1" id="btnAttachNewFiles" label="Прикрепить файлы"/>
+            <button visible="true" hflex="1" vflex="1" id="btnRegenerateDocuments" label="Пересоздать документы"/>
+            <button visible="false" hflex="1" vflex="1" id="btnSendToServer" label="Отправить на согласование"/>
+            <button visible="true" hflex="1" vflex="1" id="btnSyncOrder" label="Синхронизировать приказ"/>
+            <button visible="true" hflex="1" vflex="1" id="btnExportOrder" label="Экспортировать проект"/>
+            <button visible="false" hflex="1" vflex="1" id="btnUpdateOrderInfo" label="Обновить информацию о приказе"/>
+        </hlayout>
+        <groupbox id="gbContent" vflex="1" contentStyle="overflow:auto;"/>
+    </vlayout>
+</window>

@@ -1,0 +1,14 @@
+<window id="winReceiverSearch" apply="org.edec.notificationCenter.ctrl.WinReceiversSearchCtrl" border="normal"
+        width="60%"
+        height="60%" style="min-width: 600px; min-height: 650px;" position="center,center" closable="true">
+    <caption>
+        <label value="Выбор получателей" />
+    </caption>
+    <separator height="8px"/>
+    <hbox height="550px">
+        <separator width="8px"/>
+        <listbox id="lbSearchReceivers" height="550px" emptyMessage="Список доступных для добавления получателей пуст" mold="paging" autopaging="true"/>
+        <separator width="8px"/>
+    </hbox>
+    <separator height="8px"/>
+</window>

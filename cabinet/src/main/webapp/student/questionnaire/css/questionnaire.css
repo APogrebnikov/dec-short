@@ -1,0 +1,224 @@
+/** отрисовка контента **/
+
+.page {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 20px;
+}
+
+.header {
+    height: 17%;
+    border-bottom: 1px solid #505A6E;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16pt;
+}
+
+.item-description {
+    display: list-item;
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border-bottom: 2px solid #dddddd;
+    font-size: 12pt;
+}
+
+.b{
+	font-weight: bold;
+}
+.divide{
+	background: #333;
+	color:#fff;
+}
+.error{
+	color:red;
+}
+.correct{
+	color: green;
+}
+.order{
+	background: #ced4e2;
+}
+.orderbody{
+	background: #f5e9ec;
+}
+.section{
+	background: #e8b690;
+	border-color: black;
+}
+.lblHeadRule{
+	color: #9daccb;
+	font-size: 16px ;	
+}
+.NotPrintSection{	
+	background: #8FBC8F;
+	text-align: left;
+}
+.PrintSection{	
+	background: #FA8072;
+	text-align: left;
+}
+
+.headSection{
+	font-weight:bold;
+	text-align: center;
+}
+
+/**Настройка навигации в опроснике**/
+.list-group {
+    padding-left: 0;
+    margin-bottom: 20px;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid #dddddd;
+}
+
+.list-group-item.list-group-item-success {
+    background-color: #E66E24;
+}
+
+.list-group-item:first-child {
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    background-color: #505A6E;
+    color: #fff;
+}
+
+.list-group-item:first-child:focus {
+  background-color: #505A6E;
+  color: #fff;
+  border: 1px solid #dddddd;
+}
+
+a.list-group-item:first-child:hover {
+  background-color: #9ca5b8;
+}
+
+.list-group-item:last-child {
+    margin-bottom: 0;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+
+a.list-group-item {
+    color: #555555;
+}
+
+a.list-group-item:focus {
+  color: #555555;
+  background-color: #fff;
+}
+
+a.list-group-item:hover {
+    text-decoration: none;
+    background-color: #DCE8F5;
+}
+
+/**Контент опросника**/
+.content {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    border: 1px solid #000;
+    overflow: auto;
+}
+
+.content > a {
+    width: 100%;
+}
+
+.content > a > span {
+    text-align: center;
+    width: 100%;
+}
+
+
+.block{
+    width: 100%;
+    paddint-top: 10px;
+}
+
+.block > span {
+    font-size: 16pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.question{
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #dddddd;
+}
+
+.question > span {
+    font-size: 14pt;
+    text-align: left;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.answer {
+    width: 100%;
+    padding: 10px;
+    font-size: 12pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    background: #fff;
+    cursor: pointer;
+}
+
+.selected {
+    background: #E66E24;
+}
+
+.selected-group-item {
+    padding-left: 11px;
+    border-left: 5px solid #E66E24;
+}
+
+.optional-group-item {
+  border-left: 5px solid #00CC00;
+}
+
+.completed-btn {
+    border: 2px solid #E66E24;
+}
+
+
+/*
+   Блок отрисовки посещаемости студента
+*/
+
+.attendance {
+    display: table;
+    padding: 10px;
+    width: 100%;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.attendance-day {
+    display: table-caption;
+    font-size: 12pt;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.attendance-subject {
+    display: table-cell;
+    border: 1px solid #9ca5b8;
+    height: 40px;
+    width: 120px;
+}
+
+.attendance-subject.attend {
+    background: #f04432;
+}
+

@@ -1,0 +1,73 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.order.ctrl.IndexPageCtrl">
+    <!-- Filters -->
+    <hbox height="100px" width="100%">
+        <groupbox title="Фильтры" vflex="1" hflex="4">
+            <hbox hflex="1" vflex="1">
+                <vbox id="vbInst">
+                    <label value="Институт" style="text-weight: 650;" />
+                    <combobox id="cmbInst" itemRenderer="org.edec.utility.component.renderer.InstituteRenderer"
+                              placeholder="Институт" readonly="true" />
+                </vbox>
+                <vbox id="vbFormOfStudy">
+                    <label value="Форма обучения" style="text-weight: 650;" />
+                    <combobox id="cmbFormOfStudy" readonly="true"/>
+                </vbox>
+                <vbox>
+                    <label value="Тип приказа" />
+                    <combobox id="cmbType" readonly="true"/>
+                </vbox>
+                <vbox>
+                    <label value="Статус" />
+                    <combobox id="cmbStatus" readonly="true" />
+                </vbox>
+                <vbox>
+                    <label value="Студент" style="text-weight: 650;"/>
+                    <hbox>
+                        <textbox placeholder="Введите ФИО..." id="tbFio" />
+                        <button id="btnSearch" label="Поиск" />
+                    </hbox>
+                </vbox>
+            </hbox>
+        </groupbox>
+        <groupbox id="gbCreateOrder" title="Создание" vflex="1" hflex="1" >
+            <button id="btnCreateNewOrder" label="Создать"/>
+        </groupbox>
+    </hbox>
+    <separator />
+    <listbox id="lbOrder" style="width: 100%;" vflex="1" mold="paging" autopaging="true">
+        <listhead>
+            <listheader align="center" width="50px">
+                <label sclass="cwf-listheader-label" value="№ п\п"/>
+            </listheader>
+            <listheader align="center" width="80px">
+                <label sclass="cwf-listheader-label" value="Номер"/>
+            </listheader>
+            <listheader id="lhrDateSign" align="center" width="100px">
+                <label sclass="cwf-listheader-label" value="Подписан"/>
+            </listheader>
+            <listheader id="lhrDateCreate" align="center" width="100px">
+                <label sclass="cwf-listheader-label" value="Создан"/>
+            </listheader>
+            <listheader id="lhrDateFinish" align="center" hflex="1">
+                <label sclass="cwf-listheader-label" value="Завершен"/>
+            </listheader>
+            <listheader align="left" hflex="2">
+                <label sclass="cwf-listheader-label" value="Тип приказа"/>
+            </listheader>
+            <listheader align="left" hflex="2">
+                <label sclass="cwf-listheader-label" value="Описание"/>
+            </listheader>
+            <listheader align="center" width="150px">
+                <label sclass="cwf-listheader-label" value="Статус"/>
+            </listheader>
+            <listheader align="center" width="90px">
+                <label sclass="cwf-listheader-label" value="Студенты"/>
+            </listheader>
+            <listheader align="center" width="70px" />
+            <listheader id="lhrEdit" align="center" width="70px"/>
+            <listheader id="lhrDelete" align="center" width="70px"/>
+        </listhead>
+    </listbox>
+</vbox>

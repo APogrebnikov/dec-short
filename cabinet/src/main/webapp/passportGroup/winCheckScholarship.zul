@@ -1,0 +1,23 @@
+<window id="winCheckScholarship" apply="org.edec.passportGroup.ctrl.WinCheckScholarshipCtrl" border="normal" width="100%"
+        height="100%" style="min-width: 1000px; min-height: 650px;" position="center,center" closable="true">
+    <caption>
+        <label value="Проверка академической стипендии"/>
+    </caption>
+    <style>
+        div.z-listheader-content {
+        height: 215px;
+        }
+    </style>
+    <vlayout hflex="10" vflex="10">
+        <hbox>
+            <combobox id="cmbInst" placeholder="Институт..." readonly="true"/>
+            <combobox id="cmbFOC" placeholder="Форма контроля..." readonly="true"/>
+            <combobox id="cmbSem" placeholder="Семестр..." readonly="true"/>
+            <combobox id="cmbGroup" placeholder="Группа..." autocomplete="true"/>
+        </hbox>
+        <listbox id="lbReport" vflex="8">
+            <listhead>
+            </listhead>
+        </listbox>
+    </vlayout>
+</window>

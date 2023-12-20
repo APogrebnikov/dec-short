@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.4.3.final using JasperReports Library version 6.4.3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="passportGroup" pageWidth="1191" pageHeight="842" orientation="Landscape" columnWidth="1151" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1142c50a-fea7-41cb-8e6f-4d035ac52505">
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="136" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="600" height="14" uuid="11db3b54-7d3b-4fab-a257-c6ed1e8ecc70">
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="600" y="0" width="550" height="14" uuid="bb66349c-1623-41fc-9d91-82424d82674b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="14" width="600" height="12" uuid="c697804e-fb6b-46e7-9f7a-1e4247d6f3ec">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="600" y="14" width="550" height="12" uuid="27300a01-533c-497f-8711-e21d97bd020c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<box>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="26" width="40" height="80" uuid="dec8dc1d-6c6d-436c-acc2-24ad72a6fbd6">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Для заметок]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="40" y="26" width="40" height="80" uuid="721be509-e575-4eff-94d0-b73049fb00a9">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="Left"/>
+				<text><![CDATA[Для заметок]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="26" width="20" height="80" uuid="c21a834c-6f3d-4e92-bf10-29986d340205">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[№ п/п]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="26" width="120" height="80" uuid="aa9a479a-d804-4524-9540-bff0b411b2ea">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Фамилия И.О.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="600" y="26" width="120" height="80" uuid="2f2c6165-b38d-43cf-982d-16b8a30c7ccd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Примечание]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="720" y="26" width="20" height="80" uuid="03ce02bd-630d-41b4-9bc0-c9d7e8df9520">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[№ п/п]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="740" y="26" width="90" height="56" uuid="845c1a9e-c42b-4e3e-8393-22bb3e6034de">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Закрытие сессии]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="740" y="82" width="45" height="24" uuid="67b1d3d8-71f6-4266-a828-82033c463ec5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Дата]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="785" y="82" width="45" height="24" uuid="93cf5a77-e87b-428d-8558-b2f9dfe12b2a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Подпись]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="830" y="26" width="90" height="56" uuid="79d0a9d7-0440-4b80-b1e4-ba61b69797c0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Продление сессии]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="830" y="82" width="45" height="24" uuid="0559e85a-47aa-4f38-bd87-2b45eee7f9e7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Дата]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="875" y="82" width="45" height="24" uuid="ea59f615-e4b4-4f8d-ad75-9a12f4ef967d">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Подпись]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="920" y="26" width="230" height="56" uuid="7f8e6983-3375-4c77-99c7-d9028a1d89fb">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Продление сессии]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="920" y="82" width="45" height="24" uuid="4cce3195-d652-47b5-91c9-e548816d5fdf">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[Дата]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="965" y="82" width="185" height="24" uuid="f5ec7b50-7b10-4f39-94a3-6ec1aa13787a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None"/>
+				<text><![CDATA[№]]></text>
+			</staticText>
+		</band>
+	</detail>
+</jasperReport>

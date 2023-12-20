@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="scheduleByFOS" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2d2e9412-e761-443c-b4a5-062d001bada7">
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+	<subDataset name="courses" uuid="38d60e07-c756-44b1-aec3-65425dbd7227">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="course" class="java.lang.Integer">
+			<fieldDescription><![CDATA[course]]></fieldDescription>
+		</field>
+		<field name="groups" class="java.util.List">
+			<fieldDescription><![CDATA[groups]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="groups" uuid="9d4dbb46-68e5-4e8b-9bb6-5d0c91a72faa">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="groupname" class="java.lang.String">
+			<fieldDescription><![CDATA[groupname]]></fieldDescription>
+		</field>
+		<field name="students" class="java.util.List">
+			<fieldDescription><![CDATA[students]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="students" uuid="32c1965a-1bc9-4ab6-8cdc-17da788113e3">
+		<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="fio" class="java.lang.String">
+			<fieldDescription><![CDATA[fio]]></fieldDescription>
+		</field>
+		<field name="recordbook" class="java.lang.String">
+			<fieldDescription><![CDATA[recordbook]]></fieldDescription>
+		</field>
+		<variable name="number" class="java.lang.Integer" calculation="Count">
+			<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+		</variable>
+	</subDataset>
+	<parameter name="dateOfBegin" class="java.util.Date">
+		<parameterDescription><![CDATA[dateOfBegin]]></parameterDescription>
+		<defaultValueExpression><![CDATA[new SimpleDateFormat("dd.MM.yyyy").format($P{dateOfBegin})]]></defaultValueExpression>
+	</parameter>
+	<parameter name="dateOfEnd" class="java.util.Date">
+		<parameterDescription><![CDATA[dateOfEnd]]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="formOfStudy" class="java.lang.String">
+		<fieldDescription><![CDATA[formOfStudy]]></fieldDescription>
+	</field>
+	<field name="courses" class="java.util.List">
+		<fieldDescription><![CDATA[courses]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="32" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="2" width="560" height="30" uuid="d8867493-9e38-4550-a575-082a2e751acb"/>
+				<textElement>
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cписок студентов, отправленных на комиссию c " + new SimpleDateFormat("dd.MM.yyyyг.").format($P{dateOfBegin}) + " по " + new SimpleDateFormat("dd.MM.yyyyг.").format($P{dateOfEnd})]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="79" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="560" height="14" uuid="267dedbd-d0b8-44c4-b3cd-aacd0acd607c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" isBold="true" isUnderline="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{formOfStudy}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="0" y="14" width="560" height="42" uuid="2c601382-dae7-471a-a285-1ffb11761deb"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="courses" uuid="da09e40f-c7a2-4c02-8d7c-92879b37d559">
+						<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{courses})]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="42" width="560">
+						<textField>
+							<reportElement positionType="Float" x="0" y="0" width="560" height="14" uuid="deb493d6-8752-49d9-8f8b-74ad298a15bf">
+								<property name="com.jaspersoft.studio.unit.height" value="px"/>
+							</reportElement>
+							<textElement verticalAlignment="Middle">
+								<font fontName="Times New Roman" isBold="true"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{course} +  " курс"]]></textFieldExpression>
+						</textField>
+						<componentElement>
+							<reportElement positionType="Float" x="0" y="14" width="560" height="28" uuid="518f5f8f-1ccd-4d3d-8e14-ffb7e53e4fe4"/>
+							<jr:list printOrder="Vertical">
+								<datasetRun subDataset="groups" uuid="9ee89457-9fd9-4cb5-b9b1-97f48632d947">
+									<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{groups})]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="28" width="560">
+									<textField>
+										<reportElement positionType="Float" x="0" y="0" width="560" height="14" uuid="56ce4c00-6984-4c25-bfbd-5da60df10c7e">
+											<property name="com.jaspersoft.studio.unit.height" value="px"/>
+										</reportElement>
+										<textElement verticalAlignment="Middle">
+											<font fontName="Times New Roman"/>
+										</textElement>
+										<textFieldExpression><![CDATA["Группа " + $F{groupname}]]></textFieldExpression>
+									</textField>
+									<componentElement>
+										<reportElement x="0" y="14" width="560" height="14" uuid="0193d05d-9cda-4fec-ad03-3f2a561513f9"/>
+										<jr:list printOrder="Vertical">
+											<datasetRun subDataset="students" uuid="e5edf713-31ca-443f-b959-321674b9fbfc">
+												<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{students})]]></dataSourceExpression>
+											</datasetRun>
+											<jr:listContents height="14" width="560">
+												<textField isStretchWithOverflow="true">
+													<reportElement x="0" y="0" width="560" height="14" uuid="0bea52dd-e78e-4788-be82-3f86e8f3560b">
+														<property name="com.jaspersoft.studio.unit.height" value="px"/>
+														<property name="com.jaspersoft.studio.unit.firstLineIndent" value="px"/>
+													</reportElement>
+													<textElement verticalAlignment="Middle">
+														<font fontName="Times New Roman"/>
+														<paragraph firstLineIndent="15"/>
+													</textElement>
+													<textFieldExpression><![CDATA[$V{number} + ". (# " + $F{recordbook}  + ") " +  $F{fio}]]></textFieldExpression>
+												</textField>
+											</jr:listContents>
+										</jr:list>
+									</componentElement>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<staticText>
+				<reportElement positionType="Float" x="0" y="61" width="560" height="17" uuid="58afcde7-5f1f-44ee-a457-97a28603905c">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[В случае получения неудовлетворительной оценки или неявки, вы будете отчислены!]]></text>
+			</staticText>
+			<break>
+				<reportElement x="0" y="78" width="100" height="1" uuid="c128245f-0105-4ec1-9cf4-9ed9b69c5b55"/>
+			</break>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="17" splitType="Stretch">
+			<textField>
+				<reportElement x="507" y="0" width="50" height="17" uuid="c3f0f414-f5a1-43ca-997d-74f35b305197">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

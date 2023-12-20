@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+        <property name="connection.url">jdbc:sqlserver://localhost:1433;databaseName=ORION12</property>
+        <property name="connection.username"></property>
+        <property name="connection.password"></property>
+    </session-factory>
+</hibernate-configuration>

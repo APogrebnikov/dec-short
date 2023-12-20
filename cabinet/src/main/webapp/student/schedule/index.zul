@@ -1,0 +1,75 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox hflex="1" vflex="1" self="@define(content)" apply="org.edec.student.schedule.ctrl.IndexPageCtrl">
+    <style>
+        .z-listbox.schedule{
+            zoom: 0.85;
+        }
+    </style>
+            <hbox>
+                <vbox>
+                    <hbox style="width: 100%;">
+                        <vbox width="120px" align="right" style="background: #eeeeee;">
+                            <label id="lGroupname" value="Группа:" style="font-weight: bold; color: #000000;"/>
+                        </vbox>
+                        <vbox>
+                            <label id="lGroupnameVal" style="color: black;"/>
+                        </vbox>
+                    </hbox>
+                    <hbox style="width: 100%;">
+                        <vbox width="120px" height="30px" align="right" style="background: #eeeeee;">
+                            <label id="lSemester" value="Семестр:" style="font-weight: bold; color: #000000;"/>
+                        </vbox>
+                        <vbox>
+                            <label id="lSemesterVal" style="color: black;"/>
+                        </vbox>
+                    </hbox>
+                </vbox>
+                <space spacing="10px"></space>
+                <vbox>
+                    <hbox style="width: 100%;">
+                        <vbox width="120px" align="right" style="background: #eeeeee;">
+                            <label id="lWeek" value="Неделя:" style="font-weight: bold; color: #000000;"/>
+                        </vbox>
+                        <vbox>
+                            <label id="lWeekVal" style="color: black;"/>
+                        </vbox>
+                    </hbox>
+                    <hbox style="width: 100%;">
+                        <vbox width="120px" height="30px"  align="right" style="background: #eeeeee;">
+                            <label id="lDate" value="Дата:" style="font-weight: bold; color: #000000;"/>
+                        </vbox>
+                        <hbox>
+                            <datebox id = "dbSelectDate"/>
+                            <space spacing="10px"></space>
+                            <button id ="btnBackToToday" label="Вернуться к начальной дате"></button>
+                        </hbox>
+                    </hbox>
+                </vbox>
+            </hbox>
+            <listbox id="lbSchedule" sclass="schedule">
+                <listhead>
+                    <listheader id="lhTime" align="center" hflex="1" >
+                        <label value="Время" sclass="cwf-listheader-label"></label>
+                    </listheader>
+                    <listheader id="lhMonday" align="center"  hflex="2" >
+                        <label value="Понедельник" sclass="cwf-listheader-label"></label>
+                    </listheader>
+                    <listheader id="lhTuesday" align="center" hflex="2">
+                        <label value="Вторник" sclass="cwf-listheader-label"></label>
+                    </listheader>
+                    <listheader id="lhWednesday" align="center" hflex="2">
+                        <label value="Среда" sclass="cwf-listheader-label"></label>
+                    </listheader>
+                    <listheader id="lhThursday" align="center" hflex="2">
+                        <label value="Четверг" sclass="cwf-listheader-label"></label>
+                    </listheader>
+                    <listheader id="lhFriday" align="center" hflex="2">
+                        <label value="Пятница" sclass="cwf-listheader-label"></label>
+                    </listheader>
+                    <listheader id="lhSaturday" align="center" hflex="2">
+                        <label value="Суббота" sclass="cwf-listheader-label"></label>
+                    </listheader>
+                </listhead>
+            </listbox>
+</vbox>

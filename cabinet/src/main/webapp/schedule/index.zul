@@ -1,0 +1,17 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" height="100%" width="100%" apply="org.edec.schedule.ctrl.IndexPageCtrl">
+    <hbox height="25px" hflex="1">
+        <combobox id="cmbGroup" readonly="true" />
+        <button id="btnRefreshSchedule" label="Обновления расписания" />
+        <button id="btnOpenConfigWindow" label="Конфигурация" />
+    </hbox>
+    <hbox hflex="1" vflex="1">
+        <groupbox hflex="1" vflex="1" contentStyle="overflow-y:auto;overflow-x:hidden;">
+            <vbox id="vbScheduleSfu" hflex="1" />
+        </groupbox>
+        <groupbox hflex="1" vflex="1" contentStyle="overflow:auto;overflow-x:hidden;">
+            <vbox id="vbScheduleEso" hflex="1" />
+        </groupbox>
+    </hbox>
+</vbox>

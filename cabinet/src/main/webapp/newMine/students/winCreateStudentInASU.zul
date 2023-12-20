@@ -1,0 +1,30 @@
+<window id="winCreateStudentInASU" height="40%" width="40%" closable="true"
+        apply="org.edec.newMine.students.ctrl.WinCreateStudentInASUctrl">
+    <caption>
+        <label value="Создание нового студента" />
+    </caption>
+    <vbox hflex="1" vflex="1">
+        <grid hflex="1" >
+            <rows>
+                <row>
+                    <label value="ФИО"/><label id = "lFIO"/>
+                </row>
+                <row>
+                    <label value="Группа"/><label id = "lGroupname"/>
+                </row>
+                <row>
+                    <label value="№ зачетной кинижки"/><label id = "lRecorbook"/>
+                </row>
+                <row>
+                    <label value="Статус"/><label id = "lStatus"/>
+                </row>
+                <row>
+                    <label value="Основание"/><label id = "lCondOfEdu"/>
+                </row>
+            </rows>
+        </grid>
+        <space spacing="10px"/>
+        <button id = "btnCreateStudent" width="200px" label="Добавить студента в АСУ" style="position:absolute; bottom:15px"/>
+    </vbox>
+
+</window>

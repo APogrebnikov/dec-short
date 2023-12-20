@@ -1,0 +1,83 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.studentPassport.ctrl.IndexPageCtrl">
+    <groupbox id="gbFilter" width="100%" vflex="2" title="Фильтры">
+        <hbox>
+            <vbox id="vbInst">
+                <label value="Институт" />
+                <combobox id="cmbInst" readonly="true" />
+            </vbox>
+            <vbox id="vbFormOfStudy">
+                <label value="Форма обучения" />
+                <combobox id="cmbFormOfStudy" readonly="true" />
+            </vbox>
+            <vbox>
+                <label value="Должники" />
+                <hbox>
+                    <checkbox id="chOnlyDebtors" label="Только должники" />
+                    <button id="btnSearch" label="Поиск" />
+                </hbox>
+            </vbox>
+            <separator width="100px"/>
+            <vbox>
+                <label value="Отчет:" />
+                <hbox>
+                    <vbox id="vbSemester">
+                        <combobox id="cmbSemester" placeholder="Семестр" readonly="true" />
+                    </vbox>
+                    <vbox id="vbGetReport">
+                        <button id="btnGetReport" label="Скачать отчёт" />
+                    </vbox>
+                </hbox>
+            </vbox>
+        </hbox>
+    </groupbox>
+    <listbox id="lbStudent" width="100%" vflex="8" mold="paging" autopaging="true">
+        <auxhead>
+            <auxheader colspan="3">
+                <textbox id="tbFio" hflex="1" placeholder="Введите ФИО.." />
+            </auxheader>
+            <auxheader colspan="1">
+                <textbox id="tbRecordbook" hflex="1" />
+            </auxheader>
+            <auxheader>
+                <textbox id="tbGroup" hflex="1" />
+            </auxheader>
+            <auxheader />
+            <auxheader />
+            <auxheader />
+            <auxheader />
+            <auxheader />
+        </auxhead>
+        <listhead>
+            <listheader hflex="1">
+                <label sclass="cwf-listheader-label" value="Фамилия"/>
+            </listheader>
+            <listheader hflex="1">
+                <label sclass="cwf-listheader-label" value="Имя"/>
+            </listheader>
+            <listheader hflex="1">
+                <label sclass="cwf-listheader-label" value="Отчество"/>
+            </listheader>
+            <listheader width="120px">
+                <label sclass="cwf-listheader-label" value="№ Зач. книж."/>
+            </listheader>
+            <listheader align="center" width="120px">
+                <label sclass="cwf-listheader-label" value="Группа"/>
+            </listheader>
+            <listheader align="center" width="60px">
+                <label sclass="cwf-listheader-label" value="Курс"/>
+            </listheader>
+            <listheader align="center" width="90px">
+                <label sclass="cwf-listheader-label" value="Целевое"/>
+            </listheader>
+            <listheader align="center" width="80px">
+                <label sclass="cwf-listheader-label" value="Академ."/>
+            </listheader>
+            <listheader align="center" width="90px">
+                <label sclass="cwf-listheader-label" value="Отчислен"/>
+            </listheader>
+            <listheader id="lhrIndexCard" align="center" width="70px" />
+        </listhead>
+    </listbox>
+</vbox>

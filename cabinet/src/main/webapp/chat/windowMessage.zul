@@ -1,0 +1,16 @@
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<?link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.css" rel="stylesheet"?>
+
+<window id="modalDialog" apply="org.edec.chat.ctrl.WindowFilesCtrl"
+        position="center, center" closable="true" action="show: slideDown; hide: slideUp">
+    <caption>
+        <label value="Важные сообщения"/>
+    </caption>
+    <div id="important-history">
+        <div sclass="important-message">
+            <label>
+                hello
+            </label>
+        </div>
+    </div>
+</window>

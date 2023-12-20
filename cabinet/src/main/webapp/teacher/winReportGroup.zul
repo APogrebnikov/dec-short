@@ -1,0 +1,26 @@
+<window id="winReportGroup" closable="true" width="90%" height="100%"
+    apply="org.edec.teacher.ctrl.WinReportGroupCtrl">
+    <caption>
+        <label id="lReportAttendProgress" value="Отчет по группе"/>
+    </caption>
+    <vbox hflex="1" vflex="1">
+        <listbox id="lbAttendanceProgress" mold="paging" autopaging="true" hflex="1" vflex="1"
+                 emptyMessage="Посещаемость не заполнена">
+            <frozen columns="4" />
+            <listhead id="lhAttendance">
+                <listheader align="center" width="40px">
+                    <label sclass="cwf-listheader-label" value="#"/>
+                </listheader>
+                <listheader width="240px">
+                    <label sclass="cwf-listheader-label" value="ФИО"/>
+                </listheader>
+                <listheader align="center" width="120px">
+                    <label sclass="cwf-listheader-label" value="Успеваемость"/>
+                </listheader>
+                <listheader align="center" width="120px">
+                    <label sclass="cwf-listheader-label" value="Посещаемость"/>
+                </listheader>
+            </listhead>
+        </listbox>
+    </vbox>
+</window>

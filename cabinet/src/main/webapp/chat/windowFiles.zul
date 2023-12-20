@@ -1,0 +1,27 @@
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+
+<window id="modalDialog" apply="org.edec.chat.ctrl.WindowFilesCtrl"
+        position="center, center" closable="true" action="show: slideDown; hide: slideUp">
+    <caption>
+        <label value="Вложенные файлы"/>
+    </caption>
+    <div id="attachment-history">
+        <div sclass="attachment">
+            <label sclass="icons" value="subject"/>
+            <div sclass="attachment__data">
+                <label sclass="attachment__title" value="Лабораторная_работа.pdf"/>
+                <label sclass="attachment__size" value="228 Кб"/>
+            </div>
+            <button sclass="icons attachment__btn" label="file_download" href="/imgs/docs.png"/>
+        </div>
+        <div sclass="attachment">
+            <image sclass="img" src="/imgs/logo_sfu.png"/>
+            <label sclass="icons" value="image"/>
+            <div sclass="attachment__data">
+                <label sclass="attachment__title" value="logo_sfu.png"/>
+                <label sclass="attachment__size" value="1488 Кб"/>
+            </div>
+            <button sclass="icons attachment__btn" label="file_download" href="/imgs/docs.png"/>
+        </div>
+    </div>
+</window>

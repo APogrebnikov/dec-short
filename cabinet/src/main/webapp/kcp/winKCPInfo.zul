@@ -1,0 +1,37 @@
+<window id="winKCPInfo" border="normal" closable="true" width="30%" contentStyle="overflow:auto"
+        apply="org.edec.kcp.ctrl.WinKCPInfoCtrl">
+    <caption>
+        <label value="Информация по КЦП"/>
+    </caption>
+    <vbox width="100%" >
+        <grid hflex="1" vflex="1">
+            <rows>
+                <row>
+                    <label value="Направление"/>
+                    <label id="lbDirection"/>
+                </row>
+                <row>
+                    <label value="Год набора"/>
+                    <label id="lbYear"/>
+                </row>
+                <row>
+                    <label value="КЦП всего"/>
+                    <label id="lbTotal"/>
+                </row>
+                <row>
+                    <label value="КЦП Бюджет"/>
+                    <textbox id="tbEditKCPBudget"/>
+                </row>
+                <row>
+                    <label value="КЦП Договор"/>
+                    <textbox id="tbEditKCPDogovor"/>
+                </row>
+            </rows>
+        </grid>
+    </vbox>
+    <space width="10px"/>
+    <hbox width="100%" height="50px" pack="end">
+        <button id="btnSaveEditKCP" label="Сохранить"/>
+        <button id="btnCancel" label="Отмена"/>
+    </hbox>
+</window>

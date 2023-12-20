@@ -1,0 +1,86 @@
+<window id="winInformationAim" width="50%" height="50%" apply="org.edec.aim.ctrl.WinInformationAimCtrl">
+    <caption>
+        <label id="lAimSubject" value="Повышенная стипендия за научно-исследовательскую работу (2007-2008)" sclass="aim-text aim-text-mid b"/>
+    </caption>
+    <vbox hflex="1" vflex="1">
+        <vbox height="50px" hflex="1">
+            <hbox>
+                <label id="lAimBeginDate" value="Дата создания цели: 22.02.2008" sclass="aim-text aim-text-mid"/>
+                <space width="30px" />
+                <label id="lAimEndDate" value="Крайний срока выполнения задач: 22.06.2008" sclass="aim-text aim-text-mid"/>
+            </hbox>
+            <hbox>
+                <label id="lAimStartPoint" value="Исходное количество баллов: 10" sclass="aim-text aim-text-mid"/>
+                <space width="30px" />
+                <label id="lAimCurrentPoint" value="Текущее количество: 20" sclass="aim-text aim-text-mid"/>
+                <space width="30px" />
+                <label id="lAimLimit" value="Порог: 30" sclass="aim-text aim-text-mid"/>
+            </hbox>
+        </vbox>
+        <hbox hflex="1" vflex="1">
+            <vbox hflex="1" vflex="1">
+                <listbox id="lbAimStudentTask" hflex="1" vflex="1">
+                    <listhead>
+                        <listheader hflex="1">
+                            <label sclass="dec-head-label" value="Задача" />
+                        </listheader>
+                        <listheader width="150px">
+                            <label sclass="dec-head-label" value="Кол-во баллов" />
+                        </listheader>
+                        <listheader width="100px">
+                            <label sclass="dec-head-label" value="Выполнена" />
+                        </listheader>
+                    </listhead>
+                    <listitem style="background: #00CC00;">
+                        <listcell>
+                            Задача 1
+                        </listcell>
+                        <listcell>
+                            5
+                        </listcell>
+                        <listcell>
+                            Да
+                        </listcell>
+                    </listitem>
+                    <listitem>
+                        <listcell>
+                            Задача 1
+                        </listcell>
+                        <listcell>
+                            5
+                        </listcell>
+                        <listcell>
+                            Нет
+                        </listcell>
+                    </listitem>
+                    <listitem>
+                        <listcell>
+                            Задача 2
+                        </listcell>
+                        <listcell>
+                            8
+                        </listcell>
+                        <listcell>
+                            Нет
+                        </listcell>
+                    </listitem>
+                    <listitem>
+                        <listcell>
+                            Задача 3
+                        </listcell>
+                        <listcell>
+                            9
+                        </listcell>
+                        <listcell>
+                            Нет
+                        </listcell>
+                    </listitem>
+                </listbox>
+            </vbox>
+        </hbox>
+        <hbox hflex="1" height="40px" pack="end" align="center">
+            <button id="btnCloseWindow" label="Выйти" sclass="aim-text aim-text-mid" iconSclass="z-icon-times" vflex="1"/>
+            <!--<button id="btnCreateAim" label="Создать" iconSclass="z-icon-crosshairs" sclass="aim-text aim-text-mid b" vflex="1"/>-->
+        </hbox>
+    </vbox>
+</window>

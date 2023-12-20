@@ -1,0 +1,11 @@
+<window id="winOrdersInfo" height="80%" width="60%" closable="true"
+        apply="org.edec.newMine.orders.ctrl.WinOrdersInfo">
+    <caption>
+        <label value="Информация по приказу" />
+    </caption>
+    <vbox id ="vbOrdersInfo" hflex="1" vflex="1">
+
+    </vbox>
+    <button id="btnUpdateESO">Разнести приказ в АСУ (Только академ)</button>
+
+</window>

@@ -1,0 +1,45 @@
+<window id="winStudentItemOptions" closable="true"
+		apply="org.edec.contingentMovement.ctrl.StudentItemOptionsCtrl" style="width: 350px;">
+	<caption>
+		<label value="Доступные действия"></label>
+	</caption>
+	<!-- Контент -->
+	<vlayout style="width: 100%; height: 100%;">
+		<!-- Информация -->
+		<groupbox style="width: 100%;">
+			<caption>
+				<label value="Информация:" style="font-weight: 700; color: #000000;"></label>
+			</caption>
+			<hbox>
+				<label value="Студент: "
+					   style="font-weight: 700; color: #000000; font-size: 14px;"></label>
+				<label id="lbStudentFIO" style="font-weight: 300; color: #000000; font-size: 14px;"></label>
+			</hbox>
+			<separator></separator>
+			<hbox>
+				<label value="Группа: "
+					   style="font-weight: 700; color: #000000; font-size: 14px;"></label>
+				<label id="lbCurrentGroup" style="font-weight: 300; color: #000000; font-size: 14px;"></label>
+			</hbox>
+			<separator></separator>
+		</groupbox>
+
+		<!-- Кнопки управления -->
+		<vbox pack="center" align="center" style="width: 100%;">
+			<separator></separator>
+			<button id="btnResurrection" label="Востановление" hflex="1"
+					style="height: 40px; font-weight: 700;"></button>
+			<separator></separator>
+			<button id="btnTransfer" label="Перевод" hflex="1"
+					style="height: 40px; font-weight: 700;"></button>
+			<separator></separator>
+			<button id="btnStatus" label="Статусы" hflex="1"
+					style="height: 40px; font-weight: 700;"></button>
+			<separator></separator>
+			<button id="btnOpenWinResit" label="Перезачет оценок" hflex="1"
+					style="height: 40px; font-weight: 700;" />
+			<separator></separator>
+		</vbox>
+	</vlayout>
+
+</window>

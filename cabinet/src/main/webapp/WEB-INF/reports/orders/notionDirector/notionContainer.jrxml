@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="notionContainer" pageWidth="595" pageHeight="842" columnWidth="595" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="21d9b590-cef9-4bf5-9c94-489bb8bd1082">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="realPath" class="java.lang.String"/>
+	<parameter name="dateNotion" class="java.util.Date"/>
+	<parameter name="dateExamination" class="java.util.Date"/>
+	<parameter name="executorFio" class="java.lang.String"/>
+	<parameter name="executorTel" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="notionStudents" class="java.util.List"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="30">
+			<subreport>
+				<reportElement x="0" y="0" width="595" height="30" uuid="f98f29d5-3612-438a-b038-3992c265499f"/>
+				<subreportParameter name="dateExamination">
+					<subreportParameterExpression><![CDATA[$P{dateExamination}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="dateNotion">
+					<subreportParameterExpression><![CDATA[$P{dateNotion}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="executorFio">
+					<subreportParameterExpression><![CDATA[$P{executorFio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="executorTel">
+					<subreportParameterExpression><![CDATA[$P{executorTel}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{notionStudents})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{realPath} + "newNotion.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

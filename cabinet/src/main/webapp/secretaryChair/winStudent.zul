@@ -1,0 +1,20 @@
+<window id="winStudent" position="center" width="80%" height="70%" closable="true"
+        contentStyle="overflow: auto;" apply="org.edec.secretaryChair.ctrl.WinStudentCommissionCtrl">
+    <caption>
+        <label value="Список студентов" />
+    </caption>
+    <listbox id="lbShowStudentCommission" hflex="1"
+            itemRenderer="org.edec.secretaryChair.ctrl.renderer.StudentRenderer">
+        <listhead>
+            <listheader width="50px" align="center">
+                <label sclass="cwf-listheader-label" value="#"/>
+            </listheader>
+            <listheader hflex="1">
+                <label sclass="cwf-listheader-label" value="ФИО"/>
+            </listheader>
+            <listheader width="120px" align="center">
+                <label sclass="cwf-listheader-label" value="Группа"/>
+            </listheader>
+        </listhead>
+    </listbox>
+</window>

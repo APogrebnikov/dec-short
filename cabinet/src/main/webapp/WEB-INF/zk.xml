@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<zk>
+    <language-config>
+        <addon-uri>/WEB-INF/ckez-bind-addon.xml</addon-uri>
+    </language-config>
+    <library-property>
+        <name>org.zkoss.web.classWebResource.cache</name>
+        <value>false</value>
+    </library-property>
+    <library-property>
+        <name>org.zkoss.zul.listbox.rightSelect</name>
+        <value>false</value>
+    </library-property>
+
+    <listener>
+        <listener-class>org.zkoss.support.patch.AuUploadWebAppInit</listener-class>
+    </listener>
+
+    <system-config>
+        <file-item-factory-class>org.zkoss.support.patch.UploadFixItemFactory</file-item-factory-class>
+    </system-config>
+</zk>

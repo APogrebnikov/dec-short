@@ -1,0 +1,11 @@
+<window id="winDeleteCorrectRequest" width="25%" height="15%" closable="true"
+        apply="org.edec.register.ctrl.WinDeleteCorrectRequestCtrl">
+    <caption>
+        <label value="Подтверждение удаления запроса на корректировку" style="font-weight: 700;"/>
+    </caption>
+    <hbox vflex="1" hflex="1" align="center" pack="center" style="padding-top: 2px;padding-bottom: 2px;">
+        <button id="btnDelete" label="Подтвердить" style="font-weight:bold;"></button>
+        <separator width="10px"/>
+        <button id="btnCancel" label="Отменить"></button>
+    </hbox>
+</window>

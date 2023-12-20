@@ -1,0 +1,174 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.successful.ctrl.IndexPageCtrl">
+    <hbox hflex="1">
+        <groupbox id="gbFilter" hflex="1">
+            <hbox id="hbParams">
+                <label id="lblFilter" style="cursor: pointer">Фильтры ▼</label>
+                <label id="lblMeasure" style="cursor: pointer">Настройки групировки ▼</label>
+                <vbox id="vbBtns" vflex="1" pack="center">
+                    <button id="btnApply" vflex="1">Отчет</button>
+                </vbox>
+                <button id="btnXlsReport" vflex="1">Успеваемость(XLS)</button>
+                <button id="btnXlsReportTeacher" vflex="1">Преподаватели(XLS)</button>
+                <button id="btnXlsReportStudent" vflex="1" visible="false">Студенты(XLS)</button>
+                <button id="btnStatistic" vflex="1" visible="false">Статистика(граф.)</button>
+            </hbox>
+            <popup id="popupFilter">
+                <hbox>
+                    <vbox id="vbColumn1">
+                        <vbox id="vbInst">
+                            <hbox>
+                                <label>Институт</label>
+                                <label style="color: red;">*</label>
+                            </hbox>
+                            <combobox id="cmbInst" readonly="true"/>
+                        </vbox>
+                        <vbox id="vbFormOfStudy">
+                            <hbox>
+                                <label>Форма обучения</label>
+                                <label style="color: red;">*</label>
+                            </hbox>
+                            <combobox id="cmbFormOfStudy" readonly="true"/>
+                        </vbox>
+                    </vbox>
+
+                    <vbox id="vbColumn2">
+                        <label value="Основа обучения"/>
+                        <combobox id="cmbGovFinance" readonly="true"/>
+
+                        <label value="Преподающая кафедра"/>
+                        <combobox id="cmbChair" readonly="true"/>
+                    </vbox>
+
+                    <vbox id="vbColumn3">
+                        <hbox>
+                            <label>Семестр</label>
+                            <label style="color: red;">*</label>
+                        </hbox>
+                        <combobox id="cmbSemester" readonly="true"/>
+
+                        <label value="Учебная группа"/>
+                        <combobox id="cmbGroup" readonly="true"/>
+                    </vbox>
+
+                    <vbox id="vbColumn4">
+                        <groupbox title="Квалификация" style="padding: 0; margin-bottom: 5px">
+                            <checkbox id="chSpec" label="Спец" checked="true"/>
+                            <checkbox id="chBach" label="Бак" checked="true"/>
+                            <checkbox id="chMaster" label="Маг" checked="true"/>
+                        </groupbox>
+
+                        <groupbox title="Курс" style="padding: 0">
+                            <checkbox id="chCourse1" label="1" checked="true"/>
+                            <checkbox id="chCourse2" label="2" checked="true"/>
+                            <checkbox id="chCourse3" label="3" checked="true"/>
+                            <checkbox id="chCourse4" label="4" checked="true"/>
+                            <checkbox id="chCourse5" label="5" checked="true"/>
+                            <checkbox id="chCourse6" label="6" checked="true"/>
+                        </groupbox>
+                    </vbox>
+
+                    <vbox id="vbSettings">
+                        <groupbox title="Доп. настройки" style="padding: 0" vflex="1">
+                            <hbox>
+                                <vbox style="margin-right: 5px">
+                                    <checkbox id="cbAcadem" label="Учитывать Академистов"/>
+                                    <checkbox id="cbFiz" label="Учитывать Физ.культуру"/>
+                                    <checkbox id="cbPract" label="Учитывать Практики"/>
+                                    <checkbox id="cbPassWeek" label="Только зачетная неделя"/>
+                                </vbox>
+                                <vbox>
+                                    <checkbox id="cbDateMarks" label="Учитывать оценки до:"/>
+                                    <datebox id="dbDate" constraint="no empty"/>
+                                </vbox>
+                            </hbox>
+                        </groupbox>
+                    </vbox>
+
+                    <label value="Уровень подготовки" visible="false"/>
+                    <combobox id="cmbLvl" readonly="true" visible="false"/>
+                </hbox>
+            </popup>
+            <popup id="popupMeasure">
+                <style>
+                    .measurelb .z-listcell-content {
+                    padding: 1px !important;
+                    }
+                </style>
+                <hbox width="150px">
+                    <listbox id="lbMeasure" sclass="measurelb" droppable="true" oddRowSclass="non-odd">
+                    </listbox>
+                </hbox>
+            </popup>
+        </groupbox>
+    </hbox>
+    <listbox id="lbStudent" width="100%" vflex="1" mold="paging" autopaging="true" style="min-width: 800px">
+        <!--<auxhead>-->
+            <!--<auxheader/>-->
+            <!--<auxheader>-->
+                <!--<textbox id="tbValueFilter" hflex="1" placeholder="Введите ФИО.." />-->
+            <!--</auxheader>-->
+            <!--<auxheader>-->
+                <!--<textbox id="tbRecordbook" hflex="1" />-->
+            <!--</auxheader>-->
+            <!--<auxheader>-->
+                <!--<textbox id="tbGroup" hflex="1" />-->
+            <!--</auxheader>-->
+            <!--<auxheader />-->
+            <!--<auxheader />-->
+            <!--<auxheader />-->
+            <!--<auxheader />-->
+        <!--</auxhead>-->
+        <listhead id="lhStudent">
+            <listheader/>
+            <listheader width="150px">
+                <label sclass="cwf-listheader-label" value=""/>
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="Кол-во"/>
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="Сдали"/>
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="Все 5"/>
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="На 4 и 5"/>
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="Все 4"/>
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="На 3, 4 и 5"/>
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="Все 3"/>
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="На 2 и 3"/>
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="Долги"/>
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="1 Долг"/>
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="2 Долга"/>
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="3-4 Долга"/>
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="Более 5"/>
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="Все долги"/>
+            </listheader>
+        </listhead>
+        <listfoot id="lfStudent">
+        </listfoot>
+    </listbox>
+</vbox>

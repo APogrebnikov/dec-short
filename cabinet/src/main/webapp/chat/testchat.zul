@@ -1,0 +1,269 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+
+<?meta name="viewport" content="width=device-width, initial-scale=1"?>
+
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+
+<?link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=cyrillic" rel="stylesheet"?>
+<?link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"?>
+
+<!--?link href="/css/normalize.css" rel="stylesheet"?-->
+<!--?link href="/css/chat.css" rel="stylesheet"?-->
+<?link href="/css/chatModal.css" rel="stylesheet"?>
+
+<div self="@define(content)" xmlns:n="native" xmlns:w="client" apply="org.edec.chat.ctrl.IndexPageCtrl">
+
+    <style src="/css/chat.css"/>
+
+    <div sclass="container">
+        <tabbox>
+            <tabs id="tab">
+                <tab id="tabGroup" label=" Группа" />
+                <tab id="tabDecanat" label="Деканат" />
+            </tabs>
+            <tabpanels>
+                <tabpanel id="tpGroup">
+                    <div sclass="message-box">
+                        <div  id="aboutGroup" sclass="message-about" />
+
+                        <div sclass="message-history_wrap">
+                            <div id="messagesGroup" sclass="message-history">
+                                <div sclass="message-left">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_author" value="Сорока Евгения" />
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="Привет"/>
+                                    </div>
+                                </div>
+                                <div sclass="message-left">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_author" value="Сорока Евгения" />
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="Привет"/>
+                                    </div>
+                                </div>
+                                <div sclass="message-left">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_author" value="Сорока Евгения" />
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="Привет"/>
+                                    </div>
+                                </div>
+                                <div sclass="message-left">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_author" value="Сорока Евгения" />
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="Привет"/>
+                                    </div>
+                                </div>
+                                <div sclass="message-left">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_author" value="Сорока Евгения" />
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="Привет"/>
+                                    </div>
+                                </div>
+                                <div sclass="message-left">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_author" value="Сорока Евгения" />
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="Привет"/>
+                                    </div>
+                                </div>
+                                <div sclass="message-left">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_author" value="Сорока Евгения" />
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="The end!!!"/>
+                                    </div>
+                                </div>
+                                <div sclass="message-left">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_author" value="кто-то" />
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="Программист звонит в библиотеку. — Здравствуйте, Катю можно? — Она в архиве. — Разархивируйте ее пожалуйста. Она мне срочно нужна!"/>
+                                    </div>
+                                </div>
+                                <div sclass="message-left">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_author" value="кому-то" />
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="Привет. Кто это?"/>
+                                    </div>
+                                </div>
+                                <div sclass="message-left">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_author" value="за что-то" />
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="Привет. Здесь должен быть очень большй текст для того чтобы проверить на сколько в=красиво отображается на странице вся эта ерунда. Да дадададад"/>
+                                    </div>
+                                </div>
+                                <div sclass="message-right">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_time" value="Только что" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="Программисты на работе общаются двумя фразами: «непонятно» и «вроде работает»."/>
+                                    </div>
+                                </div>
+                                <div sclass="message-left">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_author" value="и почему-то" />
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="Привет"/>
+                                    </div>
+                                </div>
+                                <div sclass="message-right">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <div sclass="message-attach">
+                                            <div sclass="message-data">
+                                                <label sclass="message-data_author" value="Сорока Евгения" />
+                                                <label sclass="message-data_time" value="Вчера: 17:36" />
+                                            </div>
+                                            <div sclass="message-content">
+                                                <label sclass="message-content_text" value="Нет повести печальнее на свете, чем сисадмин в госсекторе и Petya."/>
+                                            </div>
+                                        </div>
+                                        <label sclass="message-content_text" value="Нет повести печальнее на свете, чем сисадмин в госсекторе и Petya."/>
+                                    </div>
+                                </div>
+
+                                <div sclass="message-center">
+                                    <label sclass="message-content_text" value="Разговор создан"/>
+                                </div>
+
+                                <div sclass="message-left">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_author" value="Сорока Евгения" />
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+
+                                    <div sclass="message-content">
+                                        <div sclass="message-attach">
+                                            <div sclass="message-data">
+                                                <label sclass="message-data_author" value="Сорока Евгения" />
+                                                <label sclass="message-data_time" value="Вчера: 17:36" />
+                                            </div>
+                                            <div sclass="message-content">
+                                                <div sclass="message-attach">
+                                                    <div sclass="message-data">
+                                                        <label sclass="message-data_author" value="Сорока Евгения" />
+                                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                                    </div>
+                                                    <div sclass="message-content">
+                                                        <div sclass="message-attach">
+                                                            <div sclass="message-data">
+                                                                <label sclass="message-data_author" value="Сорока Евгения" />
+                                                                <label sclass="message-data_time" value="Вчера: 17:36" />
+                                                            </div>
+                                                            <div sclass="message-content">
+                                                                <label sclass="message-content_text" value="Нет повести печальнее на свете, чем сисадмин в госсекторе и Petya."/>
+                                                            </div>
+                                                        </div>
+                                                        <html sclass="message-content_text">gd f<a href="#">texy</a> fg
+                                                                на свете, чем сисадмин в госсекторе и Petya.
+                                                        </html>
+
+                                                    </div>
+                                                </div>
+                                                <label sclass="message-content_text" value="Нет повести печальнее на свете, чем сисадмин в госсекторе и Petya."/>
+                                            </div>
+                                        </div>
+
+                                        <label sclass="message-content_text" value="Программисты на работе общаются двумя фразами: «непонятно» и «вроде работает»."/>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div id="sendGroup" sclass="send-panel_wrap" />
+                    </div>
+                </tabpanel>
+
+                <tabpanel id="tpDecanat">
+                    <div sclass="message-box">
+                        <div sclass="message-about">
+                            <n:ul class="message-about_header">
+                                <n:li class="message-about_header-title"><label value="Деканат"></label></n:li>
+                                <n:li><button sclass="icons">search</button></n:li>
+                                <n:li><button sclass="icons">star</button></n:li>
+                                <n:li><button id="filesDecanat" sclass="icons">insert_drive_file</button></n:li>
+                            </n:ul>
+                        </div>
+
+                        <div sclass="message-history_wrap">
+                            <div id="lbDecanat" sclass="message-history">
+                                <div sclass="message-left">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_author" value="Кто ты?" />
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="Эта страница не работает. Ну и не надо, хорошо?=)"/>
+                                    </div>
+                                </div>
+                                <div sclass="message-left">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_author" value="Кто я?" />
+                                        <label sclass="message-data_time" value="Вчера: 17:36" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="Всё не работает, мы тоже" />
+                                    </div>
+                                </div>
+                                <div sclass="message-right">
+                                    <div sclass="message-data">
+                                        <label sclass="message-data_time" value="Только что" />
+                                    </div>
+                                    <div sclass="message-content">
+                                        <label sclass="message-content_text" value="Держи картинку, не скучай" />
+                                        <image sclass="img" src="/imgs/website-under-construction.jpg" height="200px"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div sclass="send-panel_wrap">
+                            <n:ul class="send-panel">
+                                <n:li class="send-panel_clip"><button id="chooseFileDecanat" upload="true" sclass="icons">attach_file</button></n:li>
+                                <n:li class="send-panel_textarea">
+                                    <textbox id="textMessageDecanat" placeholder="Сообщение..." rows="2"/></n:li>
+                                <n:li class="send-panel_send"><button id="sendMessageDecanat" sclass="icons">send</button></n:li>
+                                <n:li><label id="loadFileDecanat" /></n:li>
+                            </n:ul>
+                        </div>
+                    </div>
+                </tabpanel>
+            </tabpanels>
+        </tabbox>
+    </div>
+
+    <script src="/js/chat.js" type="text/javascript" />
+    <timer id="timer" delay="1000" repeats="true" />
+</div>

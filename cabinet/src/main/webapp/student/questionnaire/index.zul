@@ -1,0 +1,21 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.student.questionnaire.ctrl.IndexPageCtrl">
+    <style src="/bootstrap/v3/bootstrap/css/bootstrap.css" />
+    <listbox id="lbQuestionnaire" emptyMessage="У вас нет неотвеченных опросников" hflex="1" vflex="1">
+        <listhead>
+            <listheader width="40px" align="center">
+                <label sclass="cwf-listheader-label" value="#"/>
+            </listheader>
+            <listheader hflex="1">
+                <label sclass="cwf-listheader-label" value="Тема"/>
+            </listheader>
+            <listheader width="150px">
+                <label sclass="cwf-listheader-label" value="Отправитель"/>
+            </listheader>
+            <listheader width="120px" align="center">
+                <label sclass="cwf-listheader-label" value="Дата"/>
+            </listheader>
+        </listhead>
+    </listbox>
+</vbox>

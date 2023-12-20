@@ -1,0 +1,49 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<div self="@define(content)" height="100%"
+     apply="org.edec.studentOrder.ctrl.IndexPageCtrl">
+    <hbox vflex="1" >
+
+
+        <vlayout vflex="1" hflex="4">
+        <hlayout>
+            <textbox id = "tbLastName" placeholder="Фамилия" value = "Молошаг"
+                     height="30px" hflex="1"></textbox>
+            <textbox id = "tbFirstName" placeholder="Имя" height="30px" hflex="1" value = "Анна"></textbox>
+            <textbox id = "tbSemester" placeholder="id семестра" height="30px" hflex="1" value = "58"></textbox>
+
+            <button id ="btnSearch" label="Найти" height="30px" hflex="1"></button>
+        </hlayout>
+            <listbox id="lbStudent" vflex="1">
+                <listhead>
+                    <listheader><label sclass="cwf-listheader-label" value="Фамилия" /></listheader>
+                    <listheader><label sclass="cwf-listheader-label" value="Имя"/></listheader>
+                    <listheader><label sclass="cwf-listheader-label" value="Отчество" /></listheader>
+                    <listheader><label sclass="cwf-listheader-label" value="Группа" /></listheader>
+                </listhead>
+            </listbox>
+        </vlayout>
+
+
+
+<vlayout hflex="6" vflex="1">
+        <listbox id ="lbOrder"  vflex="1">
+            <auxhead>
+                    <auxheader></auxheader>
+                    <auxheader></auxheader>
+                    <auxheader></auxheader>
+                    <auxheader><textbox id="tbTypeFilter" placeholder="Тип..." hflex="1"/></auxheader>
+                    <auxheader><textbox id="tbSectionFilter" placeholder="Секция..." hflex="1"/></auxheader>
+            </auxhead>
+            <listhead>
+                <listheader hflex="1"><label sclass="cwf-listheader-label" value="id" /></listheader>
+                <listheader hflex="6"><label sclass="cwf-listheader-label" value ="Название приказа"/></listheader>
+                <listheader hflex="3"><label sclass="cwf-listheader-label" value="Дата создания" /></listheader>
+                <listheader hflex="3"><label  sclass="cwf-listheader-label" value="Тип приказа" /></listheader>
+                <listheader hflex="4"><label sclass="cwf-listheader-label" value="Секция студента" /></listheader>
+            </listhead>
+        </listbox>
+</vlayout>
+
+    </hbox>
+</div>

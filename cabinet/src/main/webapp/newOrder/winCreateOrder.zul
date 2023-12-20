@@ -1,0 +1,68 @@
+<window position="center" id="winCreateOrder" closable="true" apply="org.edec.newOrder.ctrl.WinCreateOrderCtrl">
+    <caption>
+        <label value="Создать приказ"/>
+    </caption>
+    <vbox style="margin-top:5px">
+        <hbox id="hbInst">
+            <combobox id="cmbInst" itemRenderer="org.edec.utility.component.renderer.InstituteRenderer"
+                      placeholder="Институт" readonly="true"/>
+        </hbox>
+        <hbox id="hbFormOfStudy">
+            <combobox id="cmbFormOfStudy" placeholder="Форма обучения" readonly="true"/>
+        </hbox>
+        <hbox>
+            <label value="Вид приказа"/>
+        </hbox>
+        <hbox>
+            <combobox id="cmbListOrderTypes" placeholder="...Выберите вид приказа" autocomplete="true" width="500px"/>
+        </hbox>
+        <vbox id="vbOrderRules" visible="false">
+            <hbox>
+                <label value="Тип приказа"/>
+            </hbox>
+            <hbox>
+                <combobox id="cmbListOrderRules" placeholder="...Выберите тип приказа"
+                          autocomplete="true" width="500px"/>
+            </hbox>
+        </vbox>
+        <hbox>
+            <groupbox title="Параметры приказа:" id="gbOrderParams" visible="false">
+                <listbox id="lbParams" width="350px" height="300px">
+                    <listhead>
+                        <listheader align="center" width="175px">
+                            <label sclass="cwf-listheader-label" value="Название"/>
+                        </listheader>
+                        <listheader align="center" width="175px">
+                            <label sclass="cwf-listheader-label" value=""/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </groupbox>
+            <groupbox width="625px" title="Студенты:" id="gbOrderStudents" visible="false">
+                <listbox id="lbStudents" width="560px" height="300px">
+                    <listhead>
+                        <listheader align="center" width="300px">
+                            <label sclass="cwf-listheader-label" value="ФИО"/>
+                        </listheader>
+                        <listheader align="center" width="100px">
+                            <label sclass="cwf-listheader-label" value="Группа"/>
+                        </listheader>
+                        <listheader align="center" width="100px">
+                            <label sclass="cwf-listheader-label" value="Параметры"/>
+                        </listheader>
+                        <listheader align="center" width="60px">
+                            <label sclass="cwf-listheader-label" value=""/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </groupbox>
+            <groupbox title="Будут прикреплены следующие документы:" id="gbOrderDocuments" visible="false"/>
+        </hbox>
+        <groupbox title="Описание приказа" width="100%">
+            <textbox id="tbDescription" multiline="true" rows="3" width="100%"/>
+        </groupbox>
+        <hbox align="end" hflex="1">
+            <button id="btnCreateOrder">Создать</button>
+        </hbox>
+    </vbox>
+</window>

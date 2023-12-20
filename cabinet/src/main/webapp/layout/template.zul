@@ -1,0 +1,114 @@
+<?page title="Личный кабинет" contentType="text/html;charset=UTF-8"?>
+<?init class="org.edec.main.auth.AuthInit"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<zk xmlns:n="native" xmlns:x="xhtml">
+    <style src="/css/template.css?version=10062020" />
+    <style src="/css/style.css?version=10062020" />
+
+    <audio id="auNote" src="/sounds/note.mp3" height="0px" width="0px" />
+    <!--audio id="auScream" src="/sounds/scream.mp3" height="0px" width="0px" /-->
+
+    <timer id="timerReq" delay="10000" repeats="true"></timer>
+
+    <div height="100%" width="100%" apply="org.edec.main.ctrl.TemplatePageCtrl">
+        <div sclass="header_layout">
+            <div width="70%" style="padding-top: 18px; padding-left: 5px;">
+                <hbox hflex="1" vflex="1" pack="center">
+                    <span id="spanShowNav" style="color: #fff; font-size: 24px; cursor: pointer;" sclass="z-icon-angle-double-down" />
+                    <label id="lPageName" value="Личный кабинет" hflex="1" vflex="1"
+                           style="padding-left: 10px;color: #fff; font-size: 18px; font-family: opensans,arial,freesans,sans-serif;"/>
+                </hbox>
+            </div>
+            <div sclass="exit" width="30%" height="58px">
+                <hlayout hflex="1" vflex="1">
+                    <hbox hflex="1" vflex="1" style="cursor: pointer; padding-left: 10px;" align="center" pack="center">
+                        <div id="divProfile" hflex="1" vflex="1" style="padding-top: 17px;">
+                            <label id="lCurrentUser" value="Фамилия И. О."
+                                   style="color: #fff; font-size: 18px; font-family: opensans,arial,freesans,sans-serif;"/>
+                        </div>
+                            <div id="divRequest" vflex="1" style="width: 50px; padding-top: 17px;color: #fff; font-size: 18px;">
+                                <span id="spanReqCount" sclass="z-icon-file-o" visible="false"> </span>
+                                <label id="lbReqCount" visible="false" style="background: red; border-radius: 10px; padding: 3px;"></label>
+                            </div>
+                    </hbox>
+                    <hbox width="40px" vflex="1" pack="end" align="center" style="position: relative;">
+                        <span id="spanCogs" sclass="z-icon-cogs" style="color: #fff; font-size: 24px; cursor: pointer;" />
+                        <div id="divBadgeNotification" visible="false"
+                             style="width: 10px; height: 10px; position: absolute; border-radius: 5px;
+                                background: #e45b74; left: 0; top:0;"/>
+                        <popup id="popupTemplateCogs" style="position: absolute;">
+                            <vbox hflex="1" vflex="1">
+                                <hbox hflex="1" id="hbTemplateNotification" style="cursor: pointer;" visible="false" align="center">
+                                    <span sclass="z-icon-envelope" style="font-size: 18px; width: 20px;" />
+                                    <label value="Уведомления" style="font-size: 18px; " />
+                                </hbox>
+                                <hbox hflex="1" id="hbTemplateDownloadGuide" style="cursor: pointer;" align="center">
+                                                                    <span sclass="z-icon-info" style="font-size: 18px; width: 20px;" />
+                                                                    <label value="Помощь" style="font-size: 18px; " />
+                                                                </hbox>
+                                <hbox hflex="1" id="hbTemplateQuestion" style="cursor: pointer;" align="center">
+                                    <span sclass="z-icon-question" style="font-size: 18px; width: 20px;" />
+                                    <label value="Сообщить о проблеме" style="font-size: 18px; " />
+                                </hbox>
+                                <hbox hflex="1" id="hbTemplateExit" style="cursor: pointer;" align="center">
+                                    <span sclass="z-icon-power-off" style="font-size: 18px; width: 20px;" />
+                                    <label value="Выйти" style="font-size: 18px; " />
+                                </hbox>
+                            </vbox>
+                        </popup>
+                    </hbox>
+                </hlayout>
+            </div>
+        </div>
+        <!-- content -->
+        <div style="padding: 60px 5px 5px 5px; height: 100%; width: 100%;">
+            <!-- sidebar -->
+            <div id="divSidebar" sclass="sidebar close">
+                <div id="divOverlay" style="display: block;" sclass="side-nav-overlay"/>
+            </div>
+            <!-- main -->
+            <div self="@insert(content)" sclass="mainContent" height="100%"/>
+        </div>
+    </div>
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript" >
+        (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+        (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(87780267, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+        });
+    </script>
+
+    <script type="text/javascript">
+
+        function sendNotification(title, options) {
+            if (!("Notification" in window)) {
+                alert('Ваш браузер не поддерживает HTML Notifications, его необходимо обновить.');
+            } else if (Notification.permission === "granted") {
+                var notification = new Notification(title, options);
+
+                function clickFunc() {
+                    window.location.pathname ='/cabinet/register/index.zul';
+                }
+
+                notification.onclick = clickFunc;
+            } else if (Notification.permission !== 'denied') {
+                Notification.requestPermission(function (permission) {
+                    if (permission === "granted") {
+                    var notification = new Notification(title, options);
+                    } else {
+                        alert('Вы запретили показывать уведомления');
+                    }
+                });
+            } else {
+
+            }
+        }
+
+    </script>
+</zk>

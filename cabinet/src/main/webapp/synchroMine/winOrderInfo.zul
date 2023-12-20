@@ -1,0 +1,101 @@
+<window id="winOrderInfo" width="80%" height="95%" closable="true"
+        apply="org.edec.synchroMine.ctrl.WinOrderInfoCtrl">
+    <caption>
+        <label id="lOrderInfo" style="font-weight: 700" />
+    </caption>
+    <tabbox vflex="1">
+        <tabs>
+            <tab label="Пункты"/>
+            <tab label="Перемещение" />
+            <tab label="Пункты приказа" />
+        </tabs>
+        <tabpanels >
+            <tabpanel>
+                    <label value="Студенты пункты" height="15px"/>
+                    <listbox id="lbOrderSectionStudent" vflex="1" mold="paging" autopaging="true">
+                        <listhead>
+                            <listheader width="50px" align="center">
+                                <label sclass="cwf-listheader-label" value="#"/>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label" value="ФИО"/>
+                            </listheader>
+                            <listheader width="80px">
+                                <label sclass="cwf-listheader-label" value="Студент"/>
+                            </listheader>
+                            <listheader width="90px" align="center">
+                                <label sclass="cwf-listheader-label" value="Группа из"/>
+                            </listheader>
+                            <listheader width="160px">
+                                <label sclass="cwf-listheader-label" value="Текст основания"/>
+                            </listheader>
+                            <listheader width="120px">
+                                <label sclass="cwf-listheader-label" value="Стипендия"/>
+                            </listheader>
+                            <listheader width="70px">
+                                <label sclass="cwf-listheader-label" value="Сумма"/>
+                            </listheader>
+                            <listheader width="120px">
+                                <label sclass="cwf-listheader-label" value="Аттрибут 1"/>
+                            </listheader>
+                            <listheader width="50px" align="center" />
+                        </listhead>
+                    </listbox>
+            </tabpanel>
+            <tabpanel hflex="1" vflex="1">
+                <label value="Студенты перемещение" />
+                <listbox id="lbOrderStudentMove" vflex="1" hflex="1" mold="paging" autopaging="true">
+                    <listhead>
+                        <listheader width="50px" align="center">
+                            <label sclass="cwf-listheader-label" value="#"/>
+                        </listheader>
+                        <listheader width="110px">
+                            <label sclass="cwf-listheader-label" value="Код студента"/>
+                        </listheader>
+                        <listheader width="90px" align="center">
+                            <label sclass="cwf-listheader-label" value="Группа"/>
+                        </listheader>
+                        <listheader width="70px" align="center">
+                            <label sclass="cwf-listheader-label" value="Код перемещения"/>
+                        </listheader>
+                        <listheader width="120px">
+                            <label sclass="cwf-listheader-label" value="Основания"/>
+                        </listheader>
+                        <listheader width="80px" align="center">
+                            <label sclass="cwf-listheader-label" value="Дата с"/>
+                        </listheader>
+                        <listheader width="80px" align="center">
+                            <label sclass="cwf-listheader-label" value="Дата по"/>
+                        </listheader>
+                        <listheader hflex="1">
+                            <label sclass="cwf-listheader-label" value="Тип"/>
+                        </listheader>
+                        <listheader width="50px" align="center"/>
+                    </listhead>
+                </listbox>
+            </tabpanel>
+            <tabpanel hflex="1" vflex="1">
+                <label value="Пункты приказа" />
+                <listbox id="lbOrderSection" hflex="1" vflex="1">
+                    <listhead>
+                        <listheader width="50px" align="center">
+                            <label sclass="cwf-listheader-label" value="#"/>
+                        </listheader>
+                        <listheader hflex="1" >
+                            <label sclass="cwf-listheader-label" value="Название"/>
+                        </listheader>
+                        <listheader width="50px" align="center">
+                            <label sclass="cwf-listheader-label" value="Номер"/>
+                        </listheader>
+                        <listheader width="100px" align="center">
+                            <label sclass="cwf-listheader-label" value="Код действия"/>
+                        </listheader>
+                        <listheader width="50px" align="center">
+                            <label sclass="cwf-listheader-label" value="Массовое"/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+</window>

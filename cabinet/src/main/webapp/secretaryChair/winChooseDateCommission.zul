@@ -1,0 +1,41 @@
+<window id="winChooseDateCommission" width="640px" height="480px" closable="true" contentStyle="overflow: auto;"
+    apply="org.edec.secretaryChair.ctrl.WinChoseCommissionTime">
+    <style src="/student/calendarOfEvents/calendar.css" />
+    <caption>
+        <label value="Поиск даты и времени для комиссии"/>
+    </caption>
+    <vlayout hflex="1" vflex="1">
+        <hlayout height="40px" hflex="1">
+            <vlayout style="margin-right: 10px; width: 300px;">
+                <label value="Предмет:" sclass="b" />
+                <label id="lSubjectname" />
+            </vlayout>
+            <vlayout>
+                <label value="Период комиссий" sclass="b"/>
+                <label id="lPeriodCommission" />
+            </vlayout>
+        </hlayout>
+        <hbox hflex="2" height="30px">
+            <hbox align="center" pack="center">
+                <hbox style="height: 20px; width: 20px; background: #ccc;" />
+                <label value="Невозможно назначить комиссию" style="font-size: 9pt;"/>
+            </hbox>
+            <hbox align="center" pack="center">
+                <hbox style="height: 20px; width: 20px; background: #95FF82;" />
+                <label value="Свободный день" style="font-size: 9pt;"/>
+            </hbox>
+            <hbox align="center" pack="center">
+                <hbox style="height: 20px; width: 20px; background: #FFEF70" />
+                <label value="Есть свободное время" style="font-size: 9pt;" />
+            </hbox>
+            <hbox align="center" pack="center">
+                <hbox style="height: 20px; width: 20px; background: #ff9494;" />
+                <label value="Нет свободного времени" style="font-size: 9pt;" />
+            </hbox>
+        </hbox>
+        <vlayout hflex="1" vflex="1">
+            <vbox id="vbCalendar" hflex="3" />
+            <vbox id="vbDayTime" hflex="1" vflex="1" />
+        </vlayout>
+    </vlayout>
+</window>

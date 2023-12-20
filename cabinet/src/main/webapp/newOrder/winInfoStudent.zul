@@ -1,0 +1,38 @@
+<window id="winInfoStudent" width="80%" height="90%" closable="true"
+        apply="org.edec.newOrder.ctrl.WinInfoStudentCtrl" >
+    <caption>
+        <label value="Оценки студента"/>
+    </caption>
+    <tabbox vflex="1" hflex="1">
+        <tabs>
+            <tab label="Успеваемость" id="tabEduPerformance"/>
+        </tabs>
+        <tabpanels>
+            <!-- Успеваемость -->
+            <tabpanel vflex="1">
+                <vbox vflex="1">
+                    <checkbox id="chDebt" label="Показывать только долги" />
+                    <listbox id="lbEduPerformance" vflex="1">
+                        <listhead>
+                            <listheader align="center" width="30px">
+                                <label sclass="cwf-listheader-label" value="#"/>
+                            </listheader>
+                            <listheader>
+                                <label sclass="cwf-listheader-label" value="Предмет"/>
+                            </listheader>
+                            <listheader align="center" width="140px">
+                                <label sclass="cwf-listheader-label" value="Форма контроля"/>
+                            </listheader>
+                            <listheader align="center" width="140px">
+                                <label sclass="cwf-listheader-label" value="Семестр"/>
+                            </listheader>
+                            <listheader align="center" width="100px">
+                                <label sclass="cwf-listheader-label" value="Оценка"/>
+                            </listheader>
+                        </listhead>
+                    </listbox>
+                </vbox>
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+</window>

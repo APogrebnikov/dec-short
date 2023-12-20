@@ -1,0 +1,46 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.trajectory.ctrl.IndexPageCtrl">
+    <vbox height="20px">
+        <label value="Год набора" />
+        <combobox id="cmbSchoolYear" height="20px" width="150px" readonly="true" style="margin-bottom: 10px"/>
+    </vbox>
+    <hbox hflex="1" vflex="1">
+        <listbox id="lbDirection" hflex="1" vflex="1">
+            <listhead>
+                <listheader align="center" hflex="1">
+                    <label sclass="cwf-listheader-label" value="Направление"/>
+                </listheader>
+            </listhead>
+        </listbox>
+        <listbox id="lbTrajectory" hflex="3" vflex="1">
+            <auxhead>
+                <auxheader colspan="4">
+                    <vbox hflex="1">
+                        <combobox id="cmbTrajectoryName"  autocomplete="true" placeholder="Название траектории" hflex="1"/>
+                        <hbox hflex="1">
+                            <!--<checkbox id="chTrajectoryCurrentYear" label="Текущий год" />-->
+                            <combobox id="cmbTrajectoryCurriculum" hflex="1"
+                                      placeholder="Учебный план" visible="false" readonly="true"/>
+                            <button id="btnTrajectoryCreate" label="Создать" />
+                        </hbox>
+                    </vbox>
+                </auxheader>
+            </auxhead>
+            <listhead>
+                <listheader hflex="1">
+                    <label sclass="cwf-listheader-label" value="Траектория"/>
+                </listheader>
+                <listheader align="center" width="200px">
+                    <label sclass="cwf-listheader-label" value="Учебный план"/>
+                </listheader>
+                <listheader align="center" width="120px">
+                    <label sclass="cwf-listheader-label" value="Текущий год"/>
+                </listheader>
+                <listheader align="center" width="200px">
+                    <label sclass="cwf-listheader-label" value="Действия"/>
+                </listheader>
+            </listhead>
+        </listbox>
+    </hbox>
+</vbox>

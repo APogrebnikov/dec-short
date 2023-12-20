@@ -1,0 +1,17 @@
+<window id="winChooseStudentsForIndRetake" width="30%" height="50%" closable="true"
+        apply="org.edec.register.ctrl.winChooseStudentsForIndRetakeCtrl">
+    <caption>
+        <label value="Выбор студентов" style="font-weight: 700;"/>
+    </caption>
+    <vbox vflex="1">
+        <listbox id = "lbStudents" checkmark="true" multiple="true" hflex="1" vflex = "1">
+            <listhead>
+                <listheader id = "lhStudents"  >
+                    <label sclass="cwf-listheader-label" value="ФИО студентов"></label>
+                </listheader>
+            </listhead>
+        </listbox>
+        <button id = "btnOpenIndRetake" label="Открыть пересдачу" width="150px" style="position: absolute; padding-bottom: 5px" > </button>
+    </vbox>
+
+</window>

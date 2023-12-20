@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration PUBLIC
+        "-//APACHE//DTD LOG4J 1.2//EN"
+        "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<log4j:configuration debug="false">
+    <appender name="FileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="cabinet_log/cabinet.log"/>
+        <param name="DatePattern" value="'-'yyyy-MM-dd"/>
+        <param name="Encoding" value="utf-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c: %m%n %throwable"/>
+        </layout>
+    </appender>
+
+    <appender name="SynchFromMine" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="cabinet_log/synchMine/synch.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%-5p][%-16.16t][%30c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="Schedule" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="cabinet_log/schedule/schedule.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%-5p][%-16.16t][%30c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="Register" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="cabinet_log/register/register.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c: %m%n %throwable"/>
+        </layout>
+    </appender>
+
+    <appender name="REST" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="cabinet_log/REST/rest.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%-5p][%-16.16t][%30c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="FactSheet" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="cabinet_log/factSheet/factSheet.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%-5p][%-16.16t][%30c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="PassportGroup" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="cabinet_log/passportGroup/passportGroup.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%-5p][%-16.16t][%30c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="Teacher" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="cabinet_log/teacher/teacher.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%-5p][%-16.16t][%30c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="Authorization" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="cabinet_log/auth/auth.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c: %m%n %throwable"/>
+        </layout>
+    </appender>
+
+    <appender name="Commission" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="cabinet_log/commission/commission.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%-5p][%-16.16t][%30c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="Mine" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="cabinet_log/newMine/newMine.log"/>
+        <param name="Append" value="true"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd'.log'"/>
+        <param name="Encoding" value="UTF-8"/>
+        <layout class="org.apache.log4j.EnhancedPatternLayout">
+            <param name="ConversionPattern" value="%d{ISO8601} [%-5p][%-16.16t][%30c] - %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="org.edec.synchroMine">
+        <appender-ref ref="SynchFromMine"/>
+    </logger>
+
+    <logger name="org.edec.schedule">
+        <appender-ref ref="Schedule"/>
+    </logger>
+
+    <logger name="org.edec.register">
+        <appender-ref ref="Register"/>
+    </logger>
+
+    <logger name="org.edec.rest">
+        <appender-ref ref="REST"/>
+    </logger>
+
+    <logger name="org.edec.factSheet">
+        <appender-ref ref="FactSheet"/>
+    </logger>
+
+    <logger name="org.edec.student.factSheet">
+        <appender-ref ref="FactSheet"/>
+    </logger>
+
+    <logger name="org.edec.passportGroup">
+        <appender-ref ref="PassportGroup"/>
+    </logger>
+
+    <logger name="org.edec.teacher">
+        <appender-ref ref="Teacher"/>
+    </logger>
+
+    <logger name="org.edec.main">
+        <appender-ref ref="Authorization"/>
+    </logger>
+
+    <logger name="org.edec.commission">
+        <appender-ref ref="Commission"/>
+    </logger>
+
+    <logger name="org.edec.secretaryChair">
+        <appender-ref ref="Commission"/>
+
+    </logger>
+
+    <logger name="org.edec.newMine">
+        <appender-ref ref="Mine"/>
+
+    </logger>
+
+    <root>
+        <priority value="INFO"/>
+        <appender-ref ref="FileAppender"/>
+    </root>
+
+</log4j:configuration>

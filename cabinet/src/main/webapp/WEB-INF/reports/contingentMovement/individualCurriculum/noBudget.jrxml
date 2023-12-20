@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.18.1.final using JasperReports Library version 6.18.1-9d75d1969e774d4f179fb3be8401e98a0e6d1611  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="noBudget" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="01f28370-197b-4d10-9502-45cce7231db1">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<style name="Default" isDefault="true" fontName="Times New Roman" fontSize="10" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1251" isPdfEmbedded="true"/>
+	<parameter name="studentFio" class="java.lang.String"/>
+	<parameter name="studentShortFio" class="java.lang.String"/>
+	<parameter name="code" class="java.lang.String"/>
+	<parameter name="group" class="java.lang.String"/>
+	<parameter name="datePass" class="java.util.Date"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="subjectname" class="java.lang.String">
+		<fieldDescription><![CDATA[subjectname]]></fieldDescription>
+	</field>
+	<field name="semesternumber" class="java.lang.Integer">
+		<fieldDescription><![CDATA[semesternumber]]></fieldDescription>
+	</field>
+	<field name="hoursCount" class="java.lang.Double">
+		<fieldDescription><![CDATA[hoursCount]]></fieldDescription>
+	</field>
+	<field name="hoursaudcount" class="java.lang.Double">
+		<fieldDescription><![CDATA[hoursaudcount]]></fieldDescription>
+	</field>
+	<field name="foc" class="java.lang.String">
+		<fieldDescription><![CDATA[foc]]></fieldDescription>
+	</field>
+	<field name="type" class="java.lang.Integer">
+		<fieldDescription><![CDATA[type]]></fieldDescription>
+	</field>
+	<variable name="number" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[Boolean.TRUE]]></variableExpression>
+		<initialValueExpression><![CDATA[1]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="550" height="14" uuid="5369a413-bfbf-40e1-a1e4-c4012db180cd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[План-график ликвидации разницы]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="14" width="550" height="14" uuid="926a647c-9a6e-4fd6-8dd5-18c0f3d6afa5">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[в учебных планах]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="28" width="550" height="12" uuid="6f7439ae-45b4-4c46-aaf1-3db076a5f20e"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{studentFio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="42" width="550" height="13" uuid="b4929560-c973-466b-b282-54f2a454bb7a"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="55" width="550" height="15" uuid="2be42a3c-5230-43a9-9997-82ae9acd82fe"/>
+				<textElement textAlignment="Center"/>
+				<textFieldExpression><![CDATA[$P{group}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="20" height="30" uuid="5129c4b9-1204-4ec0-b9d6-ef7a56c6d4a7">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[№]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="20" y="0" width="190" height="30" uuid="a8609dc8-bc8d-45d5-ac1e-ae18c24d4dbf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0e15ea8f-d6d1-4a27-94c4-0c8497123280"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[Дисциплина]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="210" y="0" width="50" height="30" uuid="f4b96181-30b6-470f-b03c-4f128d84e82d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="51ec6b52-a182-40ff-939e-04f56f099bd6"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Семестр]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="0" width="80" height="30" uuid="7892c25d-6b6f-487d-8d37-46bb94ab26d4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c20478fe-e08b-4871-8bfb-c79116816e29"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Кол-во 
+часов/ауд.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="0" width="90" height="30" uuid="c72d3eb3-81b9-47ad-8fda-b37723b17fb4"/>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Форма
+контроля]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="480" y="0" width="70" height="30" uuid="a0129ff5-5c7c-435d-99da-065d96b5cf09">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b7825048-d350-48fc-afa3-18e6beb580d7"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Срок сдачи]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="0" width="50" height="30" uuid="48f0c5a0-9eb3-403f-857e-9eae475813d8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c20478fe-e08b-4871-8bfb-c79116816e29"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Кол-во 
+з.е.]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="0" y="0" width="20" height="20" uuid="b71a965f-86b6-433e-ac32-f92e526ef9cd">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{number}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="20" y="0" width="190" height="20" uuid="653aef04-77a3-4bdb-abfb-8e2369c4f398">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0e15ea8f-d6d1-4a27-94c4-0c8497123280"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="4" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{subjectname}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="210" y="0" width="50" height="20" uuid="9e090255-8ce1-44a8-a438-80c64237b1c3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="51ec6b52-a182-40ff-939e-04f56f099bd6"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{semesternumber}]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="260" y="0" width="80" height="20" uuid="e397e06c-dca1-4131-9184-4660da989d36">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c20478fe-e08b-4871-8bfb-c79116816e29"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{hoursCount}.intValue() + " / " + ($F{hoursaudcount} == null  ? "-"  : $F{hoursaudcount}.intValue())]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="340" y="0" width="50" height="20" uuid="0001f87b-c208-4152-8e99-20cd5ba814a4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c20478fe-e08b-4871-8bfb-c79116816e29"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{foc}.equals("Практика") 
+	? (int)($F{hoursCount} / 54.0) + " нед."
+	: ($F{hoursCount} % 36.0 == 0.0 ? (int)($F{hoursCount} / 36.0) : String.format("%.1f", $F{hoursCount} / 36.0))]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="390" y="0" width="90" height="20" uuid="94978156-d79e-4a12-9817-876e60d0a41e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d0f6329d-605c-481d-a089-e4bfb261fe4b"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{foc} + ($F{type} == 1 ? " (диф.)" : "")]]></textFieldExpression>
+			</textField>
+			<textField textAdjust="StretchHeight" pattern="dd.MM.yyyy">
+				<reportElement positionType="Float" stretchType="RelativeToBandHeight" x="480" y="0" width="70" height="20" uuid="db201b71-3627-474c-b87b-a54ee8b09f6f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b7825048-d350-48fc-afa3-18e6beb580d7"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0">
+					<pen lineWidth="0.25"/>
+					<topPen lineWidth="0.25"/>
+					<leftPen lineWidth="0.25"/>
+					<bottomPen lineWidth="0.25"/>
+					<rightPen lineWidth="0.25"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{datePass}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="110" y="0" width="170" height="30" uuid="7d5ecdb6-5baa-4a68-b96a-540ba82e128b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Директор]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="30" width="170" height="30" uuid="0d74a659-eba5-4291-8665-dac68bcfd037"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Обучающийся]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="360" y="0" width="190" height="30" uuid="cf71f8df-b620-4c01-aa60-02486bed2095"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<text><![CDATA[Д. В. Капулин]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="360" y="30" width="190" height="30" uuid="0b8010ba-e428-43e5-91e2-8b95b2166f53"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$P{studentShortFio}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

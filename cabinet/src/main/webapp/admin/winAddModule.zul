@@ -1,0 +1,56 @@
+<window id="winAddModule" closable="true" width="80%" height="90%"
+        apply="org.edec.admin.ctrl.WinAddModuleRoleCtrl">
+    <caption>
+        <label value="Добавление модуля для роли"/>
+    </caption>
+    <vbox hflex="1" vflex="1">
+        <hbox hflex="1" height="50px">
+            <vbox width="150px">
+                <label value="Модуль" style="font-weight: 700;"/>
+                <label id="lSelectedModule" value="" style="font-weight: 700;"/>
+            </vbox>
+            <vbox>
+                <space/>
+                <checkbox id="chReadOnly" label="Только чтение" />
+            </vbox>
+            <vbox>
+                <label value="Форма обучения" style="font-weight: 700;"/>
+                <combobox id="cmbFormOfStudy"/>
+            </vbox>
+            <vbox width="200px">
+                <label value="Подразделение" style="font-weight: 700;"/>
+                <label id="lSelectedDepartment" value="" style="font-weight: 700;"/>
+            </vbox>
+            <vbox width="200px">
+                <label value="Институт" style="font-weight: 700;"/>
+                <label id="lSelectedInstitute" value="" style="font-weight: 700;"/>
+            </vbox>
+            <vbox>
+                <space/>
+                <button id="btnCreateModuleRole" label="Добавить" />
+            </vbox>
+        </hbox>
+        <hbox hflex="1" vflex="1">
+            <listbox id="lbModuleList" hflex="1" vflex="1">
+                <listhead>
+                    <listheader>
+                        <label value="Модуль" sclass="cwf-listheader-label" />
+                    </listheader>
+                </listhead>
+            </listbox>
+            <listbox id="lbDepartmentList" hflex="2" vflex="1">
+                <listhead>
+                    <listheader>
+                        <hbox>
+                            <label value="Подразделение" sclass="cwf-listheader-label" />
+                            <textbox id="tbSearchDepartment" placeholder="Поиск.." />
+                        </hbox>
+                    </listheader>
+                    <listheader>
+                        <label value="Институт" sclass="cwf-listheader-label" />
+                    </listheader>
+                </listhead>
+            </listbox>
+        </hbox>
+    </vbox>
+</window>

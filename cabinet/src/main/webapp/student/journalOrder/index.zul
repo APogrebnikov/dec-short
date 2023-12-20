@@ -1,0 +1,33 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.student.journalOrder.ctrl.IndexPageCtrl">
+    <label value="История приказов, в которых Вы фигурировали:" style="font-weight: 700;"/>
+    <listbox vflex="1" hflex="1" mold="paging" autopaging="true" id="lbJournal" >
+        <listhead>
+            <listheader width="40px" align="center">
+                <label sclass="cwf-listheader-label" value="#"/>
+            </listheader>
+            <listheader width="120px">
+                <label sclass="cwf-listheader-label" value="Семестр"/>
+            </listheader>
+            <listheader width="100px" align="center">
+                <label sclass="cwf-listheader-label" value="Группа"/>
+            </listheader>
+            <listheader width="130px" align="center">
+                <label sclass="cwf-listheader-label" value="Номер приказа"/>
+            </listheader>
+            <listheader width="120px" align="center">
+                <label sclass="cwf-listheader-label" value="Дата приказа"/>
+            </listheader>
+            <listheader hflex="1">
+                <label sclass="cwf-listheader-label" value="Тип приказа"/>
+            </listheader>
+            <listheader hflex="2">
+                <label sclass="cwf-listheader-label" value="Описание приказа"/>
+            </listheader>
+            <listheader hflex="2">
+                <label sclass="cwf-listheader-label" value="Пункт приказа"/>
+            </listheader>
+        </listhead>
+    </listbox>
+</vbox>

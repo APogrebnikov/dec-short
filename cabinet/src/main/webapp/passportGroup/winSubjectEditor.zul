@@ -1,0 +1,80 @@
+<window id="winSubjectEditor" closable="true"
+        style="background: #dcdcdc;" apply="org.edec.passportGroup.ctrl.WinSubjectEditorCtrl">
+    <caption>
+        <hbox>
+            <image src="/imgs/readBLACK.png" style="margin-left: 5px; height: 22px;"></image>
+            <label id="windowName" value="Создание предмета"></label>
+        </hbox>
+    </caption>
+    <vlayout style="width: 100%; height: 100%; overflow-y:auto;">
+        <label>Название предмета:</label>
+        <combobox width="100%" id="cmbNameSubject" autocomplete="true" placeholder="Название предмета..."></combobox>
+        <label>Кафедра:</label>
+        <combobox width="100%" id="cmbNameChair" autocomplete="true" placeholder="Кафедра..."></combobox>
+        <label>Группа:</label>
+        <combobox width="100%" id="cmbNameGroup" readonly="true" placeholder="Группа.."></combobox>
+        <label>Код дисциплины:</label>
+        <textbox width="100%" id="tbCodeSubject" placeholder="Код дисциплины.."></textbox>
+
+        <groupbox>
+            <caption>
+                Форма контроля
+            </caption>
+            <hlayout>
+                <vlayout>
+                    <checkbox id="chPass"></checkbox>
+                    <checkbox id="chExam"></checkbox>
+                    <checkbox id="chCourseProject"></checkbox>
+                </vlayout>
+                <vlayout>
+                    <label>Зачет</label>
+                    <label>Экзамен</label>
+                    <label>К.П.</label>
+                </vlayout>
+                <vlayout>
+                    <checkbox id="chDifPass"></checkbox>
+                    <checkbox id="chCourseWork"></checkbox>
+                </vlayout>
+                <vlayout>
+                    <label>Диф. Зачет</label>
+                    <label>К.Р.</label>
+                </vlayout>
+            </hlayout>
+        </groupbox>
+
+        <groupbox>
+            <caption>
+                Распределение часов
+            </caption>
+
+            <hlayout>
+                <vlayout>
+                    <label>Аудиторных</label>
+                    <separator height="3px"></separator>
+                    <label>Лекционных</label>
+                    <separator height="3px"></separator>
+                    <label>Всего</label>
+                </vlayout>
+                <vlayout>
+                    <doublebox id="inputHoursAudCount" value="0"></doublebox>
+                    <doublebox id="inputHoursLection" value="0"></doublebox>
+                    <doublebox id="inputHoursСount" value="0"></doublebox>
+                </vlayout>
+                <vlayout>
+                    <label>Лабораторных</label>
+                    <separator height="3px"></separator>
+                    <label>Практика</label>
+                </vlayout>
+                <vlayout>
+                    <doublebox id="inputHoursLabor" value="0"></doublebox>
+                    <doublebox id="inputHoursPractic" value="0"></doublebox>
+                </vlayout>
+            </hlayout>
+        </groupbox>
+
+        <checkbox id="chbSynchMine" label="Синхронизация" checked="true"></checkbox>
+        <checkbox id="chbPractice" label="Практика" checked="false"></checkbox>
+
+        <button id="btnSave">Сохранить</button>
+    </vlayout>
+</window>

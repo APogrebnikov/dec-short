@@ -1,0 +1,46 @@
+<window id="winCreateCommission"  style="width: 95%; height: 95%;" border="normal"
+        closable="true"
+        apply="org.edec.commission.ctrl.WinCreateCommission">
+    <caption>
+        <label value="Создание комиссий" style="font-size: 14px; font-weight: 700; color: #000; margin-left: 5px;"></label>
+    </caption>
+    <vlayout vflex="1" hflex="1" style="padding: 2px;">
+        <hbox hflex="1" style="height: 30px;">
+            <textbox id="tbCreateCommissionSearch" placeholder="Введите ФИО/Группу/Предмет/Кафедру" style="height: 28px; width: 235px;"/>
+            <button id="btnCreateCommissionSearch" image="/imgs/search.png" style="height: 28px;" />
+            <button id="btnCreateCommission" label="Создать комиссию" style="height: 28px; font-weight: 700;"/>
+            <space/>
+            <hbox>
+                <hbox style="width: 28px; height: 28px; border: 1px solid black; background: #99ff99;"></hbox>
+                <label value=" - комиссия создана"/>
+            </hbox>
+        </hbox>
+        <listbox id="lbCreateCommission" vflex="7" hflex="1" emptyMessage="Нет записей для создания комиссии" mold="paging" autopaging="true"
+                  checkmark="true" multiple="true">
+            <listhead>
+                <listheader style="width: 30px;"/>
+                <listheader id="lhSubject" hflex="5">
+                    <label sclass="cwf-listheader-label" value="Предмет" />
+                </listheader>
+                <listheader id="lhCountDebts" hflex="2">
+                    <label sclass="cwf-listheader-label" value="Кол-во должников" />
+                </listheader>
+                <listheader id="lhFoc" hflex="2">
+                    <label sclass="cwf-listheader-label" value="Форма контроля" />
+                </listheader>
+                <listheader id="lhChair" hflex="5">
+                    <label sclass="cwf-listheader-label" value="Кафедра" />
+                </listheader>
+                <listheader id="lhSem" hflex="3">
+                    <label sclass="cwf-listheader-label" value="Семестр" />
+                </listheader>
+                <listheader style="width: 150px">
+                    <label sclass="cwf-listheader-label" value="Инд. ведомость" />
+                </listheader>
+                <listheader style="width: 120px">
+                    <label sclass="cwf-listheader-label" value="Действие" />
+                </listheader>
+            </listhead>
+        </listbox>
+    </vlayout>
+</window>

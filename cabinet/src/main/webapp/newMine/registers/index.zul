@@ -1,0 +1,58 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.newMine.registers.ctrl.IndexPageCtrl">
+    <hbox>
+        <combobox id="cmbInst" visible="false"/>
+        <combobox id="cmbFos" placeholder="Форма контроля"/>
+        <combobox id="cmbSemester" placeholder="Семестр"/>
+        <combobox id="cmbGroups" placeholder="Группа"/>
+    </hbox>
+    <hbox vflex="1">
+        <listbox hflex="1" vflex="1" id="lbSubjects">
+            <auxhead >
+                <auxheader colspan="2" >
+                        <label value="I" style="color: #FFF;" />
+                </auxheader>
+            </auxhead>
+            <listhead>
+                <listheader hflex="3">
+                    <label sclass="cwf-listheader-label" value="Предмет"/>
+                </listheader>
+                <listheader hflex="1" align="center">
+                    <label sclass="cwf-listheader-label" value="ФК"/>
+                </listheader>
+            </listhead>
+        </listbox>
+        <listbox hflex="3" vflex="1" id="lbRatings">
+            <auxhead>
+                <auxheader />
+                <auxheader label = "Основная сдача" colspan="2" align="center"/>
+                <auxheader label = "Пересдача" colspan="2" align="center"/>
+                <auxheader label = "Комиссия" colspan="2" align="center"/>
+            </auxhead>
+            <listhead>
+                <listheader hflex="2">
+                    <label sclass="cwf-listheader-label" value="Студент"/>
+                </listheader>
+                <listheader hflex="1" align="center">
+                    <label sclass="cwf-listheader-label" value="Оценка"/>
+                </listheader>
+                <listheader hflex="1" align="center">
+                    <label sclass="cwf-listheader-label" value="Дата"/>
+                </listheader>
+                <listheader hflex="1" align="center">
+                    <label sclass="cwf-listheader-label" value="Оценка"/>
+                </listheader>
+                <listheader hflex="1" align="center">
+                    <label sclass="cwf-listheader-label" value="Дата"/>
+                </listheader>
+                <listheader hflex="1" align="center">
+                    <label sclass="cwf-listheader-label" value="Оценка"/>
+                </listheader>
+                <listheader hflex="1" align="center">
+                    <label sclass="cwf-listheader-label" value="Дата"/>
+                </listheader>
+            </listhead>
+        </listbox>
+    </hbox>
+</vbox>

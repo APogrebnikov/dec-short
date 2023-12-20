@@ -1,0 +1,186 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vlayout self="@define(content)" hflex="1" apply="org.edec.curriculumSchedule.ctrl.IndexPageCtrl">
+    <!-- титульный блок -->
+    <groupbox id="gbFilter" hflex="1" style="min-height: 0px;">
+        <caption>
+            <label value="Фильтры" style="font-weight: 700;"/>
+        </caption>
+        <hbox hflex="10" height="40px">
+            <!-- фильтр институтов -->
+            <vbox id="vbInst">
+                <label value="Институт"/>
+                <combobox id="cmbInst" width="100%" readonly="true"/>
+            </vbox>
+            <!-- фильтр формы обучения -->
+            <vbox id="vbFormOfStudy">
+                <label value="Форма обучения"/>
+                <combobox id="cmbFormOfStudy" readonly="true"/>
+            </vbox>
+            <!-- фильтр семестров -->
+            <vbox id="vbSemester">
+                <label value="Семестр"/>
+                <combobox id="cmbSemester" readonly="true"/>
+            </vbox>
+            <vbox id="vbCourse">
+                <label value="Курс"/>
+                <combobox id="cmbCourse" disabled="true" readonly="true">
+                    <comboitem label="Все"/>
+                    <comboitem label="1"/>
+                    <comboitem label="2"/>
+                    <comboitem label="3"/>
+                    <comboitem label="4"/>
+                    <comboitem label="5"/>
+                    <comboitem label="6"/>
+                </combobox>
+            </vbox>
+            <vbox id="vbQualification">
+                <groupbox id="qualificationFilter" contentStyle="border:0" width="100%">
+                    <label value="Квалицификация"/>
+                    <separator spacing="5px"/>
+                    <checkbox id="engineer" label="Инж"/>
+                    <space spacing="10px"/>
+                    <checkbox id="bachelor" label="Бак"/>
+                    <space spacing="10px"/>
+                    <checkbox id="master" label="Маг"/>
+                </groupbox>
+            </vbox>
+        </hbox>
+    </groupbox>
+    <!-- центр -->
+    <hbox vflex="1" hflex="1">
+        <listbox id="lbGroup" width="560px" vflex="1" multiple="true" checkmark="true">
+            <listhead>
+                <listheader hflex="2">
+                    <label sclass="cwf-listheader-label" value="Выбрать все группы"/>
+                </listheader>
+            </listhead>
+        </listbox>
+        <space spacing="10px"/>
+        <vbox hflex="1" >
+            <groupbox id="gbDateOfStudy" hflex="1" style="min-height: 0px; height: 160px;">
+                <vbox>
+                    <label style="font-weight: 700; font-size: 22px"  value="Сроки обучения"/>
+                </vbox>
+                <hlayout spacing="20px">
+                    <vbox>
+                        <label value="Начало обучения"/>
+                        <datebox id="dateOfBeginStudy"
+                                 placeholder="Начало обучения" width="200px"/>
+                    </vbox>
+
+                    <vbox>
+                        <label value="Конец обучения"/>
+                        <datebox id="dateOfEndStudy"
+                                 placeholder="Конец обучения" width="200px"/>
+                    </vbox>
+                </hlayout>
+                <hlayout spacing="20px">
+                    <vbox>
+                        <label value="Дата дипломирования с"/>
+                        <datebox id="dateOfCertificationFrom"
+                                 placeholder="Дата дипломирования" width="200px"/>
+                    </vbox>
+                    <vbox>
+                        <label value="Дата дипломирования по"/>
+                        <datebox id="dateOfCertificationTo"
+                                 placeholder="Дата дипломирования по" width="200px"/>
+                    </vbox>
+
+                </hlayout>
+            </groupbox>
+            <hlayout >
+                <button id="btnSaveDatesOfStudy"
+                        label="Сохранить" style="font-weight: bold"/>
+            </hlayout>
+            <groupbox id="gbDateOfCurriculumSchedule" hflex="1" style="min-height: 0px;">
+                <vbox>
+                    <label style="font-weight: 700; font-size: 22px" value="График УП"/>
+                </vbox>
+                <separator spacing="8px"/>
+                <!-- Semestr -->
+                <hlayout spacing="20px">
+                    <vbox>
+                        <label value="Начало семестра"/>
+                        <datebox id="dateOfBeginSemester"
+                                 placeholder="Начало семестра" width="200px"/>
+                    </vbox>
+
+                    <vbox>
+                        <label value="Конец семестра"/>
+                        <datebox id="dateOfEndSemester"
+                                 placeholder="Конец семестра" width="200px"/>
+                    </vbox>
+                </hlayout>
+
+                <!-- Pass -->
+                <hlayout spacing="20px">
+                    <vbox>
+                        <label
+                                value="Начало зачетной недели"/>
+                        <datebox id="dateOfBeginPassWeek"
+                                 placeholder="Начало зачетной недели" width="200px"/>
+                    </vbox>
+
+                    <vbox>
+                        <label
+                                value="Конец зачетной недели"/>
+                        <datebox id="dateOfEndPassWeek"
+                                 placeholder="Конец зачетной недели" width="200px"/>
+                    </vbox>
+                </hlayout>
+
+                <!-- Session -->
+                <hlayout spacing="20px">
+                    <vbox>
+                        <label value="Начало сессии"/>
+                        <datebox id="dateOfBeginSession"
+                                 placeholder="Начало сессии" width="200px"/>
+                    </vbox>
+
+                    <vbox>
+                        <label value="Конец сессии"/>
+                        <datebox id="dateOfEndSession"
+                                 placeholder="Конец сессии" width="200px"/>
+                    </vbox>
+                </hlayout>
+
+                <!-- Vacation -->
+                <hlayout spacing="20px">
+                    <vbox>
+                        <label value="Начало каникул"/>
+                        <datebox id="dateOfBeginVacation"
+                                 placeholder="Начало каникул" width="200px"/>
+                    </vbox>
+
+                    <vbox>
+                        <label value="Конец каникул"/>
+                        <datebox id="dateOfEndVacation"
+                                 placeholder="Конец каникул" width="200px"/>
+                    </vbox>
+                </hlayout>
+
+                <!-- Practice -->
+                <hlayout spacing="20px">
+                    <vbox>
+                        <label value="Начало практики"/>
+                        <datebox id="dateOfBeginPractice"
+                                 placeholder="Начало практики" width="200px"/>
+                    </vbox>
+
+                    <vbox>
+                        <label value="Конец практики"/>
+                        <datebox id="dateOfEndPractice"
+                                 placeholder="Конец практики" width="200px"/>
+                    </vbox>
+                </hlayout>
+
+
+            </groupbox>
+            <hlayout spacing="10px">
+                <button id="btnSaveSemesterDates"
+                        label="Сохранить" style="font-weight: bold"/>
+            </hlayout>
+        </vbox>
+    </hbox>
+</vlayout>

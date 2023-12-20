@@ -1,0 +1,62 @@
+<window id="winCorrectSuccess" width="25%" closable="true"
+        apply="org.edec.register.ctrl.WinCorrectSuccessCtrl">
+    <caption>
+        <label value="Обработка заявки на корректировку"/>
+    </caption>
+    <vbox vflex="1" hflex="1">
+        <grid>
+            <rows>
+                <row>
+                    <label value="Номер объяснительной:"
+                           style="font-weight: 500; color: #000000; font-size: 14px;"></label>
+                    <textbox id="tbCorrectNumber" placeholder="Фамилия..." hflex="1" readonly="true"/>
+                </row>
+                <row style="margin-left: 10px;">
+                    <label value="Преподаватель:"
+                           style="font-weight: 500; color: #000000; font-size: 14px;"></label>
+                    <textbox id="tbTicherFIO" placeholder="ФИО Преподавателя..." hflex="1" readonly="true"/>
+                </row>
+                <row style="margin-left: 10px;">
+                    <label value="Студент:"
+                           style="font-weight: 500; color: #000000; font-size: 14px;"></label>
+                    <textbox id="tbStudentFIO" placeholder="ФИО Студента..." hflex="1" readonly="true"/>
+                </row>
+                <row style="margin-left: 10px;">
+                    <label value="Новая оценка"
+                           style="font-weight: 500; color: #000000; font-size: 14px;"></label>
+                    <textbox id="tbNewRating" placeholder="Новая оценка..." hflex="1" readonly="true"/>
+                </row>
+            </rows>
+        </grid>
+
+        <separator></separator>
+        <grid>
+            <rows>
+                <row>
+                    <vbox hflex="1">
+                        <label>Основная</label>
+                        <textbox id="tbMainRaiting" hflex="1" visible="false"></textbox>
+                        <combobox id="cbMainRaiting" hflex="1"></combobox>
+                    </vbox>
+                    <vbox hflex="1">
+                        <label>Пересдача</label>
+                        <textbox id="tbReRaiting" hflex="1" readonly="true"></textbox>
+                    </vbox>
+                    <vbox hflex="1">
+                        <label>Комиссия</label>
+                        <textbox id="tbComRaiting" hflex="1" readonly="true"></textbox>
+                    </vbox>
+                </row>
+            </rows>
+        </grid>
+
+        <separator></separator>
+
+        <hbox style="margin-right: 10px;" width="100%" pack="end">
+            <button id="btnSuccess" label="Подтвердить" style="font-weight:bold;"></button>
+            <button id="btnCancel" label="Отменить"></button>
+        </hbox>
+
+        <separator></separator>
+    </vbox>
+</window>

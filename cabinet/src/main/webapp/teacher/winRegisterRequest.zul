@@ -1,0 +1,51 @@
+<window id="winRegisterRequest" closable="true" width="800px"
+        style="min-width: 800px;" apply="org.edec.teacher.ctrl.WinRegisterRequestCtrl">
+    <caption>
+        <label value="Заявки на открытие ведомостей"/>
+    </caption>
+    <vlayout style="width: 100%; height: 100%; overflow:auto;">
+        <!-- Ведомость -->
+        <hbox spacing="10px" pack="center" style="width: 100%;">
+
+        <vbox hflex="1">
+            <label>Список студентов:</label>
+            <listbox id="listboxStudents" height="350px" multiple="true" checkmark="true">
+                <listhead>
+                    <listheader>
+                        <label sclass="cwf-listheader-label"  value="Выбрать всех студентов"/>
+                    </listheader>
+                </listhead>
+            </listbox>
+            <button id="btnCreateRequest" height="100%" width="100%" label="Отправить запрос"></button>
+        </vbox>
+            <vbox hflex="2">
+                <hbox>
+                    <label>История запросов:</label>
+                    <checkbox id="filterUnderConsideration" label="на рассмотрении"></checkbox>
+                </hbox>
+                <listbox id="listboxRegisterRequestHistory" height="350px">
+                    <listhead>
+                        <listheader align="center">
+                            <label sclass="cwf-listheader-label" value="ФИО студента"/>
+                        </listheader>
+                        <listheader align="center">
+                            <label sclass="cwf-listheader-label"  value="Дата обращения"/>
+                        </listheader>
+                        <listheader align="center">
+                            <label sclass="cwf-listheader-label" value="Доп. информация"/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+                <hbox>
+                    <hbox style="width: 28px; height: 28px; border: 1px solid black; background: #99ff99;"></hbox>
+                    <label value=" - одобрено"/>
+                    <hbox style="width: 28px; height: 28px; border: 1px solid black; background: #FF7373;"></hbox>
+                    <label value=" - отказано"/>
+                    <hbox style="width: 28px; height: 28px; border: 1px solid black; background: white;"></hbox>
+                    <label value=" - на рассмотрении"/>
+                </hbox>
+            </vbox>
+        </hbox>
+    </vlayout>
+    <space spacing="10px" />
+</window>

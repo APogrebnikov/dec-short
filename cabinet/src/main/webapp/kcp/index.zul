@@ -1,0 +1,117 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1" apply="org.edec.kcp.ctrl.IndexPageCtrl">
+    <!-- Фильтры -->
+    <hbox height="80px">
+        <groupbox vflex="1">
+            <caption>
+                <label value="Фильтры" style="font-weight: 700;"/>
+            </caption>
+            <hbox align="center">
+                <vbox id="vbInst" vflex="1" style="border-right: 1px solid #ccc; padding: 5px">
+                    <vbox id="vbFormOfStudy">
+                        <label value="Форма обучения" style="font-weight: 600;"/>
+                        <hbox>
+                            <checkbox id="chOch" tooltip="Очное" label="Очн." checked="true"/>
+                            <checkbox id="chZaoch" tooltip="Заочное" label="Заочн." checked="true"/>
+                        </hbox>
+                    </vbox>
+                </vbox>
+                <vbox vflex="1" style="border-right: 1px solid #ccc; padding: 5px;">
+                    <label value="Квалификация" style="font-weight: 600;"/>
+                    <hbox>
+                        <checkbox id="chEngineer" label="Спец." checked="true"/>
+                        <checkbox id="chBachelor" label="Бак." checked="true"/>
+                        <checkbox id="chMaster" label="Маг." checked="true"/>
+                    </hbox>
+                </vbox>
+                <vbox vflex="1" style="border-right: 1px solid #ccc; padding: 5px">
+                    <label value="Количество долгов" style="font-weight: 600;"/>
+                    <hbox>
+                        <combobox id="cmbTypeDebt" width="100px" readonly="true"
+                                  onCreate="cmbTypeDebt.setSelectedIndex(0)">
+                            <comboitem label="&gt;="/>
+                            <comboitem label="&lt;="/>
+                            <comboitem label="="/>
+                        </combobox>
+                        <spinner id="spinDebt" width="100px" constraint="no empty, min 0 max 15" value="2"/>
+                    </hbox>
+                </vbox>
+                <hbox width="80px" align="center" pack="center" vflex="1">
+                    <button id="btnSearch" label="Поиск" style="margin-top:-7px;"
+                            image="/imgs/search.png" hoverImage="/imgs/searchCLR.png"/>
+                    <button id="btnPrint" label="Печать" style="margin-top:-7px;"
+                            image="/imgs/xls.png"/>
+                </hbox>
+            </hbox>
+        </groupbox>
+    </hbox>
+    <listbox id="lbMain" hflex="1" vflex="1">
+        <custom-attributes org.zkoss.zul.listbox.rod="false" scope="page"/>
+        <auxhead>
+            <auxheader sclass="cwf-aux-listheader" colspan="2"></auxheader>
+            <auxheader sclass="cwf-aux-listheader" colspan="3">
+                <label sclass="cwf-aux-listheader" value="КЦП"/>
+            </auxheader>
+            <auxheader sclass="cwf-aux-listheader" colspan="6">
+                <label sclass="cwf-aux-listheader" value="Контингент"/>
+            </auxheader>
+            <auxheader sclass="cwf-aux-listheader" colspan="6">
+                <label sclass="cwf-aux-listheader" value="После отчисления"/>
+            </auxheader>
+        </auxhead>
+        <listhead>
+            <listheader hflex="3" id="lhrDirection">
+                <label sclass="cwf-listheader-label" value="Направление"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrYear">
+                <label sclass="cwf-listheader-label" value="Год набора"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrKCP">
+                <label sclass="cwf-listheader-label" value="Всего"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrKCPBudget">
+                <label sclass="cwf-listheader-label" value="Бюджет"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrKCPDogovor">
+                <label sclass="cwf-listheader-label" value="Договор"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrContingent">
+                <label sclass="cwf-listheader-label" value="Всего"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrCPerc">
+                <label sclass="cwf-listheader-label" value="%"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrCBudget">
+                <label sclass="cwf-listheader-label" value="Бюджет"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrCBudgetPerc">
+                <label sclass="cwf-listheader-label" value="%"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrCDogovor">
+                <label sclass="cwf-listheader-label" value="Договор"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrCDogovorPerc">
+                <label sclass="cwf-listheader-label" value="%"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrOtContingent">
+                <label sclass="cwf-listheader-label" value="Всего"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrOtCPerc">
+                <label sclass="cwf-listheader-label" value="%"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrOtCBudget">
+                <label sclass="cwf-listheader-label" value="Бюджет"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrOtCBudgetPerc">
+                <label sclass="cwf-listheader-label" value="%"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrOtCDogovor">
+                <label sclass="cwf-listheader-label" value="Договор"/>
+            </listheader>
+            <listheader align="center" hflex="1" id="lhrOtCDogovorPerc">
+                <label sclass="cwf-listheader-label" value="%"/>
+            </listheader>
+        </listhead>
+    </listbox>
+</vbox>

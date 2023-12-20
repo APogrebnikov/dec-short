@@ -1,0 +1,205 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<?component name="vbcalendar" class="org.edec.commons.component.VbCalendar"?>
+<vbox self="@define(content)" width="100%" height="100%"  apply="org.edec.attendance.ctrl.IndexPageCtrl">
+    <style src="calendar.css"/>
+
+    <tabbox vflex="1" hflex="1">
+        <tabs>
+            <tab label="Просмотр пропусков за день" id="tabShowAttendanceForDay"/>
+            <tab label="Просмотр пропусков за период" id="tabShowAttendanceForPeriod"/>
+        </tabs>
+        <tabpanels>
+            <tabpanel vflex="1">
+                <vbox vflex="1">
+                    <!-- Фильтры -->
+                    <hbox vflex="min" hflex="1">
+                        <groupbox>
+                            <caption>
+                                <label value="Фильтры"/>
+                            </caption>
+                            <hbox>
+                                <vbox style="padding: 5px">
+                                    <label value="Форма обучения" style="font-weight: 600;"/>
+                                    <combobox id="cmbFormOfStudyForTabDay" width="100%" readonly="true">
+                                    </combobox>
+                                </vbox>
+                                <vbox style="padding: 5px">
+                                    <label value="Семестр" style="font-weight: 600;"/>
+                                    <combobox id="cmbSemesterForTabDay" width="100%" readonly="true"/>
+                                </vbox>
+                                <vbox style="padding: 5px">
+                                    <label value="Квалификация" style="font-weight: 600;"/>
+                                    <combobox id="cmbQualificationForTabDay" width="100%" readonly="true">
+                                        <comboitem label="Все" value="1,2,3"/>
+                                        <comboitem label="Инженер" value="1"/>
+                                        <comboitem label="Бакалавр" value="2"/>
+                                        <comboitem label="Магистр" value="3"/>
+                                    </combobox>
+                                </vbox>
+                                <vbox style="padding: 5px">
+                                    <label value="Курс" style="font-weight: 600;"/>
+                                    <combobox id="cmbCourseForTabDay" width="100%" readonly="true">
+                                        <comboitem label="1" value="1"/>
+                                        <comboitem label="2" value="2"/>
+                                        <comboitem label="3" value="3"/>
+                                        <comboitem label="4" value="4"/>
+                                        <comboitem label="5" value="5"/>
+                                        <comboitem label="6" value="6"/>
+                                        <comboitem label="Все" value="1,2,3,4,5,6"/>
+                                    </combobox>
+                                </vbox>
+                                <vbox style="padding: 5px">
+                                    <label value="Группа" style="font-weight: 600;"/>
+                                    <combobox id="cmbGroupForTabDay" width="100%" readonly="true"/>
+                                </vbox>
+                                <vbox width="80px" align="center" pack="center">
+                                    <button id="btnSearchForTabDay" label="Поиск" vflex="1" style="margin-top:-7px;"/>
+                                </vbox>
+                            </hbox>
+                        </groupbox>
+                    </hbox>
+                    <!-- Отображение посещяемости -->
+                    <vbox vflex="1" hflex="1" style="padding: 10px; border: 1px solid #cfcfcf;">
+                        <hbox height="200px" hflex="1" id="hbCalendar">
+                            <vbox hflex="1">
+                                <hbox hflex="1" align="center" pack="center" height="20px">
+                                    <button id="btnPrevMonth" label="Предыдущий"/>
+                                    <label id="lCurrentMonth" value="Май" style="font-size: 12pt;"/>
+                                    <button id="btnNextMonth" label="Следующий"/>
+                                </hbox>
+                                <vbox id="vbCalendar" hflex="1" vflex="min"/>
+                            </vbox>
+                            <vbox vflex="1" hflex="1" style="padding-left: 40px; padding-top: 30px">
+                                <vbox height="30px" hflex="1" style="padding-top: 5px; padding-bottom: 10px">
+                                    <label id="lBeginSem" value="Начало семестра: 30.01.2017" style="font-size: 12pt;"/>
+                                    <label id="lEndSem" value="Конец семестра: 30.06.2017" style="font-size: 12pt;"/>
+                                </vbox>
+                                <label value="Календарь:" sclass="b" style="font-size: 14pt;"/>
+                                <vbox vflex="1">
+                                    <hbox align="center" pack="center">
+                                        <hbox style="height: 20px; width: 20px; background: #ff9494;"/>
+                                        <label value="Журнал не заполнен" style="font-size: 10pt;"/>
+                                    </hbox>
+                                    <hbox align="center" pack="center">
+                                        <hbox style="height: 20px; width: 20px; background: #cccccc;"/>
+                                        <label value="Нет занятий в этот день \ Дата занятий не наступила"
+                                               style="font-size: 10pt;"/>
+                                    </hbox>
+                                </vbox>
+                            </vbox>
+                            <vbox vflex="1" hflex="1" style="padding-top: 20px">
+                                <label value="Журнал:" sclass="b" style="font-size: 14pt;"/>
+                                <label value="Н - не был на занятии" style="font-size: 10pt;"/>
+                                <label value="+ - присутствовал на занятии" style="font-size: 10pt;"/>
+                                <label value="Э - занимался в электронных курсах" style="font-size: 10pt;"/>
+                                <label value="П - преподаватель отсутствовал на занятии"
+                                       style="font-size: 10pt;"/>
+                                <hbox align="center" pack="center">
+                                    <hbox style="height: 20px; width: 20px; background: #cccccc;"/>
+                                    <label value="- посещаемость не заполнена" style="font-size: 10pt;"/>
+                                </hbox>
+                                <hbox align="center" pack="center">
+                                    <hbox style="height: 20px; width: 20px; background: yellow;"/>
+                                    <label value="журнал заполнен не полностью"
+                                           style="font-size: 10pt;"/>
+                                </hbox>
+                            </vbox>
+                        </hbox>
+                        <vbox id="vbListbox" vflex="1">
+                            <hbox>
+                                <label id="lCurrentDate" value="Выбранная дата: " style="font-size: 10pt;"/>
+                            </hbox>
+                            <vbox vflex="1">
+                                <listbox id="lbSubjectForTabDay" vflex="1">
+                                    <listhead>
+                                        <listheader width="30px">
+                                            <label sclass="cwf-listheader-label" value="#"/>
+                                        </listheader>
+                                        <listheader width="250px">
+                                            <label sclass="cwf-listheader-label" value="Студент"/>
+                                        </listheader>
+                                    </listhead>
+                                </listbox>
+                            </vbox>
+                        </vbox>
+                    </vbox>
+                </vbox>
+            </tabpanel>
+            <tabpanel >
+                <vbox  hflex="1"  vflex="1">
+                    <!-- Фильтры -->
+                    <hbox>
+                        <groupbox>
+                            <caption>
+                                <label value="Фильтры"/>
+                            </caption>
+                            <hbox>
+                                <vbox style="padding: 5px">
+                                    <label value="Форма обучения" style="font-weight: 600;"/>
+                                    <combobox id="cmbFormOfStudyForTabPeriod" width="100%" readonly="true">
+                                    </combobox>
+                                </vbox>
+                                <vbox style="padding: 5px">
+                                    <label value="Семестр" style="font-weight: 600;"/>
+                                    <combobox id="cmbSemesterForTabPeriod" width="100%" readonly="true"
+                                              itemRenderer="org.edec.utility.component.renderer.SemesterRenderer"/>
+                                </vbox>
+                                <vbox style="padding: 5px">
+                                    <label value="Квалификация" style="font-weight: 600;"/>
+                                    <combobox id="cmbQualificationForTabPeriod" width="100%" readonly="true">
+                                        <comboitem label="Все" value="1,2,3"/>
+                                        <comboitem label="Инженер" value="1"/>
+                                        <comboitem label="Бакалавр" value="2"/>
+                                        <comboitem label="Магистр" value="3"/>
+                                    </combobox>
+                                </vbox>
+                                <vbox style="padding: 5px">
+                                    <label value="Курс" style="font-weight: 600;"/>
+                                    <combobox id="cmbCourseForTabPeriod" width="100%" readonly="true">
+                                        <comboitem label="1" value="1"/>
+                                        <comboitem label="2" value="2"/>
+                                        <comboitem label="3" value="3"/>
+                                        <comboitem label="4" value="4"/>
+                                        <comboitem label="5" value="5"/>
+                                        <comboitem label="6" value="6"/>
+                                        <comboitem label="Все" value="1,2,3,4,5,6"/>
+                                    </combobox>
+                                </vbox>
+                                <vbox style="padding: 5px">
+                                    <label value="Группа" style="font-weight: 600;"/>
+                                    <combobox id="cmbGroupForTabPeriod" width="100%" readonly="true"/>
+                                </vbox>
+                                <vbox style="padding: 5px">
+                                    <label value="Период" style="font-weight: 600;"/>
+                                    <datebox id="dbBeginPeriod"/>
+                                    <datebox id="dbEndPeriod"/>
+                                </vbox>
+                                <vbox width="80px" align="center" pack="center">
+                                    <button id="btnSearchForTabPeriod" label="Поиск" style="margin-top:-7px;"/>
+                                </vbox>
+                            </hbox>
+                        </groupbox>
+                    </hbox>
+                    <!-- Отображение посещяемости -->
+                    <hbox  hflex="1"  vflex="1">
+                        <grid id="gridForPeriodTab" hflex="1" vflex="1">
+                            <frozen columns="3" start="0"/>
+                            <auxhead>
+                                <auxheader label="#"/>
+                                <auxheader label="ФИО"/>
+                            </auxhead>
+                            <columns>
+                                <column width="20px" label="" />
+                                <column width="300px" label="Всего пропущено:"/>
+                            </columns>
+                            <rows>
+                                <row></row>
+                            </rows>
+                        </grid>
+                    </hbox>
+                </vbox>
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+</vbox>

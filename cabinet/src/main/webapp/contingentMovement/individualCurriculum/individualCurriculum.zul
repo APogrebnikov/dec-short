@@ -1,0 +1,74 @@
+<?component name="lbsearchstudent" class="org.edec.commons.component.LbSearchStudent"?>
+<zk>
+    <hlayout hflex="1" vflex="1" apply="org.edec.contingentMovement.ctrl.individualCurriculum.IndividualCurriculumCtrl">
+
+        <vlayout hflex="1" vflex="1">
+
+            <hlayout hflex="1">
+                <checkbox id="chIndCurrExternalStudent" label="Из другого института" />
+                <checkbox id="chNoBudget" label="На платной основе" />
+                <textbox id="tbIndCurrFioStudent" placeholder="Введите ФИО для отчета" width="200px" />
+            </hlayout>
+
+            <lbsearchstudent id="lbIndCurrSearchStudent" hflex="1" height="150px"/>
+
+            <listbox id="lbIndCurrStudentSubject" hflex="1" vflex="1">
+                <auxhead>
+                    <auxheader colspan="5" label="Дисциплины студента"/>
+                </auxhead>
+                <listhead>
+                    <listheader hflex="1">
+                        <label sclass="cwf-listheader-label" value="Предмет"/>
+                    </listheader>
+                    <listheader width="75px" align="center">
+                        <label sclass="cwf-listheader-label" value="Семестр"/>
+                    </listheader>
+                    <listheader width="50px" align="center">
+                        <label sclass="cwf-listheader-label" value="Часы"/>
+                    </listheader>
+                    <listheader width="80px" align="center">
+                        <label sclass="cwf-listheader-label" value="ФК"/>
+                    </listheader>
+                    <listheader width="80px" align="center">
+                        <label sclass="cwf-listheader-label" value="Оценка"/>
+                    </listheader>
+                </listhead>
+            </listbox>
+        </vlayout>
+
+        <vlayout hflex="1" vflex="1">
+
+            <hbox>
+                <datebox id="dbIndCurrDatePass" placeholder="Дата сдачи" width="120px" />
+                <combobox id="cmbIndCurrSelectGroup" placeholder="Выберите группу" width="150px"/>
+                <button id="btnIndCurrPrintReport" label="Отчет(pdf)" iconSclass="z-icon-document" />
+                <button id="btnIndCurrDownloadReport" label="Отчет(docx)" iconSclass="z-icon-document" />
+                <button id="btnIndCurrOpenProtocol" label="Протокол" iconSclass="z-icon-window" />
+                <button id="btnAddSubjects" label="Добавить предметы" />
+            </hbox>
+
+            <listbox id="lbIndCurrGroupSubject" hflex="1" vflex="1">
+                <auxhead>
+                    <auxheader colspan="5" label="Дисциплины группы"/>
+                </auxhead>
+                <listhead>
+                    <listheader hflex="1">
+                        <label sclass="cwf-listheader-label" value="Предмет"/>
+                    </listheader>
+                    <listheader width="75px" align="center">
+                        <label sclass="cwf-listheader-label" value="Семестр"/>
+                    </listheader>
+                    <listheader width="50px" align="center">
+                        <label sclass="cwf-listheader-label" value="Часы"/>
+                    </listheader>
+                    <listheader width="80px" align="center">
+                        <label sclass="cwf-listheader-label" value="ФК"/>
+                    </listheader>
+                    <listheader width="90px" align="center">
+                        <label sclass="cwf-listheader-label" value="Перезачет"/>
+                    </listheader>
+                </listhead>
+            </listbox>
+        </vlayout>
+    </hlayout>
+</zk>

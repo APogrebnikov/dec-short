@@ -1,0 +1,19 @@
+<window id="winCommissionStructure" closable="true" width="60%" height="50%"
+    apply="org.edec.commission.ctrl.WinCommissionStructureCtrl">
+    <caption>
+        <label id="lInfo" value="Просмотр состава комиссии" />
+    </caption>
+    <listbox id="lbCommissionStructure" itemRenderer="org.edec.commission.ctrl.renderer.CommissionStructureRenderer">
+        <listhead>
+            <listheader hflex="min">
+                <label sclass="cwf-listheader-label" value="Председатель" />
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="ФИО" />
+            </listheader>
+            <listheader>
+                <label sclass="cwf-listheader-label" value="Должность" />
+            </listheader>
+        </listhead>
+    </listbox>
+</window>

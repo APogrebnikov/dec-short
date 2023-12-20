@@ -1,0 +1,87 @@
+<window id="winCommissionRegister" border="normal" closable="true" height="95%" width="70%"
+        apply="org.edec.teacher.ctrl.WinCommissionCtrl">
+    <caption>
+        <label value="Комиссионная ведомость"/>
+    </caption>
+    <vlayout hflex="1" vflex="1" style="padding: 10px; color: #000;">
+        <hbox hflex="1">
+            <!--Инфо о предмете-->
+            <vbox hflex="2">
+                <hbox>
+                    <hbox pack="right" style="width: 110px; background: #efefef;">
+                        <label value="Предмет:" style="font-weight: 700;"/>
+                    </hbox>
+                    <hbox pack="left">
+                        <label id="lSubjectName" value="Устройство гравицапы одноместного пепелаца"/>
+                    </hbox>
+                </hbox>
+                <hbox>
+                    <hbox pack="right" style="width: 110px; background: #efefef;">
+                        <label value="Форма контроля:" style="font-weight: 700;"/>
+                    </hbox>
+                    <hbox pack="left">
+                        <label id="lFormOfControl" value="Экзамен"/>
+                    </hbox>
+                </hbox>
+                <hbox>
+                    <hbox pack="right" style="width: 110px; background: #efefef;">
+                        <label value="Семестр:" style="font-weight: 700;"/>
+                    </hbox>
+                    <hbox pack="left">
+                        <label id="lSemesterStr" value="2015/2016 весенний"/>
+                    </hbox>
+                </hbox>
+                <hbox>
+                    <hbox pack="right" style="width: 110px; background: #efefef;">
+                        <label value="Кол-во часов:" style="font-weight: 700;"/>
+                    </hbox>
+                    <hbox pack="left">
+                        <label id="lHoursCount" value="20 (5.0)"/>
+                    </hbox>
+                </hbox>
+            </vbox>
+            <!-- Состав комиссии -->
+            <vbox hflex="1">
+                <hbox>
+                    <label value="Состав комиссии:" style="font-weight: 700;"/>
+                </hbox>
+                <vbox id="vbCommissionStaff">
+                    <label value="Пупкин Василий Арсенович"/>
+                    <label value="Пупкин Василий Арсенович"/>
+                    <label value="Пупкин Василий Арсенович"/>
+                </vbox>
+            </vbox>
+        </hbox>
+        <vbox hflex="1" vflex="1">
+            <listbox id="lbCommissionStudent" hflex="1" vflex="1">
+                <listhead>
+                    <listheader align="center" width="50px" >
+                        <label sclass="cwf-listheader-label" value="#"/>
+                    </listheader>
+                    <listheader hflex="1" >
+                        <label sclass="cwf-listheader-label" value="Студент"/>
+                    </listheader>
+                    <listheader align="center" width="150px" >
+                        <label sclass="cwf-listheader-label" value="Группа"/>
+                    </listheader>
+                    <listheader align="center" width="250px">
+                        <combobox id="cmbCommonRating" readonly="true" width="100px"/>
+                        <button id="btnCommonRating" label="Ввод" style="width: 80px; font-weight: 700;"/>
+                    </listheader>
+                </listhead>
+            </listbox>
+            <hbox width="100%">
+                <hbox pack="left" hflex="1">
+                    <button id="btnShowProtocols" label="Протоколы" image="/imgs/pdf.png"
+                            style="width: 150px; height: 40px; font-size: 14px; font-weight: 700;"/>
+                </hbox>
+                <hbox pack="right" hflex="1">
+                    <button id="btnSign" label="Подписать"
+                            style="width: 160px; height: 40px; background: #B0FFAD; font-size: 14px; font-weight: 700; "/>
+                    <button id="btnShowRegister" label="Печать ведомости" image="/imgs/pdf.png"
+                            style="width: 200px; height: 40px; font-weight: 700; font-size: 14px;"/>
+                </hbox>
+            </hbox>
+        </vbox>
+    </vlayout>
+</window>

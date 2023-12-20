@@ -1,0 +1,112 @@
+<window id="winSignEmployee" apply="org.edec.signEditor.ctrl.WinSignEmployee" closable="true" width="1000px">
+    <caption>
+        <label value="Сотрудники"/>
+    </caption>
+    <vlayout hflex="1" vflex="1">
+
+        <hbox vflex="1" hflex="">
+            <vbox hflex="1" vflex="1">
+                <listbox id="lbSignatory" height="100%" hflex="1">
+                    <auxhead>
+                        <auxheader>
+                            <textbox id="tbEmpFilter" hflex="3" placeholder="ФИО.."/>
+                        </auxheader>
+                        <auxheader>
+                            <textbox id="tbRoleFilter" hflex="2" placeholder="Роль.."/>
+                        </auxheader>
+                        <auxheader>
+                            <textbox id="tbPositionFilter" hflex="1" placeholder="Позиция.."/>
+                        </auxheader>
+                    </auxhead>
+                    <listhead>
+                        <listheader hflex="3" align="center">
+                            <label sclass="cwf-listheader-label" value="ФИО"/>
+                        </listheader>
+                        <listheader hflex="2" align="center">
+                            <label sclass="cwf-listheader-label" value="Роль"/>
+                        </listheader>
+                        <listheader hflex="1" align="center">
+                            <label sclass="cwf-listheader-label" value="Позиция"/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </vbox>
+            <vbox hflex="1" vflex="1">
+                <groupbox width="450px">
+                    <separator spacing="8px"/>
+                    <hbox>
+                        <separator spacing="2px"/>
+                        <label style="font-weight: 700; font-size: 22px" value="Редактирование"/>
+                    </hbox>
+                    <groupbox width="100%" id="gbFio" contentStyle="border: 0">
+                        <vbox width="100%">
+                            <label value="ФИО" style="font-weight: 700;"/>
+                            <combobox id="cmbEmp" width="57%" disabled="true" autocomplete="true">
+                            </combobox>
+                        </vbox>
+                    </groupbox>
+                    <groupbox id="gbRole" contentStyle="border: 0">
+                        <vbox width="100%">
+                            <label value="Роль" style="font-weight: 700;"/>
+                            <combobox id="cmbRole" width="100%" readonly="true">
+                                <comboitem label="Исполнитель"/>
+                                <comboitem label="Утверждающее лицо"/>
+                                <comboitem label="Согласующее лицо"/>
+                                <comboitem label="Рассылка"/>
+                            </combobox>
+                        </vbox>
+                    </groupbox>
+
+                    <groupbox id="gbPosition" contentStyle="border: 0">
+                        <hbox>
+                            <vbox width="50px">
+                                <label value="Позиция" style="font-weight: 700;"/>
+                                <textbox id="tbPosition" width="50px"/>
+                            </vbox>
+                            <separator width="8px"></separator>
+                            <vbox width="25px">
+                                <label value="Форма обучения" style="font-weight: 700;"/>
+                                <combobox id="cmbFos">
+                                    <comboitem label="Очное"/>
+                                    <comboitem label="Заочное"/>
+                                </combobox>
+                            </vbox>
+                        </hbox>
+                    </groupbox>
+
+
+                    <groupbox id="gbPrint" contentStyle="border: 0">
+                        <checkbox id="cbPrint" label="Отображение в приказе" value="true" height="100%" width="100%"
+                                  checked="true">
+                        </checkbox>
+                    </groupbox>
+                    <separator spacing="8px"/>
+                    <groupbox width="100%" id="gbPost" contentStyle="border: 0">
+                        <vbox width="100%">
+                            <label value="Должность" style="font-weight: 700;"></label>
+                            <textbox id="tbPost" width="100%"/>
+                        </vbox>
+                    </groupbox>
+                    <separator spacing="8px"/>
+                    <groupbox width="100%" id="gbSubquery" contentStyle="border: 0">
+                        <vbox width="100%">
+                            <label value="Подзапрос" style="font-weight: 700;"></label>
+                            <textbox id="tbSubquery" width="100%"/>
+                        </vbox>
+                    </groupbox>
+                    <separator spacing="8px"/>
+                    <groupbox contentStyle="border: 0">
+                        <hbox hflex="1" align="center">
+                            <button id="btnAddEmp" disabled="true" label="Создать" hflex="1"/>
+                            <separator spacing="8px"/>
+                            <button id="btnSaveEmp" disabled="true" label="Сохранить" hflex="1"/>
+                            <separator spacing="8px"/>
+                            <button id="btnRemoveEmp" disabled="true" label="Удалить" hflex="1"/>
+                        </hbox>
+                    </groupbox>
+                </groupbox>
+            </vbox>
+        </hbox>
+
+    </vlayout>
+</window>

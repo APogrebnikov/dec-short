@@ -1,0 +1,25 @@
+package org.edec.newOrder.model.dao;
+
+/**
+ * Created by antonskripacev on 03.01.17.
+ */
+public class SearchGroupModelESO {
+    long id;
+    String name;
+
+    public long getId () {
+        return id;
+    }
+
+    public void setId (long id) {
+        this.id = id;
+    }
+
+    public String getName () {
+        return name;
+    }
+
+    public void setName (String name) {
+        this.name = name;
+    }
+}

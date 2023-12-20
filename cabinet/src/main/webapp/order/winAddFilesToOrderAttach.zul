@@ -1,0 +1,13 @@
+<window closable="true" height="40%" width="60%" apply="org.edec.order.ctrl.AddFilesToOrderAttachCtrl"
+        id="winAttachFiles">
+    <caption>
+        <label value="Прикрепленнные файлы" />
+    </caption>
+    <hbox>
+        <button label="Добавить файл" upload="true,maxsize=3000000,multiple=true" id="btnUpload"/>
+        <button label="Сохранить файлы" id="btnSave" />
+    </hbox>
+    <groupbox title="Прикрепленные файлы:" open="true" width="100%">
+        <div id="divFound" width="100%"/>
+    </groupbox>
+</window>

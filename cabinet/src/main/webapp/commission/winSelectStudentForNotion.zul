@@ -1,0 +1,39 @@
+<window id="winCreateCommissionStudent" closable="true" apply="org.edec.commission.ctrl.WinSelectStudentForNotion"
+        position="center">
+    <caption>
+        <label id="lInfo" value="Студенты для представления"/>
+    </caption>
+
+    <hbox>
+        <vbox>
+            <label value="Дата представления"/>
+            <datebox id="dbDateNotion" constraint="no empty"/>
+        </vbox>
+        <vbox>
+            <label value="Дата повтороной аттестации"/>
+            <datebox id="dbExamination" constraint="no empty"/>
+        </vbox>
+        <vbox>
+            <label value="Исполнитель ФИО" />
+            <textbox id="tbExecutorFio" constraint="no empty"/>
+        </vbox>
+        <vbox>
+            <label value="Исполнитель тел." />
+            <textbox id="tbExecutorTel" constraint="no empty"/>
+        </vbox>
+    </hbox>
+
+    <listbox id="lbStudents" style="maring-left: 10px; margin-top: 10px" width="600px" height="400px" multiple="true"
+             checkmark="true">
+        <listhead>
+            <listheader hflex="2">
+                <label sclass="cwf-listheader-label" value="ФИО"/>
+            </listheader>
+            <listheader width="100px">
+                <label sclass="cwf-listheader-label" value="Группа"/>
+            </listheader>
+        </listhead>
+    </listbox>
+
+    <button id="btnPrint" style="maring-left: 10px; margin-top: 10px" label="Готово"></button>
+</window>

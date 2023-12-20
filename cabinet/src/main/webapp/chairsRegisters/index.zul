@@ -1,0 +1,252 @@
+<?init class="org.zkoss.zk.ui.util.Composition" arg0="/layout/template.zul"?>
+<?link rel="shortcut icon" href="/imgs/favicon.ico" type="image/x-icon"?>
+<vbox self="@define(content)" hflex="1" vflex="1"  apply="org.edec.chairsRegisters.ctrl.IndexPageCtrl" >
+    <hbox hflex="1" vflex="1">
+        <vbox hflex="1" vflex="1">
+            <groupbox hflex="1">
+                <caption> Семестр </caption>
+                    <radiogroup>
+                        <vbox>
+                            <radio id = "rFullTime" label="Очная"></radio>
+                            <radio id = "rExtramural" label="Заочная"></radio>
+                        </vbox>
+                    </radiogroup>
+                <space spacing="10px"/>
+                    <combobox id="cmbSemester" placeholder="Семестр">
+                    </combobox>
+                <button id = "btnSearch" label="Найти все ведомости в семестре" hflex="1">
+                </button>
+            </groupbox>
+            <groupbox >
+                <caption> Статус </caption>
+                <vbox>
+                    <checkbox id = "chbSign" label="Подписанные"></checkbox>
+                    <checkbox id = "chbUnsign" label="Не подписанные"></checkbox>
+                    <checkbox id = "chbOverdue" label="Просроченные"></checkbox>
+                    <checkbox id = "chbWithNumber" label = "С номером"></checkbox>
+                </vbox>
+            </groupbox>
+            <groupbox >
+                <caption> Квалификация </caption>
+                <vbox>
+                    <checkbox id = "chbBachelors" label="Бакалавр"></checkbox>
+                    <checkbox id = "chbMaster" label="Магистр"></checkbox>
+                    <checkbox id = "chbSpec" label="Специалист"></checkbox>
+                </vbox>
+            </groupbox>
+            <groupbox >
+                <caption> Дата подписи </caption>
+                <vbox>
+                    <datebox id = "dbFrom" placeholder="С"> </datebox>
+                    <datebox  id = "dbTo" placeholder="По"> </datebox>
+                </vbox>
+            </groupbox>
+            <hbox>
+                <hbox style="width: 15px; height: 15px; border: 1px solid black; background: #99ff99;"/>
+                <label value=" - Ведомость подписана"/>
+            </hbox>
+            <hbox>
+                <hbox style="width: 15px; height: 15px; border: 1px solid black; background: #bff0b6;"/>
+                <label value=" - Ведомость подписана без ЭП"/>
+            </hbox>
+            <hbox>
+                <hbox style="width: 15px; height: 15px; border: 1px solid black; background: #FF7373;"/>
+                <label value=" - Ведомость просрочена"/>
+            </hbox>
+
+
+        </vbox>
+        <space spacing="10px">
+        </space>
+        <tabbox hflex="5" vflex="1">
+            <tabs>
+                <tab id = "tabMain" label="Основная сдача" vflex="1" hflex="5"></tab>
+                <tab  id = "tabRetake" label="Пересдача" vflex="1" hflex="5"></tab>
+                <tab id = "tabComission" label="Комиссия" vflex="1" hflex="5"></tab>
+            </tabs>
+            <tabpanels>
+                <tabpanel>
+                    <listbox id  = "lbMain" vflex="1" mold="paging" autopaging="false" pageSize="7" >
+                        <auxhead>
+                            <auxheader>
+                                <textbox id = "tbMainFilterSubjectname" hflex="1" placeholder="Предмет..."/>
+                            </auxheader>
+                            <auxheader>
+                                <textbox id = "tbMainFilterGroupname" hflex="1"  placeholder="Группа..."/>
+                            </auxheader>
+                            <auxheader>
+                                <textbox id = "tbMainFilterTeacher" hflex="1"  placeholder="Преподаватель..."/>
+                            </auxheader>
+                            <auxheader>
+                                <combobox id = "cmbMainFilterFoc" width="80px" placeholder="ФК">
+                                    <comboitem label="Зачет"/>
+                                    <comboitem label="Экзамен"/>
+                                    <comboitem label="КР"/>
+                                    <comboitem label="КП"/>
+                                    <comboitem label="Практика"/>
+                                </combobox>
+                            </auxheader>
+                            <auxheader>
+                            </auxheader>
+                            <auxheader>
+                                <textbox id  ="tbMainFilterNumberRegister" hflex="1"  placeholder="Номер..."/>
+                            </auxheader>
+                            <auxheader>
+                            </auxheader>
+                        </auxhead>
+                        <listhead style="text-align: center">
+                            <listheader hflex="2">
+                                <label sclass="cwf-listheader-label"  value="Предмет"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="Группа"></label>
+                            </listheader>
+                            <listheader hflex="2">
+                                <label sclass="cwf-listheader-label"  value="Преподаватель"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="ФК"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="Дата подписи"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="Номер"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value=" "></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="Дата сдачи"></label>
+                            </listheader>
+                        </listhead>
+                    </listbox>
+                </tabpanel>
+                <tabpanel>
+                    <hbox>
+                        <checkbox id = "chbIndivRetake" label="Индивидуальные"/>
+                        <checkbox id = "chbCommonRetake" label="Общие"/>
+                        <space spacing="20px"></space>
+                           <datebox id = "dbRetakeFrom" placeholder="С"/>
+                           <datebox id = "dbRetakeTo" placeholder="По"/>
+                           <button id ="btnPrintScheduleRetake" label="Расписание (doc)" image="/imgs/docs.png"/>
+                           <button id ="btnPrintScheduleRetakeXls" label="Расписание (xls)" image="/imgs/excel.png"/>
+                    </hbox>
+                    <listbox id = "lbRetake" vflex="1"  mold="paging" autopaging="false" pageSize="7">
+                        <auxhead>
+                            <auxheader>
+                                <textbox id = "tbRetakeFilterSubjectname"   hflex="1" placeholder="Предмет..."/>
+                            </auxheader>
+                            <auxheader>
+                                <textbox id = "tbRetakeFilterGroupname" hflex="1"  placeholder="Группа..."/>
+                            </auxheader>
+                            <auxheader>
+                                <textbox id = "tbRetakeFilterTeacher" hflex="1"  placeholder="Преподаватель..."/>
+                            </auxheader>
+                            <auxheader>
+                                <combobox id = "cmbRetakeFilterFoc" width="80px" placeholder="ФК">
+                                    <comboitem label="Зачет"/>
+                                    <comboitem label="Экзамен"/>
+                                    <comboitem label="КР"/>
+                                    <comboitem label="КП"/>
+                                    <comboitem label="Практика"/>
+                                </combobox>
+                            </auxheader>
+                            <auxheader>
+                            </auxheader>
+                            <auxheader>
+                                <textbox id = "tbRetakeFilterRegisterNumber" hflex="1"  placeholder="Номер..."/>
+                            </auxheader>
+                            <auxheader>
+                            </auxheader>
+                        </auxhead>
+                        <listhead style="text-align: center" >
+                            <listheader hflex="2">
+                                <label sclass="cwf-listheader-label"  value="Предмет"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="Группа"></label>
+                            </listheader>
+                            <listheader hflex="2">
+                                <label sclass="cwf-listheader-label"  value="Преподаватель"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="ФК"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="Дата подписи"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="Номер"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value=" "></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="Срок сдачи"></label>
+                            </listheader>
+                        </listhead>
+                    </listbox>
+                </tabpanel>
+                <tabpanel>
+
+                    <listbox id = "lbComission" vflex="1" mold="paging" autopaging="false" pageSize="7">
+                        <auxhead>
+                            <auxheader>
+                                <textbox id = "tbComissionFilterSubjectname"  hflex="1" placeholder="Предмет..."/>
+                            </auxheader>
+                            <auxheader>
+                                <textbox id = "tbComissionFilterGroupname" hflex="1"  placeholder="Группа..."/>
+                            </auxheader>
+                            <auxheader>
+                                <textbox id = "tbComissionFilterTeacher" hflex="1"  placeholder="Преподаватель..."/>
+                            </auxheader>
+                            <auxheader>
+                                <combobox id = "cmbComissionFilterFoc" width="80px" placeholder="ФК">
+                                    <comboitem label="Зачет"/>
+                                    <comboitem label="Экзамен"/>
+                                    <comboitem label="КР"/>
+                                    <comboitem label="КП"/>
+                                    <comboitem label="Практика"/>
+                                </combobox>
+                            </auxheader>
+                            <auxheader>
+                            </auxheader>
+                            <auxheader>
+                                <textbox id = "tbComissionFilterRegisterNumber" hflex="1"  placeholder="Номер..."/>
+                            </auxheader>
+                            <auxheader>
+                            </auxheader>
+                        </auxhead>
+                        <listhead style="text-align: center">
+                            <listheader hflex="2">
+                                <label sclass="cwf-listheader-label"  value="Предмет"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="Группа"></label>
+                            </listheader>
+                            <listheader hflex="2">
+                                <label sclass="cwf-listheader-label"  value="Преподаватель"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="ФК"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="Дата подписи"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="Номер"></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value=" "></label>
+                            </listheader>
+                            <listheader hflex="1">
+                                <label sclass="cwf-listheader-label"  value="Дата сдачи"></label>
+                            </listheader>
+                        </listhead>
+                    </listbox>
+                </tabpanel>
+            </tabpanels>
+        </tabbox>
+    </hbox>
+</vbox>

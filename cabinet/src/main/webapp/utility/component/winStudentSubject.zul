@@ -1,0 +1,25 @@
+<window id="winStudentSubject" closable="true" height="90%" width="80%"
+    apply="org.edec.utility.component.ctrl.WinStudentSubjectCtrl">
+    <caption>
+        <label value="Студента предметы синхронизация" />
+    </caption>
+    <vbox hflex="1" vflex="1">
+        <hbox id="hbInfo" height="30px">
+            <label id="lStudent" />
+        </hbox>
+        <hbox vflex="1">
+            <listbox id="lbGroupSemester" vflex="1">
+                <listhead>
+                    <listheader label="Семестр" />
+                </listhead>
+            </listbox>
+        </hbox>
+        <hbox vflex="1">
+            <listbox id="lbStudentSemester" vflex="1">
+                <listhead>
+                    <listheader label="Семестр" />
+                </listhead>
+            </listbox>
+        </hbox>
+    </vbox>
+</window>

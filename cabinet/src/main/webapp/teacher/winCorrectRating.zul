@@ -1,0 +1,34 @@
+<window id="winCorrectRating" closable="true" width="800px"
+        style="min-width: 800px;" apply="org.edec.teacher.ctrl.WinCorrectRatingCtrl">
+    <caption>
+        <label value="Корректировка оценок"/>
+    </caption>
+    <vlayout style="width: 100%; height: 100%; overflow:auto;">
+        <!-- Ведомость -->
+        <hbox spacing="10px" pack="center" style="width: 100%;">
+            <vbox hflex="1">
+                <listbox id="listboxStudents" height="350px">
+                    <listhead>
+                        <listheader
+                                style="text-align: center;">
+                            <label value="Студент" sclass="cwf-listheader-label"/>
+                        </listheader>
+                        <listheader
+                                style="text-align: center;">
+                            <label value="Старая оценка" sclass="cwf-listheader-label"/>
+                        </listheader>
+                        <listheader
+                                style="text-align: center;">
+                            <label value="Новая оценка" sclass="cwf-listheader-label"/>
+                        </listheader>
+                        <listheader
+                                style="text-align: center;">
+                            <label value="Служебная" sclass="cwf-listheader-label"/>
+                        </listheader>
+                    </listhead>
+                </listbox>
+            </vbox>
+        </hbox>
+    </vlayout>
+    <space spacing="10px" />
+</window>

@@ -1,0 +1,17 @@
+<window id="winAddScholarshipForStudent" apply="org.edec.passportGroup.ctrl.WinAddScholarshipStudentCtrl" border="normal"
+        position="center,center" closable="true">
+    <caption>
+        <label value="Назначить стипендию"/>
+    </caption>
+    <vlayout>
+        <hbox>
+            <label>Дата начала </label>
+            <datebox id="dbDateBegin" placeholder=""/>
+        </hbox>
+        <hbox>
+            <label>Дата конца </label>
+            <datebox id="dbDateEnd" placeholder=""/>
+        </hbox>
+        <button id="btnSet" label="Назначить"></button>
+    </vlayout>
+</window>
