@@ -156,7 +156,7 @@
         <dependency>
             <groupId>com.microsoft.sqlserver</groupId>
             <artifactId>mssql-jdbc</artifactId>
-            <version>6.1.4.jre7-preview</version>
+            <version>6.5.4.jre8-preview</version>
         </dependency>
         <dependency>
             <groupId>org.hibernate</groupId>
